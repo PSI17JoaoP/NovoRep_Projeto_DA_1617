@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE5CAF40-3BB0-4317-8922-60173E77F0CE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Projeto</RootNamespace>
+    <AssemblyName>Projeto</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrator.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD_DA_ProjetoDataSet_Administradores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DA_ProjetoDataSet_Administradores.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD_DA_ProjetoDataSet_Arbitros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DA_ProjetoDataSet_Arbitros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD_DA_ProjetoDataSet_Cards.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DA_ProjetoDataSet_Cards.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD_DA_ProjetoDataSet_Decks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DA_ProjetoDataSet_Decks.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD_DA_ProjetoDataSet_Players.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DA_ProjetoDataSet_Players.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD_DA_ProjetoDataSet_Teams.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DA_ProjetoDataSet_Teams.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Card.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Deck.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeckCards.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DiagramaArcmage.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiagramaArcmage.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DiagramaArcmage.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DiagramaArcmage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiagramaArcmage.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formMenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formMenuAdmin.Designer.cs">
+      <DependentUpon>formMenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formMenuArbitro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formMenuArbitro.Designer.cs">
+      <DependentUpon>formMenuArbitro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Player.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Referee.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StandardGame.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StandardTournament.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Team.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeamGame.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeamPlayers.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeamTournament.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tournament.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>DiagramaArcmage.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formMenuAdmin.resx">
+      <DependentUpon>formMenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formMenuArbitro.resx">
+      <DependentUpon>formMenuArbitro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="DiagramaArcmage.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DiagramaArcmage.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BD_DA_ProjetoDataSet_Administradores.xsc">
+      <DependentUpon>BD_DA_ProjetoDataSet_Administradores.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Administradores.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DA_ProjetoDataSet_Administradores.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Administradores.xss">
+      <DependentUpon>BD_DA_ProjetoDataSet_Administradores.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Arbitros.xsc">
+      <DependentUpon>BD_DA_ProjetoDataSet_Arbitros.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Arbitros.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DA_ProjetoDataSet_Arbitros.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Arbitros.xss">
+      <DependentUpon>BD_DA_ProjetoDataSet_Arbitros.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Cards.xsc">
+      <DependentUpon>BD_DA_ProjetoDataSet_Cards.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Cards.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DA_ProjetoDataSet_Cards.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Cards.xss">
+      <DependentUpon>BD_DA_ProjetoDataSet_Cards.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Decks.xsc">
+      <DependentUpon>BD_DA_ProjetoDataSet_Decks.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Decks.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DA_ProjetoDataSet_Decks.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Decks.xss">
+      <DependentUpon>BD_DA_ProjetoDataSet_Decks.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Players.xsc">
+      <DependentUpon>BD_DA_ProjetoDataSet_Players.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Players.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DA_ProjetoDataSet_Players.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Players.xss">
+      <DependentUpon>BD_DA_ProjetoDataSet_Players.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Teams.xsc">
+      <DependentUpon>BD_DA_ProjetoDataSet_Teams.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Teams.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DA_ProjetoDataSet_Teams.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Teams.xss">
+      <DependentUpon>BD_DA_ProjetoDataSet_Teams.xsd</DependentUpon>
+    </None>
+    <None Include="DiagramaArcmage.edmx.diagram">
+      <DependentUpon>DiagramaArcmage.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DiagramaArcmage.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DiagramaArcmage.Context.cs</LastGenOutput>
+      <DependentUpon>DiagramaArcmage.edmx</DependentUpon>
+    </Content>
+    <Content Include="DiagramaArcmage.edmx.sql" />
+    <Content Include="DiagramaArcmage.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DiagramaArcmage.cs</LastGenOutput>
+      <DependentUpon>DiagramaArcmage.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
