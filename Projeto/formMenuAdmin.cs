@@ -40,6 +40,11 @@ namespace Projeto
 
         private int idEquipa;
 
+        /// <summary>
+        /// Variavel privada que guarda o id do torneio selecionado.
+        /// </summary>
+        private int idTorneio;
+
         public formMenuAdmin()
         {
             InitializeComponent();
@@ -55,6 +60,8 @@ namespace Projeto
 
         private void formMenuAdmin_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Tournaments.TournamentSet' table. You can move, or remove it, as needed.
+            this.tournamentSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Tournaments.TournamentSet);
             // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Players.PlayerSet' table. You can move, or remove it, as needed.
             this.playerSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Players.PlayerSet);
             // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Teams.TeamSet' table. You can move, or remove it, as needed.
@@ -3380,6 +3387,139 @@ namespace Projeto
 
             tbxnomeequipapesquisa.ResetText();
             cbnomejogadorpesquisa.SelectedIndex = -1;
+        }
+
+        #endregion
+
+        #region Gestão de Torneios
+
+        private void AdicionarTeamTournament(string name, string description, DateTime date)
+        {
+            try
+            {
+                TeamTournament novoTeamTournament = new TeamTournament
+                {
+                    Name = name,
+                    Description = description,
+                    Date = date
+                };
+
+                containerDados.TournamentSet.Add(novoTeamTournament);
+                containerDados.SaveChanges();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na inserção do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AdicionarStandardTournament(string name, string description, DateTime date)
+        {
+            try
+            {
+                StandardTournament novoTeamTournament = new StandardTournament
+                {
+                    Name = name,
+                    Description = description,
+                    Date = date
+                };
+
+                containerDados.TournamentSet.Add(novoTeamTournament);
+                containerDados.SaveChanges();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na inserção do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AlterarTeamTournament(string name, string description, DateTime date)
+        {
+            try
+            {
+                Tournament teamTournament = (Tournament)containerDados.TournamentSet.Find(idTorneio);
+
+                teamTournament.Name = name;
+                teamTournament.Description = description;
+                teamTournament.Date = date;
+
+                containerDados.Entry(teamTournament).State = EntityState.Modified;
+                containerDados.SaveChanges();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na edição do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AlterarStandardTournament(string name, string description, DateTime date)
+        {
+            try
+            {
+                Tournament standardTournament = (Tournament)containerDados.TournamentSet.Find(idTorneio);
+
+                standardTournament.Name = name;
+                standardTournament.Description = description;
+                standardTournament.Date = date;
+
+                containerDados.Entry(standardTournament).State = EntityState.Modified;
+                containerDados.SaveChanges();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na edição do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RemoverTeamTournament()
+        {
+            try
+            {
+                TeamTournament teamTournament = (TeamTournament)containerDados.TournamentSet.Find(idTorneio);
+
+                containerDados.TournamentSet.Remove(teamTournament);
+                containerDados.SaveChanges();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na remoção do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RemoverStandardTournament()
+        {
+            try
+            {
+                StandardTournament standardTournament = (StandardTournament)containerDados.TournamentSet.Find(idTorneio);
+
+                containerDados.TournamentSet.Remove(standardTournament);
+                containerDados.SaveChanges();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na remoção do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RefreshTabelaTorneios()
+        {
+            tournamentSetBindingSource.DataSource = bD_DA_ProjetoDataSet_Tournaments.TournamentSet;
+            tournamentSetTableAdapter.Fill(bD_DA_ProjetoDataSet_Tournaments.TournamentSet);
+            dgvGTorneiosLista.DataSource = tournamentSetBindingSource;
+        }
+
+        private void ResetFormTorneios()
+        {
+            txtNomeTorneio.Clear();
+            txtDescricaoTorneio.Clear();
+            tpDataTorneio.ResetText();
+            gbGTorneiosDados.Enabled = true;
         }
 
         #endregion
