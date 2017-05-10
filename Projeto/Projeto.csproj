@@ -95,6 +95,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD_DA_ProjetoDataSet_Decks.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BD_DA_ProjetoDataSet_Games.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DA_ProjetoDataSet_Games.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BD_DA_ProjetoDataSet_Players.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -247,6 +252,17 @@
     </None>
     <None Include="BD_DA_ProjetoDataSet_Decks.xss">
       <DependentUpon>BD_DA_ProjetoDataSet_Decks.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Games.xsc">
+      <DependentUpon>BD_DA_ProjetoDataSet_Games.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Games.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DA_ProjetoDataSet_Games.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Games.xss">
+      <DependentUpon>BD_DA_ProjetoDataSet_Games.xsd</DependentUpon>
     </None>
     <None Include="BD_DA_ProjetoDataSet_Players.xsc">
       <DependentUpon>BD_DA_ProjetoDataSet_Players.xsd</DependentUpon>

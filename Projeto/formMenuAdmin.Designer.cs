@@ -54,12 +54,32 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAlterarJogador = new System.Windows.Forms.Button();
             this.dgvGListaJogadores = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nicknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avatarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.playerSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bD_DA_ProjetoDataSet_Players = new Projeto.BD_DA_ProjetoDataSet_Players();
             this.btnInserirJogador = new System.Windows.Forms.Button();
             this.txtGJogadoresPesquisa = new System.Windows.Forms.TextBox();
             this.tbGestaoEquipas = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lvJogadoresEquipa = new System.Windows.Forms.ListView();
+            this.cNome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cIdade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cNickname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnGuardarJogadorEquipa = new System.Windows.Forms.Button();
             this.btnRetirarJogador = new System.Windows.Forms.Button();
             this.btnAdicionarJogador = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lcListaJogadores = new System.Windows.Forms.ListView();
+            this.cNome1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cEmail2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cIdade2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cNickname2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbGEquipasDados = new System.Windows.Forms.GroupBox();
             this.btnGerirEquipa = new System.Windows.Forms.Button();
             this.gbGEquipasForm = new System.Windows.Forms.GroupBox();
@@ -76,19 +96,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnInserirEquipa = new System.Windows.Forms.Button();
             this.dgvGListaEquipas = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avatarDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teamSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bD_DA_ProjetoDataSet_Teams = new Projeto.BD_DA_ProjetoDataSet_Teams();
             this.txtGEquipasPesquisa = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lvJogadoresEquipa = new System.Windows.Forms.ListView();
-            this.cNome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cIdade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cNickname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lcListaJogadores = new System.Windows.Forms.ListView();
-            this.cNome1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cEmail2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cIdade2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cNickname2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbGestaoTorneios = new System.Windows.Forms.TabPage();
             this.gbGJogosDados = new System.Windows.Forms.GroupBox();
             this.labPesquisarJogos = new System.Windows.Forms.Label();
@@ -174,7 +187,15 @@
             this.btnCancelarAltBaralho = new System.Windows.Forms.Button();
             this.btnGuardarAltBaralho = new System.Windows.Forms.Button();
             this.gbGCartasnoBaralho = new System.Windows.Forms.GroupBox();
+            this.lvCartasBaralho = new System.Windows.Forms.ListView();
+            this.chCarta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chTipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chQtd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbGListaDeCartas = new System.Windows.Forms.GroupBox();
+            this.lvListaCartas = new System.Windows.Forms.ListView();
+            this.cCarta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CTipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cQtd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbGBaralhosDados = new System.Windows.Forms.GroupBox();
             this.gbGBaralhosForm = new System.Windows.Forms.GroupBox();
             this.labNomeBaralho = new System.Windows.Forms.Label();
@@ -236,6 +257,12 @@
             this.label37 = new System.Windows.Forms.Label();
             this.btnExportar = new System.Windows.Forms.Button();
             this.dgvGListaJogadoresPesquisa = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nicknameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avatarDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbVerEquipas = new System.Windows.Forms.TabPage();
             this.btlimpar = new System.Windows.Forms.Button();
             this.cbnomejogadorpesquisa = new System.Windows.Forms.ComboBox();
@@ -243,6 +270,9 @@
             this.tbxnomeequipapesquisa = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.dgvGListaEquipasPesquisa = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avatarDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbVerTorneios = new System.Windows.Forms.TabPage();
             this.tbVerCartas = new System.Windows.Forms.TabPage();
             this.btnVLimparCartas = new System.Windows.Forms.Button();
@@ -301,39 +331,20 @@
             this.userSetTableAdapterArbitros = new Projeto.BD_DA_ProjetoDataSet_ArbitrosTableAdapters.UserSetTableAdapter();
             this.cardSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_CardsTableAdapters.CardSetTableAdapter();
             this.deckSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_DecksTableAdapters.DeckSetTableAdapter();
-            this.lvListaCartas = new System.Windows.Forms.ListView();
-            this.cCarta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CTipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cQtd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvCartasBaralho = new System.Windows.Forms.ListView();
-            this.chCarta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chTipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chQtd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.bD_DA_ProjetoDataSet_Teams = new Projeto.BD_DA_ProjetoDataSet_Teams();
-            this.teamSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.teamSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_TeamsTableAdapters.TeamSetTableAdapter();
-            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avatarDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bD_DA_ProjetoDataSet_Players = new Projeto.BD_DA_ProjetoDataSet_Players();
-            this.playerSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.playerSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_PlayersTableAdapters.PlayerSetTableAdapter();
-            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nicknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avatarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opfProcurarImagem = new System.Windows.Forms.OpenFileDialog();
-            this.idDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nicknameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avatarDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avatarDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bD_DA_ProjetoDataSet_Games = new Projeto.BD_DA_ProjetoDataSet_Games();
+            this.gameSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gameSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_GamesTableAdapters.GameSetTableAdapter();
+            this.idDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.refereeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deckId1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deckId2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.refereeIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbMenu.SuspendLayout();
             this.tpGestao.SuspendLayout();
             this.tcGestao.SuspendLayout();
@@ -343,13 +354,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudIdadeJogador)).BeginInit();
             this.gbGJogadoresDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGListaJogadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Players)).BeginInit();
             this.tbGestaoEquipas.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.gbGEquipasDados.SuspendLayout();
             this.gbGEquipasForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatarEquipa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGListaEquipas)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teamSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Teams)).BeginInit();
             this.tbGestaoTorneios.SuspendLayout();
             this.gbGJogosDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGJogosLista)).BeginInit();
@@ -404,10 +419,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSetArbitros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAdminstradores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceArbitros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Teams)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Players)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Games)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tbMenu
@@ -419,7 +432,7 @@
             this.tbMenu.Margin = new System.Windows.Forms.Padding(2);
             this.tbMenu.Name = "tbMenu";
             this.tbMenu.SelectedIndex = 0;
-            this.tbMenu.Size = new System.Drawing.Size(797, 455);
+            this.tbMenu.Size = new System.Drawing.Size(797, 454);
             this.tbMenu.TabIndex = 0;
             // 
             // tpGestao
@@ -429,7 +442,7 @@
             this.tpGestao.Margin = new System.Windows.Forms.Padding(2);
             this.tpGestao.Name = "tpGestao";
             this.tpGestao.Padding = new System.Windows.Forms.Padding(2);
-            this.tpGestao.Size = new System.Drawing.Size(789, 429);
+            this.tpGestao.Size = new System.Drawing.Size(789, 428);
             this.tpGestao.TabIndex = 0;
             this.tpGestao.Text = "Gestão";
             this.tpGestao.UseVisualStyleBackColor = true;
@@ -447,8 +460,9 @@
             this.tcGestao.Margin = new System.Windows.Forms.Padding(2);
             this.tcGestao.Name = "tcGestao";
             this.tcGestao.SelectedIndex = 0;
-            this.tcGestao.Size = new System.Drawing.Size(785, 425);
+            this.tcGestao.Size = new System.Drawing.Size(785, 424);
             this.tcGestao.TabIndex = 0;
+            this.tcGestao.Enter += new System.EventHandler(this.tcGestao_Enter);
             // 
             // tbGestaoJogadores
             // 
@@ -458,7 +472,7 @@
             this.tbGestaoJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoJogadores.Name = "tbGestaoJogadores";
             this.tbGestaoJogadores.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoJogadores.Size = new System.Drawing.Size(777, 399);
+            this.tbGestaoJogadores.Size = new System.Drawing.Size(777, 398);
             this.tbGestaoJogadores.TabIndex = 0;
             this.tbGestaoJogadores.Text = "Jogadores";
             this.tbGestaoJogadores.UseVisualStyleBackColor = true;
@@ -486,7 +500,7 @@
             this.gbGJogadoresForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogadoresForm.Name = "gbGJogadoresForm";
             this.gbGJogadoresForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGJogadoresForm.Size = new System.Drawing.Size(273, 391);
+            this.gbGJogadoresForm.Size = new System.Drawing.Size(273, 390);
             this.gbGJogadoresForm.TabIndex = 7;
             this.gbGJogadoresForm.TabStop = false;
             this.gbGJogadoresForm.Text = "Campos";
@@ -533,7 +547,7 @@
             // btnJogadoresCancelar
             // 
             this.btnJogadoresCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogadoresCancelar.Location = new System.Drawing.Point(193, 351);
+            this.btnJogadoresCancelar.Location = new System.Drawing.Point(193, 350);
             this.btnJogadoresCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogadoresCancelar.Name = "btnJogadoresCancelar";
             this.btnJogadoresCancelar.Size = new System.Drawing.Size(62, 21);
@@ -545,7 +559,7 @@
             // btnJogadoresAcao
             // 
             this.btnJogadoresAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogadoresAcao.Location = new System.Drawing.Point(133, 351);
+            this.btnJogadoresAcao.Location = new System.Drawing.Point(133, 350);
             this.btnJogadoresAcao.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogadoresAcao.Name = "btnJogadoresAcao";
             this.btnJogadoresAcao.Size = new System.Drawing.Size(56, 21);
@@ -635,7 +649,7 @@
             this.gbGJogadoresDados.Controls.Add(this.dgvGListaJogadores);
             this.gbGJogadoresDados.Controls.Add(this.btnInserirJogador);
             this.gbGJogadoresDados.Controls.Add(this.txtGJogadoresPesquisa);
-            this.gbGJogadoresDados.Location = new System.Drawing.Point(4, 4);
+            this.gbGJogadoresDados.Location = new System.Drawing.Point(4, 3);
             this.gbGJogadoresDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogadoresDados.MaximumSize = new System.Drawing.Size(492, 391);
             this.gbGJogadoresDados.MinimumSize = new System.Drawing.Size(492, 391);
@@ -708,6 +722,58 @@
             this.dgvGListaJogadores.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGListaJogadores_CellMouseDoubleClick);
             this.dgvGListaJogadores.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGListaJogadores_CellMouseEnter);
             // 
+            // idDataGridViewTextBoxColumn5
+            // 
+            this.idDataGridViewTextBoxColumn5.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn5.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
+            this.idDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn5
+            // 
+            this.nameDataGridViewTextBoxColumn5.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn5.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn5.Name = "nameDataGridViewTextBoxColumn5";
+            this.nameDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nicknameDataGridViewTextBoxColumn
+            // 
+            this.nicknameDataGridViewTextBoxColumn.DataPropertyName = "Nickname";
+            this.nicknameDataGridViewTextBoxColumn.HeaderText = "Nickname";
+            this.nicknameDataGridViewTextBoxColumn.Name = "nicknameDataGridViewTextBoxColumn";
+            this.nicknameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // avatarDataGridViewTextBoxColumn
+            // 
+            this.avatarDataGridViewTextBoxColumn.DataPropertyName = "Avatar";
+            this.avatarDataGridViewTextBoxColumn.HeaderText = "Avatar";
+            this.avatarDataGridViewTextBoxColumn.Name = "avatarDataGridViewTextBoxColumn";
+            this.avatarDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // playerSetBindingSource
+            // 
+            this.playerSetBindingSource.DataMember = "PlayerSet";
+            this.playerSetBindingSource.DataSource = this.bD_DA_ProjetoDataSet_Players;
+            // 
+            // bD_DA_ProjetoDataSet_Players
+            // 
+            this.bD_DA_ProjetoDataSet_Players.DataSetName = "BD_DA_ProjetoDataSet_Players";
+            this.bD_DA_ProjetoDataSet_Players.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnInserirJogador
             // 
             this.btnInserirJogador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -743,10 +809,51 @@
             this.tbGestaoEquipas.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoEquipas.Name = "tbGestaoEquipas";
             this.tbGestaoEquipas.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoEquipas.Size = new System.Drawing.Size(777, 399);
+            this.tbGestaoEquipas.Size = new System.Drawing.Size(777, 398);
             this.tbGestaoEquipas.TabIndex = 1;
             this.tbGestaoEquipas.Text = "Equipas";
             this.tbGestaoEquipas.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lvJogadoresEquipa);
+            this.groupBox1.Location = new System.Drawing.Point(5, 231);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(321, 163);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Jogadores na Equipa";
+            // 
+            // lvJogadoresEquipa
+            // 
+            this.lvJogadoresEquipa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.cNome,
+            this.cEmail,
+            this.cIdade,
+            this.cNickname});
+            this.lvJogadoresEquipa.FullRowSelect = true;
+            this.lvJogadoresEquipa.Location = new System.Drawing.Point(6, 19);
+            this.lvJogadoresEquipa.Name = "lvJogadoresEquipa";
+            this.lvJogadoresEquipa.Size = new System.Drawing.Size(309, 138);
+            this.lvJogadoresEquipa.TabIndex = 3;
+            this.lvJogadoresEquipa.UseCompatibleStateImageBehavior = false;
+            this.lvJogadoresEquipa.View = System.Windows.Forms.View.Details;
+            // 
+            // cNome
+            // 
+            this.cNome.Text = "Nome";
+            // 
+            // cEmail
+            // 
+            this.cEmail.Text = "Email";
+            // 
+            // cIdade
+            // 
+            this.cIdade.Text = "Idade";
+            // 
+            // cNickname
+            // 
+            this.cNickname.Text = "Nickname";
             // 
             // btnGuardarJogadorEquipa
             // 
@@ -781,6 +888,47 @@
             this.btnAdicionarJogador.UseVisualStyleBackColor = true;
             this.btnAdicionarJogador.Click += new System.EventHandler(this.btnAdicionarJogador_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lcListaJogadores);
+            this.groupBox2.Location = new System.Drawing.Point(476, 231);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(298, 163);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Lista de Jogadores";
+            // 
+            // lcListaJogadores
+            // 
+            this.lcListaJogadores.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.cNome1,
+            this.cEmail2,
+            this.cIdade2,
+            this.cNickname2});
+            this.lcListaJogadores.FullRowSelect = true;
+            this.lcListaJogadores.Location = new System.Drawing.Point(6, 19);
+            this.lcListaJogadores.Name = "lcListaJogadores";
+            this.lcListaJogadores.Size = new System.Drawing.Size(286, 138);
+            this.lcListaJogadores.TabIndex = 0;
+            this.lcListaJogadores.UseCompatibleStateImageBehavior = false;
+            this.lcListaJogadores.View = System.Windows.Forms.View.Details;
+            // 
+            // cNome1
+            // 
+            this.cNome1.Text = "Nome";
+            // 
+            // cEmail2
+            // 
+            this.cEmail2.Text = "Email";
+            // 
+            // cIdade2
+            // 
+            this.cIdade2.Text = "Idade";
+            // 
+            // cNickname2
+            // 
+            this.cNickname2.Text = "Nickname";
+            // 
             // gbGEquipasDados
             // 
             this.gbGEquipasDados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -798,7 +946,7 @@
             this.gbGEquipasDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGEquipasDados.Name = "gbGEquipasDados";
             this.gbGEquipasDados.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGEquipasDados.Size = new System.Drawing.Size(769, 222);
+            this.gbGEquipasDados.Size = new System.Drawing.Size(769, 221);
             this.gbGEquipasDados.TabIndex = 12;
             this.gbGEquipasDados.TabStop = false;
             this.gbGEquipasDados.Text = "Equipas";
@@ -807,7 +955,7 @@
             // 
             this.btnGerirEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGerirEquipa.Enabled = false;
-            this.btnGerirEquipa.Location = new System.Drawing.Point(427, 139);
+            this.btnGerirEquipa.Location = new System.Drawing.Point(427, 138);
             this.btnGerirEquipa.Name = "btnGerirEquipa";
             this.btnGerirEquipa.Size = new System.Drawing.Size(62, 23);
             this.btnGerirEquipa.TabIndex = 7;
@@ -832,7 +980,7 @@
             this.gbGEquipasForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGEquipasForm.Name = "gbGEquipasForm";
             this.gbGEquipasForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGEquipasForm.Size = new System.Drawing.Size(244, 201);
+            this.gbGEquipasForm.Size = new System.Drawing.Size(244, 200);
             this.gbGEquipasForm.TabIndex = 6;
             this.gbGEquipasForm.TabStop = false;
             this.gbGEquipasForm.Text = "Campos";
@@ -861,7 +1009,7 @@
             // txtEquipaCancelar
             // 
             this.txtEquipaCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEquipaCancelar.Location = new System.Drawing.Point(164, 161);
+            this.txtEquipaCancelar.Location = new System.Drawing.Point(164, 160);
             this.txtEquipaCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.txtEquipaCancelar.Name = "txtEquipaCancelar";
             this.txtEquipaCancelar.Size = new System.Drawing.Size(62, 21);
@@ -873,7 +1021,7 @@
             // btnEquipaAcao
             // 
             this.btnEquipaAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEquipaAcao.Location = new System.Drawing.Point(104, 161);
+            this.btnEquipaAcao.Location = new System.Drawing.Point(104, 160);
             this.btnEquipaAcao.Margin = new System.Windows.Forms.Padding(2);
             this.btnEquipaAcao.Name = "btnEquipaAcao";
             this.btnEquipaAcao.Size = new System.Drawing.Size(56, 21);
@@ -924,7 +1072,7 @@
             // 
             this.btnRemoverEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoverEquipa.Enabled = false;
-            this.btnRemoverEquipa.Location = new System.Drawing.Point(427, 168);
+            this.btnRemoverEquipa.Location = new System.Drawing.Point(427, 167);
             this.btnRemoverEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverEquipa.Name = "btnRemoverEquipa";
             this.btnRemoverEquipa.Size = new System.Drawing.Size(62, 24);
@@ -937,7 +1085,7 @@
             // 
             this.btnAlterarEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarEquipa.Enabled = false;
-            this.btnAlterarEquipa.Location = new System.Drawing.Point(427, 110);
+            this.btnAlterarEquipa.Location = new System.Drawing.Point(427, 109);
             this.btnAlterarEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarEquipa.Name = "btnAlterarEquipa";
             this.btnAlterarEquipa.Size = new System.Drawing.Size(62, 24);
@@ -959,7 +1107,7 @@
             // btnInserirEquipa
             // 
             this.btnInserirEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirEquipa.Location = new System.Drawing.Point(427, 82);
+            this.btnInserirEquipa.Location = new System.Drawing.Point(427, 81);
             this.btnInserirEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirEquipa.Name = "btnInserirEquipa";
             this.btnInserirEquipa.Size = new System.Drawing.Size(62, 24);
@@ -988,10 +1136,41 @@
             this.dgvGListaEquipas.ReadOnly = true;
             this.dgvGListaEquipas.RowHeadersVisible = false;
             this.dgvGListaEquipas.RowTemplate.Height = 24;
-            this.dgvGListaEquipas.Size = new System.Drawing.Size(388, 161);
+            this.dgvGListaEquipas.Size = new System.Drawing.Size(388, 160);
             this.dgvGListaEquipas.TabIndex = 3;
             this.dgvGListaEquipas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGListaEquipas_CellContentClick);
             this.dgvGListaEquipas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGListaEquipas_CellMouseClick);
+            // 
+            // idDataGridViewTextBoxColumn4
+            // 
+            this.idDataGridViewTextBoxColumn4.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn4.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            this.idDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn4
+            // 
+            this.nameDataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn4.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn4.Name = "nameDataGridViewTextBoxColumn4";
+            this.nameDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // avatarDataGridViewTextBoxColumn1
+            // 
+            this.avatarDataGridViewTextBoxColumn1.DataPropertyName = "Avatar";
+            this.avatarDataGridViewTextBoxColumn1.HeaderText = "Avatar";
+            this.avatarDataGridViewTextBoxColumn1.Name = "avatarDataGridViewTextBoxColumn1";
+            this.avatarDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // teamSetBindingSource
+            // 
+            this.teamSetBindingSource.DataMember = "TeamSet";
+            this.teamSetBindingSource.DataSource = this.bD_DA_ProjetoDataSet_Teams;
+            // 
+            // bD_DA_ProjetoDataSet_Teams
+            // 
+            this.bD_DA_ProjetoDataSet_Teams.DataSetName = "BD_DA_ProjetoDataSet_Teams";
+            this.bD_DA_ProjetoDataSet_Teams.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtGEquipasPesquisa
             // 
@@ -1004,88 +1183,6 @@
             this.txtGEquipasPesquisa.TabIndex = 4;
             this.txtGEquipasPesquisa.TextChanged += new System.EventHandler(this.txtGEquipasPesquisa_TextChanged);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lvJogadoresEquipa);
-            this.groupBox1.Location = new System.Drawing.Point(5, 231);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(321, 163);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Jogadores na Equipa";
-            // 
-            // lvJogadoresEquipa
-            // 
-            this.lvJogadoresEquipa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.cNome,
-            this.cEmail,
-            this.cIdade,
-            this.cNickname});
-            this.lvJogadoresEquipa.FullRowSelect = true;
-            this.lvJogadoresEquipa.Location = new System.Drawing.Point(6, 19);
-            this.lvJogadoresEquipa.Name = "lvJogadoresEquipa";
-            this.lvJogadoresEquipa.Size = new System.Drawing.Size(309, 138);
-            this.lvJogadoresEquipa.TabIndex = 3;
-            this.lvJogadoresEquipa.UseCompatibleStateImageBehavior = false;
-            this.lvJogadoresEquipa.View = System.Windows.Forms.View.Details;
-            // 
-            // cNome
-            // 
-            this.cNome.Text = "Nome";
-            // 
-            // cEmail
-            // 
-            this.cEmail.Text = "Email";
-            // 
-            // cIdade
-            // 
-            this.cIdade.Text = "Idade";
-            // 
-            // cNickname
-            // 
-            this.cNickname.Text = "Nickname";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lcListaJogadores);
-            this.groupBox2.Location = new System.Drawing.Point(476, 231);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(298, 163);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Lista de Jogadores";
-            // 
-            // lcListaJogadores
-            // 
-            this.lcListaJogadores.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.cNome1,
-            this.cEmail2,
-            this.cIdade2,
-            this.cNickname2});
-            this.lcListaJogadores.FullRowSelect = true;
-            this.lcListaJogadores.Location = new System.Drawing.Point(6, 19);
-            this.lcListaJogadores.Name = "lcListaJogadores";
-            this.lcListaJogadores.Size = new System.Drawing.Size(286, 138);
-            this.lcListaJogadores.TabIndex = 0;
-            this.lcListaJogadores.UseCompatibleStateImageBehavior = false;
-            this.lcListaJogadores.View = System.Windows.Forms.View.Details;
-            // 
-            // cNome1
-            // 
-            this.cNome1.Text = "Nome";
-            // 
-            // cEmail2
-            // 
-            this.cEmail2.Text = "Email";
-            // 
-            // cIdade2
-            // 
-            this.cIdade2.Text = "Idade";
-            // 
-            // cNickname2
-            // 
-            this.cNickname2.Text = "Nickname";
-            // 
             // tbGestaoTorneios
             // 
             this.tbGestaoTorneios.Controls.Add(this.gbGJogosDados);
@@ -1095,10 +1192,11 @@
             this.tbGestaoTorneios.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoTorneios.Name = "tbGestaoTorneios";
             this.tbGestaoTorneios.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoTorneios.Size = new System.Drawing.Size(777, 399);
+            this.tbGestaoTorneios.Size = new System.Drawing.Size(777, 398);
             this.tbGestaoTorneios.TabIndex = 2;
             this.tbGestaoTorneios.Text = "Torneios";
             this.tbGestaoTorneios.UseVisualStyleBackColor = true;
+            this.tbGestaoTorneios.Enter += new System.EventHandler(this.tbGestaoTorneios_Enter);
             // 
             // gbGJogosDados
             // 
@@ -1113,7 +1211,7 @@
             this.gbGJogosDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogosDados.Name = "gbGJogosDados";
             this.gbGJogosDados.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGJogosDados.Size = new System.Drawing.Size(436, 194);
+            this.gbGJogosDados.Size = new System.Drawing.Size(436, 193);
             this.gbGJogosDados.TabIndex = 1;
             this.gbGJogosDados.TabStop = false;
             this.gbGJogosDados.Text = "Jogos";
@@ -1140,21 +1238,37 @@
             // 
             // dgvGJogosLista
             // 
+            this.dgvGJogosLista.AllowUserToAddRows = false;
+            this.dgvGJogosLista.AllowUserToDeleteRows = false;
             this.dgvGJogosLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGJogosLista.AutoGenerateColumns = false;
             this.dgvGJogosLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGJogosLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn8,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.numberDataGridViewTextBoxColumn,
+            this.refereeIdDataGridViewTextBoxColumn,
+            this.deckId1DataGridViewTextBoxColumn,
+            this.deckId2DataGridViewTextBoxColumn,
+            this.refereeIdDataGridViewTextBoxColumn1});
+            this.dgvGJogosLista.DataSource = this.gameSetBindingSource;
             this.dgvGJogosLista.Location = new System.Drawing.Point(19, 57);
             this.dgvGJogosLista.Margin = new System.Windows.Forms.Padding(2);
             this.dgvGJogosLista.Name = "dgvGJogosLista";
+            this.dgvGJogosLista.ReadOnly = true;
+            this.dgvGJogosLista.RowHeadersVisible = false;
             this.dgvGJogosLista.RowTemplate.Height = 24;
-            this.dgvGJogosLista.Size = new System.Drawing.Size(404, 97);
+            this.dgvGJogosLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGJogosLista.Size = new System.Drawing.Size(404, 96);
             this.dgvGJogosLista.TabIndex = 4;
             // 
             // btnAlterarJogo
             // 
             this.btnAlterarJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterarJogo.Location = new System.Drawing.Point(303, 168);
+            this.btnAlterarJogo.Location = new System.Drawing.Point(303, 167);
             this.btnAlterarJogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarJogo.Name = "btnAlterarJogo";
             this.btnAlterarJogo.Size = new System.Drawing.Size(58, 22);
@@ -1165,18 +1279,19 @@
             // btnInserirJogo
             // 
             this.btnInserirJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirJogo.Location = new System.Drawing.Point(241, 168);
+            this.btnInserirJogo.Location = new System.Drawing.Point(241, 167);
             this.btnInserirJogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirJogo.Name = "btnInserirJogo";
             this.btnInserirJogo.Size = new System.Drawing.Size(58, 22);
             this.btnInserirJogo.TabIndex = 2;
             this.btnInserirJogo.Text = "Inserir";
             this.btnInserirJogo.UseVisualStyleBackColor = true;
+            this.btnInserirJogo.Click += new System.EventHandler(this.btnInserirJogo_Click);
             // 
             // btnRemoverJogo
             // 
             this.btnRemoverJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoverJogo.Location = new System.Drawing.Point(365, 168);
+            this.btnRemoverJogo.Location = new System.Drawing.Point(365, 167);
             this.btnRemoverJogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverJogo.Name = "btnRemoverJogo";
             this.btnRemoverJogo.Size = new System.Drawing.Size(58, 22);
@@ -1279,7 +1394,7 @@
             this.gbGTorneiosInfo.Margin = new System.Windows.Forms.Padding(2);
             this.gbGTorneiosInfo.Name = "gbGTorneiosInfo";
             this.gbGTorneiosInfo.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGTorneiosInfo.Size = new System.Drawing.Size(337, 395);
+            this.gbGTorneiosInfo.Size = new System.Drawing.Size(337, 394);
             this.gbGTorneiosInfo.TabIndex = 2;
             this.gbGTorneiosInfo.TabStop = false;
             // 
@@ -1301,7 +1416,7 @@
             this.gbGJogosForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogosForm.Name = "gbGJogosForm";
             this.gbGJogosForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGJogosForm.Size = new System.Drawing.Size(333, 378);
+            this.gbGJogosForm.Size = new System.Drawing.Size(333, 377);
             this.gbGJogosForm.TabIndex = 2;
             this.gbGJogosForm.TabStop = false;
             this.gbGJogosForm.Text = "Campos";
@@ -1310,7 +1425,7 @@
             // btnJogoCancelar
             // 
             this.btnJogoCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogoCancelar.Location = new System.Drawing.Point(261, 353);
+            this.btnJogoCancelar.Location = new System.Drawing.Point(261, 352);
             this.btnJogoCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogoCancelar.Name = "btnJogoCancelar";
             this.btnJogoCancelar.Size = new System.Drawing.Size(62, 21);
@@ -1321,7 +1436,7 @@
             // btnJogoAcao
             // 
             this.btnJogoAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogoAcao.Location = new System.Drawing.Point(201, 353);
+            this.btnJogoAcao.Location = new System.Drawing.Point(201, 352);
             this.btnJogoAcao.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogoAcao.Name = "btnJogoAcao";
             this.btnJogoAcao.Size = new System.Drawing.Size(56, 21);
@@ -1356,6 +1471,7 @@
             this.cmbJogador1Jogo.Name = "cmbJogador1Jogo";
             this.cmbJogador1Jogo.Size = new System.Drawing.Size(79, 21);
             this.cmbJogador1Jogo.TabIndex = 15;
+            this.cmbJogador1Jogo.SelectedIndexChanged += new System.EventHandler(this.cmbJogador1Jogo_SelectedIndexChanged);
             // 
             // nudNJogo
             // 
@@ -1404,7 +1520,7 @@
             this.txtDescricaoJogo.MinimumSize = new System.Drawing.Size(271, 42);
             this.txtDescricaoJogo.Multiline = true;
             this.txtDescricaoJogo.Name = "txtDescricaoJogo";
-            this.txtDescricaoJogo.Size = new System.Drawing.Size(301, 150);
+            this.txtDescricaoJogo.Size = new System.Drawing.Size(301, 149);
             this.txtDescricaoJogo.TabIndex = 10;
             // 
             // labDescricao
@@ -1432,7 +1548,7 @@
             this.gbGTorneiosForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGTorneiosForm.Name = "gbGTorneiosForm";
             this.gbGTorneiosForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGTorneiosForm.Size = new System.Drawing.Size(333, 378);
+            this.gbGTorneiosForm.Size = new System.Drawing.Size(333, 377);
             this.gbGTorneiosForm.TabIndex = 1;
             this.gbGTorneiosForm.TabStop = false;
             this.gbGTorneiosForm.Text = "Campos";
@@ -1441,7 +1557,7 @@
             // txtTorneioCancelar
             // 
             this.txtTorneioCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTorneioCancelar.Location = new System.Drawing.Point(261, 268);
+            this.txtTorneioCancelar.Location = new System.Drawing.Point(261, 267);
             this.txtTorneioCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.txtTorneioCancelar.Name = "txtTorneioCancelar";
             this.txtTorneioCancelar.Size = new System.Drawing.Size(62, 21);
@@ -1452,7 +1568,7 @@
             // txtTorneioAcao
             // 
             this.txtTorneioAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTorneioAcao.Location = new System.Drawing.Point(201, 268);
+            this.txtTorneioAcao.Location = new System.Drawing.Point(201, 267);
             this.txtTorneioAcao.Margin = new System.Windows.Forms.Padding(2);
             this.txtTorneioAcao.Name = "txtTorneioAcao";
             this.txtTorneioAcao.Size = new System.Drawing.Size(56, 21);
@@ -1471,7 +1587,7 @@
             this.txtDescricaoTorneio.MinimumSize = new System.Drawing.Size(289, 50);
             this.txtDescricaoTorneio.Multiline = true;
             this.txtDescricaoTorneio.Name = "txtDescricaoTorneio";
-            this.txtDescricaoTorneio.Size = new System.Drawing.Size(301, 118);
+            this.txtDescricaoTorneio.Size = new System.Drawing.Size(301, 117);
             this.txtDescricaoTorneio.TabIndex = 8;
             // 
             // tpDataTorneio
@@ -1528,7 +1644,7 @@
             this.tbGestaoCartas.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoCartas.Name = "tbGestaoCartas";
             this.tbGestaoCartas.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoCartas.Size = new System.Drawing.Size(777, 399);
+            this.tbGestaoCartas.Size = new System.Drawing.Size(777, 398);
             this.tbGestaoCartas.TabIndex = 3;
             this.tbGestaoCartas.Text = "Cartas";
             this.tbGestaoCartas.UseVisualStyleBackColor = true;
@@ -1559,7 +1675,7 @@
             this.gbGCartasForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGCartasForm.Name = "gbGCartasForm";
             this.gbGCartasForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGCartasForm.Size = new System.Drawing.Size(244, 400);
+            this.gbGCartasForm.Size = new System.Drawing.Size(244, 399);
             this.gbGCartasForm.TabIndex = 1;
             this.gbGCartasForm.TabStop = false;
             this.gbGCartasForm.Text = "Campos";
@@ -1568,7 +1684,7 @@
             // btnCartaCancelar
             // 
             this.btnCartaCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCartaCancelar.Location = new System.Drawing.Point(166, 365);
+            this.btnCartaCancelar.Location = new System.Drawing.Point(166, 364);
             this.btnCartaCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCartaCancelar.Name = "btnCartaCancelar";
             this.btnCartaCancelar.Size = new System.Drawing.Size(62, 21);
@@ -1580,7 +1696,7 @@
             // btnAcaoCarta
             // 
             this.btnAcaoCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAcaoCarta.Location = new System.Drawing.Point(106, 365);
+            this.btnAcaoCarta.Location = new System.Drawing.Point(106, 364);
             this.btnAcaoCarta.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcaoCarta.Name = "btnAcaoCarta";
             this.btnAcaoCarta.Size = new System.Drawing.Size(56, 21);
@@ -1592,7 +1708,7 @@
             // nudGDefesaCarta
             // 
             this.nudGDefesaCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudGDefesaCarta.Location = new System.Drawing.Point(179, 331);
+            this.nudGDefesaCarta.Location = new System.Drawing.Point(179, 330);
             this.nudGDefesaCarta.Margin = new System.Windows.Forms.Padding(2);
             this.nudGDefesaCarta.Name = "nudGDefesaCarta";
             this.nudGDefesaCarta.Size = new System.Drawing.Size(41, 20);
@@ -1601,7 +1717,7 @@
             // nudGAtaqueCarta
             // 
             this.nudGAtaqueCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudGAtaqueCarta.Location = new System.Drawing.Point(62, 331);
+            this.nudGAtaqueCarta.Location = new System.Drawing.Point(62, 330);
             this.nudGAtaqueCarta.Margin = new System.Windows.Forms.Padding(2);
             this.nudGAtaqueCarta.Name = "nudGAtaqueCarta";
             this.nudGAtaqueCarta.Size = new System.Drawing.Size(41, 20);
@@ -1616,7 +1732,7 @@
             this.txtGRegrasCarta.Margin = new System.Windows.Forms.Padding(2);
             this.txtGRegrasCarta.Multiline = true;
             this.txtGRegrasCarta.Name = "txtGRegrasCarta";
-            this.txtGRegrasCarta.Size = new System.Drawing.Size(210, 132);
+            this.txtGRegrasCarta.Size = new System.Drawing.Size(210, 131);
             this.txtGRegrasCarta.TabIndex = 13;
             // 
             // nudGLealdadeCarta
@@ -1677,7 +1793,7 @@
             // 
             this.labDefesa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labDefesa.AutoSize = true;
-            this.labDefesa.Location = new System.Drawing.Point(134, 333);
+            this.labDefesa.Location = new System.Drawing.Point(134, 332);
             this.labDefesa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labDefesa.Name = "labDefesa";
             this.labDefesa.Size = new System.Drawing.Size(41, 13);
@@ -1688,7 +1804,7 @@
             // 
             this.labAtaque.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labAtaque.AutoSize = true;
-            this.labAtaque.Location = new System.Drawing.Point(17, 333);
+            this.labAtaque.Location = new System.Drawing.Point(17, 332);
             this.labAtaque.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labAtaque.Name = "labAtaque";
             this.labAtaque.Size = new System.Drawing.Size(41, 13);
@@ -1772,7 +1888,7 @@
             this.gbGCartasDados.MinimumSize = new System.Drawing.Size(292, 317);
             this.gbGCartasDados.Name = "gbGCartasDados";
             this.gbGCartasDados.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGCartasDados.Size = new System.Drawing.Size(523, 400);
+            this.gbGCartasDados.Size = new System.Drawing.Size(523, 399);
             this.gbGCartasDados.TabIndex = 0;
             this.gbGCartasDados.TabStop = false;
             this.gbGCartasDados.Text = "Cartas";
@@ -1781,7 +1897,7 @@
             // 
             this.btnRemoverCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoverCarta.Enabled = false;
-            this.btnRemoverCarta.Location = new System.Drawing.Point(437, 365);
+            this.btnRemoverCarta.Location = new System.Drawing.Point(437, 364);
             this.btnRemoverCarta.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverCarta.Name = "btnRemoverCarta";
             this.btnRemoverCarta.Size = new System.Drawing.Size(62, 21);
@@ -1794,7 +1910,7 @@
             // 
             this.btnAlterarCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarCarta.Enabled = false;
-            this.btnAlterarCarta.Location = new System.Drawing.Point(375, 365);
+            this.btnAlterarCarta.Location = new System.Drawing.Point(375, 364);
             this.btnAlterarCarta.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarCarta.Name = "btnAlterarCarta";
             this.btnAlterarCarta.Size = new System.Drawing.Size(58, 21);
@@ -1806,7 +1922,7 @@
             // btnInserirCarta
             // 
             this.btnInserirCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirCarta.Location = new System.Drawing.Point(308, 365);
+            this.btnInserirCarta.Location = new System.Drawing.Point(308, 364);
             this.btnInserirCarta.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirCarta.Name = "btnInserirCarta";
             this.btnInserirCarta.Size = new System.Drawing.Size(62, 21);
@@ -1841,7 +1957,7 @@
             this.dgvGCartasLista.Name = "dgvGCartasLista";
             this.dgvGCartasLista.ReadOnly = true;
             this.dgvGCartasLista.RowTemplate.Height = 24;
-            this.dgvGCartasLista.Size = new System.Drawing.Size(481, 272);
+            this.dgvGCartasLista.Size = new System.Drawing.Size(481, 271);
             this.dgvGCartasLista.TabIndex = 8;
             this.dgvGCartasLista.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGCartasLista_CellEnter);
             this.dgvGCartasLista.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGCartasLista_CellLeave);
@@ -1948,7 +2064,7 @@
             this.tbGestaoBaralhos.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoBaralhos.Name = "tbGestaoBaralhos";
             this.tbGestaoBaralhos.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoBaralhos.Size = new System.Drawing.Size(777, 399);
+            this.tbGestaoBaralhos.Size = new System.Drawing.Size(777, 398);
             this.tbGestaoBaralhos.TabIndex = 4;
             this.tbGestaoBaralhos.Text = "Baralhos";
             this.tbGestaoBaralhos.UseVisualStyleBackColor = true;
@@ -1968,7 +2084,7 @@
             this.panelGestaoBaralho.Name = "panelGestaoBaralho";
             this.panelGestaoBaralho.RowCount = 1;
             this.panelGestaoBaralho.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelGestaoBaralho.Size = new System.Drawing.Size(773, 200);
+            this.panelGestaoBaralho.Size = new System.Drawing.Size(773, 199);
             this.panelGestaoBaralho.TabIndex = 1;
             // 
             // gbGCartasBotoes
@@ -1983,7 +2099,7 @@
             this.gbGCartasBotoes.Margin = new System.Windows.Forms.Padding(2);
             this.gbGCartasBotoes.Name = "gbGCartasBotoes";
             this.gbGCartasBotoes.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGCartasBotoes.Size = new System.Drawing.Size(96, 196);
+            this.gbGCartasBotoes.Size = new System.Drawing.Size(96, 195);
             this.gbGCartasBotoes.TabIndex = 15;
             this.gbGCartasBotoes.TabStop = false;
             // 
@@ -2059,10 +2175,43 @@
             this.gbGCartasnoBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.gbGCartasnoBaralho.Name = "gbGCartasnoBaralho";
             this.gbGCartasnoBaralho.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGCartasnoBaralho.Size = new System.Drawing.Size(332, 196);
+            this.gbGCartasnoBaralho.Size = new System.Drawing.Size(332, 195);
             this.gbGCartasnoBaralho.TabIndex = 2;
             this.gbGCartasnoBaralho.TabStop = false;
             this.gbGCartasnoBaralho.Text = "Cartas do Baralho";
+            // 
+            // lvCartasBaralho
+            // 
+            this.lvCartasBaralho.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chCarta,
+            this.chTipo,
+            this.chQtd});
+            this.lvCartasBaralho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvCartasBaralho.FullRowSelect = true;
+            this.lvCartasBaralho.Location = new System.Drawing.Point(2, 15);
+            this.lvCartasBaralho.Margin = new System.Windows.Forms.Padding(2);
+            this.lvCartasBaralho.MultiSelect = false;
+            this.lvCartasBaralho.Name = "lvCartasBaralho";
+            this.lvCartasBaralho.Size = new System.Drawing.Size(328, 178);
+            this.lvCartasBaralho.TabIndex = 1;
+            this.lvCartasBaralho.UseCompatibleStateImageBehavior = false;
+            this.lvCartasBaralho.View = System.Windows.Forms.View.Details;
+            this.lvCartasBaralho.SelectedIndexChanged += new System.EventHandler(this.lvCartasBaralho_SelectedIndexChanged);
+            // 
+            // chCarta
+            // 
+            this.chCarta.Text = "Carta";
+            this.chCarta.Width = 83;
+            // 
+            // chTipo
+            // 
+            this.chTipo.Text = "Tipo";
+            this.chTipo.Width = 70;
+            // 
+            // chQtd
+            // 
+            this.chQtd.Text = "Qtd";
+            this.chQtd.Width = 37;
             // 
             // gbGListaDeCartas
             // 
@@ -2072,10 +2221,43 @@
             this.gbGListaDeCartas.Margin = new System.Windows.Forms.Padding(2);
             this.gbGListaDeCartas.Name = "gbGListaDeCartas";
             this.gbGListaDeCartas.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGListaDeCartas.Size = new System.Drawing.Size(333, 196);
+            this.gbGListaDeCartas.Size = new System.Drawing.Size(333, 195);
             this.gbGListaDeCartas.TabIndex = 1;
             this.gbGListaDeCartas.TabStop = false;
             this.gbGListaDeCartas.Text = "Lista de Cartas";
+            // 
+            // lvListaCartas
+            // 
+            this.lvListaCartas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.cCarta,
+            this.CTipo,
+            this.cQtd});
+            this.lvListaCartas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvListaCartas.FullRowSelect = true;
+            this.lvListaCartas.Location = new System.Drawing.Point(2, 15);
+            this.lvListaCartas.Margin = new System.Windows.Forms.Padding(2);
+            this.lvListaCartas.MultiSelect = false;
+            this.lvListaCartas.Name = "lvListaCartas";
+            this.lvListaCartas.Size = new System.Drawing.Size(329, 178);
+            this.lvListaCartas.TabIndex = 1;
+            this.lvListaCartas.UseCompatibleStateImageBehavior = false;
+            this.lvListaCartas.View = System.Windows.Forms.View.Details;
+            this.lvListaCartas.SelectedIndexChanged += new System.EventHandler(this.lvListaCartas_SelectedIndexChanged);
+            // 
+            // cCarta
+            // 
+            this.cCarta.Text = "Carta";
+            this.cCarta.Width = 106;
+            // 
+            // CTipo
+            // 
+            this.CTipo.Text = "Tipo";
+            this.CTipo.Width = 67;
+            // 
+            // cQtd
+            // 
+            this.cQtd.Text = "Qtd";
+            this.cQtd.Width = 40;
             // 
             // gbGBaralhosDados
             // 
@@ -2269,7 +2451,7 @@
             this.tbGestaoUtilizadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoUtilizadores.Name = "tbGestaoUtilizadores";
             this.tbGestaoUtilizadores.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoUtilizadores.Size = new System.Drawing.Size(777, 399);
+            this.tbGestaoUtilizadores.Size = new System.Drawing.Size(777, 398);
             this.tbGestaoUtilizadores.TabIndex = 5;
             this.tbGestaoUtilizadores.Text = "Utilizadores";
             this.tbGestaoUtilizadores.UseVisualStyleBackColor = true;
@@ -2293,7 +2475,7 @@
             this.gbGUtilizadoresDados.MinimumSize = new System.Drawing.Size(292, 317);
             this.gbGUtilizadoresDados.Name = "gbGUtilizadoresDados";
             this.gbGUtilizadoresDados.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGUtilizadoresDados.Size = new System.Drawing.Size(523, 403);
+            this.gbGUtilizadoresDados.Size = new System.Drawing.Size(523, 402);
             this.gbGUtilizadoresDados.TabIndex = 0;
             this.gbGUtilizadoresDados.TabStop = false;
             this.gbGUtilizadoresDados.Text = "Utilizadores";
@@ -2327,7 +2509,7 @@
             // btnEliminarUtilizador
             // 
             this.btnEliminarUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminarUtilizador.Location = new System.Drawing.Point(446, 368);
+            this.btnEliminarUtilizador.Location = new System.Drawing.Point(446, 367);
             this.btnEliminarUtilizador.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarUtilizador.Name = "btnEliminarUtilizador";
             this.btnEliminarUtilizador.Size = new System.Drawing.Size(62, 24);
@@ -2349,7 +2531,7 @@
             // btnAlterarUtilizador
             // 
             this.btnAlterarUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterarUtilizador.Location = new System.Drawing.Point(385, 368);
+            this.btnAlterarUtilizador.Location = new System.Drawing.Point(385, 367);
             this.btnAlterarUtilizador.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarUtilizador.Name = "btnAlterarUtilizador";
             this.btnAlterarUtilizador.Size = new System.Drawing.Size(58, 24);
@@ -2373,13 +2555,13 @@
             this.dgvGUtilizadoresLista.ReadOnly = true;
             this.dgvGUtilizadoresLista.RowTemplate.Height = 24;
             this.dgvGUtilizadoresLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGUtilizadoresLista.Size = new System.Drawing.Size(494, 287);
+            this.dgvGUtilizadoresLista.Size = new System.Drawing.Size(494, 286);
             this.dgvGUtilizadoresLista.TabIndex = 3;
             // 
             // btnInserirUtilizador
             // 
             this.btnInserirUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirUtilizador.Location = new System.Drawing.Point(319, 368);
+            this.btnInserirUtilizador.Location = new System.Drawing.Point(319, 367);
             this.btnInserirUtilizador.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirUtilizador.Name = "btnInserirUtilizador";
             this.btnInserirUtilizador.Size = new System.Drawing.Size(62, 24);
@@ -2415,7 +2597,7 @@
             this.gbGAdministradorForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGAdministradorForm.Name = "gbGAdministradorForm";
             this.gbGAdministradorForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGAdministradorForm.Size = new System.Drawing.Size(244, 403);
+            this.gbGAdministradorForm.Size = new System.Drawing.Size(244, 402);
             this.gbGAdministradorForm.TabIndex = 1;
             this.gbGAdministradorForm.TabStop = false;
             this.gbGAdministradorForm.Text = "Campos";
@@ -2424,7 +2606,7 @@
             // btnCancelarAdministrador
             // 
             this.btnCancelarAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarAdministrador.Location = new System.Drawing.Point(161, 367);
+            this.btnCancelarAdministrador.Location = new System.Drawing.Point(161, 366);
             this.btnCancelarAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarAdministrador.Name = "btnCancelarAdministrador";
             this.btnCancelarAdministrador.Size = new System.Drawing.Size(62, 25);
@@ -2436,7 +2618,7 @@
             // btnAcaoAdministrador
             // 
             this.btnAcaoAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAcaoAdministrador.Location = new System.Drawing.Point(97, 367);
+            this.btnAcaoAdministrador.Location = new System.Drawing.Point(97, 366);
             this.btnAcaoAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcaoAdministrador.Name = "btnAcaoAdministrador";
             this.btnAcaoAdministrador.Size = new System.Drawing.Size(60, 25);
@@ -2520,7 +2702,7 @@
             this.gbGArbitroForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGArbitroForm.Name = "gbGArbitroForm";
             this.gbGArbitroForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGArbitroForm.Size = new System.Drawing.Size(244, 403);
+            this.gbGArbitroForm.Size = new System.Drawing.Size(244, 402);
             this.gbGArbitroForm.TabIndex = 16;
             this.gbGArbitroForm.TabStop = false;
             this.gbGArbitroForm.Text = "Campos";
@@ -2622,7 +2804,7 @@
             // btnAcaoArbitro
             // 
             this.btnAcaoArbitro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAcaoArbitro.Location = new System.Drawing.Point(97, 367);
+            this.btnAcaoArbitro.Location = new System.Drawing.Point(97, 366);
             this.btnAcaoArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcaoArbitro.Name = "btnAcaoArbitro";
             this.btnAcaoArbitro.Size = new System.Drawing.Size(60, 25);
@@ -2634,7 +2816,7 @@
             // btnCancelarArbitro
             // 
             this.btnCancelarArbitro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarArbitro.Location = new System.Drawing.Point(161, 367);
+            this.btnCancelarArbitro.Location = new System.Drawing.Point(161, 366);
             this.btnCancelarArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarArbitro.Name = "btnCancelarArbitro";
             this.btnCancelarArbitro.Size = new System.Drawing.Size(62, 25);
@@ -2650,7 +2832,7 @@
             this.tbVer.Margin = new System.Windows.Forms.Padding(2);
             this.tbVer.Name = "tbVer";
             this.tbVer.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVer.Size = new System.Drawing.Size(789, 429);
+            this.tbVer.Size = new System.Drawing.Size(789, 428);
             this.tbVer.TabIndex = 1;
             this.tbVer.Text = "Ver";
             this.tbVer.UseVisualStyleBackColor = true;
@@ -2668,7 +2850,7 @@
             this.tcVer.Margin = new System.Windows.Forms.Padding(2);
             this.tcVer.Name = "tcVer";
             this.tcVer.SelectedIndex = 0;
-            this.tcVer.Size = new System.Drawing.Size(785, 425);
+            this.tcVer.Size = new System.Drawing.Size(785, 424);
             this.tcVer.TabIndex = 0;
             this.tcVer.Enter += new System.EventHandler(this.TabPesquisaUtilizadores);
             // 
@@ -2688,7 +2870,7 @@
             this.tbVerJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerJogadores.Name = "tbVerJogadores";
             this.tbVerJogadores.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerJogadores.Size = new System.Drawing.Size(777, 399);
+            this.tbVerJogadores.Size = new System.Drawing.Size(777, 398);
             this.tbVerJogadores.TabIndex = 0;
             this.tbVerJogadores.Text = "Jogadores";
             this.tbVerJogadores.UseVisualStyleBackColor = true;
@@ -2794,6 +2976,48 @@
             this.dgvGListaJogadoresPesquisa.Size = new System.Drawing.Size(728, 260);
             this.dgvGListaJogadoresPesquisa.TabIndex = 14;
             // 
+            // idDataGridViewTextBoxColumn6
+            // 
+            this.idDataGridViewTextBoxColumn6.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn6.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn6.Name = "idDataGridViewTextBoxColumn6";
+            this.idDataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn6
+            // 
+            this.nameDataGridViewTextBoxColumn6.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn6.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn6.Name = "nameDataGridViewTextBoxColumn6";
+            this.nameDataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn1
+            // 
+            this.emailDataGridViewTextBoxColumn1.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn1.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn1.Name = "emailDataGridViewTextBoxColumn1";
+            this.emailDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nicknameDataGridViewTextBoxColumn1
+            // 
+            this.nicknameDataGridViewTextBoxColumn1.DataPropertyName = "Nickname";
+            this.nicknameDataGridViewTextBoxColumn1.HeaderText = "Nickname";
+            this.nicknameDataGridViewTextBoxColumn1.Name = "nicknameDataGridViewTextBoxColumn1";
+            this.nicknameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // ageDataGridViewTextBoxColumn1
+            // 
+            this.ageDataGridViewTextBoxColumn1.DataPropertyName = "Age";
+            this.ageDataGridViewTextBoxColumn1.HeaderText = "Age";
+            this.ageDataGridViewTextBoxColumn1.Name = "ageDataGridViewTextBoxColumn1";
+            this.ageDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // avatarDataGridViewTextBoxColumn2
+            // 
+            this.avatarDataGridViewTextBoxColumn2.DataPropertyName = "Avatar";
+            this.avatarDataGridViewTextBoxColumn2.HeaderText = "Avatar";
+            this.avatarDataGridViewTextBoxColumn2.Name = "avatarDataGridViewTextBoxColumn2";
+            this.avatarDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
             // tbVerEquipas
             // 
             this.tbVerEquipas.Controls.Add(this.btlimpar);
@@ -2806,7 +3030,7 @@
             this.tbVerEquipas.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerEquipas.Name = "tbVerEquipas";
             this.tbVerEquipas.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerEquipas.Size = new System.Drawing.Size(689, 399);
+            this.tbVerEquipas.Size = new System.Drawing.Size(777, 398);
             this.tbVerEquipas.TabIndex = 1;
             this.tbVerEquipas.Text = "Equipas";
             this.tbVerEquipas.UseVisualStyleBackColor = true;
@@ -2877,8 +3101,29 @@
             this.dgvGListaEquipasPesquisa.ReadOnly = true;
             this.dgvGListaEquipasPesquisa.RowHeadersVisible = false;
             this.dgvGListaEquipasPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGListaEquipasPesquisa.Size = new System.Drawing.Size(622, 283);
+            this.dgvGListaEquipasPesquisa.Size = new System.Drawing.Size(710, 282);
             this.dgvGListaEquipasPesquisa.TabIndex = 6;
+            // 
+            // idDataGridViewTextBoxColumn7
+            // 
+            this.idDataGridViewTextBoxColumn7.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn7.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn7.Name = "idDataGridViewTextBoxColumn7";
+            this.idDataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn7
+            // 
+            this.nameDataGridViewTextBoxColumn7.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn7.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn7.Name = "nameDataGridViewTextBoxColumn7";
+            this.nameDataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // avatarDataGridViewTextBoxColumn3
+            // 
+            this.avatarDataGridViewTextBoxColumn3.DataPropertyName = "Avatar";
+            this.avatarDataGridViewTextBoxColumn3.HeaderText = "Avatar";
+            this.avatarDataGridViewTextBoxColumn3.Name = "avatarDataGridViewTextBoxColumn3";
+            this.avatarDataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // tbVerTorneios
             // 
@@ -2886,7 +3131,7 @@
             this.tbVerTorneios.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerTorneios.Name = "tbVerTorneios";
             this.tbVerTorneios.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerTorneios.Size = new System.Drawing.Size(719, 399);
+            this.tbVerTorneios.Size = new System.Drawing.Size(777, 398);
             this.tbVerTorneios.TabIndex = 2;
             this.tbVerTorneios.Text = "Torneios";
             this.tbVerTorneios.UseVisualStyleBackColor = true;
@@ -2913,7 +3158,7 @@
             this.tbVerCartas.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerCartas.Name = "tbVerCartas";
             this.tbVerCartas.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerCartas.Size = new System.Drawing.Size(689, 399);
+            this.tbVerCartas.Size = new System.Drawing.Size(777, 398);
             this.tbVerCartas.TabIndex = 3;
             this.tbVerCartas.Text = "Cartas";
             this.tbVerCartas.UseVisualStyleBackColor = true;
@@ -2921,7 +3166,7 @@
             // btnVLimparCartas
             // 
             this.btnVLimparCartas.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnVLimparCartas.Location = new System.Drawing.Point(549, 98);
+            this.btnVLimparCartas.Location = new System.Drawing.Point(593, 98);
             this.btnVLimparCartas.Margin = new System.Windows.Forms.Padding(2);
             this.btnVLimparCartas.Name = "btnVLimparCartas";
             this.btnVLimparCartas.Size = new System.Drawing.Size(74, 27);
@@ -2933,7 +3178,7 @@
             // nudVDefesaCarta
             // 
             this.nudVDefesaCarta.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.nudVDefesaCarta.Location = new System.Drawing.Point(471, 101);
+            this.nudVDefesaCarta.Location = new System.Drawing.Point(515, 101);
             this.nudVDefesaCarta.Margin = new System.Windows.Forms.Padding(2);
             this.nudVDefesaCarta.Name = "nudVDefesaCarta";
             this.nudVDefesaCarta.Size = new System.Drawing.Size(41, 20);
@@ -2943,7 +3188,7 @@
             // nudVAtaqueCarta
             // 
             this.nudVAtaqueCarta.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.nudVAtaqueCarta.Location = new System.Drawing.Point(351, 101);
+            this.nudVAtaqueCarta.Location = new System.Drawing.Point(395, 101);
             this.nudVAtaqueCarta.Margin = new System.Windows.Forms.Padding(2);
             this.nudVAtaqueCarta.Name = "nudVAtaqueCarta";
             this.nudVAtaqueCarta.Size = new System.Drawing.Size(41, 20);
@@ -2953,7 +3198,7 @@
             // nudVLealdadeCarta
             // 
             this.nudVLealdadeCarta.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.nudVLealdadeCarta.Location = new System.Drawing.Point(242, 101);
+            this.nudVLealdadeCarta.Location = new System.Drawing.Point(286, 101);
             this.nudVLealdadeCarta.Margin = new System.Windows.Forms.Padding(2);
             this.nudVLealdadeCarta.Name = "nudVLealdadeCarta";
             this.nudVLealdadeCarta.Size = new System.Drawing.Size(41, 20);
@@ -2963,7 +3208,7 @@
             // txtVCustoCarta
             // 
             this.txtVCustoCarta.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtVCustoCarta.Location = new System.Drawing.Point(98, 102);
+            this.txtVCustoCarta.Location = new System.Drawing.Point(142, 102);
             this.txtVCustoCarta.Margin = new System.Windows.Forms.Padding(2);
             this.txtVCustoCarta.Name = "txtVCustoCarta";
             this.txtVCustoCarta.Size = new System.Drawing.Size(53, 20);
@@ -2982,7 +3227,7 @@
             "Magia",
             "Encantamento",
             "Cidade"});
-            this.cmbVTipoCarta.Location = new System.Drawing.Point(540, 54);
+            this.cmbVTipoCarta.Location = new System.Drawing.Point(584, 54);
             this.cmbVTipoCarta.Margin = new System.Windows.Forms.Padding(2);
             this.cmbVTipoCarta.Name = "cmbVTipoCarta";
             this.cmbVTipoCarta.Size = new System.Drawing.Size(136, 21);
@@ -2997,7 +3242,7 @@
             this.cmbVFacaoCarta.Items.AddRange(new object[] {
             "Gaian Love for Life",
             "Uneasy Alliance"});
-            this.cmbVFacaoCarta.Location = new System.Drawing.Point(344, 54);
+            this.cmbVFacaoCarta.Location = new System.Drawing.Point(388, 54);
             this.cmbVFacaoCarta.Margin = new System.Windows.Forms.Padding(2);
             this.cmbVFacaoCarta.Name = "cmbVFacaoCarta";
             this.cmbVFacaoCarta.Size = new System.Drawing.Size(148, 21);
@@ -3007,7 +3252,7 @@
             // txtVNomeCarta
             // 
             this.txtVNomeCarta.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtVNomeCarta.Location = new System.Drawing.Point(81, 54);
+            this.txtVNomeCarta.Location = new System.Drawing.Point(125, 54);
             this.txtVNomeCarta.Margin = new System.Windows.Forms.Padding(2);
             this.txtVNomeCarta.Name = "txtVNomeCarta";
             this.txtVNomeCarta.Size = new System.Drawing.Size(197, 20);
@@ -3018,7 +3263,7 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(417, 103);
+            this.label9.Location = new System.Drawing.Point(461, 103);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 13);
@@ -3029,7 +3274,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(306, 103);
+            this.label10.Location = new System.Drawing.Point(350, 103);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 13);
@@ -3040,7 +3285,7 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(187, 105);
+            this.label11.Location = new System.Drawing.Point(231, 105);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 13);
@@ -3051,7 +3296,7 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(60, 103);
+            this.label12.Location = new System.Drawing.Point(104, 103);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(34, 13);
@@ -3062,7 +3307,7 @@
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(507, 56);
+            this.label13.Location = new System.Drawing.Point(551, 56);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(28, 13);
@@ -3073,7 +3318,7 @@
             // 
             this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(295, 56);
+            this.label42.Location = new System.Drawing.Point(339, 56);
             this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(37, 13);
@@ -3084,7 +3329,7 @@
             // 
             this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(5, 56);
+            this.label43.Location = new System.Drawing.Point(49, 56);
             this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(73, 13);
@@ -3116,7 +3361,7 @@
             this.dgvVCartasLista.Name = "dgvVCartasLista";
             this.dgvVCartasLista.ReadOnly = true;
             this.dgvVCartasLista.RowTemplate.Height = 24;
-            this.dgvVCartasLista.Size = new System.Drawing.Size(638, 231);
+            this.dgvVCartasLista.Size = new System.Drawing.Size(726, 230);
             this.dgvVCartasLista.TabIndex = 31;
             // 
             // idDataGridViewTextBoxColumn2
@@ -3194,7 +3439,7 @@
             this.tbVerBaralhos.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerBaralhos.Name = "tbVerBaralhos";
             this.tbVerBaralhos.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerBaralhos.Size = new System.Drawing.Size(777, 399);
+            this.tbVerBaralhos.Size = new System.Drawing.Size(777, 398);
             this.tbVerBaralhos.TabIndex = 4;
             this.tbVerBaralhos.Text = "Baralhos";
             this.tbVerBaralhos.UseVisualStyleBackColor = true;
@@ -3219,7 +3464,7 @@
             this.dgvVBaralhosLista.Name = "dgvVBaralhosLista";
             this.dgvVBaralhosLista.ReadOnly = true;
             this.dgvVBaralhosLista.RowTemplate.Height = 24;
-            this.dgvVBaralhosLista.Size = new System.Drawing.Size(723, 269);
+            this.dgvVBaralhosLista.Size = new System.Drawing.Size(723, 268);
             this.dgvVBaralhosLista.TabIndex = 38;
             // 
             // idDataGridViewTextBoxColumn3
@@ -3310,7 +3555,7 @@
             this.tbVerUtilizadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerUtilizadores.Name = "tbVerUtilizadores";
             this.tbVerUtilizadores.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerUtilizadores.Size = new System.Drawing.Size(719, 399);
+            this.tbVerUtilizadores.Size = new System.Drawing.Size(777, 398);
             this.tbVerUtilizadores.TabIndex = 5;
             this.tbVerUtilizadores.Text = "Utilizadores";
             this.tbVerUtilizadores.UseVisualStyleBackColor = true;
@@ -3466,231 +3711,89 @@
             // 
             this.deckSetTableAdapter.ClearBeforeFill = true;
             // 
-            // lvListaCartas
-            // 
-            this.lvListaCartas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.cCarta,
-            this.CTipo,
-            this.cQtd});
-            this.lvListaCartas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvListaCartas.FullRowSelect = true;
-            this.lvListaCartas.Location = new System.Drawing.Point(2, 15);
-            this.lvListaCartas.Margin = new System.Windows.Forms.Padding(2);
-            this.lvListaCartas.MultiSelect = false;
-            this.lvListaCartas.Name = "lvListaCartas";
-            this.lvListaCartas.Size = new System.Drawing.Size(329, 179);
-            this.lvListaCartas.TabIndex = 1;
-            this.lvListaCartas.UseCompatibleStateImageBehavior = false;
-            this.lvListaCartas.View = System.Windows.Forms.View.Details;
-            this.lvListaCartas.SelectedIndexChanged += new System.EventHandler(this.lvListaCartas_SelectedIndexChanged);
-            // 
-            // cCarta
-            // 
-            this.cCarta.Text = "Carta";
-            this.cCarta.Width = 106;
-            // 
-            // CTipo
-            // 
-            this.CTipo.Text = "Tipo";
-            this.CTipo.Width = 67;
-            // 
-            // cQtd
-            // 
-            this.cQtd.Text = "Qtd";
-            this.cQtd.Width = 40;
-            // 
-            // lvCartasBaralho
-            // 
-            this.lvCartasBaralho.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chCarta,
-            this.chTipo,
-            this.chQtd});
-            this.lvCartasBaralho.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvCartasBaralho.FullRowSelect = true;
-            this.lvCartasBaralho.Location = new System.Drawing.Point(2, 15);
-            this.lvCartasBaralho.Margin = new System.Windows.Forms.Padding(2);
-            this.lvCartasBaralho.MultiSelect = false;
-            this.lvCartasBaralho.Name = "lvCartasBaralho";
-            this.lvCartasBaralho.Size = new System.Drawing.Size(328, 179);
-            this.lvCartasBaralho.TabIndex = 1;
-            this.lvCartasBaralho.UseCompatibleStateImageBehavior = false;
-            this.lvCartasBaralho.View = System.Windows.Forms.View.Details;
-            this.lvCartasBaralho.SelectedIndexChanged += new System.EventHandler(this.lvCartasBaralho_SelectedIndexChanged);
-            // 
-            // chCarta
-            // 
-            this.chCarta.Text = "Carta";
-            this.chCarta.Width = 83;
-            // 
-            // chTipo
-            // 
-            this.chTipo.Text = "Tipo";
-            this.chTipo.Width = 70;
-            // 
-            // chQtd
-            // 
-            this.chQtd.Text = "Qtd";
-            this.chQtd.Width = 37;
-            // 
-            // bD_DA_ProjetoDataSet_Teams
-            // 
-            this.bD_DA_ProjetoDataSet_Teams.DataSetName = "BD_DA_ProjetoDataSet_Teams";
-            this.bD_DA_ProjetoDataSet_Teams.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // teamSetBindingSource
-            // 
-            this.teamSetBindingSource.DataMember = "TeamSet";
-            this.teamSetBindingSource.DataSource = this.bD_DA_ProjetoDataSet_Teams;
-            // 
             // teamSetTableAdapter
             // 
             this.teamSetTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn4
-            // 
-            this.idDataGridViewTextBoxColumn4.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn4.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
-            this.idDataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn4
-            // 
-            this.nameDataGridViewTextBoxColumn4.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn4.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn4.Name = "nameDataGridViewTextBoxColumn4";
-            this.nameDataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // avatarDataGridViewTextBoxColumn1
-            // 
-            this.avatarDataGridViewTextBoxColumn1.DataPropertyName = "Avatar";
-            this.avatarDataGridViewTextBoxColumn1.HeaderText = "Avatar";
-            this.avatarDataGridViewTextBoxColumn1.Name = "avatarDataGridViewTextBoxColumn1";
-            this.avatarDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // bD_DA_ProjetoDataSet_Players
-            // 
-            this.bD_DA_ProjetoDataSet_Players.DataSetName = "BD_DA_ProjetoDataSet_Players";
-            this.bD_DA_ProjetoDataSet_Players.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // playerSetBindingSource
-            // 
-            this.playerSetBindingSource.DataMember = "PlayerSet";
-            this.playerSetBindingSource.DataSource = this.bD_DA_ProjetoDataSet_Players;
             // 
             // playerSetTableAdapter
             // 
             this.playerSetTableAdapter.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn5
+            // bD_DA_ProjetoDataSet_Games
             // 
-            this.idDataGridViewTextBoxColumn5.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn5.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
-            this.idDataGridViewTextBoxColumn5.ReadOnly = true;
+            this.bD_DA_ProjetoDataSet_Games.DataSetName = "BD_DA_ProjetoDataSet_Games";
+            this.bD_DA_ProjetoDataSet_Games.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // nameDataGridViewTextBoxColumn5
+            // gameSetBindingSource
             // 
-            this.nameDataGridViewTextBoxColumn5.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn5.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn5.Name = "nameDataGridViewTextBoxColumn5";
-            this.nameDataGridViewTextBoxColumn5.ReadOnly = true;
+            this.gameSetBindingSource.DataMember = "GameSet";
+            this.gameSetBindingSource.DataSource = this.bD_DA_ProjetoDataSet_Games;
             // 
-            // emailDataGridViewTextBoxColumn
+            // gameSetTableAdapter
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gameSetTableAdapter.ClearBeforeFill = true;
             // 
-            // nicknameDataGridViewTextBoxColumn
+            // idDataGridViewTextBoxColumn8
             // 
-            this.nicknameDataGridViewTextBoxColumn.DataPropertyName = "Nickname";
-            this.nicknameDataGridViewTextBoxColumn.HeaderText = "Nickname";
-            this.nicknameDataGridViewTextBoxColumn.Name = "nicknameDataGridViewTextBoxColumn";
-            this.nicknameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn8.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn8.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn8.Name = "idDataGridViewTextBoxColumn8";
+            this.idDataGridViewTextBoxColumn8.ReadOnly = true;
             // 
-            // ageDataGridViewTextBoxColumn
+            // descriptionDataGridViewTextBoxColumn
             // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // avatarDataGridViewTextBoxColumn
+            // dateDataGridViewTextBoxColumn
             // 
-            this.avatarDataGridViewTextBoxColumn.DataPropertyName = "Avatar";
-            this.avatarDataGridViewTextBoxColumn.HeaderText = "Avatar";
-            this.avatarDataGridViewTextBoxColumn.Name = "avatarDataGridViewTextBoxColumn";
-            this.avatarDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // idDataGridViewTextBoxColumn6
+            // numberDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn6.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn6.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn6.Name = "idDataGridViewTextBoxColumn6";
-            this.idDataGridViewTextBoxColumn6.ReadOnly = true;
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // nameDataGridViewTextBoxColumn6
+            // refereeIdDataGridViewTextBoxColumn
             // 
-            this.nameDataGridViewTextBoxColumn6.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn6.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn6.Name = "nameDataGridViewTextBoxColumn6";
-            this.nameDataGridViewTextBoxColumn6.ReadOnly = true;
+            this.refereeIdDataGridViewTextBoxColumn.DataPropertyName = "RefereeId";
+            this.refereeIdDataGridViewTextBoxColumn.HeaderText = "RefereeId";
+            this.refereeIdDataGridViewTextBoxColumn.Name = "refereeIdDataGridViewTextBoxColumn";
+            this.refereeIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // emailDataGridViewTextBoxColumn1
+            // deckId1DataGridViewTextBoxColumn
             // 
-            this.emailDataGridViewTextBoxColumn1.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn1.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn1.Name = "emailDataGridViewTextBoxColumn1";
-            this.emailDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.deckId1DataGridViewTextBoxColumn.DataPropertyName = "DeckId1";
+            this.deckId1DataGridViewTextBoxColumn.HeaderText = "DeckId1";
+            this.deckId1DataGridViewTextBoxColumn.Name = "deckId1DataGridViewTextBoxColumn";
+            this.deckId1DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // nicknameDataGridViewTextBoxColumn1
+            // deckId2DataGridViewTextBoxColumn
             // 
-            this.nicknameDataGridViewTextBoxColumn1.DataPropertyName = "Nickname";
-            this.nicknameDataGridViewTextBoxColumn1.HeaderText = "Nickname";
-            this.nicknameDataGridViewTextBoxColumn1.Name = "nicknameDataGridViewTextBoxColumn1";
-            this.nicknameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.deckId2DataGridViewTextBoxColumn.DataPropertyName = "DeckId2";
+            this.deckId2DataGridViewTextBoxColumn.HeaderText = "DeckId2";
+            this.deckId2DataGridViewTextBoxColumn.Name = "deckId2DataGridViewTextBoxColumn";
+            this.deckId2DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // ageDataGridViewTextBoxColumn1
+            // refereeIdDataGridViewTextBoxColumn1
             // 
-            this.ageDataGridViewTextBoxColumn1.DataPropertyName = "Age";
-            this.ageDataGridViewTextBoxColumn1.HeaderText = "Age";
-            this.ageDataGridViewTextBoxColumn1.Name = "ageDataGridViewTextBoxColumn1";
-            this.ageDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // avatarDataGridViewTextBoxColumn2
-            // 
-            this.avatarDataGridViewTextBoxColumn2.DataPropertyName = "Avatar";
-            this.avatarDataGridViewTextBoxColumn2.HeaderText = "Avatar";
-            this.avatarDataGridViewTextBoxColumn2.Name = "avatarDataGridViewTextBoxColumn2";
-            this.avatarDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn7
-            // 
-            this.idDataGridViewTextBoxColumn7.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn7.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn7.Name = "idDataGridViewTextBoxColumn7";
-            this.idDataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn7
-            // 
-            this.nameDataGridViewTextBoxColumn7.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn7.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn7.Name = "nameDataGridViewTextBoxColumn7";
-            this.nameDataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // avatarDataGridViewTextBoxColumn3
-            // 
-            this.avatarDataGridViewTextBoxColumn3.DataPropertyName = "Avatar";
-            this.avatarDataGridViewTextBoxColumn3.HeaderText = "Avatar";
-            this.avatarDataGridViewTextBoxColumn3.Name = "avatarDataGridViewTextBoxColumn3";
-            this.avatarDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.refereeIdDataGridViewTextBoxColumn1.DataPropertyName = "Referee_Id";
+            this.refereeIdDataGridViewTextBoxColumn1.HeaderText = "Referee_Id";
+            this.refereeIdDataGridViewTextBoxColumn1.Name = "refereeIdDataGridViewTextBoxColumn1";
+            this.refereeIdDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // formMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 455);
+            this.ClientSize = new System.Drawing.Size(797, 454);
             this.Controls.Add(this.tbMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -3712,15 +3815,19 @@
             this.gbGJogadoresDados.ResumeLayout(false);
             this.gbGJogadoresDados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGListaJogadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Players)).EndInit();
             this.tbGestaoEquipas.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.gbGEquipasDados.ResumeLayout(false);
             this.gbGEquipasDados.PerformLayout();
             this.gbGEquipasForm.ResumeLayout(false);
             this.gbGEquipasForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatarEquipa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGListaEquipas)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.teamSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Teams)).EndInit();
             this.tbGestaoTorneios.ResumeLayout(false);
             this.gbGJogosDados.ResumeLayout(false);
             this.gbGJogosDados.PerformLayout();
@@ -3792,10 +3899,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSetArbitros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAdminstradores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceArbitros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Teams)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Players)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Games)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4106,5 +4211,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn avatarDataGridViewTextBoxColumn3;
+        private BD_DA_ProjetoDataSet_Games bD_DA_ProjetoDataSet_Games;
+        private System.Windows.Forms.BindingSource gameSetBindingSource;
+        private BD_DA_ProjetoDataSet_GamesTableAdapters.GameSetTableAdapter gameSetTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn refereeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deckId1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deckId2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn refereeIdDataGridViewTextBoxColumn1;
     }
 }
