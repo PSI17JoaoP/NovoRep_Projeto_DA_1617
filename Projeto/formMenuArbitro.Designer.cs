@@ -92,6 +92,7 @@
             this.Name = "formMenuArbitro";
             this.Text = "Arcmage- Menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formMenuArbitro_FormClosed);
+            this.Load += new System.EventHandler(this.formMenuArbitro_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbArbitroTabela.ResumeLayout(false);

@@ -62,7 +62,7 @@ namespace Projeto
 
                     else if(VerificarTipoReferee(idUtilizador))
                     {
-                        formMenuArbitro menuArbitro = new formMenuArbitro();
+                        formMenuArbitro menuArbitro = new formMenuArbitro(idUtilizador);
                         menuArbitro.Show();
                         Hide();
                     }
