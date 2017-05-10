@@ -3545,7 +3545,7 @@ namespace Projeto
 
         private void BotaoRemoverTorneio(object sender, EventArgs e)
         {
-            DialogResult confirmacaoEliminar = MessageBox.Show("Tem a certeza que quer eliminar o torneio '" + dgvGUtilizadoresLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult confirmacaoEliminar = MessageBox.Show("Tem a certeza que quer eliminar o torneio '" + dgvGTorneiosLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (confirmacaoEliminar == DialogResult.Yes)
             {
