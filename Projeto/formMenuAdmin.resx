@@ -129,6 +129,12 @@
   <metadata name="bD_DA_ProjetoDataSet_Teams.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>572, 102</value>
   </metadata>
+  <metadata name="tournamentSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>270, 176</value>
+  </metadata>
+  <metadata name="bD_DA_ProjetoDataSet_Tournaments.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 176</value>
+  </metadata>
   <metadata name="cardSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>691, 63</value>
   </metadata>
@@ -140,12 +146,6 @@
   </metadata>
   <metadata name="bD_DA_ProjetoDataSet_Decks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 102</value>
-  </metadata>
-  <metadata name="tournamentSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>270, 176</value>
-  </metadata>
-  <metadata name="bD_DA_ProjetoDataSet_Tournaments.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 176</value>
   </metadata>
   <metadata name="ofdAvatarArbitro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>28, 24</value>

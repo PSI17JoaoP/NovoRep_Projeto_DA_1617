@@ -118,8 +118,6 @@
             this.btnAlterarTorneio = new System.Windows.Forms.Button();
             this.btnInserirTorneio = new System.Windows.Forms.Button();
             this.dgvGTorneiosLista = new System.Windows.Forms.DataGridView();
-            this.tournamentSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bD_DA_ProjetoDataSet_Tournaments = new Projeto.BD_DA_ProjetoDataSet_Tournaments();
             this.btnRemoverTorneio = new System.Windows.Forms.Button();
             this.gbGTorneiosInfo = new System.Windows.Forms.GroupBox();
             this.gbGTorneiosForm = new System.Windows.Forms.GroupBox();
@@ -326,6 +324,8 @@
             this.btnPesquisarUtilizador = new System.Windows.Forms.Button();
             this.btnResetPesquisa = new System.Windows.Forms.Button();
             this.dgvPesquisaUtilizadores = new System.Windows.Forms.DataGridView();
+            this.tournamentSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bD_DA_ProjetoDataSet_Tournaments = new Projeto.BD_DA_ProjetoDataSet_Tournaments();
             this.ofdAvatarArbitro = new System.Windows.Forms.OpenFileDialog();
             this.dataSetAdministradores = new Projeto.BD_DA_ProjetoDataSet_Administradores();
             this.dataSetArbitros = new Projeto.BD_DA_ProjetoDataSet_Arbitros();
@@ -339,6 +339,10 @@
             this.playerSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_PlayersTableAdapters.PlayerSetTableAdapter();
             this.opfProcurarImagem = new System.Windows.Forms.OpenFileDialog();
             this.tournamentSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_TournamentsTableAdapters.TournamentSetTableAdapter();
+            this.idDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbMenu.SuspendLayout();
             this.tpGestao.SuspendLayout();
             this.tcGestao.SuspendLayout();
@@ -364,8 +368,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGJogosLista)).BeginInit();
             this.gbGTorneiosDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGTorneiosLista)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tournamentSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Tournaments)).BeginInit();
             this.gbGTorneiosInfo.SuspendLayout();
             this.gbGTorneiosForm.SuspendLayout();
             this.gbGJogosForm.SuspendLayout();
@@ -411,6 +413,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVBaralhosLista)).BeginInit();
             this.tbVerUtilizadores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPesquisaUtilizadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tournamentSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Tournaments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetAdministradores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetArbitros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAdminstradores)).BeginInit();
@@ -1347,6 +1351,7 @@
             this.btnAlterarTorneio.TabIndex = 3;
             this.btnAlterarTorneio.Text = "Alterar";
             this.btnAlterarTorneio.UseVisualStyleBackColor = true;
+            this.btnAlterarTorneio.Click += new System.EventHandler(this.BotaoAlterarTorneio);
             // 
             // btnInserirTorneio
             // 
@@ -1358,6 +1363,7 @@
             this.btnInserirTorneio.TabIndex = 2;
             this.btnInserirTorneio.Text = "Inserir";
             this.btnInserirTorneio.UseVisualStyleBackColor = true;
+            this.btnInserirTorneio.Click += new System.EventHandler(this.BotaoInserirTorneio);
             // 
             // dgvGTorneiosLista
             // 
@@ -1366,7 +1372,14 @@
             this.dgvGTorneiosLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGTorneiosLista.AutoGenerateColumns = false;
             this.dgvGTorneiosLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGTorneiosLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn8,
+            this.nameDataGridViewTextBoxColumn8,
+            this.dateDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn});
+            this.dgvGTorneiosLista.DataSource = this.tournamentSetBindingSource;
             this.dgvGTorneiosLista.Location = new System.Drawing.Point(19, 51);
             this.dgvGTorneiosLista.Margin = new System.Windows.Forms.Padding(2);
             this.dgvGTorneiosLista.Name = "dgvGTorneiosLista";
@@ -1374,16 +1387,6 @@
             this.dgvGTorneiosLista.RowTemplate.Height = 24;
             this.dgvGTorneiosLista.Size = new System.Drawing.Size(404, 100);
             this.dgvGTorneiosLista.TabIndex = 1;
-            // 
-            // tournamentSetBindingSource
-            // 
-            this.tournamentSetBindingSource.DataMember = "TournamentSet";
-            this.tournamentSetBindingSource.DataSource = this.bD_DA_ProjetoDataSet_Tournaments;
-            // 
-            // bD_DA_ProjetoDataSet_Tournaments
-            // 
-            this.bD_DA_ProjetoDataSet_Tournaments.DataSetName = "BD_DA_ProjetoDataSet_Tournaments";
-            this.bD_DA_ProjetoDataSet_Tournaments.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnRemoverTorneio
             // 
@@ -1395,7 +1398,7 @@
             this.btnRemoverTorneio.TabIndex = 0;
             this.btnRemoverTorneio.Text = "Eliminar";
             this.btnRemoverTorneio.UseVisualStyleBackColor = true;
-            this.btnRemoverTorneio.Click += new System.EventHandler(this.btnRemoverTorneio_Click);
+            this.btnRemoverTorneio.Click += new System.EventHandler(this.BotaoRemoverTorneio);
             // 
             // gbGTorneiosInfo
             // 
@@ -1441,6 +1444,7 @@
             this.txtTorneioCancelar.TabIndex = 13;
             this.txtTorneioCancelar.Text = "Cancelar";
             this.txtTorneioCancelar.UseVisualStyleBackColor = true;
+            this.txtTorneioCancelar.Click += new System.EventHandler(this.BotaoCancelarTorneio);
             // 
             // txtTorneioAcao
             // 
@@ -1452,6 +1456,7 @@
             this.txtTorneioAcao.TabIndex = 12;
             this.txtTorneioAcao.Text = "Ação";
             this.txtTorneioAcao.UseVisualStyleBackColor = true;
+            this.txtTorneioAcao.Click += new System.EventHandler(this.BotaoAcaoTorneio);
             // 
             // txtDescricaoTorneio
             // 
@@ -3686,6 +3691,16 @@
             this.dgvPesquisaUtilizadores.Size = new System.Drawing.Size(740, 262);
             this.dgvPesquisaUtilizadores.TabIndex = 9;
             // 
+            // tournamentSetBindingSource
+            // 
+            this.tournamentSetBindingSource.DataMember = "TournamentSet";
+            this.tournamentSetBindingSource.DataSource = this.bD_DA_ProjetoDataSet_Tournaments;
+            // 
+            // bD_DA_ProjetoDataSet_Tournaments
+            // 
+            this.bD_DA_ProjetoDataSet_Tournaments.DataSetName = "BD_DA_ProjetoDataSet_Tournaments";
+            this.bD_DA_ProjetoDataSet_Tournaments.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dataSetAdministradores
             // 
             this.dataSetAdministradores.DataSetName = "BD_DA_ProjetoDataSet_Administradores";
@@ -3734,6 +3749,34 @@
             // 
             this.tournamentSetTableAdapter.ClearBeforeFill = true;
             // 
+            // idDataGridViewTextBoxColumn8
+            // 
+            this.idDataGridViewTextBoxColumn8.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn8.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn8.Name = "idDataGridViewTextBoxColumn8";
+            this.idDataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn8
+            // 
+            this.nameDataGridViewTextBoxColumn8.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn8.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn8.Name = "nameDataGridViewTextBoxColumn8";
+            this.nameDataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // formMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3780,8 +3823,6 @@
             this.gbGTorneiosDados.ResumeLayout(false);
             this.gbGTorneiosDados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGTorneiosLista)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tournamentSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Tournaments)).EndInit();
             this.gbGTorneiosInfo.ResumeLayout(false);
             this.gbGTorneiosForm.ResumeLayout(false);
             this.gbGTorneiosForm.PerformLayout();
@@ -3842,6 +3883,8 @@
             this.tbVerUtilizadores.ResumeLayout(false);
             this.tbVerUtilizadores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPesquisaUtilizadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tournamentSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Tournaments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetAdministradores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetArbitros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAdminstradores)).EndInit();
@@ -4161,5 +4204,9 @@
         private BD_DA_ProjetoDataSet_Tournaments bD_DA_ProjetoDataSet_Tournaments;
         private System.Windows.Forms.BindingSource tournamentSetBindingSource;
         private BD_DA_ProjetoDataSet_TournamentsTableAdapters.TournamentSetTableAdapter tournamentSetTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
     }
 }
