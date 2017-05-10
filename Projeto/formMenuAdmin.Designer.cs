@@ -111,13 +111,26 @@
             this.btnInserirJogo = new System.Windows.Forms.Button();
             this.btnRemoverJogo = new System.Windows.Forms.Button();
             this.gbGTorneiosDados = new System.Windows.Forms.GroupBox();
+            this.radioStandardTournaments = new System.Windows.Forms.RadioButton();
+            this.radioTeamTournaments = new System.Windows.Forms.RadioButton();
             this.labPesquisarTorneio = new System.Windows.Forms.Label();
             this.txtGTorneiosPesquisa = new System.Windows.Forms.TextBox();
             this.btnAlterarTorneio = new System.Windows.Forms.Button();
             this.btnInserirTorneio = new System.Windows.Forms.Button();
             this.dgvGTorneiosLista = new System.Windows.Forms.DataGridView();
+            this.tournamentSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bD_DA_ProjetoDataSet_Tournaments = new Projeto.BD_DA_ProjetoDataSet_Tournaments();
             this.btnRemoverTorneio = new System.Windows.Forms.Button();
             this.gbGTorneiosInfo = new System.Windows.Forms.GroupBox();
+            this.gbGTorneiosForm = new System.Windows.Forms.GroupBox();
+            this.txtTorneioCancelar = new System.Windows.Forms.Button();
+            this.txtTorneioAcao = new System.Windows.Forms.Button();
+            this.txtDescricaoTorneio = new System.Windows.Forms.TextBox();
+            this.tpDataTorneio = new System.Windows.Forms.DateTimePicker();
+            this.txtNomeTorneio = new System.Windows.Forms.TextBox();
+            this.labDescricaoJogo = new System.Windows.Forms.Label();
+            this.labDataJogo = new System.Windows.Forms.Label();
+            this.labNomeJogo = new System.Windows.Forms.Label();
             this.gbGJogosForm = new System.Windows.Forms.GroupBox();
             this.btnJogoCancelar = new System.Windows.Forms.Button();
             this.btnJogoAcao = new System.Windows.Forms.Button();
@@ -130,15 +143,6 @@
             this.labData = new System.Windows.Forms.Label();
             this.txtDescricaoJogo = new System.Windows.Forms.TextBox();
             this.labDescricao = new System.Windows.Forms.Label();
-            this.gbGTorneiosForm = new System.Windows.Forms.GroupBox();
-            this.txtTorneioCancelar = new System.Windows.Forms.Button();
-            this.txtTorneioAcao = new System.Windows.Forms.Button();
-            this.txtDescricaoTorneio = new System.Windows.Forms.TextBox();
-            this.tpDataTorneio = new System.Windows.Forms.DateTimePicker();
-            this.txtNomeTorneio = new System.Windows.Forms.TextBox();
-            this.labDescricaoJogo = new System.Windows.Forms.Label();
-            this.labDataJogo = new System.Windows.Forms.Label();
-            this.labNomeJogo = new System.Windows.Forms.Label();
             this.tbGestaoCartas = new System.Windows.Forms.TabPage();
             this.gbGCartasForm = new System.Windows.Forms.GroupBox();
             this.btnCartaCancelar = new System.Windows.Forms.Button();
@@ -345,6 +349,7 @@
             this.deckId1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deckId2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.refereeIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tournamentSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_TournamentsTableAdapters.TournamentSetTableAdapter();
             this.tbMenu.SuspendLayout();
             this.tpGestao.SuspendLayout();
             this.tcGestao.SuspendLayout();
@@ -370,10 +375,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGJogosLista)).BeginInit();
             this.gbGTorneiosDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGTorneiosLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tournamentSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Tournaments)).BeginInit();
             this.gbGTorneiosInfo.SuspendLayout();
+            this.gbGTorneiosForm.SuspendLayout();
             this.gbGJogosForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNJogo)).BeginInit();
-            this.gbGTorneiosForm.SuspendLayout();
             this.tbGestaoCartas.SuspendLayout();
             this.gbGCartasForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGDefesaCarta)).BeginInit();
@@ -1302,6 +1309,8 @@
             // 
             // gbGTorneiosDados
             // 
+            this.gbGTorneiosDados.Controls.Add(this.radioStandardTournaments);
+            this.gbGTorneiosDados.Controls.Add(this.radioTeamTournaments);
             this.gbGTorneiosDados.Controls.Add(this.labPesquisarTorneio);
             this.gbGTorneiosDados.Controls.Add(this.txtGTorneiosPesquisa);
             this.gbGTorneiosDados.Controls.Add(this.btnAlterarTorneio);
@@ -1317,6 +1326,28 @@
             this.gbGTorneiosDados.TabIndex = 0;
             this.gbGTorneiosDados.TabStop = false;
             this.gbGTorneiosDados.Text = "Torneios";
+            // 
+            // radioStandardTournaments
+            // 
+            this.radioStandardTournaments.AutoSize = true;
+            this.radioStandardTournaments.Location = new System.Drawing.Point(78, 165);
+            this.radioStandardTournaments.Name = "radioStandardTournaments";
+            this.radioStandardTournaments.Size = new System.Drawing.Size(68, 17);
+            this.radioStandardTournaments.TabIndex = 9;
+            this.radioStandardTournaments.TabStop = true;
+            this.radioStandardTournaments.Text = "Standard";
+            this.radioStandardTournaments.UseVisualStyleBackColor = true;
+            // 
+            // radioTeamTournaments
+            // 
+            this.radioTeamTournaments.AutoSize = true;
+            this.radioTeamTournaments.Location = new System.Drawing.Point(20, 165);
+            this.radioTeamTournaments.Name = "radioTeamTournaments";
+            this.radioTeamTournaments.Size = new System.Drawing.Size(52, 17);
+            this.radioTeamTournaments.TabIndex = 8;
+            this.radioTeamTournaments.TabStop = true;
+            this.radioTeamTournaments.Text = "Team";
+            this.radioTeamTournaments.UseVisualStyleBackColor = true;
             // 
             // labPesquisarTorneio
             // 
@@ -1362,6 +1393,8 @@
             // 
             // dgvGTorneiosLista
             // 
+            this.dgvGTorneiosLista.AllowUserToAddRows = false;
+            this.dgvGTorneiosLista.AllowUserToDeleteRows = false;
             this.dgvGTorneiosLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1369,9 +1402,20 @@
             this.dgvGTorneiosLista.Location = new System.Drawing.Point(19, 51);
             this.dgvGTorneiosLista.Margin = new System.Windows.Forms.Padding(2);
             this.dgvGTorneiosLista.Name = "dgvGTorneiosLista";
+            this.dgvGTorneiosLista.ReadOnly = true;
             this.dgvGTorneiosLista.RowTemplate.Height = 24;
             this.dgvGTorneiosLista.Size = new System.Drawing.Size(404, 100);
             this.dgvGTorneiosLista.TabIndex = 1;
+            // 
+            // tournamentSetBindingSource
+            // 
+            this.tournamentSetBindingSource.DataMember = "TournamentSet";
+            this.tournamentSetBindingSource.DataSource = this.bD_DA_ProjetoDataSet_Tournaments;
+            // 
+            // bD_DA_ProjetoDataSet_Tournaments
+            // 
+            this.bD_DA_ProjetoDataSet_Tournaments.DataSetName = "BD_DA_ProjetoDataSet_Tournaments";
+            this.bD_DA_ProjetoDataSet_Tournaments.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnRemoverTorneio
             // 
@@ -1387,8 +1431,8 @@
             // 
             // gbGTorneiosInfo
             // 
-            this.gbGTorneiosInfo.Controls.Add(this.gbGJogosForm);
             this.gbGTorneiosInfo.Controls.Add(this.gbGTorneiosForm);
+            this.gbGTorneiosInfo.Controls.Add(this.gbGJogosForm);
             this.gbGTorneiosInfo.Dock = System.Windows.Forms.DockStyle.Right;
             this.gbGTorneiosInfo.Location = new System.Drawing.Point(438, 2);
             this.gbGTorneiosInfo.Margin = new System.Windows.Forms.Padding(2);
@@ -1397,6 +1441,109 @@
             this.gbGTorneiosInfo.Size = new System.Drawing.Size(337, 394);
             this.gbGTorneiosInfo.TabIndex = 2;
             this.gbGTorneiosInfo.TabStop = false;
+            // 
+            // gbGTorneiosForm
+            // 
+            this.gbGTorneiosForm.Controls.Add(this.txtTorneioCancelar);
+            this.gbGTorneiosForm.Controls.Add(this.txtTorneioAcao);
+            this.gbGTorneiosForm.Controls.Add(this.txtDescricaoTorneio);
+            this.gbGTorneiosForm.Controls.Add(this.tpDataTorneio);
+            this.gbGTorneiosForm.Controls.Add(this.txtNomeTorneio);
+            this.gbGTorneiosForm.Controls.Add(this.labDescricaoJogo);
+            this.gbGTorneiosForm.Controls.Add(this.labDataJogo);
+            this.gbGTorneiosForm.Controls.Add(this.labNomeJogo);
+            this.gbGTorneiosForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbGTorneiosForm.Location = new System.Drawing.Point(2, 15);
+            this.gbGTorneiosForm.Margin = new System.Windows.Forms.Padding(2);
+            this.gbGTorneiosForm.Name = "gbGTorneiosForm";
+            this.gbGTorneiosForm.Padding = new System.Windows.Forms.Padding(2);
+            this.gbGTorneiosForm.Size = new System.Drawing.Size(333, 378);
+            this.gbGTorneiosForm.TabIndex = 1;
+            this.gbGTorneiosForm.TabStop = false;
+            this.gbGTorneiosForm.Text = "Campos";
+            this.gbGTorneiosForm.Visible = false;
+            // 
+            // txtTorneioCancelar
+            // 
+            this.txtTorneioCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTorneioCancelar.Location = new System.Drawing.Point(261, 268);
+            this.txtTorneioCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTorneioCancelar.Name = "txtTorneioCancelar";
+            this.txtTorneioCancelar.Size = new System.Drawing.Size(62, 21);
+            this.txtTorneioCancelar.TabIndex = 13;
+            this.txtTorneioCancelar.Text = "Cancelar";
+            this.txtTorneioCancelar.UseVisualStyleBackColor = true;
+            // 
+            // txtTorneioAcao
+            // 
+            this.txtTorneioAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTorneioAcao.Location = new System.Drawing.Point(201, 268);
+            this.txtTorneioAcao.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTorneioAcao.Name = "txtTorneioAcao";
+            this.txtTorneioAcao.Size = new System.Drawing.Size(56, 21);
+            this.txtTorneioAcao.TabIndex = 12;
+            this.txtTorneioAcao.Text = "Ação";
+            this.txtTorneioAcao.UseVisualStyleBackColor = true;
+            // 
+            // txtDescricaoTorneio
+            // 
+            this.txtDescricaoTorneio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescricaoTorneio.Location = new System.Drawing.Point(22, 132);
+            this.txtDescricaoTorneio.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescricaoTorneio.MaximumSize = new System.Drawing.Size(301, 123);
+            this.txtDescricaoTorneio.MinimumSize = new System.Drawing.Size(289, 50);
+            this.txtDescricaoTorneio.Multiline = true;
+            this.txtDescricaoTorneio.Name = "txtDescricaoTorneio";
+            this.txtDescricaoTorneio.Size = new System.Drawing.Size(301, 118);
+            this.txtDescricaoTorneio.TabIndex = 8;
+            // 
+            // tpDataTorneio
+            // 
+            this.tpDataTorneio.Location = new System.Drawing.Point(92, 66);
+            this.tpDataTorneio.Margin = new System.Windows.Forms.Padding(2);
+            this.tpDataTorneio.Name = "tpDataTorneio";
+            this.tpDataTorneio.Size = new System.Drawing.Size(220, 20);
+            this.tpDataTorneio.TabIndex = 7;
+            // 
+            // txtNomeTorneio
+            // 
+            this.txtNomeTorneio.Location = new System.Drawing.Point(92, 32);
+            this.txtNomeTorneio.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomeTorneio.Name = "txtNomeTorneio";
+            this.txtNomeTorneio.Size = new System.Drawing.Size(220, 20);
+            this.txtNomeTorneio.TabIndex = 6;
+            // 
+            // labDescricaoJogo
+            // 
+            this.labDescricaoJogo.AutoSize = true;
+            this.labDescricaoJogo.Location = new System.Drawing.Point(20, 106);
+            this.labDescricaoJogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labDescricaoJogo.Name = "labDescricaoJogo";
+            this.labDescricaoJogo.Size = new System.Drawing.Size(55, 13);
+            this.labDescricaoJogo.TabIndex = 5;
+            this.labDescricaoJogo.Text = "Descrição";
+            // 
+            // labDataJogo
+            // 
+            this.labDataJogo.AutoSize = true;
+            this.labDataJogo.Location = new System.Drawing.Point(20, 70);
+            this.labDataJogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labDataJogo.Name = "labDataJogo";
+            this.labDataJogo.Size = new System.Drawing.Size(30, 13);
+            this.labDataJogo.TabIndex = 4;
+            this.labDataJogo.Text = "Data";
+            // 
+            // labNomeJogo
+            // 
+            this.labNomeJogo.AutoSize = true;
+            this.labNomeJogo.Location = new System.Drawing.Point(20, 37);
+            this.labNomeJogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labNomeJogo.Name = "labNomeJogo";
+            this.labNomeJogo.Size = new System.Drawing.Size(35, 13);
+            this.labNomeJogo.TabIndex = 3;
+            this.labNomeJogo.Text = "Nome";
             // 
             // gbGJogosForm
             // 
@@ -2192,7 +2339,7 @@
             this.lvCartasBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.lvCartasBaralho.MultiSelect = false;
             this.lvCartasBaralho.Name = "lvCartasBaralho";
-            this.lvCartasBaralho.Size = new System.Drawing.Size(328, 178);
+            this.lvCartasBaralho.Size = new System.Drawing.Size(328, 179);
             this.lvCartasBaralho.TabIndex = 1;
             this.lvCartasBaralho.UseCompatibleStateImageBehavior = false;
             this.lvCartasBaralho.View = System.Windows.Forms.View.Details;
@@ -2238,7 +2385,7 @@
             this.lvListaCartas.Margin = new System.Windows.Forms.Padding(2);
             this.lvListaCartas.MultiSelect = false;
             this.lvListaCartas.Name = "lvListaCartas";
-            this.lvListaCartas.Size = new System.Drawing.Size(329, 178);
+            this.lvListaCartas.Size = new System.Drawing.Size(329, 179);
             this.lvListaCartas.TabIndex = 1;
             this.lvListaCartas.UseCompatibleStateImageBehavior = false;
             this.lvListaCartas.View = System.Windows.Forms.View.Details;
@@ -3030,7 +3177,7 @@
             this.tbVerEquipas.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerEquipas.Name = "tbVerEquipas";
             this.tbVerEquipas.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerEquipas.Size = new System.Drawing.Size(777, 398);
+            this.tbVerEquipas.Size = new System.Drawing.Size(777, 399);
             this.tbVerEquipas.TabIndex = 1;
             this.tbVerEquipas.Text = "Equipas";
             this.tbVerEquipas.UseVisualStyleBackColor = true;
@@ -3101,7 +3248,7 @@
             this.dgvGListaEquipasPesquisa.ReadOnly = true;
             this.dgvGListaEquipasPesquisa.RowHeadersVisible = false;
             this.dgvGListaEquipasPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGListaEquipasPesquisa.Size = new System.Drawing.Size(710, 282);
+            this.dgvGListaEquipasPesquisa.Size = new System.Drawing.Size(710, 283);
             this.dgvGListaEquipasPesquisa.TabIndex = 6;
             // 
             // idDataGridViewTextBoxColumn7
@@ -3131,7 +3278,7 @@
             this.tbVerTorneios.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerTorneios.Name = "tbVerTorneios";
             this.tbVerTorneios.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerTorneios.Size = new System.Drawing.Size(777, 398);
+            this.tbVerTorneios.Size = new System.Drawing.Size(777, 399);
             this.tbVerTorneios.TabIndex = 2;
             this.tbVerTorneios.Text = "Torneios";
             this.tbVerTorneios.UseVisualStyleBackColor = true;
@@ -3158,7 +3305,7 @@
             this.tbVerCartas.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerCartas.Name = "tbVerCartas";
             this.tbVerCartas.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerCartas.Size = new System.Drawing.Size(777, 398);
+            this.tbVerCartas.Size = new System.Drawing.Size(777, 399);
             this.tbVerCartas.TabIndex = 3;
             this.tbVerCartas.Text = "Cartas";
             this.tbVerCartas.UseVisualStyleBackColor = true;
@@ -3361,7 +3508,7 @@
             this.dgvVCartasLista.Name = "dgvVCartasLista";
             this.dgvVCartasLista.ReadOnly = true;
             this.dgvVCartasLista.RowTemplate.Height = 24;
-            this.dgvVCartasLista.Size = new System.Drawing.Size(726, 230);
+            this.dgvVCartasLista.Size = new System.Drawing.Size(726, 231);
             this.dgvVCartasLista.TabIndex = 31;
             // 
             // idDataGridViewTextBoxColumn2
@@ -3555,7 +3702,7 @@
             this.tbVerUtilizadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerUtilizadores.Name = "tbVerUtilizadores";
             this.tbVerUtilizadores.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerUtilizadores.Size = new System.Drawing.Size(777, 398);
+            this.tbVerUtilizadores.Size = new System.Drawing.Size(777, 399);
             this.tbVerUtilizadores.TabIndex = 5;
             this.tbVerUtilizadores.Text = "Utilizadores";
             this.tbVerUtilizadores.UseVisualStyleBackColor = true;
@@ -3788,6 +3935,10 @@
             this.refereeIdDataGridViewTextBoxColumn1.HeaderText = "Referee_Id";
             this.refereeIdDataGridViewTextBoxColumn1.Name = "refereeIdDataGridViewTextBoxColumn1";
             this.refereeIdDataGridViewTextBoxColumn1.ReadOnly = true;
+			//
+            // tournamentSetTableAdapter
+            // 
+            this.tournamentSetTableAdapter.ClearBeforeFill = true;
             // 
             // formMenuAdmin
             // 
@@ -3835,12 +3986,14 @@
             this.gbGTorneiosDados.ResumeLayout(false);
             this.gbGTorneiosDados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGTorneiosLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tournamentSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Tournaments)).EndInit();
             this.gbGTorneiosInfo.ResumeLayout(false);
+            this.gbGTorneiosForm.ResumeLayout(false);
+            this.gbGTorneiosForm.PerformLayout();
             this.gbGJogosForm.ResumeLayout(false);
             this.gbGJogosForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNJogo)).EndInit();
-            this.gbGTorneiosForm.ResumeLayout(false);
-            this.gbGTorneiosForm.PerformLayout();
             this.tbGestaoCartas.ResumeLayout(false);
             this.gbGCartasForm.ResumeLayout(false);
             this.gbGCartasForm.PerformLayout();
@@ -4222,5 +4375,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn deckId1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn deckId2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn refereeIdDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.RadioButton radioStandardTournaments;
+        private System.Windows.Forms.RadioButton radioTeamTournaments;
+        private BD_DA_ProjetoDataSet_Tournaments bD_DA_ProjetoDataSet_Tournaments;
+        private System.Windows.Forms.BindingSource tournamentSetBindingSource;
+        private BD_DA_ProjetoDataSet_TournamentsTableAdapters.TournamentSetTableAdapter tournamentSetTableAdapter;
     }
 }
