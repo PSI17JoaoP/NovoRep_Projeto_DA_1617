@@ -40,6 +40,11 @@ namespace Projeto
 
         private int idEquipa;
 
+        /// <summary>
+        /// Variavel privada que guarda o id do torneio selecionado.
+        /// </summary>
+        private int idTorneio;
+
         public formMenuAdmin()
         {
             InitializeComponent();
@@ -55,6 +60,10 @@ namespace Projeto
 
         private void formMenuAdmin_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Games.GameSet' table. You can move, or remove it, as needed.
+            this.gameSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Games.GameSet);
+            // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Tournaments.TournamentSet' table. You can move, or remove it, as needed.
+            this.tournamentSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Tournaments.TournamentSet);
             // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Players.PlayerSet' table. You can move, or remove it, as needed.
             this.playerSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Players.PlayerSet);
             // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Teams.TeamSet' table. You can move, or remove it, as needed.
@@ -70,12 +79,6 @@ namespace Projeto
 
             radioAdmins.Checked = true;
             radioPesquisaAdministrador.Checked = true;
-        }
-
-        private void btnRemoverTorneio_Click(object sender, EventArgs e)
-        {
-            gbGTorneiosForm.Visible = true;
-            gbGJogosForm.Visible = false;
         }
 
         private void btnRemoverJogo_Click(object sender, EventArgs e)
@@ -1352,6 +1355,9 @@ namespace Projeto
         #endregion
 
         #region GestaoCartas
+
+
+
 
         /// <summary>
         /// Ativa o formulário para preencher os dados da nova carta.
@@ -3382,6 +3388,368 @@ namespace Projeto
             cbnomejogadorpesquisa.SelectedIndex = -1;
         }
 
+        #endregion
+
+        private void tcGestao_Enter(object sender, EventArgs e)
+        {
+            
+
+
+           
+
+
+        }
+
+        private void tbGestaoTorneios_Enter(object sender, EventArgs e)
+        {
+            /*cmbJogador1Jogo.Items.Clear();
+
+            Player jogador1;
+            if(cmbJogador1Jogo.SelectedIndex != -1)
+            {
+                jogador1 = (Player)cmbJogador1Jogo.SelectedItem;
+
+
+            }
+
+                foreach(Player jogador in containerDados.PlayerSet)
+                {
+                    cmbJogador1Jogo.Items.Add(jogador.Name);
+                    cmbJogador2Jogo.Items.Add(jogador.Name);
+                }
+                */
+            carregarJogadoresJogos();
+            //MessageBox.Show("Olá");
+            }
+
+        private void carregarJogadoresJogos()
+        {
+            cmbJogador1Jogo.Items.Clear();
+
+            Player jogador1;
+            /*if (cmbJogador1Jogo.SelectedIndex != -1)
+            {
+                jogador1 = (Player)cmbJogador1Jogo.SelectedItem;
+            */
+
+            foreach (Player jogador in containerDados.PlayerSet)
+            {
+                
+                cmbJogador1Jogo.Items.Add(jogador.Name);
+
+                /*if(jogador.Id != jogador1.Id)
+                {
+
+                }
+                */
+                cmbJogador2Jogo.Items.Add(jogador.Name);
+            /*}*/
+            }
+
+        }
+
+        private void cmbJogador1Jogo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string jogador1;
+            if (cmbJogador1Jogo.SelectedIndex != -1)
+            {
+                //cmbJogador2Jogo.Items.Clear();
+                //int i = cmbJogador1Jogo.SelectedIndex;
+                //jogador1 = cmbJogador1Jogo.SelectedItem.ToString();
+
+                //MessageBox.Show(jogador1.Name);
+
+                /*int a = 0;
+                foreach(Player p in cmbJogador1Jogo.Items)
+                {
+                    if(a != i)
+                    {
+                        cmbJogador2Jogo.Items.Add(p.Name);
+                    }
+                    a++;
+                }*/
+
+                int b = cmbJogador1Jogo.SelectedIndex;
+                //Player p = cmbJogador1Jogo.Items;
+
+                Player pl = getPlayer(b);
+                //MessageBox.Show(pl.Name);
+
+
+                /*foreach (Player jogador in containerDados.PlayerSet)
+                {
+                    if (!jogador.Name.Equals(jogador1))
+                    {
+                        cmbJogador2Jogo.Items.Add(jogador.Name);
+                    }
+                }*/
+
+                foreach (Player jogador in containerDados.PlayerSet)
+                {
+                    if (jogador.Id != pl.Id)
+                    {
+                        cmbJogador2Jogo.Items.Add(jogador.Name);
+                    }
+                }
+            }
+        }
+
+        private Player getPlayer(int i)
+        {
+            int a = 0;
+            Player p = null;
+            foreach (Player jogador in containerDados.PlayerSet)
+            {
+                if(i == a)
+                {
+                    p = jogador;
+                    return p;
+                }
+                a++;
+            }
+            return null;
+        }
+
+        private void btnInserirJogo_Click(object sender, EventArgs e)
+        {
+            gbGJogosForm.Visible = true;
+            btnJogoAcao.Text = "Criar";
+
+
+        }
+
+        #region Gestão de Torneios
+
+        private void BotaoInserirTorneio(object sender, EventArgs e)
+        {
+            ResetFormTorneios();
+            txtTorneioAcao.Text = "Adicionar";
+            gbGTorneiosForm.Enabled = true;
+            gbGTorneiosForm.Visible = true;
+        }
+
+        private void BotaoAlterarTorneio(object sender, EventArgs e)
+        {
+            idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+
+            Tournament torneio = (Tournament)containerDados.TournamentSet.Find(idTorneio);
+
+            txtNomeTorneio.Text = torneio.Name;
+            txtDescricaoTorneio.Text = torneio.Description;
+            tpDataTorneio.Value = torneio.Date;
+
+            txtTorneioAcao.Text = "Aplicar";
+            gbGTorneiosForm.Enabled = true;
+            gbGTorneiosForm.Visible = true;
+        }
+
+        private void BotaoRemoverTorneio(object sender, EventArgs e)
+        {
+            DialogResult confirmacaoEliminar = MessageBox.Show("Tem a certeza que quer eliminar o utilizador '" + dgvGUtilizadoresLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (confirmacaoEliminar == DialogResult.Yes)
+            {
+                if (containerDados.TournamentSet.Count() > 1)
+                {
+                    idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+
+                    RemoverAdministrador();
+                }
+
+                else
+                {
+                    MessageBox.Show("Tem de existir, no mínimo, um torneio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BotaoAcaoTorneio(object sender, EventArgs e)
+        {
+            string nameForm = txtNomeTorneio.Text.Trim();
+            string descriptionForm = txtDescricaoTorneio.Text.Trim();
+            DateTime dataForm = tpDataTorneio.Value;
+
+            if (txtTorneioAcao.Text == "Aplicar")
+            {
+                DialogResult confirmacaoAlterar = MessageBox.Show("Tem a certeza que quer alterar o torneio '" + dgvGTorneiosLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if(confirmacaoAlterar == DialogResult.Yes)
+                {
+                    if (nameForm.Length > 0 && descriptionForm.Length > 0)
+                    {
+                        if (containerDados.TournamentSet.Count() > 0)
+                        {
+                            if (VerificarAlteracoesAdministrador(nameForm, descriptionForm))
+                            {
+                                AlterarTournament(nameForm, descriptionForm, dataForm);
+                                ResetFormTorneios();
+                                gbGTorneiosForm.Visible = false;
+                            }
+
+                            else
+                            {
+                                MessageBox.Show("O administrador editado já existe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Tem de preencher os campos necessários para efetuar as alterações.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            else if (txtTorneioAcao.Text == "Adicionar")
+            {
+                DialogResult confirmacaoAdicionar = MessageBox.Show("Tem a certeza que quer adicionar o arbitro '" + nameForm + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if(confirmacaoAdicionar == DialogResult.Yes)
+                {
+                    if (nameForm.Length > 0 && descriptionForm.Length > 0)
+                    {
+                        if (containerDados.UserSet.Count() > 0)
+                        {
+                            if (VerificarDadosTournament(nameForm, descriptionForm))
+                            {
+                                AdicionarTournament(nameForm, descriptionForm, dataForm);
+                                ResetFormTorneios();
+                                gbGTorneiosForm.Visible = false;
+                            }
+
+                            else
+                            {
+                                MessageBox.Show("O torneio inserido já existe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+                        else
+                        {
+                            AdicionarTournament(nameForm, descriptionForm, dataForm);
+                            ResetFormTorneios();
+                            gbGTorneiosForm.Visible = false;
+                        }
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Tem de preencher todos os campos para adicionar o Admin.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void BotaoCancelarTorneio(object sender, EventArgs e)
+        {
+            ResetFormTorneios();
+            gbGTorneiosForm.Visible = false;
+        }
+
+        private void AdicionarTournament(string name, string description, DateTime date)
+        {
+            try
+            {
+                Tournament novoTournament = new Tournament
+                {
+                    Name = name,
+                    Description = description,
+                    Date = date
+                };
+
+                containerDados.TournamentSet.Add(novoTournament);
+                containerDados.SaveChanges();
+                RefreshTabelaTorneios();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na inserção do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AlterarTournament(string name, string description, DateTime date)
+        {
+            try
+            {
+                Tournament torneio = (Tournament)containerDados.TournamentSet.Find(idTorneio);
+
+                torneio.Name = name;
+                torneio.Description = description;
+                torneio.Date = date;
+
+                containerDados.Entry(torneio).State = EntityState.Modified;
+                containerDados.SaveChanges();
+                RefreshTabelaTorneios();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na edição do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RemoverTournament()
+        {
+            try
+            {
+                Tournament torneio = (Tournament)containerDados.TournamentSet.Find(idTorneio);
+
+                containerDados.TournamentSet.Remove(torneio);
+                containerDados.SaveChanges();
+                RefreshTabelaTorneios();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na remoção do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RefreshTabelaTorneios()
+        {
+            tournamentSetBindingSource.DataSource = bD_DA_ProjetoDataSet_Tournaments.TournamentSet;
+            tournamentSetTableAdapter.Fill(bD_DA_ProjetoDataSet_Tournaments.TournamentSet);
+            dgvGTorneiosLista.DataSource = tournamentSetBindingSource;
+        }
+
+        private void ResetFormTorneios()
+        {
+            txtNomeTorneio.Clear();
+            txtDescricaoTorneio.Clear();
+            tpDataTorneio.ResetText();
+            gbGTorneiosDados.Enabled = true;
+        }
+
+        private bool VerificarDadosTournament(string nameTorneio, string descriptionTorneio)
+        {
+            bool naoExisteDados = true;
+
+            foreach (Tournament torneio in containerDados.TournamentSet)
+            {
+                if (torneio.Name == nameTorneio && torneio.Description == descriptionTorneio)
+                {
+                    naoExisteDados = false;
+                }
+            }
+
+            return naoExisteDados;
+        }
+
+        private bool VerificarAlteracoesTournament(string nameTorneio, string descriptionTorneio)
+        {
+            bool aplicaAlteracoes = true;
+
+            foreach (Tournament torneio in containerDados.TournamentSet)
+            {
+                if (torneio.Name == nameTorneio && torneio.Description == descriptionTorneio && torneio.Id != idTorneio)
+                {
+                    aplicaAlteracoes = false;
+                }
+            }
+
+            return aplicaAlteracoes;
+        }
+		
         #endregion
     }
 }
