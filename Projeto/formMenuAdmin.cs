@@ -3439,7 +3439,7 @@ namespace Projeto
         {
             try
             {
-                Tournament teamTournament = (Tournament)containerDados.TournamentSet.Find(idTorneio);
+                TeamTournament teamTournament = (TeamTournament)containerDados.TournamentSet.Find(idTorneio);
 
                 teamTournament.Name = name;
                 teamTournament.Description = description;
@@ -3459,7 +3459,7 @@ namespace Projeto
         {
             try
             {
-                Tournament standardTournament = (Tournament)containerDados.TournamentSet.Find(idTorneio);
+                StandardTournament standardTournament = (StandardTournament)containerDados.TournamentSet.Find(idTorneio);
 
                 standardTournament.Name = name;
                 standardTournament.Description = description;
