@@ -338,6 +338,17 @@
             this.teamSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_TeamsTableAdapters.TeamSetTableAdapter();
             this.playerSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_PlayersTableAdapters.PlayerSetTableAdapter();
             this.opfProcurarImagem = new System.Windows.Forms.OpenFileDialog();
+            this.bD_DA_ProjetoDataSet_Games = new Projeto.BD_DA_ProjetoDataSet_Games();
+            this.gameSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gameSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_GamesTableAdapters.GameSetTableAdapter();
+            this.idDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.refereeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deckId1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deckId2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.refereeIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tournamentSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_TournamentsTableAdapters.TournamentSetTableAdapter();
             this.idDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -419,6 +430,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSetArbitros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAdminstradores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceArbitros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Games)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tbMenu
@@ -430,7 +443,7 @@
             this.tbMenu.Margin = new System.Windows.Forms.Padding(2);
             this.tbMenu.Name = "tbMenu";
             this.tbMenu.SelectedIndex = 0;
-            this.tbMenu.Size = new System.Drawing.Size(797, 455);
+            this.tbMenu.Size = new System.Drawing.Size(797, 454);
             this.tbMenu.TabIndex = 0;
             // 
             // tpGestao
@@ -440,7 +453,7 @@
             this.tpGestao.Margin = new System.Windows.Forms.Padding(2);
             this.tpGestao.Name = "tpGestao";
             this.tpGestao.Padding = new System.Windows.Forms.Padding(2);
-            this.tpGestao.Size = new System.Drawing.Size(789, 429);
+            this.tpGestao.Size = new System.Drawing.Size(789, 428);
             this.tpGestao.TabIndex = 0;
             this.tpGestao.Text = "Gestão";
             this.tpGestao.UseVisualStyleBackColor = true;
@@ -458,8 +471,9 @@
             this.tcGestao.Margin = new System.Windows.Forms.Padding(2);
             this.tcGestao.Name = "tcGestao";
             this.tcGestao.SelectedIndex = 0;
-            this.tcGestao.Size = new System.Drawing.Size(785, 425);
+            this.tcGestao.Size = new System.Drawing.Size(785, 424);
             this.tcGestao.TabIndex = 0;
+            this.tcGestao.Enter += new System.EventHandler(this.tcGestao_Enter);
             // 
             // tbGestaoJogadores
             // 
@@ -469,7 +483,7 @@
             this.tbGestaoJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoJogadores.Name = "tbGestaoJogadores";
             this.tbGestaoJogadores.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoJogadores.Size = new System.Drawing.Size(777, 399);
+            this.tbGestaoJogadores.Size = new System.Drawing.Size(777, 398);
             this.tbGestaoJogadores.TabIndex = 0;
             this.tbGestaoJogadores.Text = "Jogadores";
             this.tbGestaoJogadores.UseVisualStyleBackColor = true;
@@ -497,7 +511,7 @@
             this.gbGJogadoresForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogadoresForm.Name = "gbGJogadoresForm";
             this.gbGJogadoresForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGJogadoresForm.Size = new System.Drawing.Size(273, 391);
+            this.gbGJogadoresForm.Size = new System.Drawing.Size(273, 390);
             this.gbGJogadoresForm.TabIndex = 7;
             this.gbGJogadoresForm.TabStop = false;
             this.gbGJogadoresForm.Text = "Campos";
@@ -544,7 +558,7 @@
             // btnJogadoresCancelar
             // 
             this.btnJogadoresCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogadoresCancelar.Location = new System.Drawing.Point(193, 351);
+            this.btnJogadoresCancelar.Location = new System.Drawing.Point(193, 350);
             this.btnJogadoresCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogadoresCancelar.Name = "btnJogadoresCancelar";
             this.btnJogadoresCancelar.Size = new System.Drawing.Size(62, 21);
@@ -556,7 +570,7 @@
             // btnJogadoresAcao
             // 
             this.btnJogadoresAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogadoresAcao.Location = new System.Drawing.Point(133, 351);
+            this.btnJogadoresAcao.Location = new System.Drawing.Point(133, 350);
             this.btnJogadoresAcao.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogadoresAcao.Name = "btnJogadoresAcao";
             this.btnJogadoresAcao.Size = new System.Drawing.Size(56, 21);
@@ -646,7 +660,7 @@
             this.gbGJogadoresDados.Controls.Add(this.dgvGListaJogadores);
             this.gbGJogadoresDados.Controls.Add(this.btnInserirJogador);
             this.gbGJogadoresDados.Controls.Add(this.txtGJogadoresPesquisa);
-            this.gbGJogadoresDados.Location = new System.Drawing.Point(4, 4);
+            this.gbGJogadoresDados.Location = new System.Drawing.Point(4, 3);
             this.gbGJogadoresDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogadoresDados.MaximumSize = new System.Drawing.Size(492, 391);
             this.gbGJogadoresDados.MinimumSize = new System.Drawing.Size(492, 391);
@@ -806,7 +820,7 @@
             this.tbGestaoEquipas.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoEquipas.Name = "tbGestaoEquipas";
             this.tbGestaoEquipas.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoEquipas.Size = new System.Drawing.Size(777, 399);
+            this.tbGestaoEquipas.Size = new System.Drawing.Size(777, 398);
             this.tbGestaoEquipas.TabIndex = 1;
             this.tbGestaoEquipas.Text = "Equipas";
             this.tbGestaoEquipas.UseVisualStyleBackColor = true;
@@ -943,7 +957,7 @@
             this.gbGEquipasDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGEquipasDados.Name = "gbGEquipasDados";
             this.gbGEquipasDados.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGEquipasDados.Size = new System.Drawing.Size(769, 222);
+            this.gbGEquipasDados.Size = new System.Drawing.Size(769, 221);
             this.gbGEquipasDados.TabIndex = 12;
             this.gbGEquipasDados.TabStop = false;
             this.gbGEquipasDados.Text = "Equipas";
@@ -952,7 +966,7 @@
             // 
             this.btnGerirEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGerirEquipa.Enabled = false;
-            this.btnGerirEquipa.Location = new System.Drawing.Point(427, 139);
+            this.btnGerirEquipa.Location = new System.Drawing.Point(427, 138);
             this.btnGerirEquipa.Name = "btnGerirEquipa";
             this.btnGerirEquipa.Size = new System.Drawing.Size(62, 23);
             this.btnGerirEquipa.TabIndex = 7;
@@ -977,7 +991,7 @@
             this.gbGEquipasForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGEquipasForm.Name = "gbGEquipasForm";
             this.gbGEquipasForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGEquipasForm.Size = new System.Drawing.Size(244, 201);
+            this.gbGEquipasForm.Size = new System.Drawing.Size(244, 200);
             this.gbGEquipasForm.TabIndex = 6;
             this.gbGEquipasForm.TabStop = false;
             this.gbGEquipasForm.Text = "Campos";
@@ -1006,7 +1020,7 @@
             // txtEquipaCancelar
             // 
             this.txtEquipaCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEquipaCancelar.Location = new System.Drawing.Point(164, 161);
+            this.txtEquipaCancelar.Location = new System.Drawing.Point(164, 160);
             this.txtEquipaCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.txtEquipaCancelar.Name = "txtEquipaCancelar";
             this.txtEquipaCancelar.Size = new System.Drawing.Size(62, 21);
@@ -1018,7 +1032,7 @@
             // btnEquipaAcao
             // 
             this.btnEquipaAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEquipaAcao.Location = new System.Drawing.Point(104, 161);
+            this.btnEquipaAcao.Location = new System.Drawing.Point(104, 160);
             this.btnEquipaAcao.Margin = new System.Windows.Forms.Padding(2);
             this.btnEquipaAcao.Name = "btnEquipaAcao";
             this.btnEquipaAcao.Size = new System.Drawing.Size(56, 21);
@@ -1069,7 +1083,7 @@
             // 
             this.btnRemoverEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoverEquipa.Enabled = false;
-            this.btnRemoverEquipa.Location = new System.Drawing.Point(427, 168);
+            this.btnRemoverEquipa.Location = new System.Drawing.Point(427, 167);
             this.btnRemoverEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverEquipa.Name = "btnRemoverEquipa";
             this.btnRemoverEquipa.Size = new System.Drawing.Size(62, 24);
@@ -1082,7 +1096,7 @@
             // 
             this.btnAlterarEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarEquipa.Enabled = false;
-            this.btnAlterarEquipa.Location = new System.Drawing.Point(427, 110);
+            this.btnAlterarEquipa.Location = new System.Drawing.Point(427, 109);
             this.btnAlterarEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarEquipa.Name = "btnAlterarEquipa";
             this.btnAlterarEquipa.Size = new System.Drawing.Size(62, 24);
@@ -1104,7 +1118,7 @@
             // btnInserirEquipa
             // 
             this.btnInserirEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirEquipa.Location = new System.Drawing.Point(427, 82);
+            this.btnInserirEquipa.Location = new System.Drawing.Point(427, 81);
             this.btnInserirEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirEquipa.Name = "btnInserirEquipa";
             this.btnInserirEquipa.Size = new System.Drawing.Size(62, 24);
@@ -1133,7 +1147,7 @@
             this.dgvGListaEquipas.ReadOnly = true;
             this.dgvGListaEquipas.RowHeadersVisible = false;
             this.dgvGListaEquipas.RowTemplate.Height = 24;
-            this.dgvGListaEquipas.Size = new System.Drawing.Size(388, 161);
+            this.dgvGListaEquipas.Size = new System.Drawing.Size(388, 160);
             this.dgvGListaEquipas.TabIndex = 3;
             this.dgvGListaEquipas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGListaEquipas_CellContentClick);
             this.dgvGListaEquipas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGListaEquipas_CellMouseClick);
@@ -1189,10 +1203,11 @@
             this.tbGestaoTorneios.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoTorneios.Name = "tbGestaoTorneios";
             this.tbGestaoTorneios.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoTorneios.Size = new System.Drawing.Size(777, 399);
+            this.tbGestaoTorneios.Size = new System.Drawing.Size(777, 398);
             this.tbGestaoTorneios.TabIndex = 2;
             this.tbGestaoTorneios.Text = "Torneios";
             this.tbGestaoTorneios.UseVisualStyleBackColor = true;
+            this.tbGestaoTorneios.Enter += new System.EventHandler(this.tbGestaoTorneios_Enter);
             // 
             // gbGJogosDados
             // 
@@ -1207,7 +1222,7 @@
             this.gbGJogosDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogosDados.Name = "gbGJogosDados";
             this.gbGJogosDados.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGJogosDados.Size = new System.Drawing.Size(436, 194);
+            this.gbGJogosDados.Size = new System.Drawing.Size(436, 193);
             this.gbGJogosDados.TabIndex = 1;
             this.gbGJogosDados.TabStop = false;
             this.gbGJogosDados.Text = "Jogos";
@@ -1234,21 +1249,37 @@
             // 
             // dgvGJogosLista
             // 
+            this.dgvGJogosLista.AllowUserToAddRows = false;
+            this.dgvGJogosLista.AllowUserToDeleteRows = false;
             this.dgvGJogosLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGJogosLista.AutoGenerateColumns = false;
             this.dgvGJogosLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGJogosLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn8,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.numberDataGridViewTextBoxColumn,
+            this.refereeIdDataGridViewTextBoxColumn,
+            this.deckId1DataGridViewTextBoxColumn,
+            this.deckId2DataGridViewTextBoxColumn,
+            this.refereeIdDataGridViewTextBoxColumn1});
+            this.dgvGJogosLista.DataSource = this.gameSetBindingSource;
             this.dgvGJogosLista.Location = new System.Drawing.Point(19, 57);
             this.dgvGJogosLista.Margin = new System.Windows.Forms.Padding(2);
             this.dgvGJogosLista.Name = "dgvGJogosLista";
+            this.dgvGJogosLista.ReadOnly = true;
+            this.dgvGJogosLista.RowHeadersVisible = false;
             this.dgvGJogosLista.RowTemplate.Height = 24;
-            this.dgvGJogosLista.Size = new System.Drawing.Size(404, 97);
+            this.dgvGJogosLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGJogosLista.Size = new System.Drawing.Size(404, 96);
             this.dgvGJogosLista.TabIndex = 4;
             // 
             // btnAlterarJogo
             // 
             this.btnAlterarJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterarJogo.Location = new System.Drawing.Point(303, 168);
+            this.btnAlterarJogo.Location = new System.Drawing.Point(303, 167);
             this.btnAlterarJogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarJogo.Name = "btnAlterarJogo";
             this.btnAlterarJogo.Size = new System.Drawing.Size(58, 22);
@@ -1259,18 +1290,19 @@
             // btnInserirJogo
             // 
             this.btnInserirJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirJogo.Location = new System.Drawing.Point(241, 168);
+            this.btnInserirJogo.Location = new System.Drawing.Point(241, 167);
             this.btnInserirJogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirJogo.Name = "btnInserirJogo";
             this.btnInserirJogo.Size = new System.Drawing.Size(58, 22);
             this.btnInserirJogo.TabIndex = 2;
             this.btnInserirJogo.Text = "Inserir";
             this.btnInserirJogo.UseVisualStyleBackColor = true;
+            this.btnInserirJogo.Click += new System.EventHandler(this.btnInserirJogo_Click);
             // 
             // btnRemoverJogo
             // 
             this.btnRemoverJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoverJogo.Location = new System.Drawing.Point(365, 168);
+            this.btnRemoverJogo.Location = new System.Drawing.Point(365, 167);
             this.btnRemoverJogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverJogo.Name = "btnRemoverJogo";
             this.btnRemoverJogo.Size = new System.Drawing.Size(58, 22);
@@ -1409,7 +1441,7 @@
             this.gbGTorneiosInfo.Margin = new System.Windows.Forms.Padding(2);
             this.gbGTorneiosInfo.Name = "gbGTorneiosInfo";
             this.gbGTorneiosInfo.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGTorneiosInfo.Size = new System.Drawing.Size(337, 395);
+            this.gbGTorneiosInfo.Size = new System.Drawing.Size(337, 394);
             this.gbGTorneiosInfo.TabIndex = 2;
             this.gbGTorneiosInfo.TabStop = false;
             // 
@@ -1536,7 +1568,7 @@
             this.gbGJogosForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogosForm.Name = "gbGJogosForm";
             this.gbGJogosForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGJogosForm.Size = new System.Drawing.Size(333, 378);
+            this.gbGJogosForm.Size = new System.Drawing.Size(333, 377);
             this.gbGJogosForm.TabIndex = 2;
             this.gbGJogosForm.TabStop = false;
             this.gbGJogosForm.Text = "Campos";
@@ -1545,7 +1577,7 @@
             // btnJogoCancelar
             // 
             this.btnJogoCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogoCancelar.Location = new System.Drawing.Point(261, 353);
+            this.btnJogoCancelar.Location = new System.Drawing.Point(261, 352);
             this.btnJogoCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogoCancelar.Name = "btnJogoCancelar";
             this.btnJogoCancelar.Size = new System.Drawing.Size(62, 21);
@@ -1556,7 +1588,7 @@
             // btnJogoAcao
             // 
             this.btnJogoAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogoAcao.Location = new System.Drawing.Point(201, 353);
+            this.btnJogoAcao.Location = new System.Drawing.Point(201, 352);
             this.btnJogoAcao.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogoAcao.Name = "btnJogoAcao";
             this.btnJogoAcao.Size = new System.Drawing.Size(56, 21);
@@ -1591,6 +1623,7 @@
             this.cmbJogador1Jogo.Name = "cmbJogador1Jogo";
             this.cmbJogador1Jogo.Size = new System.Drawing.Size(79, 21);
             this.cmbJogador1Jogo.TabIndex = 15;
+            this.cmbJogador1Jogo.SelectedIndexChanged += new System.EventHandler(this.cmbJogador1Jogo_SelectedIndexChanged);
             // 
             // nudNJogo
             // 
@@ -1639,7 +1672,7 @@
             this.txtDescricaoJogo.MinimumSize = new System.Drawing.Size(271, 42);
             this.txtDescricaoJogo.Multiline = true;
             this.txtDescricaoJogo.Name = "txtDescricaoJogo";
-            this.txtDescricaoJogo.Size = new System.Drawing.Size(301, 150);
+            this.txtDescricaoJogo.Size = new System.Drawing.Size(301, 149);
             this.txtDescricaoJogo.TabIndex = 10;
             // 
             // labDescricao
@@ -1652,6 +1685,109 @@
             this.labDescricao.TabIndex = 9;
             this.labDescricao.Text = "Descrição";
             // 
+            // gbGTorneiosForm
+            // 
+            this.gbGTorneiosForm.Controls.Add(this.txtTorneioCancelar);
+            this.gbGTorneiosForm.Controls.Add(this.txtTorneioAcao);
+            this.gbGTorneiosForm.Controls.Add(this.txtDescricaoTorneio);
+            this.gbGTorneiosForm.Controls.Add(this.tpDataTorneio);
+            this.gbGTorneiosForm.Controls.Add(this.txtNomeTorneio);
+            this.gbGTorneiosForm.Controls.Add(this.labDescricaoJogo);
+            this.gbGTorneiosForm.Controls.Add(this.labDataJogo);
+            this.gbGTorneiosForm.Controls.Add(this.labNomeJogo);
+            this.gbGTorneiosForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbGTorneiosForm.Location = new System.Drawing.Point(2, 15);
+            this.gbGTorneiosForm.Margin = new System.Windows.Forms.Padding(2);
+            this.gbGTorneiosForm.Name = "gbGTorneiosForm";
+            this.gbGTorneiosForm.Padding = new System.Windows.Forms.Padding(2);
+            this.gbGTorneiosForm.Size = new System.Drawing.Size(333, 377);
+            this.gbGTorneiosForm.TabIndex = 1;
+            this.gbGTorneiosForm.TabStop = false;
+            this.gbGTorneiosForm.Text = "Campos";
+            this.gbGTorneiosForm.Visible = false;
+            // 
+            // txtTorneioCancelar
+            // 
+            this.txtTorneioCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTorneioCancelar.Location = new System.Drawing.Point(261, 267);
+            this.txtTorneioCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTorneioCancelar.Name = "txtTorneioCancelar";
+            this.txtTorneioCancelar.Size = new System.Drawing.Size(62, 21);
+            this.txtTorneioCancelar.TabIndex = 13;
+            this.txtTorneioCancelar.Text = "Cancelar";
+            this.txtTorneioCancelar.UseVisualStyleBackColor = true;
+            // 
+            // txtTorneioAcao
+            // 
+            this.txtTorneioAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTorneioAcao.Location = new System.Drawing.Point(201, 267);
+            this.txtTorneioAcao.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTorneioAcao.Name = "txtTorneioAcao";
+            this.txtTorneioAcao.Size = new System.Drawing.Size(56, 21);
+            this.txtTorneioAcao.TabIndex = 12;
+            this.txtTorneioAcao.Text = "Ação";
+            this.txtTorneioAcao.UseVisualStyleBackColor = true;
+            // 
+            // txtDescricaoTorneio
+            // 
+            this.txtDescricaoTorneio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescricaoTorneio.Location = new System.Drawing.Point(22, 132);
+            this.txtDescricaoTorneio.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescricaoTorneio.MaximumSize = new System.Drawing.Size(301, 123);
+            this.txtDescricaoTorneio.MinimumSize = new System.Drawing.Size(289, 50);
+            this.txtDescricaoTorneio.Multiline = true;
+            this.txtDescricaoTorneio.Name = "txtDescricaoTorneio";
+            this.txtDescricaoTorneio.Size = new System.Drawing.Size(301, 117);
+            this.txtDescricaoTorneio.TabIndex = 8;
+            // 
+            // tpDataTorneio
+            // 
+            this.tpDataTorneio.Location = new System.Drawing.Point(92, 66);
+            this.tpDataTorneio.Margin = new System.Windows.Forms.Padding(2);
+            this.tpDataTorneio.Name = "tpDataTorneio";
+            this.tpDataTorneio.Size = new System.Drawing.Size(220, 20);
+            this.tpDataTorneio.TabIndex = 7;
+            // 
+            // txtNomeTorneio
+            // 
+            this.txtNomeTorneio.Location = new System.Drawing.Point(92, 32);
+            this.txtNomeTorneio.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomeTorneio.Name = "txtNomeTorneio";
+            this.txtNomeTorneio.Size = new System.Drawing.Size(220, 20);
+            this.txtNomeTorneio.TabIndex = 6;
+            // 
+            // labDescricaoJogo
+            // 
+            this.labDescricaoJogo.AutoSize = true;
+            this.labDescricaoJogo.Location = new System.Drawing.Point(20, 106);
+            this.labDescricaoJogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labDescricaoJogo.Name = "labDescricaoJogo";
+            this.labDescricaoJogo.Size = new System.Drawing.Size(55, 13);
+            this.labDescricaoJogo.TabIndex = 5;
+            this.labDescricaoJogo.Text = "Descrição";
+            // 
+            // labDataJogo
+            // 
+            this.labDataJogo.AutoSize = true;
+            this.labDataJogo.Location = new System.Drawing.Point(20, 70);
+            this.labDataJogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labDataJogo.Name = "labDataJogo";
+            this.labDataJogo.Size = new System.Drawing.Size(30, 13);
+            this.labDataJogo.TabIndex = 4;
+            this.labDataJogo.Text = "Data";
+            // 
+            // labNomeJogo
+            // 
+            this.labNomeJogo.AutoSize = true;
+            this.labNomeJogo.Location = new System.Drawing.Point(20, 37);
+            this.labNomeJogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labNomeJogo.Name = "labNomeJogo";
+            this.labNomeJogo.Size = new System.Drawing.Size(35, 13);
+            this.labNomeJogo.TabIndex = 3;
+            this.labNomeJogo.Text = "Nome";
+            // 
             // tbGestaoCartas
             // 
             this.tbGestaoCartas.Controls.Add(this.gbGCartasForm);
@@ -1660,7 +1796,7 @@
             this.tbGestaoCartas.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoCartas.Name = "tbGestaoCartas";
             this.tbGestaoCartas.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoCartas.Size = new System.Drawing.Size(777, 399);
+            this.tbGestaoCartas.Size = new System.Drawing.Size(777, 398);
             this.tbGestaoCartas.TabIndex = 3;
             this.tbGestaoCartas.Text = "Cartas";
             this.tbGestaoCartas.UseVisualStyleBackColor = true;
@@ -1691,7 +1827,7 @@
             this.gbGCartasForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGCartasForm.Name = "gbGCartasForm";
             this.gbGCartasForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGCartasForm.Size = new System.Drawing.Size(244, 400);
+            this.gbGCartasForm.Size = new System.Drawing.Size(244, 399);
             this.gbGCartasForm.TabIndex = 1;
             this.gbGCartasForm.TabStop = false;
             this.gbGCartasForm.Text = "Campos";
@@ -1700,7 +1836,7 @@
             // btnCartaCancelar
             // 
             this.btnCartaCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCartaCancelar.Location = new System.Drawing.Point(166, 365);
+            this.btnCartaCancelar.Location = new System.Drawing.Point(166, 364);
             this.btnCartaCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCartaCancelar.Name = "btnCartaCancelar";
             this.btnCartaCancelar.Size = new System.Drawing.Size(62, 21);
@@ -1712,7 +1848,7 @@
             // btnAcaoCarta
             // 
             this.btnAcaoCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAcaoCarta.Location = new System.Drawing.Point(106, 365);
+            this.btnAcaoCarta.Location = new System.Drawing.Point(106, 364);
             this.btnAcaoCarta.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcaoCarta.Name = "btnAcaoCarta";
             this.btnAcaoCarta.Size = new System.Drawing.Size(56, 21);
@@ -1724,7 +1860,7 @@
             // nudGDefesaCarta
             // 
             this.nudGDefesaCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudGDefesaCarta.Location = new System.Drawing.Point(179, 331);
+            this.nudGDefesaCarta.Location = new System.Drawing.Point(179, 330);
             this.nudGDefesaCarta.Margin = new System.Windows.Forms.Padding(2);
             this.nudGDefesaCarta.Name = "nudGDefesaCarta";
             this.nudGDefesaCarta.Size = new System.Drawing.Size(41, 20);
@@ -1733,7 +1869,7 @@
             // nudGAtaqueCarta
             // 
             this.nudGAtaqueCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudGAtaqueCarta.Location = new System.Drawing.Point(62, 331);
+            this.nudGAtaqueCarta.Location = new System.Drawing.Point(62, 330);
             this.nudGAtaqueCarta.Margin = new System.Windows.Forms.Padding(2);
             this.nudGAtaqueCarta.Name = "nudGAtaqueCarta";
             this.nudGAtaqueCarta.Size = new System.Drawing.Size(41, 20);
@@ -1748,7 +1884,7 @@
             this.txtGRegrasCarta.Margin = new System.Windows.Forms.Padding(2);
             this.txtGRegrasCarta.Multiline = true;
             this.txtGRegrasCarta.Name = "txtGRegrasCarta";
-            this.txtGRegrasCarta.Size = new System.Drawing.Size(210, 132);
+            this.txtGRegrasCarta.Size = new System.Drawing.Size(210, 131);
             this.txtGRegrasCarta.TabIndex = 13;
             // 
             // nudGLealdadeCarta
@@ -1809,7 +1945,7 @@
             // 
             this.labDefesa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labDefesa.AutoSize = true;
-            this.labDefesa.Location = new System.Drawing.Point(134, 333);
+            this.labDefesa.Location = new System.Drawing.Point(134, 332);
             this.labDefesa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labDefesa.Name = "labDefesa";
             this.labDefesa.Size = new System.Drawing.Size(41, 13);
@@ -1820,7 +1956,7 @@
             // 
             this.labAtaque.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labAtaque.AutoSize = true;
-            this.labAtaque.Location = new System.Drawing.Point(17, 333);
+            this.labAtaque.Location = new System.Drawing.Point(17, 332);
             this.labAtaque.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labAtaque.Name = "labAtaque";
             this.labAtaque.Size = new System.Drawing.Size(41, 13);
@@ -1904,7 +2040,7 @@
             this.gbGCartasDados.MinimumSize = new System.Drawing.Size(292, 317);
             this.gbGCartasDados.Name = "gbGCartasDados";
             this.gbGCartasDados.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGCartasDados.Size = new System.Drawing.Size(523, 400);
+            this.gbGCartasDados.Size = new System.Drawing.Size(523, 399);
             this.gbGCartasDados.TabIndex = 0;
             this.gbGCartasDados.TabStop = false;
             this.gbGCartasDados.Text = "Cartas";
@@ -1913,7 +2049,7 @@
             // 
             this.btnRemoverCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoverCarta.Enabled = false;
-            this.btnRemoverCarta.Location = new System.Drawing.Point(437, 365);
+            this.btnRemoverCarta.Location = new System.Drawing.Point(437, 364);
             this.btnRemoverCarta.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverCarta.Name = "btnRemoverCarta";
             this.btnRemoverCarta.Size = new System.Drawing.Size(62, 21);
@@ -1926,7 +2062,7 @@
             // 
             this.btnAlterarCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarCarta.Enabled = false;
-            this.btnAlterarCarta.Location = new System.Drawing.Point(375, 365);
+            this.btnAlterarCarta.Location = new System.Drawing.Point(375, 364);
             this.btnAlterarCarta.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarCarta.Name = "btnAlterarCarta";
             this.btnAlterarCarta.Size = new System.Drawing.Size(58, 21);
@@ -1938,7 +2074,7 @@
             // btnInserirCarta
             // 
             this.btnInserirCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirCarta.Location = new System.Drawing.Point(308, 365);
+            this.btnInserirCarta.Location = new System.Drawing.Point(308, 364);
             this.btnInserirCarta.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirCarta.Name = "btnInserirCarta";
             this.btnInserirCarta.Size = new System.Drawing.Size(62, 21);
@@ -1973,7 +2109,7 @@
             this.dgvGCartasLista.Name = "dgvGCartasLista";
             this.dgvGCartasLista.ReadOnly = true;
             this.dgvGCartasLista.RowTemplate.Height = 24;
-            this.dgvGCartasLista.Size = new System.Drawing.Size(481, 272);
+            this.dgvGCartasLista.Size = new System.Drawing.Size(481, 271);
             this.dgvGCartasLista.TabIndex = 8;
             this.dgvGCartasLista.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGCartasLista_CellEnter);
             this.dgvGCartasLista.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGCartasLista_CellLeave);
@@ -2080,7 +2216,7 @@
             this.tbGestaoBaralhos.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoBaralhos.Name = "tbGestaoBaralhos";
             this.tbGestaoBaralhos.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoBaralhos.Size = new System.Drawing.Size(777, 399);
+            this.tbGestaoBaralhos.Size = new System.Drawing.Size(777, 398);
             this.tbGestaoBaralhos.TabIndex = 4;
             this.tbGestaoBaralhos.Text = "Baralhos";
             this.tbGestaoBaralhos.UseVisualStyleBackColor = true;
@@ -2100,7 +2236,7 @@
             this.panelGestaoBaralho.Name = "panelGestaoBaralho";
             this.panelGestaoBaralho.RowCount = 1;
             this.panelGestaoBaralho.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelGestaoBaralho.Size = new System.Drawing.Size(773, 200);
+            this.panelGestaoBaralho.Size = new System.Drawing.Size(773, 199);
             this.panelGestaoBaralho.TabIndex = 1;
             // 
             // gbGCartasBotoes
@@ -2115,7 +2251,7 @@
             this.gbGCartasBotoes.Margin = new System.Windows.Forms.Padding(2);
             this.gbGCartasBotoes.Name = "gbGCartasBotoes";
             this.gbGCartasBotoes.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGCartasBotoes.Size = new System.Drawing.Size(96, 196);
+            this.gbGCartasBotoes.Size = new System.Drawing.Size(96, 195);
             this.gbGCartasBotoes.TabIndex = 15;
             this.gbGCartasBotoes.TabStop = false;
             // 
@@ -2191,7 +2327,7 @@
             this.gbGCartasnoBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.gbGCartasnoBaralho.Name = "gbGCartasnoBaralho";
             this.gbGCartasnoBaralho.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGCartasnoBaralho.Size = new System.Drawing.Size(332, 196);
+            this.gbGCartasnoBaralho.Size = new System.Drawing.Size(332, 195);
             this.gbGCartasnoBaralho.TabIndex = 2;
             this.gbGCartasnoBaralho.TabStop = false;
             this.gbGCartasnoBaralho.Text = "Cartas do Baralho";
@@ -2237,7 +2373,7 @@
             this.gbGListaDeCartas.Margin = new System.Windows.Forms.Padding(2);
             this.gbGListaDeCartas.Name = "gbGListaDeCartas";
             this.gbGListaDeCartas.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGListaDeCartas.Size = new System.Drawing.Size(333, 196);
+            this.gbGListaDeCartas.Size = new System.Drawing.Size(333, 195);
             this.gbGListaDeCartas.TabIndex = 1;
             this.gbGListaDeCartas.TabStop = false;
             this.gbGListaDeCartas.Text = "Lista de Cartas";
@@ -2467,7 +2603,7 @@
             this.tbGestaoUtilizadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoUtilizadores.Name = "tbGestaoUtilizadores";
             this.tbGestaoUtilizadores.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoUtilizadores.Size = new System.Drawing.Size(777, 399);
+            this.tbGestaoUtilizadores.Size = new System.Drawing.Size(777, 398);
             this.tbGestaoUtilizadores.TabIndex = 5;
             this.tbGestaoUtilizadores.Text = "Utilizadores";
             this.tbGestaoUtilizadores.UseVisualStyleBackColor = true;
@@ -2491,7 +2627,7 @@
             this.gbGUtilizadoresDados.MinimumSize = new System.Drawing.Size(292, 317);
             this.gbGUtilizadoresDados.Name = "gbGUtilizadoresDados";
             this.gbGUtilizadoresDados.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGUtilizadoresDados.Size = new System.Drawing.Size(523, 403);
+            this.gbGUtilizadoresDados.Size = new System.Drawing.Size(523, 402);
             this.gbGUtilizadoresDados.TabIndex = 0;
             this.gbGUtilizadoresDados.TabStop = false;
             this.gbGUtilizadoresDados.Text = "Utilizadores";
@@ -2525,7 +2661,7 @@
             // btnEliminarUtilizador
             // 
             this.btnEliminarUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminarUtilizador.Location = new System.Drawing.Point(446, 368);
+            this.btnEliminarUtilizador.Location = new System.Drawing.Point(446, 367);
             this.btnEliminarUtilizador.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarUtilizador.Name = "btnEliminarUtilizador";
             this.btnEliminarUtilizador.Size = new System.Drawing.Size(62, 24);
@@ -2547,7 +2683,7 @@
             // btnAlterarUtilizador
             // 
             this.btnAlterarUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterarUtilizador.Location = new System.Drawing.Point(385, 368);
+            this.btnAlterarUtilizador.Location = new System.Drawing.Point(385, 367);
             this.btnAlterarUtilizador.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarUtilizador.Name = "btnAlterarUtilizador";
             this.btnAlterarUtilizador.Size = new System.Drawing.Size(58, 24);
@@ -2571,13 +2707,13 @@
             this.dgvGUtilizadoresLista.ReadOnly = true;
             this.dgvGUtilizadoresLista.RowTemplate.Height = 24;
             this.dgvGUtilizadoresLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGUtilizadoresLista.Size = new System.Drawing.Size(494, 287);
+            this.dgvGUtilizadoresLista.Size = new System.Drawing.Size(494, 286);
             this.dgvGUtilizadoresLista.TabIndex = 3;
             // 
             // btnInserirUtilizador
             // 
             this.btnInserirUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirUtilizador.Location = new System.Drawing.Point(319, 368);
+            this.btnInserirUtilizador.Location = new System.Drawing.Point(319, 367);
             this.btnInserirUtilizador.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirUtilizador.Name = "btnInserirUtilizador";
             this.btnInserirUtilizador.Size = new System.Drawing.Size(62, 24);
@@ -2613,7 +2749,7 @@
             this.gbGAdministradorForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGAdministradorForm.Name = "gbGAdministradorForm";
             this.gbGAdministradorForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGAdministradorForm.Size = new System.Drawing.Size(244, 403);
+            this.gbGAdministradorForm.Size = new System.Drawing.Size(244, 402);
             this.gbGAdministradorForm.TabIndex = 1;
             this.gbGAdministradorForm.TabStop = false;
             this.gbGAdministradorForm.Text = "Campos";
@@ -2622,7 +2758,7 @@
             // btnCancelarAdministrador
             // 
             this.btnCancelarAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarAdministrador.Location = new System.Drawing.Point(161, 367);
+            this.btnCancelarAdministrador.Location = new System.Drawing.Point(161, 366);
             this.btnCancelarAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarAdministrador.Name = "btnCancelarAdministrador";
             this.btnCancelarAdministrador.Size = new System.Drawing.Size(62, 25);
@@ -2634,7 +2770,7 @@
             // btnAcaoAdministrador
             // 
             this.btnAcaoAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAcaoAdministrador.Location = new System.Drawing.Point(97, 367);
+            this.btnAcaoAdministrador.Location = new System.Drawing.Point(97, 366);
             this.btnAcaoAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcaoAdministrador.Name = "btnAcaoAdministrador";
             this.btnAcaoAdministrador.Size = new System.Drawing.Size(60, 25);
@@ -2718,7 +2854,7 @@
             this.gbGArbitroForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGArbitroForm.Name = "gbGArbitroForm";
             this.gbGArbitroForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGArbitroForm.Size = new System.Drawing.Size(244, 403);
+            this.gbGArbitroForm.Size = new System.Drawing.Size(244, 402);
             this.gbGArbitroForm.TabIndex = 16;
             this.gbGArbitroForm.TabStop = false;
             this.gbGArbitroForm.Text = "Campos";
@@ -2820,7 +2956,7 @@
             // btnAcaoArbitro
             // 
             this.btnAcaoArbitro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAcaoArbitro.Location = new System.Drawing.Point(97, 367);
+            this.btnAcaoArbitro.Location = new System.Drawing.Point(97, 366);
             this.btnAcaoArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcaoArbitro.Name = "btnAcaoArbitro";
             this.btnAcaoArbitro.Size = new System.Drawing.Size(60, 25);
@@ -2832,7 +2968,7 @@
             // btnCancelarArbitro
             // 
             this.btnCancelarArbitro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarArbitro.Location = new System.Drawing.Point(161, 367);
+            this.btnCancelarArbitro.Location = new System.Drawing.Point(161, 366);
             this.btnCancelarArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarArbitro.Name = "btnCancelarArbitro";
             this.btnCancelarArbitro.Size = new System.Drawing.Size(62, 25);
@@ -2848,7 +2984,7 @@
             this.tbVer.Margin = new System.Windows.Forms.Padding(2);
             this.tbVer.Name = "tbVer";
             this.tbVer.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVer.Size = new System.Drawing.Size(789, 429);
+            this.tbVer.Size = new System.Drawing.Size(789, 428);
             this.tbVer.TabIndex = 1;
             this.tbVer.Text = "Ver";
             this.tbVer.UseVisualStyleBackColor = true;
@@ -2866,7 +3002,7 @@
             this.tcVer.Margin = new System.Windows.Forms.Padding(2);
             this.tcVer.Name = "tcVer";
             this.tcVer.SelectedIndex = 0;
-            this.tcVer.Size = new System.Drawing.Size(785, 425);
+            this.tcVer.Size = new System.Drawing.Size(785, 424);
             this.tcVer.TabIndex = 0;
             this.tcVer.Enter += new System.EventHandler(this.TabPesquisaUtilizadores);
             // 
@@ -2886,7 +3022,7 @@
             this.tbVerJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerJogadores.Name = "tbVerJogadores";
             this.tbVerJogadores.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerJogadores.Size = new System.Drawing.Size(777, 399);
+            this.tbVerJogadores.Size = new System.Drawing.Size(777, 398);
             this.tbVerJogadores.TabIndex = 0;
             this.tbVerJogadores.Text = "Jogadores";
             this.tbVerJogadores.UseVisualStyleBackColor = true;
@@ -3455,7 +3591,7 @@
             this.tbVerBaralhos.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerBaralhos.Name = "tbVerBaralhos";
             this.tbVerBaralhos.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerBaralhos.Size = new System.Drawing.Size(777, 399);
+            this.tbVerBaralhos.Size = new System.Drawing.Size(777, 398);
             this.tbVerBaralhos.TabIndex = 4;
             this.tbVerBaralhos.Text = "Baralhos";
             this.tbVerBaralhos.UseVisualStyleBackColor = true;
@@ -3480,7 +3616,7 @@
             this.dgvVBaralhosLista.Name = "dgvVBaralhosLista";
             this.dgvVBaralhosLista.ReadOnly = true;
             this.dgvVBaralhosLista.RowTemplate.Height = 24;
-            this.dgvVBaralhosLista.Size = new System.Drawing.Size(723, 269);
+            this.dgvVBaralhosLista.Size = new System.Drawing.Size(723, 268);
             this.dgvVBaralhosLista.TabIndex = 38;
             // 
             // idDataGridViewTextBoxColumn3
@@ -3745,6 +3881,76 @@
             // 
             this.playerSetTableAdapter.ClearBeforeFill = true;
             // 
+            // bD_DA_ProjetoDataSet_Games
+            // 
+            this.bD_DA_ProjetoDataSet_Games.DataSetName = "BD_DA_ProjetoDataSet_Games";
+            this.bD_DA_ProjetoDataSet_Games.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gameSetBindingSource
+            // 
+            this.gameSetBindingSource.DataMember = "GameSet";
+            this.gameSetBindingSource.DataSource = this.bD_DA_ProjetoDataSet_Games;
+            // 
+            // gameSetTableAdapter
+            // 
+            this.gameSetTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn8
+            // 
+            this.idDataGridViewTextBoxColumn8.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn8.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn8.Name = "idDataGridViewTextBoxColumn8";
+            this.idDataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // refereeIdDataGridViewTextBoxColumn
+            // 
+            this.refereeIdDataGridViewTextBoxColumn.DataPropertyName = "RefereeId";
+            this.refereeIdDataGridViewTextBoxColumn.HeaderText = "RefereeId";
+            this.refereeIdDataGridViewTextBoxColumn.Name = "refereeIdDataGridViewTextBoxColumn";
+            this.refereeIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // deckId1DataGridViewTextBoxColumn
+            // 
+            this.deckId1DataGridViewTextBoxColumn.DataPropertyName = "DeckId1";
+            this.deckId1DataGridViewTextBoxColumn.HeaderText = "DeckId1";
+            this.deckId1DataGridViewTextBoxColumn.Name = "deckId1DataGridViewTextBoxColumn";
+            this.deckId1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // deckId2DataGridViewTextBoxColumn
+            // 
+            this.deckId2DataGridViewTextBoxColumn.DataPropertyName = "DeckId2";
+            this.deckId2DataGridViewTextBoxColumn.HeaderText = "DeckId2";
+            this.deckId2DataGridViewTextBoxColumn.Name = "deckId2DataGridViewTextBoxColumn";
+            this.deckId2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // refereeIdDataGridViewTextBoxColumn1
+            // 
+            this.refereeIdDataGridViewTextBoxColumn1.DataPropertyName = "Referee_Id";
+            this.refereeIdDataGridViewTextBoxColumn1.HeaderText = "Referee_Id";
+            this.refereeIdDataGridViewTextBoxColumn1.Name = "refereeIdDataGridViewTextBoxColumn1";
+            this.refereeIdDataGridViewTextBoxColumn1.ReadOnly = true;
+			//
             // tournamentSetTableAdapter
             // 
             this.tournamentSetTableAdapter.ClearBeforeFill = true;
@@ -3781,7 +3987,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 455);
+            this.ClientSize = new System.Drawing.Size(797, 454);
             this.Controls.Add(this.tbMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -3889,6 +4095,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSetArbitros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAdminstradores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceArbitros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Games)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4199,6 +4407,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn avatarDataGridViewTextBoxColumn3;
+        private BD_DA_ProjetoDataSet_Games bD_DA_ProjetoDataSet_Games;
+        private System.Windows.Forms.BindingSource gameSetBindingSource;
+        private BD_DA_ProjetoDataSet_GamesTableAdapters.GameSetTableAdapter gameSetTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn refereeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deckId1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deckId2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn refereeIdDataGridViewTextBoxColumn1;
         private System.Windows.Forms.RadioButton radioStandardTournaments;
         private System.Windows.Forms.RadioButton radioTeamTournaments;
         private BD_DA_ProjetoDataSet_Tournaments bD_DA_ProjetoDataSet_Tournaments;

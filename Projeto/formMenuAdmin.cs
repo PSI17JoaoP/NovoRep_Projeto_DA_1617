@@ -60,6 +60,8 @@ namespace Projeto
 
         private void formMenuAdmin_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Games.GameSet' table. You can move, or remove it, as needed.
+            this.gameSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Games.GameSet);
             // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Tournaments.TournamentSet' table. You can move, or remove it, as needed.
             this.tournamentSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Tournaments.TournamentSet);
             // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Players.PlayerSet' table. You can move, or remove it, as needed.
@@ -1353,6 +1355,9 @@ namespace Projeto
         #endregion
 
         #region GestaoCartas
+
+
+
 
         /// <summary>
         /// Ativa o formulário para preencher os dados da nova carta.
@@ -3385,6 +3390,134 @@ namespace Projeto
 
         #endregion
 
+        private void tcGestao_Enter(object sender, EventArgs e)
+        {
+            
+
+
+           
+
+
+        }
+
+        private void tbGestaoTorneios_Enter(object sender, EventArgs e)
+        {
+            /*cmbJogador1Jogo.Items.Clear();
+
+            Player jogador1;
+            if(cmbJogador1Jogo.SelectedIndex != -1)
+            {
+                jogador1 = (Player)cmbJogador1Jogo.SelectedItem;
+
+
+            }
+
+                foreach(Player jogador in containerDados.PlayerSet)
+                {
+                    cmbJogador1Jogo.Items.Add(jogador.Name);
+                    cmbJogador2Jogo.Items.Add(jogador.Name);
+                }
+                */
+            carregarJogadoresJogos();
+            //MessageBox.Show("Olá");
+            }
+
+        private void carregarJogadoresJogos()
+        {
+            cmbJogador1Jogo.Items.Clear();
+
+            Player jogador1;
+            /*if (cmbJogador1Jogo.SelectedIndex != -1)
+            {
+                jogador1 = (Player)cmbJogador1Jogo.SelectedItem;
+            */
+
+            foreach (Player jogador in containerDados.PlayerSet)
+            {
+                
+                cmbJogador1Jogo.Items.Add(jogador.Name);
+
+                /*if(jogador.Id != jogador1.Id)
+                {
+
+                }
+                */
+                cmbJogador2Jogo.Items.Add(jogador.Name);
+            /*}*/
+            }
+
+        }
+
+        private void cmbJogador1Jogo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string jogador1;
+            if (cmbJogador1Jogo.SelectedIndex != -1)
+            {
+                //cmbJogador2Jogo.Items.Clear();
+                //int i = cmbJogador1Jogo.SelectedIndex;
+                //jogador1 = cmbJogador1Jogo.SelectedItem.ToString();
+
+                //MessageBox.Show(jogador1.Name);
+
+                /*int a = 0;
+                foreach(Player p in cmbJogador1Jogo.Items)
+                {
+                    if(a != i)
+                    {
+                        cmbJogador2Jogo.Items.Add(p.Name);
+                    }
+                    a++;
+                }*/
+
+                int b = cmbJogador1Jogo.SelectedIndex;
+                //Player p = cmbJogador1Jogo.Items;
+
+                Player pl = getPlayer(b);
+                //MessageBox.Show(pl.Name);
+
+
+                /*foreach (Player jogador in containerDados.PlayerSet)
+                {
+                    if (!jogador.Name.Equals(jogador1))
+                    {
+                        cmbJogador2Jogo.Items.Add(jogador.Name);
+                    }
+                }*/
+
+                foreach (Player jogador in containerDados.PlayerSet)
+                {
+                    if (jogador.Id != pl.Id)
+                    {
+                        cmbJogador2Jogo.Items.Add(jogador.Name);
+                    }
+                }
+            }
+        }
+
+        private Player getPlayer(int i)
+        {
+            int a = 0;
+            Player p = null;
+            foreach (Player jogador in containerDados.PlayerSet)
+            {
+                if(i == a)
+                {
+                    p = jogador;
+                    return p;
+                }
+                a++;
+            }
+            return null;
+        }
+
+        private void btnInserirJogo_Click(object sender, EventArgs e)
+        {
+            gbGJogosForm.Visible = true;
+            btnJogoAcao.Text = "Criar";
+
+
+        }
+
         #region Gestão de Torneios
 
         private void BotaoInserirTorneio(object sender, EventArgs e)
@@ -3616,7 +3749,7 @@ namespace Projeto
 
             return aplicaAlteracoes;
         }
-
+		
         #endregion
     }
 }
