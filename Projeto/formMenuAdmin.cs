@@ -3545,21 +3545,13 @@ namespace Projeto
 
         private void BotaoRemoverTorneio(object sender, EventArgs e)
         {
-            DialogResult confirmacaoEliminar = MessageBox.Show("Tem a certeza que quer eliminar o utilizador '" + dgvGUtilizadoresLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult confirmacaoEliminar = MessageBox.Show("Tem a certeza que quer eliminar o torneio '" + dgvGUtilizadoresLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (confirmacaoEliminar == DialogResult.Yes)
             {
-                if (containerDados.TournamentSet.Count() > 1)
-                {
-                    idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+                idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
 
-                    RemoverAdministrador();
-                }
-
-                else
-                {
-                    MessageBox.Show("Tem de existir, no mínimo, um torneio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                RemoverTournament();
             }
         }
 
