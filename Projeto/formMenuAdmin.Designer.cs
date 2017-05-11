@@ -2987,7 +2987,7 @@
             this.tbVer.Margin = new System.Windows.Forms.Padding(2);
             this.tbVer.Name = "tbVer";
             this.tbVer.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVer.Size = new System.Drawing.Size(789, 428);
+            this.tbVer.Size = new System.Drawing.Size(789, 429);
             this.tbVer.TabIndex = 1;
             this.tbVer.Text = "Ver";
             this.tbVer.UseVisualStyleBackColor = true;
@@ -3005,7 +3005,7 @@
             this.tcVer.Margin = new System.Windows.Forms.Padding(2);
             this.tcVer.Name = "tcVer";
             this.tcVer.SelectedIndex = 0;
-            this.tcVer.Size = new System.Drawing.Size(785, 424);
+            this.tcVer.Size = new System.Drawing.Size(785, 425);
             this.tcVer.TabIndex = 0;
             this.tcVer.Enter += new System.EventHandler(this.TabPesquisaUtilizadores);
             // 
@@ -3025,7 +3025,7 @@
             this.tbVerJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerJogadores.Name = "tbVerJogadores";
             this.tbVerJogadores.Padding = new System.Windows.Forms.Padding(2);
-            this.tbVerJogadores.Size = new System.Drawing.Size(777, 398);
+            this.tbVerJogadores.Size = new System.Drawing.Size(777, 399);
             this.tbVerJogadores.TabIndex = 0;
             this.tbVerJogadores.Text = "Jogadores";
             this.tbVerJogadores.UseVisualStyleBackColor = true;
