@@ -79,6 +79,7 @@ namespace Projeto
 
             radioAdmins.Checked = true;
             radioPesquisaAdministrador.Checked = true;
+            radioTeamTournaments.Checked = true;
         }
 
         private void btnRemoverJogo_Click(object sender, EventArgs e)
@@ -118,45 +119,48 @@ namespace Projeto
         /// </summary>
         private void BotaoAlterarUtilizador(object sender, EventArgs e)
         {
-            if(VerificarTipoAdministrator(dgvGUtilizadoresLista.CurrentRow))
+            if (dgvGUtilizadoresLista.SelectedRows.Count > 0)
             {
-                idAdministrador = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
-
-                Administrator admin = (Administrator)containerDados.UserSet.Find(idAdministrador);
-
-                txtUsernameAdministrador.Text = admin.Username;
-                txtEmailAdministrador.Text = admin.Email;
-
-                btnAcaoAdministrador.Text = "Aplicar";
-                gbGAdministradorForm.Visible = true;
-                gbGArbitroForm.Visible = false;
-                gbGUtilizadoresDados.Enabled = false;
-            }
-
-            else if(VerificarTipoReferee(dgvGUtilizadoresLista.CurrentRow))
-            {
-                idArbitro = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
-
-                Referee arbitro = (Referee)containerDados.UserSet.Find(idArbitro);
-
-                txtUsernameArbitro.Text = arbitro.Username;
-                txtNomeArbitro.Text = arbitro.Name;
-                txtAvatarArbitro.Text = arbitro.Avatar;
-
-                if (File.Exists(arbitro.Avatar))
+                if (VerificarTipoAdministrator(dgvGUtilizadoresLista.CurrentRow))
                 {
-                    using (Bitmap imagemAvatar = new Bitmap(arbitro.Avatar))
-                    {
-                        Image avatarArbitro = new Bitmap(imagemAvatar);
-                        pbAvatarArbitro.Image = avatarArbitro;
-                    }
+                    idAdministrador = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
+
+                    Administrator admin = (Administrator)containerDados.UserSet.Find(idAdministrador);
+
+                    txtUsernameAdministrador.Text = admin.Username;
+                    txtEmailAdministrador.Text = admin.Email;
+
+                    btnAcaoAdministrador.Text = "Aplicar";
+                    gbGAdministradorForm.Visible = true;
+                    gbGArbitroForm.Visible = false;
+                    gbGUtilizadoresDados.Enabled = false;
                 }
 
-                btnAcaoArbitro.Text = "Aplicar";
-                txtAvatarArbitro.Enabled = true;
-                gbGAdministradorForm.Visible = false;
-                gbGArbitroForm.Visible = true;
-                gbGUtilizadoresDados.Enabled = false;
+                else if (VerificarTipoReferee(dgvGUtilizadoresLista.CurrentRow))
+                {
+                    idArbitro = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
+
+                    Referee arbitro = (Referee)containerDados.UserSet.Find(idArbitro);
+
+                    txtUsernameArbitro.Text = arbitro.Username;
+                    txtNomeArbitro.Text = arbitro.Name;
+                    txtAvatarArbitro.Text = arbitro.Avatar;
+
+                    if (File.Exists(arbitro.Avatar))
+                    {
+                        using (Bitmap imagemAvatar = new Bitmap(arbitro.Avatar))
+                        {
+                            Image avatarArbitro = new Bitmap(imagemAvatar);
+                            pbAvatarArbitro.Image = avatarArbitro;
+                        }
+                    }
+
+                    btnAcaoArbitro.Text = "Aplicar";
+                    txtAvatarArbitro.Enabled = true;
+                    gbGAdministradorForm.Visible = false;
+                    gbGArbitroForm.Visible = true;
+                    gbGUtilizadoresDados.Enabled = false;
+                }
             }
         }
 
@@ -166,30 +170,33 @@ namespace Projeto
         /// </summary>
         private void BotaoEliminarUtilizador(object sender, EventArgs e)
         {
-            DialogResult confirmacaoEliminar = MessageBox.Show("Tem a certeza que quer eliminar o utilizador '" + dgvGUtilizadoresLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (confirmacaoEliminar == DialogResult.Yes)
+            if (dgvGUtilizadoresLista.SelectedRows.Count > 0)
             {
-                if (VerificarTipoAdministrator(dgvGUtilizadoresLista.CurrentRow))
-                {
-                    if (containerDados.UserSet.OfType<Administrator>().Count() > 1)
-                    {
-                        idAdministrador = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
+                DialogResult confirmacaoEliminar = MessageBox.Show("Tem a certeza que quer eliminar o utilizador '" + dgvGUtilizadoresLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        RemoverAdministrador();
+                if (confirmacaoEliminar == DialogResult.Yes)
+                {
+                    if (VerificarTipoAdministrator(dgvGUtilizadoresLista.CurrentRow))
+                    {
+                        if (containerDados.UserSet.OfType<Administrator>().Count() > 1)
+                        {
+                            idAdministrador = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
+
+                            RemoverAdministrador();
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Tem de existir, no mínimo, uma administrador.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
 
-                    else
+                    else if (VerificarTipoReferee(dgvGUtilizadoresLista.CurrentRow))
                     {
-                        MessageBox.Show("Tem de existir, no mínimo, uma administrador.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        idArbitro = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
+
+                        RemoverArbitro();
                     }
-                }
-
-                else if (VerificarTipoReferee(dgvGUtilizadoresLista.CurrentRow))
-                {
-                    idArbitro = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
-
-                    RemoverArbitro();
                 }
             }
         }
@@ -3520,6 +3527,24 @@ namespace Projeto
 
         #region Gestão de Torneios
 
+        private void RadioFiltrarTeamTournaments(object sender, EventArgs e)
+        {
+            if(radioTeamTournaments.Checked == true)
+            {
+                txtGTorneiosPesquisa.Clear();
+                RefreshTabelaTorneios();
+            }
+        }
+
+        private void RadioFiltrarStandardTournaments(object sender, EventArgs e)
+        {
+            if(radioStandardTournaments.Checked == true)
+            {
+                txtGTorneiosPesquisa.Clear();
+                RefreshTabelaTorneios();
+            }
+        }
+
         private void BotaoInserirTorneio(object sender, EventArgs e)
         {
             ResetFormTorneios();
@@ -3530,28 +3555,62 @@ namespace Projeto
 
         private void BotaoAlterarTorneio(object sender, EventArgs e)
         {
-            idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+            if (dgvGTorneiosLista.SelectedRows.Count > 0)
+            {
+                idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
 
-            Tournament torneio = (Tournament)containerDados.TournamentSet.Find(idTorneio);
+                if (VerificarTipoTeamTournament())
+                {
+                    TeamTournament torneio = (TeamTournament)containerDados.TournamentSet.Find(idTorneio);
 
-            txtNomeTorneio.Text = torneio.Name;
-            txtDescricaoTorneio.Text = torneio.Description;
-            tpDataTorneio.Value = torneio.Date;
+                    txtNomeTorneio.Text = torneio.Name;
+                    txtDescricaoTorneio.Text = torneio.Description;
+                    tpDataTorneio.Value = torneio.Date;
 
-            txtTorneioAcao.Text = "Aplicar";
-            gbGTorneiosForm.Enabled = true;
-            gbGTorneiosForm.Visible = true;
+                    txtTorneioAcao.Text = "Aplicar";
+                    gbGTorneiosForm.Enabled = true;
+                    gbGTorneiosForm.Visible = true;
+                    gbTipoTorneio.Enabled = false;
+                    gbTipoTorneio.Visible = false;
+                }
+
+                else if (VerificarTipoStandardTournament())
+                {
+                    StandardTournament torneio = (StandardTournament)containerDados.TournamentSet.Find(idTorneio);
+
+                    txtNomeTorneio.Text = torneio.Name;
+                    txtDescricaoTorneio.Text = torneio.Description;
+                    tpDataTorneio.Value = torneio.Date;
+
+                    txtTorneioAcao.Text = "Aplicar";
+                    gbGTorneiosForm.Enabled = true;
+                    gbGTorneiosForm.Visible = true;
+                    gbTipoTorneio.Enabled = false;
+                    gbTipoTorneio.Visible = false;
+                }
+            }
         }
 
         private void BotaoRemoverTorneio(object sender, EventArgs e)
         {
-            DialogResult confirmacaoEliminar = MessageBox.Show("Tem a certeza que quer eliminar o torneio '" + dgvGTorneiosLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (confirmacaoEliminar == DialogResult.Yes)
+            if (dgvGTorneiosLista.SelectedRows.Count > 0)
             {
-                idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+                DialogResult confirmacaoEliminar = MessageBox.Show("Tem a certeza que quer eliminar o torneio '" + dgvGTorneiosLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                RemoverTournament();
+                if (confirmacaoEliminar == DialogResult.Yes)
+                {
+                    idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+
+                    if(VerificarTipoTeamTournament())
+                    {
+                        RemoverTeamTournament();
+                    }
+
+                    else if (VerificarTipoStandardTournament())
+                    {
+                        RemoverStandardTournament();
+                    }
+                }
             }
         }
 
@@ -3571,16 +3630,27 @@ namespace Projeto
                     {
                         if (containerDados.TournamentSet.Count() > 0)
                         {
-                            if (VerificarAlteracoesAdministrador(nameForm, descriptionForm))
+                            idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+
+                            if (VerificarAlteracoesTournament(nameForm))
                             {
-                                AlterarTournament(nameForm, descriptionForm, dataForm);
+                                if (VerificarTipoTeamTournament())
+                                {
+                                    AlterarTeamTournament(nameForm, descriptionForm, dataForm);
+                                }
+
+                                else if (VerificarTipoStandardTournament())
+                                {
+                                    AlterarStandardTournament(nameForm, descriptionForm, dataForm);
+                                }
+
                                 ResetFormTorneios();
                                 gbGTorneiosForm.Visible = false;
                             }
 
                             else
                             {
-                                MessageBox.Show("O administrador editado já existe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("O torneio editado já existe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
@@ -3594,7 +3664,7 @@ namespace Projeto
 
             else if (txtTorneioAcao.Text == "Adicionar")
             {
-                DialogResult confirmacaoAdicionar = MessageBox.Show("Tem a certeza que quer adicionar o arbitro '" + nameForm + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult confirmacaoAdicionar = MessageBox.Show("Tem a certeza que quer adicionar o torneio '" + nameForm + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if(confirmacaoAdicionar == DialogResult.Yes)
                 {
@@ -3604,7 +3674,16 @@ namespace Projeto
                         {
                             if (VerificarDadosTournament(nameForm, descriptionForm))
                             {
-                                AdicionarTournament(nameForm, descriptionForm, dataForm);
+                                if (radioTipoTorneioTeam.Checked == true)
+                                {
+                                    AdicionarTeamTournament(nameForm, descriptionForm, dataForm);
+                                }
+                                
+                                else if (radioTipoTorneioStandard.Checked == true)
+                                {
+                                    AdicionarStandardTournament(nameForm, descriptionForm, dataForm);
+                                }
+
                                 ResetFormTorneios();
                                 gbGTorneiosForm.Visible = false;
                             }
@@ -3617,15 +3696,25 @@ namespace Projeto
 
                         else
                         {
-                            AdicionarTournament(nameForm, descriptionForm, dataForm);
-                            ResetFormTorneios();
-                            gbGTorneiosForm.Visible = false;
+                            if (radioTipoTorneioTeam.Checked == true)
+                            {
+                                AdicionarTeamTournament(nameForm, descriptionForm, dataForm);
+                                ResetFormTorneios();
+                                gbGTorneiosForm.Visible = false;
+                            }
+
+                            else if (radioTipoTorneioStandard.Checked == true)
+                            {
+                                AdicionarStandardTournament(nameForm, descriptionForm, dataForm);
+                                ResetFormTorneios();
+                                gbGTorneiosForm.Visible = false;
+                            }
                         }
                     }
 
                     else
                     {
-                        MessageBox.Show("Tem de preencher todos os campos para adicionar o Admin.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Tem de preencher todos os campos para adicionar o torneio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -3637,11 +3726,11 @@ namespace Projeto
             gbGTorneiosForm.Visible = false;
         }
 
-        private void AdicionarTournament(string name, string description, DateTime date)
+        private void AdicionarTeamTournament(string name, string description, DateTime date)
         {
             try
             {
-                Tournament novoTournament = new Tournament
+                TeamTournament novoTournament = new TeamTournament
                 {
                     Name = name,
                     Description = description,
@@ -3659,11 +3748,33 @@ namespace Projeto
             }
         }
 
-        private void AlterarTournament(string name, string description, DateTime date)
+        private void AdicionarStandardTournament(string name, string description, DateTime date)
         {
             try
             {
-                Tournament torneio = (Tournament)containerDados.TournamentSet.Find(idTorneio);
+                StandardTournament novoTournament = new StandardTournament
+                {
+                    Name = name,
+                    Description = description,
+                    Date = date
+                };
+
+                containerDados.TournamentSet.Add(novoTournament);
+                containerDados.SaveChanges();
+                RefreshTabelaTorneios();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na inserção do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AlterarTeamTournament(string name, string description, DateTime date)
+        {
+            try
+            {
+                TeamTournament torneio = (TeamTournament) containerDados.TournamentSet.Find(idTorneio);
 
                 torneio.Name = name;
                 torneio.Description = description;
@@ -3680,11 +3791,49 @@ namespace Projeto
             }
         }
 
-        private void RemoverTournament()
+        private void AlterarStandardTournament(string name, string description, DateTime date)
         {
             try
             {
-                Tournament torneio = (Tournament)containerDados.TournamentSet.Find(idTorneio);
+                StandardTournament torneio = (StandardTournament) containerDados.TournamentSet.Find(idTorneio);
+
+                torneio.Name = name;
+                torneio.Description = description;
+                torneio.Date = date;
+
+                containerDados.Entry(torneio).State = EntityState.Modified;
+                containerDados.SaveChanges();
+                RefreshTabelaTorneios();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na edição do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RemoverTeamTournament()
+        {
+            try
+            {
+                TeamTournament torneio = (TeamTournament) containerDados.TournamentSet.Find(idTorneio);
+
+                containerDados.TournamentSet.Remove(torneio);
+                containerDados.SaveChanges();
+                RefreshTabelaTorneios();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na remoção do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RemoverStandardTournament()
+        {
+            try
+            {
+                StandardTournament torneio = (StandardTournament) containerDados.TournamentSet.Find(idTorneio);
 
                 containerDados.TournamentSet.Remove(torneio);
                 containerDados.SaveChanges();
@@ -3699,9 +3848,17 @@ namespace Projeto
 
         private void RefreshTabelaTorneios()
         {
-            tournamentSetBindingSource.DataSource = bD_DA_ProjetoDataSet_Tournaments.TournamentSet;
-            tournamentSetTableAdapter.Fill(bD_DA_ProjetoDataSet_Tournaments.TournamentSet);
-            dgvGTorneiosLista.DataSource = tournamentSetBindingSource;
+            if(radioTeamTournaments.Checked == true)
+            {
+                dgvGTorneiosLista.DataSource = (from torneiosTeam in containerDados.TournamentSet.OfType<TeamTournament>()
+                                                select new { torneiosTeam.Id, torneiosTeam.Name, torneiosTeam.Date, torneiosTeam.Description} ).ToList();
+            }
+
+            else if (radioStandardTournaments.Checked == true)
+            {
+                dgvGTorneiosLista.DataSource = (from torneiosStandard in containerDados.TournamentSet.OfType<StandardTournament>()
+                                                select new { torneiosStandard.Id, torneiosStandard.Name, torneiosStandard.Date, torneiosStandard.Description }).ToList();
+            }
         }
 
         private void ResetFormTorneios()
@@ -3710,6 +3867,8 @@ namespace Projeto
             txtDescricaoTorneio.Clear();
             tpDataTorneio.ResetText();
             gbGTorneiosDados.Enabled = true;
+            gbTipoTorneio.Enabled = true;
+            gbTipoTorneio.Visible = true;
         }
 
         private bool VerificarDadosTournament(string nameTorneio, string descriptionTorneio)
@@ -3727,13 +3886,13 @@ namespace Projeto
             return naoExisteDados;
         }
 
-        private bool VerificarAlteracoesTournament(string nameTorneio, string descriptionTorneio)
+        private bool VerificarAlteracoesTournament(string nameTorneio)
         {
             bool aplicaAlteracoes = true;
 
             foreach (Tournament torneio in containerDados.TournamentSet)
             {
-                if (torneio.Name == nameTorneio && torneio.Description == descriptionTorneio && torneio.Id != idTorneio)
+                if (torneio.Name == nameTorneio && torneio.Id != idTorneio)
                 {
                     aplicaAlteracoes = false;
                 }
@@ -3742,6 +3901,36 @@ namespace Projeto
             return aplicaAlteracoes;
         }
 		
+        private bool VerificarTipoTeamTournament()
+        {
+            bool isTipoTeamTournament = false;
+
+            foreach (TeamTournament torneioTeam in containerDados.TournamentSet.OfType<TeamTournament>())
+            {
+                if (torneioTeam.Id == idTorneio)
+                {
+                    isTipoTeamTournament = true;
+                }
+            }
+
+            return isTipoTeamTournament;
+        }
+
+        private bool VerificarTipoStandardTournament()
+        {
+            bool isTipoStandardTournament = false;
+
+            foreach (StandardTournament torneioStandard in containerDados.TournamentSet.OfType<StandardTournament>())
+            {
+                if (torneioStandard.Id == idTorneio)
+                {
+                    isTipoStandardTournament = true;
+                }
+            }
+
+            return isTipoStandardTournament;
+        }
+
         #endregion
     }
 }
