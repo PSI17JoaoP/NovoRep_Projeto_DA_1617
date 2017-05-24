@@ -47,6 +47,9 @@ namespace Projeto
 
         private TeamTournament torneioequipaselecionado;
 
+        private int idJogo;
+
+
         public formMenuAdmin()
         {
             InitializeComponent();
@@ -62,8 +65,6 @@ namespace Projeto
 
         private void formMenuAdmin_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Games.GameSet' table. You can move, or remove it, as needed.
-            this.gameSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Games.GameSet);
             // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Tournaments.TournamentSet' table. You can move, or remove it, as needed.
             this.tournamentSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Tournaments.TournamentSet);
             // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Players.PlayerSet' table. You can move, or remove it, as needed.
@@ -88,6 +89,40 @@ namespace Projeto
         {
             gbGTorneiosForm.Visible = false;
             gbGJogosForm.Visible = true;
+
+            if(dgvGJogosLista.SelectedCells.Count > 0)
+            {
+                idJogo = (int)dgvGJogosLista.CurrentRow.Cells[0].Value;
+
+                DialogResult confirmar = MessageBox.Show("Deseja eliminar o jogador selecionado.", "Eliminação de dados", MessageBoxButtons.YesNo);
+
+                if(confirmar == DialogResult.Yes)
+                {
+                    removerJogo();
+                    refreshTabelaJogos();
+                }
+            }
+            cancelarJogo();
+            gbGJogosForm.Enabled = false;
+        }
+
+        private void removerJogo()
+        {
+            try
+            {
+                foreach(Game jogo in containerDados.GameSet)
+                {
+                    if(jogo.Id == idJogo)
+                    {
+                        containerDados.GameSet.Remove(jogo);
+                    }
+                }
+                containerDados.SaveChanges();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao eliminar o jogo.", "Eliminar dados");
+            }
         }
 
         #region Gestão de Utiilizadores
@@ -3458,7 +3493,7 @@ namespace Projeto
 
             foreach (Referee arbitro in containerDados.UserSet.OfType<Referee>())
             {
-                cmbarbitrojogos.Items.Add(arbitro.Name);
+                cmbarbitrojogos.Items.Add(arbitro.Username);
             }
         }
 
@@ -3492,19 +3527,22 @@ namespace Projeto
 
         private void cmbJogador1Jogo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(radioTeamTournaments.Checked == true)
+            /*if (radioTeamTournaments.Checked == true)
             {
-                string nomeequipa1 = cmbequipajogador1.SelectedItem.ToString();
-                cmbequipajogador2.Items.Clear();
-                foreach (Team equipa in containerDados.TeamSet)
+                if(cmbequipajogador1.SelectedIndex != -1)
                 {
-                    if (!equipa.Name.Equals(nomeequipa1))
+                    string nomeequipa1 = cmbequipajogador1.SelectedItem.ToString();
+                    cmbequipajogador2.Items.Clear();
+                    foreach (Team equipa in containerDados.TeamSet)
                     {
-                        cmbequipajogador2.Items.Add(equipa.Name);
+                        if (!equipa.Name.Equals(nomeequipa1))
+                        {
+                            cmbequipajogador2.Items.Add(equipa.Name);
+                        }
                     }
                 }
             }
-            else if(radioStandardTournaments.Checked == true)
+            else if (radioStandardTournaments.Checked == true)
             {
                 string nomejogador1 = cmbequipajogador1.SelectedItem.ToString();
                 cmbequipajogador2.Items.Clear();
@@ -3516,7 +3554,16 @@ namespace Projeto
                     }
                 }
 
-            }
+            }*/
+               
+            
+
+            /*if (i != -1)
+            {
+                cmbequipajogador2.SelectedIndex = i;
+            }*/
+
+
         }
 
         private Player getPlayer(int i)
@@ -3543,6 +3590,7 @@ namespace Projeto
             gbGJogosForm.Visible = true;
             gbGTorneiosForm.Visible = false;
             btnJogoAcao.Text = "Criar";
+            gbGJogosForm.Enabled = true;
 
             if (radioTeamTournaments.Checked == true)
             {
@@ -3981,7 +4029,7 @@ namespace Projeto
 
         private void cmbequipajogador2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (radioTeamTournaments.Checked == true)
+            /*if (radioTeamTournaments.Checked == true)
             {
                 string nomeequipa2 = cmbequipajogador2.SelectedItem.ToString();
                 cmbequipajogador1.Items.Clear();
@@ -4004,27 +4052,25 @@ namespace Projeto
                         cmbequipajogador1.Items.Add(jogador.Name);
                     }
                 }
-            }
+            }*/
         }
 
         private void btngerirjogos_Click(object sender, EventArgs e)
         {
-
+            gbGJogosDados.Enabled = true;
             carregarArbitrosJogos();
             carregarDecks();
             if (dgvGTorneiosLista.SelectedRows.Count > 0)
             {
-
-
-
-
                 idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+
                 if (radioStandardTournaments.Checked == true)
                 {
                     carregarJogadoresJogos();
                     groupBoxEquipasJogos.Text = "Jogadores";
 
                 }
+
                 else if (radioTeamTournaments.Checked == true)
                 {
                     carregarEquipasJogos();
@@ -4033,39 +4079,409 @@ namespace Projeto
 
                 gbGTorneiosDados.Enabled = false;
 
-
-                carregarJogosTorneio();
-
-            }
-            
-            
-        }
-
-        private void carregarJogosTorneio()
-        {
-            if(radioTeamTournaments.Checked == true)
-            {
-
-                var query = from games in containerDados.GameSet.OfType<TeamGame>()
-                            join torneio in containerDados.TournamentSet.OfType<TeamTournament>()
-                            on games.TeamTournamentId equals torneio.Id
-                            where torneio.Id.Equals(idTorneio)
-                            select games;
-
-                dgvGJogosLista.DataSource = query.ToList();
-            }
+                refreshTabelaJogos();
+            }     
         }
 
         private void carregarEquipasJogos()
         {
             cmbequipajogador1.Items.Clear();
-            Team equipa1;
 
             foreach(Team equipa in containerDados.TeamSet)
             {
                 cmbequipajogador1.Items.Add(equipa.Name);
                 cmbequipajogador2.Items.Add(equipa.Name);
             }
+        }
+
+        private void btnJogoAcao_Click(object sender, EventArgs e)
+        {
+            if((int)nudNJogo.Value == 0 || cmbarbitrojogos.SelectedIndex == -1 || cmbequipajogador1.SelectedIndex == -1 || cmbequipajogador2.SelectedIndex == -1 || cmbdecks1.SelectedIndex == -1 || cmbdecks2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Preencha os campos corretamente.", "Preenchimento de dados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DateTime data = tpDataJogos.Value;
+                int nrjogo = (int)nudNJogo.Value;
+                string usernamearbitro = cmbarbitrojogos.SelectedItem.ToString();
+                string nomejogador1 = cmbequipajogador1.SelectedItem.ToString();
+                string nomejogador2 = cmbequipajogador2.SelectedItem.ToString();
+                string deck1 = cmbdecks1.SelectedItem.ToString();
+                string deck2 = cmbdecks2.SelectedItem.ToString();
+                string descricao = txtDescricaoJogo.Text;
+
+                if (btnJogoAcao.Text.Equals("Criar")){
+
+                    if(radioStandardTournaments.Checked == true)
+                    {
+                        guardarStandardTournament(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                    }
+                    else if(radioTeamTournaments.Checked == true)
+                    {
+                        guardarTeamTournament(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                    }
+                }
+                else if(btnJogoAcao.Text.Equals("Guardar"))
+                {
+                    if (radioStandardTournaments.Checked == true)
+                    {
+                        alterarStandardTournament(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                    }
+                    else if (radioTeamTournaments.Checked == true)
+                    {
+                        alterarTeamTournament(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                    }
+                }
+                cancelarJogo();
+                gbGJogosForm.Enabled = false;
+            }
+        }
+
+        private void alterarTeamTournament(DateTime data, int nrjogo, string usernamearbitro, string nomeequipa1, string nomeequipa2, string deck1, string deck2, string descricao)
+        {
+            int idarbitro = getIdArbitro(usernamearbitro);
+            int idequipa1 = getIdEquipa(nomeequipa1);
+            int idequipa2 = getIdEquipa(nomeequipa2);
+            int iddeck1 = getIdDeck(deck1);
+            int iddeck2 = getIdDeck(deck2);
+
+            idJogo = (int)dgvGJogosLista.CurrentRow.Cells[0].Value;
+
+            TeamGame jogoequipa = (TeamGame) containerDados.GameSet.Find(idJogo);
+
+            jogoequipa.Date = data;
+            jogoequipa.Number = nrjogo;
+            jogoequipa.RefereeId = idarbitro;
+            jogoequipa.TeamId1 = idequipa1;
+            jogoequipa.TeamId2 = idequipa2;
+            jogoequipa.DeckId1 = iddeck1;
+            jogoequipa.DeckId2 = iddeck2;
+            jogoequipa.Description = descricao;
+
+            containerDados.Entry(jogoequipa).State = EntityState.Modified;
+            containerDados.SaveChanges();
+            refreshTabelaJogos();
+        }
+
+        private void alterarStandardTournament(DateTime data, int nrjogo, string usernamearbitro, string nomejogador1, string nomejogador2, string deck1, string deck2, string descricao)
+        {
+            int idarbitro = getIdArbitro(usernamearbitro);
+            int idjogador1 = getIdJogador(nomejogador1);
+            int idjogador2 = getIdJogador(nomejogador2);
+            int iddeck1 = getIdDeck(deck1);
+            int iddeck2 = getIdDeck(deck2);
+
+            idJogo = (int)dgvGJogosLista.CurrentRow.Cells[0].Value;
+
+            StandardGame jogo = (StandardGame) containerDados.GameSet.Find(idJogo);
+
+            jogo.Date = data;
+            jogo.Number = nrjogo;
+            jogo.RefereeId = idarbitro;
+            jogo.PlayerId1 = idjogador1;
+            jogo.PlayerId2 = idjogador2;
+            jogo.DeckId1 = iddeck1;
+            jogo.DeckId2 = iddeck2;
+            jogo.Description = descricao;
+
+            containerDados.Entry(jogo).State = EntityState.Modified;
+            containerDados.SaveChanges();
+            refreshTabelaJogos();
+        }
+
+        private void guardarTeamTournament(DateTime data, int nrjogo, string usernamearbitro, string nomeequipa1, string nomeequipa2, string deck1, string deck2, string descricao)
+        {
+            int idarbitro = getIdArbitro(usernamearbitro);
+            int idequipa1 = getIdEquipa(nomeequipa1);
+            int idequipa2 = getIdEquipa(nomeequipa2);
+            int iddeck1 = getIdDeck(deck1);
+            int iddeck2 = getIdDeck(deck2);
+
+            try
+            {
+                TeamGame jogoequipa = new TeamGame
+                {
+                    Date = data,
+                    Number = nrjogo,
+                    RefereeId = idarbitro,
+                    TeamId1 = idequipa1,
+                    TeamId2 = idequipa2,
+                    DeckId1 = iddeck1,
+                    DeckId2 = iddeck2,
+                    Description = descricao,
+                    TeamTournamentId = idTorneio
+                };
+                containerDados.GameSet.Add(jogoequipa);
+                containerDados.SaveChanges();
+                refreshTabelaJogos();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro na inserção do jogo de jogadores." + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private int getIdEquipa(string nomeequipa)
+        {
+            int idequipa = 0;
+            foreach(Team equipa in containerDados.TeamSet)
+            {
+                if (equipa.Name.Equals(nomeequipa))
+                {
+                    idequipa = equipa.Id;
+                }
+            }
+            return idequipa;
+        }
+
+        private void guardarStandardTournament(DateTime data, int nrjogo, string usernamearbitro, string nomejogador1, string nomejogador2, string deck1, string deck2, string descricao)
+        {
+
+            int idarbitro = getIdArbitro(usernamearbitro);
+            int idjogador1 = getIdJogador(nomejogador1);
+            int idjogador2 = getIdJogador(nomejogador2);
+            int iddeck1 = getIdDeck(deck1);
+            int iddeck2 = getIdDeck(deck2);
+
+            try
+            {
+                StandardGame jogo = new StandardGame
+                {
+                    Date = data,
+                    Number = nrjogo,
+                    RefereeId = idarbitro,
+                    PlayerId1 = idjogador1,
+                    PlayerId2 = idjogador2,
+                    DeckId1 = iddeck1,
+                    DeckId2 = iddeck2,
+                    Description = descricao,
+                    StandardTournamentId = idTorneio
+                    
+
+                };
+                containerDados.GameSet.Add(jogo);
+                containerDados.SaveChanges();
+                refreshTabelaJogos();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro na inserção do jogo de equipa." + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void refreshTabelaJogos()
+        {
+            if (radioTeamTournaments.Checked == true)
+            {
+                dgvGJogosLista.DataSource = (from games in containerDados.GameSet.OfType<TeamGame>().Where(game => game.TeamTournamentId.Value.Equals(idTorneio))
+                                             select new { games.Id, games.Description, games.Number, games.Date, games.TeamId1, games.TeamId2, games.DeckId1, games.DeckId2 }).ToList();
+            }
+
+             else if(radioStandardTournaments.Checked == true)
+             {
+                dgvGJogosLista.DataSource = (from games in containerDados.GameSet.OfType<StandardGame>().Where(game => game.StandardTournamentId.Value.Equals(idTorneio))
+                                             select new { games.Id, games.Description, games.Number, games.Date, games.PlayerId1, games.PlayerId2, games.DeckId1, games.DeckId2}).ToList();
+            }
+
+            int i = dgvGJogosLista.Rows.Count;
+            dgvGJogosLista.CurrentCell = dgvGJogosLista.Rows[i - 1].Cells[0];
+        }
+
+        private int getIdDeck(string nomedeck)
+        {
+            int iddeck = 0;
+            foreach(Deck baralho in containerDados.DeckSet)
+            {
+                if (baralho.Name.Equals(nomedeck))
+                {
+                    iddeck = baralho.Id;
+                }
+            }
+            return iddeck;
+        }
+
+        private int getIdJogador(string nomejogador)
+        {
+            int idjogador = 0;
+            foreach(Player jogador in containerDados.PlayerSet)
+            {
+                if (jogador.Name.Equals(nomejogador))
+                {
+                    idjogador = jogador.Id;
+                }
+            }
+            return idjogador;
+        }
+
+        private int getIdArbitro(string usernamearbitro)
+        {
+            int idarbitro = 0;
+            foreach(Referee arbitro in containerDados.UserSet.OfType<Referee>())
+            {
+                if (arbitro.Username.Equals(usernamearbitro))
+                {
+                    idarbitro = arbitro.Id;
+                }
+            }
+            return idarbitro;
+        }
+
+        private void btnAlterarJogo_Click(object sender, EventArgs e)
+        {
+            gbGJogosForm.Enabled = true;
+            gbGJogosForm.Visible = true;
+            btnJogoAcao.Text = "Guardar";
+
+            if(dgvGJogosLista.SelectedCells.Count > 0)
+            {
+                idJogo = (int)dgvGJogosLista.CurrentRow.Cells[0].Value;
+
+                if(radioTeamTournaments.Checked == true)
+                {
+                    foreach(TeamGame jogoequipa in containerDados.GameSet.OfType<TeamGame>())
+                    {
+                        if(jogoequipa.Id == idJogo)
+                        {
+                            tpDataJogos.Value = jogoequipa.Date;
+                            nudNJogo.Value = jogoequipa.Number;
+                            int nrarbitro = (int)jogoequipa.RefereeId;
+                            string nomearbitro = getNomeArbitro(nrarbitro);
+                            cmbarbitrojogos.SelectedItem = nomearbitro;
+                            int nrequipa1 = (int)jogoequipa.TeamId1;
+                            string nomeequipa1 = getNomeEquipa(nrequipa1);
+                            cmbequipajogador1.SelectedItem = nomeequipa1;
+                            int nrequipa2 = (int)jogoequipa.TeamId2;
+                            string nomeequipa2 = getNomeEquipa(nrequipa2);
+                            cmbequipajogador2.SelectedItem = nomeequipa2;
+                            int nrdeck1 = (int)jogoequipa.DeckId1;
+                            string nomedeck1 = getNomeDeck(nrdeck1);
+                            cmbdecks1.SelectedItem = nomedeck1;
+                            int nrdeck2 = (int)jogoequipa.DeckId2;
+                            string nomedeck2 = getNomeDeck(nrdeck2);
+                            cmbdecks2.SelectedItem = nomedeck2;
+                            txtDescricaoJogo.Text = jogoequipa.Description;
+                        }
+                    }
+                }
+                else if(radioStandardTournaments.Checked == true)
+                {
+                    foreach (StandardGame jogo in containerDados.GameSet.OfType<StandardGame>())
+                    {
+                        if (jogo.Id == idJogo)
+                        {
+                            tpDataJogos.Value = jogo.Date;
+                            nudNJogo.Value = jogo.Number;
+                            int nrarbitro = (int)jogo.RefereeId;
+                            string nomearbitro = getNomeArbitro(nrarbitro);
+                            cmbarbitrojogos.SelectedItem = nomearbitro;
+                            int nrjogador1 = (int)jogo.PlayerId1;
+                            string nomejogador1 = getNomeJogador(nrjogador1);
+                            cmbequipajogador1.SelectedItem = nomejogador1;
+                            int nrjogador2 = (int)jogo.PlayerId2;
+                            string nomejogador2 = getNomeJogador(nrjogador2);
+                            cmbequipajogador2.SelectedItem = nomejogador2;
+                            int nrdeck1 = (int)jogo.DeckId1;
+                            string nomedeck1 = getNomeDeck(nrdeck1);
+                            cmbdecks1.SelectedItem = nomedeck1;
+                            int nrdeck2 = (int)jogo.DeckId2;
+                            string nomedeck2 = getNomeDeck(nrdeck2);
+                            cmbdecks2.SelectedItem = nomedeck2;
+                            txtDescricaoJogo.Text = jogo.Description;
+                        }
+                    }
+                }
+
+            }
+            
+        }
+
+        private string getNomeJogador(int nrjogador)
+        {
+            string nomejogador = "";
+            foreach(Player jogador in containerDados.PlayerSet)
+            {
+                if(jogador.Id == nrjogador)
+                {
+                    nomejogador = jogador.Name;
+                }
+            }
+            return nomejogador;
+        }
+
+        private string getNomeDeck(int nrdeck)
+        {
+            string nomedeck = "";
+            foreach(Deck baralho in containerDados.DeckSet)
+            {
+                if(baralho.Id == nrdeck)
+                {
+                    nomedeck = baralho.Name;
+                }
+            }
+            return nomedeck;
+        }
+
+        private string getNomeEquipa(int nrequipa)
+        {
+            string nomeequipa = "";
+            foreach(Team equipa in containerDados.TeamSet)
+            {
+                if(equipa.Id == nrequipa)
+                {
+                    nomeequipa = equipa.Name;
+                }
+            }
+            return nomeequipa;
+        }
+
+        private string getNomeArbitro(int idarbitro)
+        {
+            string nomearbitro = "";
+            foreach(Referee arbitro in containerDados.UserSet.OfType<Referee>())
+            {
+                if(arbitro.Id == idarbitro)
+                {
+                    nomearbitro = arbitro.Name;
+                }
+            }
+            return nomearbitro;
+        }
+
+        private void btnJogoCancelar_Click(object sender, EventArgs e)
+        {
+            cancelarJogo();
+        }
+
+        private void cancelarJogo()
+        {
+            tpDataJogos.Value = DateTime.Now;
+            nudNJogo.Value = 0;
+            cmbarbitrojogos.SelectedIndex = -1;
+            cmbequipajogador1.SelectedIndex = -1;
+            cmbequipajogador2.SelectedIndex = -1;
+            cmbdecks1.SelectedIndex = -1;
+            cmbdecks2.SelectedIndex = -1;
+            txtDescricaoJogo.ResetText();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cancelarJogo();
+            gbGJogosForm.Enabled = false;
+            gbGJogosDados.Enabled = false;
+            gbGTorneiosDados.Enabled = true;
+        }
+
+        private void groupBoxEquipasJogos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbGJogosForm_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
