@@ -21,10 +21,8 @@
         <AssociationConnector Association="DiagramaArcmage.RefereeGame" />
         <AssociationConnector Association="DiagramaArcmage.DeckGame" />
         <AssociationConnector Association="DiagramaArcmage.DeckGame1" />
-        <AssociationConnector Association="DiagramaArcmage.StandardGameStandardTournament" />
         <AssociationConnector Association="DiagramaArcmage.PlayerStandardGame" />
         <AssociationConnector Association="DiagramaArcmage.PlayerStandardGame1" />
-        <AssociationConnector Association="DiagramaArcmage.TeamGameTeamTournament" />
         <AssociationConnector Association="DiagramaArcmage.TeamTeamGame" />
         <AssociationConnector Association="DiagramaArcmage.TeamTeamGame1" />
         <AssociationConnector Association="DiagramaArcmage.TeamTeamTournament" />
@@ -41,6 +39,8 @@
         <EntityTypeShape EntityType="DiagramaArcmage.TeamPlayers" Width="1.5" PointX="15.75" PointY="8.375" />
         <AssociationConnector Association="DiagramaArcmage.TeamTeamPlayers" />
         <AssociationConnector Association="DiagramaArcmage.TeamPlayersPlayer" />
+        <AssociationConnector Association="DiagramaArcmage.TeamGameTeamTournament" />
+        <AssociationConnector Association="DiagramaArcmage.StandardGameStandardTournament" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
