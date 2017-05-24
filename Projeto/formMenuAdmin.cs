@@ -3660,10 +3660,114 @@ namespace Projeto
 
         #region Gestão de Jogos
 
+        private void btnInserirJogo_Click(object sender, EventArgs e)
+        {
+            //gbGJogosForm.Visible = true;
+            //btnJogoAcao.Text = "Criar";
+
+            gbGJogosForm.Visible = true;
+            gbGTorneiosForm.Visible = false;
+            btnJogoAcao.Text = "Criar";
+
+            if (radioTeamTournaments.Checked == true)
+            {
+                //carregar dados das equipas
+                carregarEquipas();
+            }
+
+            else if (radioStandardTournaments.Checked == true)
+            {
+                //carregar dados dos jogadores
+                carregarJogadoresJogos();
+            }
+        }
+
         private void btnRemoverJogo_Click(object sender, EventArgs e)
         {
             gbGTorneiosForm.Visible = false;
             gbGJogosForm.Visible = true;
+        }
+
+        private void btngerirjogos_Click(object sender, EventArgs e)
+        {
+            carregarArbitrosJogos();
+            carregarDecks();
+            if (dgvGTorneiosLista.SelectedRows.Count > 0)
+            {
+                idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+
+                if (radioStandardTournaments.Checked == true)
+                {
+                    carregarJogadoresJogos();
+                    groupBoxEquipasJogos.Text = "Jogadores";
+
+                }
+                else if (radioTeamTournaments.Checked == true)
+                {
+                    carregarEquipasJogos();
+                    groupBoxEquipasJogos.Text = "Equipas";
+                }
+
+                gbGTorneiosDados.Enabled = false;
+                carregarJogosTorneio();
+            }
+        }
+
+        private void tbGestaoTorneios_Enter(object sender, EventArgs e)
+        {
+            /*cmbJogador1Jogo.Items.Clear();
+
+            Player jogador1;
+            if(cmbJogador1Jogo.SelectedIndex != -1)
+            {
+                jogador1 = (Player)cmbJogador1Jogo.SelectedItem;
+
+
+            }
+
+                foreach(Player jogador in containerDados.PlayerSet)
+                {
+                    cmbJogador1Jogo.Items.Add(jogador.Name);
+                    cmbJogador2Jogo.Items.Add(jogador.Name);
+                }
+                */
+
+
+            /*carregarJogadoresJogos();
+
+            carregarArbitrosJogos();
+            carregarDecks();
+            */
+            //MessageBox.Show("Olá");
+        }
+
+        private void cmbJogador1Jogo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (radioTeamTournaments.Checked == true)
+            {
+                string nomeequipa1 = cmbequipajogador1.SelectedItem.ToString();
+                cmbequipajogador2.Items.Clear();
+                foreach (Team equipa in containerDados.TeamSet)
+                {
+                    if (!equipa.Name.Equals(nomeequipa1))
+                    {
+                        cmbequipajogador2.Items.Add(equipa.Name);
+                    }
+                }
+            }
+            else if (radioStandardTournaments.Checked == true)
+            {
+                string nomejogador1 = cmbequipajogador1.SelectedItem.ToString();
+                cmbequipajogador2.Items.Clear();
+                foreach (Player jogador in containerDados.PlayerSet)
+                {
+                    if (!jogador.Name.Equals(nomejogador1))
+                    {
+                        cmbequipajogador2.Items.Add(jogador.Name);
+                    }
+                }
+
+            }
         }
 
         private void cmbequipajogador2_SelectedIndexChanged(object sender, EventArgs e)
@@ -3697,31 +3801,6 @@ namespace Projeto
             }
         }
 
-        private void btngerirjogos_Click(object sender, EventArgs e)
-        {
-            carregarArbitrosJogos();
-            carregarDecks();
-            if (dgvGTorneiosLista.SelectedRows.Count > 0)
-            {
-                idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
-
-                if (radioStandardTournaments.Checked == true)
-                {
-                    carregarJogadoresJogos();
-                    groupBoxEquipasJogos.Text = "Jogadores";
-
-                }
-                else if (radioTeamTournaments.Checked == true)
-                {
-                    carregarEquipasJogos();
-                    groupBoxEquipasJogos.Text = "Equipas";
-                }
-
-                gbGTorneiosDados.Enabled = false;
-                carregarJogosTorneio();
-            }
-        }
-
         private void carregarJogosTorneio()
         {
             if(radioTeamTournaments.Checked == true)
@@ -3746,34 +3825,6 @@ namespace Projeto
                 cmbequipajogador1.Items.Add(equipa.Name);
                 cmbequipajogador2.Items.Add(equipa.Name);
             }
-        }
-
-        private void tbGestaoTorneios_Enter(object sender, EventArgs e)
-        {
-            /*cmbJogador1Jogo.Items.Clear();
-
-            Player jogador1;
-            if(cmbJogador1Jogo.SelectedIndex != -1)
-            {
-                jogador1 = (Player)cmbJogador1Jogo.SelectedItem;
-
-
-            }
-
-                foreach(Player jogador in containerDados.PlayerSet)
-                {
-                    cmbJogador1Jogo.Items.Add(jogador.Name);
-                    cmbJogador2Jogo.Items.Add(jogador.Name);
-                }
-                */
-
-
-            /*carregarJogadoresJogos();
-
-            carregarArbitrosJogos();
-            carregarDecks();
-            */
-            //MessageBox.Show("Olá");
         }
 
         private void carregarDecks()
@@ -3825,32 +3876,17 @@ namespace Projeto
 
         }
 
-        private void cmbJogador1Jogo_SelectedIndexChanged(object sender, EventArgs e)
+        private void carregarEquipas()
         {
-            if (radioTeamTournaments.Checked == true)
-            {
-                string nomeequipa1 = cmbequipajogador1.SelectedItem.ToString();
-                cmbequipajogador2.Items.Clear();
-                foreach (Team equipa in containerDados.TeamSet)
-                {
-                    if (!equipa.Name.Equals(nomeequipa1))
-                    {
-                        cmbequipajogador2.Items.Add(equipa.Name);
-                    }
-                }
-            }
-            else if (radioStandardTournaments.Checked == true)
-            {
-                string nomejogador1 = cmbequipajogador1.SelectedItem.ToString();
-                cmbequipajogador2.Items.Clear();
-                foreach (Player jogador in containerDados.PlayerSet)
-                {
-                    if (!jogador.Name.Equals(nomejogador1))
-                    {
-                        cmbequipajogador2.Items.Add(jogador.Name);
-                    }
-                }
+            cmbequipajogador1.Items.Clear();
+            cmbequipajogador2.Items.Clear();
 
+            Team equipa1;
+
+            foreach (Team equipa in containerDados.TeamSet)
+            {
+                cmbequipajogador1.Items.Add(equipa.Name);
+                cmbequipajogador2.Items.Add(equipa.Name);
             }
         }
 
@@ -3870,41 +3906,9 @@ namespace Projeto
             return null;
         }
 
-        private void btnInserirJogo_Click(object sender, EventArgs e)
-        {
-            //gbGJogosForm.Visible = true;
-            //btnJogoAcao.Text = "Criar";
+        #endregion
 
-            gbGJogosForm.Visible = true;
-            gbGTorneiosForm.Visible = false;
-            btnJogoAcao.Text = "Criar";
-
-            if (radioTeamTournaments.Checked == true)
-            {
-                //carregar dados das equipas
-                carregarEquipas();
-            }
-
-            else if (radioStandardTournaments.Checked == true)
-            {
-                //carregar dados dos jogadores
-                carregarJogadoresJogos();
-            }
-        }
-
-        private void carregarEquipas()
-        {
-            cmbequipajogador1.Items.Clear();
-            cmbequipajogador2.Items.Clear();
-
-            Team equipa1;
-
-            foreach (Team equipa in containerDados.TeamSet)
-            {
-                cmbequipajogador1.Items.Add(equipa.Name);
-                cmbequipajogador2.Items.Add(equipa.Name);
-            }
-        }
+        #region Pesquisa de Torneios e Jogos
 
         #endregion
     }
