@@ -482,7 +482,6 @@
             this.tcGestao.SelectedIndex = 0;
             this.tcGestao.Size = new System.Drawing.Size(785, 425);
             this.tcGestao.TabIndex = 0;
-            this.tcGestao.Enter += new System.EventHandler(this.tcGestao_Enter);
             // 
             // tbGestaoJogadores
             // 
@@ -2299,7 +2298,7 @@
             this.tbGestaoBaralhos.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoBaralhos.Name = "tbGestaoBaralhos";
             this.tbGestaoBaralhos.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoBaralhos.Size = new System.Drawing.Size(777, 398);
+            this.tbGestaoBaralhos.Size = new System.Drawing.Size(777, 399);
             this.tbGestaoBaralhos.TabIndex = 4;
             this.tbGestaoBaralhos.Text = "Baralhos";
             this.tbGestaoBaralhos.UseVisualStyleBackColor = true;
@@ -2319,7 +2318,7 @@
             this.panelGestaoBaralho.Name = "panelGestaoBaralho";
             this.panelGestaoBaralho.RowCount = 1;
             this.panelGestaoBaralho.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelGestaoBaralho.Size = new System.Drawing.Size(773, 199);
+            this.panelGestaoBaralho.Size = new System.Drawing.Size(773, 200);
             this.panelGestaoBaralho.TabIndex = 1;
             // 
             // gbGCartasBotoes
@@ -2410,7 +2409,7 @@
             this.gbGCartasnoBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.gbGCartasnoBaralho.Name = "gbGCartasnoBaralho";
             this.gbGCartasnoBaralho.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGCartasnoBaralho.Size = new System.Drawing.Size(332, 195);
+            this.gbGCartasnoBaralho.Size = new System.Drawing.Size(332, 196);
             this.gbGCartasnoBaralho.TabIndex = 2;
             this.gbGCartasnoBaralho.TabStop = false;
             this.gbGCartasnoBaralho.Text = "Cartas do Baralho";
@@ -2427,7 +2426,7 @@
             this.lvCartasBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.lvCartasBaralho.MultiSelect = false;
             this.lvCartasBaralho.Name = "lvCartasBaralho";
-            this.lvCartasBaralho.Size = new System.Drawing.Size(328, 178);
+            this.lvCartasBaralho.Size = new System.Drawing.Size(328, 179);
             this.lvCartasBaralho.TabIndex = 1;
             this.lvCartasBaralho.UseCompatibleStateImageBehavior = false;
             this.lvCartasBaralho.View = System.Windows.Forms.View.Details;
@@ -2456,7 +2455,7 @@
             this.gbGListaDeCartas.Margin = new System.Windows.Forms.Padding(2);
             this.gbGListaDeCartas.Name = "gbGListaDeCartas";
             this.gbGListaDeCartas.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGListaDeCartas.Size = new System.Drawing.Size(333, 195);
+            this.gbGListaDeCartas.Size = new System.Drawing.Size(333, 196);
             this.gbGListaDeCartas.TabIndex = 1;
             this.gbGListaDeCartas.TabStop = false;
             this.gbGListaDeCartas.Text = "Lista de Cartas";
@@ -2473,7 +2472,7 @@
             this.lvListaCartas.Margin = new System.Windows.Forms.Padding(2);
             this.lvListaCartas.MultiSelect = false;
             this.lvListaCartas.Name = "lvListaCartas";
-            this.lvListaCartas.Size = new System.Drawing.Size(329, 178);
+            this.lvListaCartas.Size = new System.Drawing.Size(329, 179);
             this.lvListaCartas.TabIndex = 1;
             this.lvListaCartas.UseCompatibleStateImageBehavior = false;
             this.lvListaCartas.View = System.Windows.Forms.View.Details;
@@ -2686,7 +2685,7 @@
             this.tbGestaoUtilizadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoUtilizadores.Name = "tbGestaoUtilizadores";
             this.tbGestaoUtilizadores.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoUtilizadores.Size = new System.Drawing.Size(777, 398);
+            this.tbGestaoUtilizadores.Size = new System.Drawing.Size(777, 399);
             this.tbGestaoUtilizadores.TabIndex = 5;
             this.tbGestaoUtilizadores.Text = "Utilizadores";
             this.tbGestaoUtilizadores.UseVisualStyleBackColor = true;
@@ -2710,7 +2709,7 @@
             this.gbGUtilizadoresDados.MinimumSize = new System.Drawing.Size(292, 317);
             this.gbGUtilizadoresDados.Name = "gbGUtilizadoresDados";
             this.gbGUtilizadoresDados.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGUtilizadoresDados.Size = new System.Drawing.Size(523, 402);
+            this.gbGUtilizadoresDados.Size = new System.Drawing.Size(523, 403);
             this.gbGUtilizadoresDados.TabIndex = 0;
             this.gbGUtilizadoresDados.TabStop = false;
             this.gbGUtilizadoresDados.Text = "Utilizadores";
@@ -2744,7 +2743,7 @@
             // btnEliminarUtilizador
             // 
             this.btnEliminarUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminarUtilizador.Location = new System.Drawing.Point(446, 367);
+            this.btnEliminarUtilizador.Location = new System.Drawing.Point(446, 368);
             this.btnEliminarUtilizador.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarUtilizador.Name = "btnEliminarUtilizador";
             this.btnEliminarUtilizador.Size = new System.Drawing.Size(62, 24);
@@ -2766,7 +2765,7 @@
             // btnAlterarUtilizador
             // 
             this.btnAlterarUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterarUtilizador.Location = new System.Drawing.Point(385, 367);
+            this.btnAlterarUtilizador.Location = new System.Drawing.Point(385, 368);
             this.btnAlterarUtilizador.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarUtilizador.Name = "btnAlterarUtilizador";
             this.btnAlterarUtilizador.Size = new System.Drawing.Size(58, 24);
@@ -2790,13 +2789,13 @@
             this.dgvGUtilizadoresLista.ReadOnly = true;
             this.dgvGUtilizadoresLista.RowTemplate.Height = 24;
             this.dgvGUtilizadoresLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGUtilizadoresLista.Size = new System.Drawing.Size(494, 286);
+            this.dgvGUtilizadoresLista.Size = new System.Drawing.Size(494, 287);
             this.dgvGUtilizadoresLista.TabIndex = 3;
             // 
             // btnInserirUtilizador
             // 
             this.btnInserirUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirUtilizador.Location = new System.Drawing.Point(319, 367);
+            this.btnInserirUtilizador.Location = new System.Drawing.Point(319, 368);
             this.btnInserirUtilizador.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirUtilizador.Name = "btnInserirUtilizador";
             this.btnInserirUtilizador.Size = new System.Drawing.Size(62, 24);
@@ -2832,7 +2831,7 @@
             this.gbGAdministradorForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGAdministradorForm.Name = "gbGAdministradorForm";
             this.gbGAdministradorForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGAdministradorForm.Size = new System.Drawing.Size(244, 402);
+            this.gbGAdministradorForm.Size = new System.Drawing.Size(244, 403);
             this.gbGAdministradorForm.TabIndex = 1;
             this.gbGAdministradorForm.TabStop = false;
             this.gbGAdministradorForm.Text = "Campos";
@@ -2841,7 +2840,7 @@
             // btnCancelarAdministrador
             // 
             this.btnCancelarAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarAdministrador.Location = new System.Drawing.Point(161, 366);
+            this.btnCancelarAdministrador.Location = new System.Drawing.Point(161, 367);
             this.btnCancelarAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarAdministrador.Name = "btnCancelarAdministrador";
             this.btnCancelarAdministrador.Size = new System.Drawing.Size(62, 25);
@@ -2853,7 +2852,7 @@
             // btnAcaoAdministrador
             // 
             this.btnAcaoAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAcaoAdministrador.Location = new System.Drawing.Point(97, 366);
+            this.btnAcaoAdministrador.Location = new System.Drawing.Point(97, 367);
             this.btnAcaoAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcaoAdministrador.Name = "btnAcaoAdministrador";
             this.btnAcaoAdministrador.Size = new System.Drawing.Size(60, 25);
@@ -2937,7 +2936,7 @@
             this.gbGArbitroForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGArbitroForm.Name = "gbGArbitroForm";
             this.gbGArbitroForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGArbitroForm.Size = new System.Drawing.Size(244, 402);
+            this.gbGArbitroForm.Size = new System.Drawing.Size(244, 403);
             this.gbGArbitroForm.TabIndex = 16;
             this.gbGArbitroForm.TabStop = false;
             this.gbGArbitroForm.Text = "Campos";
@@ -3039,7 +3038,7 @@
             // btnAcaoArbitro
             // 
             this.btnAcaoArbitro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAcaoArbitro.Location = new System.Drawing.Point(97, 366);
+            this.btnAcaoArbitro.Location = new System.Drawing.Point(97, 367);
             this.btnAcaoArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcaoArbitro.Name = "btnAcaoArbitro";
             this.btnAcaoArbitro.Size = new System.Drawing.Size(60, 25);
@@ -3051,7 +3050,7 @@
             // btnCancelarArbitro
             // 
             this.btnCancelarArbitro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarArbitro.Location = new System.Drawing.Point(161, 366);
+            this.btnCancelarArbitro.Location = new System.Drawing.Point(161, 367);
             this.btnCancelarArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarArbitro.Name = "btnCancelarArbitro";
             this.btnCancelarArbitro.Size = new System.Drawing.Size(62, 25);
@@ -3314,6 +3313,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGListaEquipasPesquisa.AutoGenerateColumns = false;
+            this.dgvGListaEquipasPesquisa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGListaEquipasPesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGListaEquipasPesquisa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn7,
