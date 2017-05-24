@@ -1110,18 +1110,31 @@ namespace Projeto
 
         #region Pesquisa de Utilizadores
 
+        /// <summary>
+        /// Evento do radio button "Administrador", na tab de Pesquisa de Utilizadores.
+        /// Apenas invoca os métodos ResetPesquisaUtilizadoresForm e RefreshTabelaPesquisaUtilizadores para limpar o form e fazer refresh à tabela.
+        /// </summary>
         private void RadioPesquisarAdministrador(object sender, EventArgs e)
         {
             ResetPesquisaUtilizadoresForm();
             RefreshTabelaPesquisaUtilizadores();
         }
 
+        /// <summary>
+        /// Evento do radio button "Arbitro", na tab de Pesquisa de Utilizadores.
+        /// Apenas invoca os métodos ResetPesquisaUtilizadoresForm e RefreshTabelaPesquisaUtilizadores para limpar o form e fazer refresh à tabela.
+        /// </summary>
         private void RadioPesquisarArbitro(object sender, EventArgs e)
         {
             ResetPesquisaUtilizadoresForm();
             RefreshTabelaPesquisaUtilizadores();
         }
 
+        /// <summary>
+        /// Evento da checkbox "Ativo", na tab de Pesquisa de Utilizadores.
+        /// Indica se o utilizador deseja pesquisar arbitros ativos, isto é, tenham jogos futuros associados.
+        /// Invoca os métodos de pesquisa de Arbitros, dependendo se a checkbox seja ativada.
+        /// </summary>
         private void CheckArbitroAtivo(object sender, EventArgs e)
         {
             if (checkPesquisaArbitroAtivo.Checked == true)
@@ -1135,6 +1148,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do botão "Pesquisar", na tab de Pesquisa de Utilizadores.
+        /// Invoca os métodos de Pesquisa de Utilizadores, dependendo do tipo de utilizador selecionado
+        /// </summary>
         private void PesquisaAvancadaUtilizador(object sender, EventArgs e)
         {
             if (radioPesquisaAdministrador.Checked == true)
@@ -2609,7 +2626,7 @@ namespace Projeto
         {
 
             carregarCancelarJogadores();
-            gbGJogadoresForm.Enabled = true;
+            gbGJogadoresForm.Visible = true;
             btnJogadoresAcao.Text = "Guardar";
 
 
@@ -2841,7 +2858,7 @@ namespace Projeto
         private void btnAlterarEquipa_Click(object sender, EventArgs e)
         {
             carregarCancelarEquipas();
-            gbGEquipasForm.Enabled = true;
+            gbGEquipasForm.Visible = true;
             btnEquipaAcao.Text = "Guardar";
 
             Image file;
@@ -3549,8 +3566,8 @@ namespace Projeto
         {
             ResetFormTorneios();
             txtTorneioAcao.Text = "Adicionar";
-            gbGTorneiosForm.Enabled = true;
             gbGTorneiosForm.Visible = true;
+            gbGJogosForm.Visible = false;
         }
 
         private void BotaoAlterarTorneio(object sender, EventArgs e)
@@ -3568,10 +3585,9 @@ namespace Projeto
                     tpDataTorneio.Value = torneio.Date;
 
                     txtTorneioAcao.Text = "Aplicar";
-                    gbGTorneiosForm.Enabled = true;
                     gbGTorneiosForm.Visible = true;
-                    gbTipoTorneio.Enabled = false;
                     gbTipoTorneio.Visible = false;
+                    gbGJogosForm.Visible = false;
                 }
 
                 else if (VerificarTipoStandardTournament())
@@ -3583,10 +3599,9 @@ namespace Projeto
                     tpDataTorneio.Value = torneio.Date;
 
                     txtTorneioAcao.Text = "Aplicar";
-                    gbGTorneiosForm.Enabled = true;
                     gbGTorneiosForm.Visible = true;
-                    gbTipoTorneio.Enabled = false;
                     gbTipoTorneio.Visible = false;
+                    gbGJogosForm.Visible = false;
                 }
             }
         }
