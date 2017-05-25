@@ -36,20 +36,16 @@ namespace Projeto
         /// </summary>
         private int idBaralho;
 
-        /// <summary>
-        /// Variável usada para guardar o id do jogador selecionado para alterar/remover
-        /// </summary>
         private int idJogador;
 
-        /// <summary>
-        /// Variável usada para guardar o id da equipa selecionado para alterar/remover
-        /// </summary>
         private int idEquipa;
 
         /// <summary>
         /// Variavel privada que guarda o id do torneio selecionado.
         /// </summary>
         private int idTorneio;
+
+        private TeamTournament torneioequipaselecionado;
 
         public formMenuAdmin()
         {
@@ -3884,6 +3880,8 @@ namespace Projeto
         {
             cmbequipajogador1.Items.Clear();
             cmbequipajogador2.Items.Clear();
+
+            Team equipa1;
 
             foreach (Team equipa in containerDados.TeamSet)
             {
