@@ -1446,6 +1446,7 @@ namespace Projeto
         /// </summary>
         private void btnAlterarCarta_Click(object sender, EventArgs e)
         {
+            gbGCartasForm.Visible = true;
             gbGCartasForm.Enabled = true;
             btnAcaoCarta.Text = "Guardar";
 
@@ -1924,8 +1925,11 @@ namespace Projeto
             this.deckSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Decks.DeckSet);
             dgvGBaralhosLista.DataSource = deckSetBindingSource;
 
-            int lastrow = dgvGBaralhosLista.Rows.GetLastRow(DataGridViewElementStates.Visible);
-            dgvGBaralhosLista.CurrentCell = dgvGBaralhosLista[0, lastrow];
+            if (dgvGBaralhosLista.Rows.Count > 0)
+            {
+                int lastrow = dgvGBaralhosLista.Rows.GetLastRow(DataGridViewElementStates.Visible);
+                dgvGBaralhosLista.CurrentCell = dgvGBaralhosLista[0, lastrow];
+            }
         }
 
         /// <summary>
@@ -2108,7 +2112,7 @@ namespace Projeto
             }
             else
             {
-                btnAdicionarCartaBaralho.Enabled = false; btnAdicionarCartaBaralho.Enabled = false;
+                btnAdicionarCartaBaralho.Enabled = false;
             }
         }
 
@@ -2120,13 +2124,13 @@ namespace Projeto
         /// </summary>
         private void lvCartasBaralho_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvListaCartas.SelectedItems.Count > 0 && Convert.ToInt32(lblNCartasNoBaralho.Text) < 45)
+            if (lvCartasBaralho.SelectedItems.Count > 0)
             {
-                btnAdicionarCartaBaralho.Enabled = true; btnAdicionarCartaBaralho.Enabled = true;
+                btnRemoverCartaBaralho.Enabled = true;
             }
             else
             {
-                btnAdicionarCartaBaralho.Enabled = false; btnAdicionarCartaBaralho.Enabled = false;
+                btnRemoverCartaBaralho.Enabled = false;
             }
         }
 
@@ -2497,7 +2501,6 @@ namespace Projeto
                        MessageBox.Show("Jogador não inserido com sucesso.");
                    }
                    */
-
                 }
                 else if (btnJogadoresAcao.Text == "Guardar")
                 {
@@ -2509,8 +2512,10 @@ namespace Projeto
                         alterarJogadorExistente(nome, email, nickname, idade, caminho);
                         atualizarTabelaJogadores();
                     }
-
                 }
+
+                gbGJogadoresForm.Enabled = false;
+                gbGJogadoresForm.Visible = false;
             }
         }
 
@@ -2827,6 +2832,9 @@ namespace Projeto
                         atualizarTabelaEquipas();
                     }
                 }
+
+                gbGEquipasForm.Enabled = false;
+                gbGEquipasForm.Visible = false;
             }
         }
 
@@ -2969,15 +2977,11 @@ namespace Projeto
 
         }
 
-        private void dgvGListaEquipas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dgvGListaEquipas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (dgvGListaEquipas.RowCount > 0 && dgvGListaEquipas.SelectedCells.Count > 0)
             {
+                btnGerirEquipa.Enabled = true;
                 btnAlterarEquipa.Enabled = true;
                 btnRemoverEquipa.Enabled = true;
             }
@@ -3035,70 +3039,6 @@ namespace Projeto
             }
         }
 
-
-
-        /*private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if(cbxpesquisarpor.SelectedIndex != -1)
-            {
-                string pesquisapor = cbxpesquisarpor.SelectedItem.ToString();
-                string pesquisa = txtpesquisa.Text;
-                if (!pesquisa.Equals(""))
-                {
-                    
-                    if (pesquisapor.Equals("Nome"))
-                    {
-                        var query = from player in container.PlayerSet
-                                    where player.Name.Contains(pesquisa)
-                                    select player;
-                        dgvGListaJogadoresPesquisa.DataSource = query.ToList();
-                    }
-                    else if (pesquisapor.Equals("Email"))
-                    {
-                        var query1 = from player in container.PlayerSet
-                                where player.Email.Contains(pesquisa)
-                                select player;
-                        dgvGListaJogadoresPesquisa.DataSource = query1.ToList();
-                    }
-                    else if (pesquisapor.Equals("Nickname"))
-                    {
-                        var query2 = from player in container.PlayerSet
-                                    where player.Nickname.Contains(pesquisa)
-                                    select player;
-                        dgvGListaJogadoresPesquisa.DataSource = query2.ToList();
-                    }
-                    else if (pesquisapor.Equals("Idade"))
-                    {
-                        //int idade = int.Parse(txtpesquisa.Text);
-                        int idade = 0;
-                       
-                        if(int.TryParse(pesquisa, out idade))
-                        {
-                          var query3 = from player in container.PlayerSet
-                                        where player.Age == idade
-                                        select player;
-                          dgvGListaJogadoresPesquisa.DataSource = query3.ToList();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Insira valores numéricos.");
-                        }
-
-
-                            
-                    
-                        
-                    }
-                    
-                }
-                else
-                {
-                    atualizarTabelaJogadoresPesquisa();
-                }
-            }
-        }
-        */
-
         private void atualizarTabelaJogadoresPesquisa()
         {
             dgvGListaJogadoresPesquisa.DataSource = null;
@@ -3108,102 +3048,6 @@ namespace Projeto
             int i = dgvGListaJogadoresPesquisa.Rows.Count;
 
             dgvGListaJogadoresPesquisa.CurrentCell = dgvGListaJogadoresPesquisa.Rows[i - 1].Cells[0];
-        }
-
-        private void btnExportar_Click(object sender, EventArgs e)
-        {
-
-            /*string filtro = " ";
-            if (txtNomeJogador2.Text.Equals("") && txtEmailJogador2.Text.Equals("") && txtNicknameJogador2.Text.Equals("") && nudIdadeJogador2.Value == 0)
-            {
-                filtro = "Nenhum filtro aplicado. Todos os jogadores.";
-            }
-            else
-            {
-                filtro = "Filtro Aplicado\n";
-                if (!txtNomeJogador2.Text.Equals(""))
-                {
-                    filtro += "Nome: " + txtNomeJogador2.Text;
-                }
-                if (!txtEmailJogador2.Text.Equals(""))
-                {
-                    filtro += "\nEmail: " + txtEmailJogador2.Text;
-                }
-                if (!txtNicknameJogador2.Text.Equals(""))
-                {
-                    filtro += "\nNickname: " + txtNicknameJogador2.Text;
-                }
-                if ((int)nudIdadeJogador2.Value != 0)
-                {
-                    filtro += "\nIdade: " + nudIdadeJogador2.Value;
-                }
-
-
-
-                Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Test.pdf", FileMode.Create));
-                doc.Open();
-
-                Paragraph paragraph = new Paragraph(filtro);
-
-                doc.Add(paragraph);
-                
-
-                string[] tit = { "Id", "Nome", "Email", "Nickname", "Idade" };
-                float[] larg = { 0.08f, 0.3f, 0.2f, 0.2f, 0.1f };
-
-                PdfPTable tabela = new PdfPTable(tit.Length);
-
-                tabela.SetWidths(larg);
-
-                for(int i=0, n=tit.Length; i<n; i++){
-                    string titulo = tit[i];
-                    Paragraph p = new Paragraph(tit[i]);
-                    iTextSharp.text.Font tipoletra = FontFactory.GetFont("Arial", 12.0f, 3, new BaseColor(255, 255, 255));
-                    PdfPCell cel = new PdfPCell(p);
-                    tabela.AddCell(cel);
-                }
-
-                //List<Class> myClass = DataGridView.Datasource as List<Class>;
-
-                List<Player> jogadores = dgvGListaJogadoresPesquisa.DataSource as List<Player>;
-                for(int i=0; i<jogadores.Count; i++)
-                {
-                    Player jogador = jogadores[i];
-                    Paragraph id = new Paragraph(jogador.Id.ToString());
-                    PdfPCell cel1 = new PdfPCell(id);
-                    Paragraph nome = new Paragraph(jogador.Name);
-                    PdfPCell cel = new PdfPCell(nome);
-                    Paragraph email = new Paragraph(jogador.Email);
-                    PdfPCell cel2 = new PdfPCell(email);
-                    Paragraph nickname = new Paragraph(jogador.Nickname);
-                    PdfPCell cel3 = new PdfPCell(nickname);
-                    Paragraph idade = new Paragraph(jogador.Age.ToString());
-                    PdfPCell cel4 = new PdfPCell(idade);
-                    tabela.AddCell(cel1);
-                    tabela.AddCell(cel);
-                    tabela.AddCell(cel2);
-                    tabela.AddCell(cel3);
-                    tabela.AddCell(cel4);
-
-
-                }
-
-
-
-                doc.Add(tabela);
-                doc.Close();
-
-                
-
-
-
-            }
-            */
-
-
-
-
         }
 
         private void pesquisarJogadores(object sender, EventArgs e)
@@ -3235,11 +3079,6 @@ namespace Projeto
             }
 
             dgvGListaJogadoresPesquisa.DataSource = query.ToList();
-
-
-
-
-
         }
 
         private void tbVerJogadores_Click(object sender, EventArgs e)
@@ -3255,8 +3094,6 @@ namespace Projeto
         private void btnGerirEquipa_Click(object sender, EventArgs e)
         {
             idEquipa = (int)dgvGListaEquipas.CurrentRow.Cells[0].Value;
-            int nrjogadores = 0;
-            //int nrequipas = 0;
 
             ListViewItem linhaJogadoresEquipa;
             ListViewItem linhaListaJogadores;
@@ -3266,14 +3103,10 @@ namespace Projeto
 
             foreach (Player jogador in containerDados.PlayerSet)
             {
-                nrjogadores = 0;
-
                 foreach (TeamPlayers equipasjogadores in containerDados.TeamPlayersSet.Where(tp => tp.TeamId.Equals(idEquipa)))
                 {
                     if (equipasjogadores.PlayerId == jogador.Id)
                     {
-                        nrjogadores += 1;
-
                         linhaJogadoresEquipa = new ListViewItem(jogador.Name);
                         linhaJogadoresEquipa.SubItems.Add(jogador.Email);
                         linhaJogadoresEquipa.SubItems.Add(jogador.Age.ToString());
@@ -3285,10 +3118,10 @@ namespace Projeto
                 }
             }
 
-
             foreach (Player jogador in containerDados.PlayerSet)
             {
                 Boolean temEquipa = false;
+
                 foreach (TeamPlayers equipasjogadores in containerDados.TeamPlayersSet)
                 {
                     if (equipasjogadores.PlayerId == jogador.Id)
@@ -3307,6 +3140,11 @@ namespace Projeto
                 }
             }
 
+            groupBox1.Enabled = true;
+            groupBox2.Enabled = true;
+            btnAdicionarJogador.Enabled = true;
+            btnRetirarJogador.Enabled = true;
+            btnGuardarJogadorEquipa.Enabled = true;
         }
 
         private void btnAdicionarJogador_Click(object sender, EventArgs e)
@@ -3333,40 +3171,12 @@ namespace Projeto
                 btnRetirarJogador.Enabled = true;
                 btnGuardarJogadorEquipa.Enabled = true;
             }
-
-
-
-
-
-
-            /*var selectedItems = lcListaJogadores.SelectedItems;
-            foreach(ListViewItem selectedItem in selectedItems)
-            {
-                
-            }*/
-
-
-
-
-            //MessageBox.Show(jogador1.Text);
-            //Player jogador = getJogador(jogador.Text);
-
         }
 
         private void btnGuardarJogadorEquipa_Click(object sender, EventArgs e)
         {
             Player jogador;
             TeamPlayers equipajogadores;
-
-            /*var idJogadoresAnteriores = from equipasjogadores in container.TeamPlayersSet
-                                        where equipasjogadores.TeamId == idEquipa
-                                        select equipasjogadores;
-            */
-
-            /*context.Projects.Where(p => p.ProjectId == projectId)
-               .ToList().ForEach(p => context.Projects.Remove(p));
-            context.SaveChanges();
-            */
 
             containerDados.TeamPlayersSet.Where(tp => tp.TeamId == idEquipa)
                 .ToList().ForEach(tp => containerDados.TeamPlayersSet.Remove(tp));
@@ -3385,7 +3195,18 @@ namespace Projeto
             }
 
             containerDados.SaveChanges();
+            ResetListViewsEquipas();
+        }
 
+        private void ResetListViewsEquipas()
+        {
+            lcListaJogadores.Items.Clear();
+            lvJogadoresEquipa.Items.Clear();
+            groupBox1.Enabled = false;
+            groupBox2.Enabled = false;
+            btnAdicionarJogador.Enabled = false;
+            btnRetirarJogador.Enabled = false;
+            btnGuardarJogadorEquipa.Enabled = false;
         }
 
         private void btnRetirarJogador_Click(object sender, EventArgs e)
@@ -3440,7 +3261,6 @@ namespace Projeto
 
             if (!nomeequipa.Equals("") && cbnomejogadorpesquisa.SelectedIndex != -1)
             {
-                //MessageBox.Show("Olá1");
                 var query =
                     from equipa in containerDados.TeamSet
                     join equipajogadores in containerDados.TeamPlayersSet on equipa.Id equals equipajogadores.TeamId
@@ -3454,7 +3274,6 @@ namespace Projeto
             {
                 if (!nomeequipa.Equals(""))
                 {
-                    //MessageBox.Show("Ola2");
                     var query =
                         from equipa in containerDados.TeamSet
                         where equipa.Name.Contains(nomeequipa)
@@ -3464,7 +3283,6 @@ namespace Projeto
                 }
                 if (cbnomejogadorpesquisa.SelectedIndex != -1)
                 {
-                    //MessageBox.Show("Olá3");
                     var query =
                     from equipa in containerDados.TeamSet
                     join equipajogadores in containerDados.TeamPlayersSet on equipa.Id equals equipajogadores.TeamId
@@ -3483,9 +3301,6 @@ namespace Projeto
             tbxnomeequipapesquisa.ResetText();
             cbnomejogadorpesquisa.SelectedIndex = -1;
             dgvGListaEquipasPesquisa.DataSource = teamSetBindingSource;
-
-
-
         }
 
         private void limparTabelaPesquisas()
@@ -3501,11 +3316,6 @@ namespace Projeto
         private void tcGestao_Enter(object sender, EventArgs e)
         {
             
-
-
-           
-
-
         }
 
         private void tbGestaoTorneios_Enter(object sender, EventArgs e)
@@ -3541,8 +3351,6 @@ namespace Projeto
             cmbdecks1.Items.Clear();
             cmbdecks2.Items.Clear();
 
-            Deck deck1;
-
             foreach (Deck deck in containerDados.DeckSet)
             {
                 cmbdecks1.Items.Add(deck.Name);
@@ -3568,24 +3376,11 @@ namespace Projeto
             cmbequipajogador1.Items.Clear();
             cmbequipajogador2.Items.Clear();
 
-            Player jogador1;
-            /*if (cmbJogador1Jogo.SelectedIndex != -1)
-            {
-                jogador1 = (Player)cmbJogador1Jogo.SelectedItem;
-            */
-
             foreach (Player jogador in containerDados.PlayerSet)
             {
                 
                 cmbequipajogador1.Items.Add(jogador.Name);
-
-                /*if(jogador.Id != jogador1.Id)
-                {
-
-                }
-                */
                 cmbequipajogador2.Items.Add(jogador.Name);
-            /*}*/
             }
 
         }
@@ -4348,8 +4143,10 @@ namespace Projeto
                                              select new { games.Id, games.Description, games.Number, games.Date, games.PlayerId1, games.PlayerId2, games.DeckId1, games.DeckId2}).ToList();
             }
 
-            int i = dgvGJogosLista.Rows.Count;
-            dgvGJogosLista.CurrentCell = dgvGJogosLista.Rows[i - 1].Cells[0];
+            if(dgvGJogosLista.Rows.Count > 0)
+            {
+                dgvGJogosLista.CurrentCell = dgvGJogosLista.Rows[dgvGJogosLista.Rows.Count - 1].Cells[0];
+            }
         }
 
         private int getIdDeck(string nomedeck)
