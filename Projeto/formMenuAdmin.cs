@@ -2394,7 +2394,8 @@ namespace Projeto
 
         #endregion
 
-        #region Gestão dos Jogadores
+        #region Parte do Cristiano (Tenta separar isto por tipo de gestão, como em cima, e comentar)
+
 
         private void btnInserirJogador_Click(object sender, EventArgs e)
         {
@@ -2403,63 +2404,6 @@ namespace Projeto
             gbGJogadoresForm.Visible = true;
             //muda o nome do botão para criar.
             btnJogadoresAcao.Text = "Criar";
-        }
-
-        private void btnAlterarJogador_Click(object sender, EventArgs e)
-        {
-
-            carregarCancelarJogadores();
-            gbGJogadoresForm.Visible = true;
-            btnJogadoresAcao.Text = "Guardar";
-
-
-            Image file;
-            if (dgvGListaJogadores.SelectedCells.Count > 0)
-            {
-
-                gbGJogadoresForm.Enabled = true;
-                idJogador = (int)dgvGListaJogadores.CurrentRow.Cells[0].Value;
-
-                foreach (Player player in containerDados.PlayerSet.OfType<Player>())
-                {
-                    if (player.Id == idJogador)
-                    {
-                        txtNomeJogador.Text = player.Name;
-                        txtEmailJogador.Text = player.Email;
-                        txtNickJogador.Text = player.Nickname;
-                        nudIdadeJogador.Value = (int)player.Age;
-
-                        file = Image.FromFile(player.Avatar);
-
-                        txtAvatar.Text = player.Avatar;
-
-                        pictureBox1.Image = file;
-
-
-
-                    }
-                }
-
-            }
-
-
-        }
-
-        private void btnRemoverJogador_Click(object sender, EventArgs e)
-        {
-            if (dgvGListaJogadores.SelectedCells.Count > 0)
-            {
-                idJogador = (int)dgvGListaJogadores.CurrentRow.Cells[0].Value;
-                string nome = dgvGListaJogadores.CurrentRow.Cells[1].Value.ToString();
-
-                DialogResult confirmar = MessageBox.Show("Deseja eliminar o jogador com o nome " + nome + "?", "Eliminar dados", MessageBoxButtons.YesNo);
-
-                if (confirmar == DialogResult.Yes)
-                {
-                    removerJogador();
-                    atualizarTabelaJogadores();
-                }
-            }
         }
 
         private void btnJogadoresAcao_Click(object sender, EventArgs e)
@@ -2524,129 +2468,6 @@ namespace Projeto
             }
         }
 
-        private void btnJogadoresCancelar_Click(object sender, EventArgs e)
-        {
-            carregarCancelarJogadores();
-        }
-
-        private void btImagem_Click(object sender, EventArgs e)
-        {
-            //filtra e só deixa selecionar imagens
-            opfProcurarImagem.Filter = "Image Files (JPG,PNG,GIF)|*.JPG;*.PNG;*.GIF";
-            Image file;
-            if (opfProcurarImagem.ShowDialog() == DialogResult.OK)
-            {
-                //caminho da imagem para guardar no ado.
-                string caminho = opfProcurarImagem.FileName;
-                //titulo da janela
-                opfProcurarImagem.Title = "Selecione uma imagem";
-                txtAvatar.Text = caminho;
-                //vai buscar a imagem
-                file = Image.FromFile(caminho);
-                //coloca a imagem na picture box.
-                pictureBox1.Image = file;
-            }
-
-        }
-
-        private void inserirNovoJogador(string nome, string email, string nickname, int idade, string caminho)
-        {
-
-            try
-            {
-                Player jogador = new Player
-                {
-                    Name = nome,
-                    Email = email,
-                    Nickname = nickname,
-                    Age = idade,
-                    Avatar = caminho
-                };
-
-                containerDados.PlayerSet.Add(jogador);
-                containerDados.SaveChanges();
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("O jogador não foi inserido.", "Registo de Jogadores");
-            }
-
-
-        }
-
-        private void alterarJogadorExistente(string nome, string email, string nickname, int idade, string caminho)
-        {
-            Player jogador;
-
-            jogador = containerDados.PlayerSet.Find(idJogador);
-
-            jogador.Name = nome;
-            jogador.Email = email;
-            jogador.Nickname = nickname;
-            jogador.Age = idade;
-            jogador.Avatar = caminho;
-
-            containerDados.Entry(jogador).State = EntityState.Modified;
-            containerDados.SaveChanges();
-
-
-        }
-
-        private void removerJogador()
-        {
-
-            try
-            {
-
-                foreach (Player jogador in containerDados.PlayerSet)
-                {
-                    if (jogador.Id == idJogador)
-                    {
-                        containerDados.PlayerSet.Remove(jogador);
-                    }
-                }
-                containerDados.SaveChanges();
-            }
-            catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
-            {
-                MessageBox.Show("Não é possível eliminar um jogador que está associado a uma equipa. Erro:" + ex.Message, "Eliminar dados");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Erro ao eliminar o jogador.", "Eliminar dados");
-            }
-
-
-        }
-
-        private void carregarCancelarJogadores()
-        {
-            txtNomeJogador.ResetText();
-            txtEmailJogador.ResetText();
-            txtNickJogador.ResetText();
-            nudIdadeJogador.Value = 0;
-            txtAvatar.ResetText();
-            pictureBox1.Image = null;
-
-            btnJogadoresAcao.Text = "Acção";
-
-            gbGJogadoresForm.Enabled = false;
-            gbGJogadoresForm.Visible = false;
-
-            btnAlterarJogador.Enabled = false;
-            btnRemoverJogador.Enabled = false;
-        }
-
-        private void dgvGListaJogadores_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (dgvGListaJogadores.RowCount > 0 && dgvGListaJogadores.SelectedCells.Count > 0)
-            {
-                btnAlterarJogador.Enabled = true;
-                btnRemoverJogador.Enabled = true;
-            }
-        }
-
         private Boolean verificarNomeNickname(string nome, string email, string nickname)
         {
             Boolean existe = false;
@@ -2694,6 +2515,24 @@ namespace Projeto
             }
         }
 
+        private void alterarJogadorExistente(string nome, string email, string nickname, int idade, string caminho)
+        {
+            Player jogador;
+
+            jogador = containerDados.PlayerSet.Find(idJogador);
+
+            jogador.Name = nome;
+            jogador.Email = email;
+            jogador.Nickname = nickname;
+            jogador.Age = idade;
+            jogador.Avatar = caminho;
+
+            containerDados.Entry(jogador).State = EntityState.Modified;
+            containerDados.SaveChanges();
+
+
+        }
+
         private void atualizarTabelaJogadores()
         {
             //MessageBox.Show("Olá");
@@ -2722,103 +2561,199 @@ namespace Projeto
 
         }
 
-        #endregion
-
-        #region Pesquisa de Jogadores
-
-        private void pesquisarJogadores(object sender, EventArgs e)
+        private void inserirNovoJogador(string nome, string email, string nickname, int idade, string caminho)
         {
-            string nome = txtNomeJogador2.Text;
-            string email = txtEmailJogador2.Text;
-            string nickname = txtNicknameJogador2.Text;
-            int idade = (int)nudIdadeJogador2.Value;
 
-            IQueryable<Player> query = containerDados.PlayerSet;
-
-            if (nome.Length > 0)
+            try
             {
-                query = query.Where(player => player.Name.Contains(nome));
+                Player jogador = new Player
+                {
+                    Name = nome,
+                    Email = email,
+                    Nickname = nickname,
+                    Age = idade,
+                    Avatar = caminho
+                };
+
+                containerDados.PlayerSet.Add(jogador);
+                containerDados.SaveChanges();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("O jogador não foi inserido.", "Registo de Jogadores");
             }
 
-            if (email.Length > 0)
-            {
-                query = query.Where(player => player.Email.Contains(email));
-            }
 
-            if (nickname.Length > 0)
-            {
-                query = query.Where(player => player.Nickname.Contains(nickname));
-            }
-            if (idade != 0)
-            {
-                query = query.Where(player => player.Age == idade);
-            }
-
-            dgvGListaJogadoresPesquisa.DataSource = query.ToList();
         }
 
-        private void atualizarTabelaJogadoresPesquisa()
+        private void btImagem_Click(object sender, EventArgs e)
         {
-            dgvGListaJogadoresPesquisa.DataSource = null;
-            this.playerSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Players.PlayerSet);
-            dgvGListaJogadoresPesquisa.DataSource = this.playerSetBindingSource;
+            //filtra e só deixa selecionar imagens
+            opfProcurarImagem.Filter = "Image Files (JPG,PNG,GIF)|*.JPG;*.PNG;*.GIF";
+            Image file;
+            if (opfProcurarImagem.ShowDialog() == DialogResult.OK)
+            {
+                //caminho da imagem para guardar no ado.
+                string caminho = opfProcurarImagem.FileName;
+                //titulo da janela
+                opfProcurarImagem.Title = "Selecione uma imagem";
+                txtAvatar.Text = caminho;
+                //vai buscar a imagem
+                file = Image.FromFile(caminho);
+                //coloca a imagem na picture box.
+                pictureBox1.Image = file;
+            }
 
-            int i = dgvGListaJogadoresPesquisa.Rows.Count;
-
-            dgvGListaJogadoresPesquisa.CurrentCell = dgvGListaJogadoresPesquisa.Rows[i - 1].Cells[0];
         }
 
-        #endregion
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
 
-        #region Gestão de Equipas
+        }
+
+        private void btnJogadoresCancelar_Click(object sender, EventArgs e)
+        {
+            carregarCancelarJogadores();
+        }
+
+        private void carregarCancelarJogadores()
+        {
+            txtNomeJogador.ResetText();
+            txtEmailJogador.ResetText();
+            txtNickJogador.ResetText();
+            nudIdadeJogador.Value = 0;
+            txtAvatar.ResetText();
+            pictureBox1.Image = null;
+
+            btnJogadoresAcao.Text = "Acção";
+
+            gbGJogadoresForm.Enabled = false;
+            gbGJogadoresForm.Visible = false;
+
+            btnAlterarJogador.Enabled = false;
+            btnRemoverJogador.Enabled = false;
+        }
+
+        private void dgvGListaJogadores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+
+        private void dgvGListaJogadores_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void dgvGListaJogadores_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvGListaJogadores_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dgvGListaJogadores.RowCount > 0 && dgvGListaJogadores.SelectedCells.Count > 0)
+            {
+                btnAlterarJogador.Enabled = true;
+                btnRemoverJogador.Enabled = true;
+            }
+        }
+
+        private void btnAlterarJogador_Click(object sender, EventArgs e)
+        {
+
+            carregarCancelarJogadores();
+            gbGJogadoresForm.Visible = true;
+            btnJogadoresAcao.Text = "Guardar";
+
+
+            Image file;
+            if (dgvGListaJogadores.SelectedCells.Count > 0)
+            {
+
+                gbGJogadoresForm.Enabled = true;
+                idJogador = (int)dgvGListaJogadores.CurrentRow.Cells[0].Value;
+
+                foreach (Player player in containerDados.PlayerSet.OfType<Player>())
+                {
+                    if (player.Id == idJogador)
+                    {
+                        txtNomeJogador.Text = player.Name;
+                        txtEmailJogador.Text = player.Email;
+                        txtNickJogador.Text = player.Nickname;
+                        nudIdadeJogador.Value = (int)player.Age;
+
+                        file = Image.FromFile(player.Avatar);
+
+                        txtAvatar.Text = player.Avatar;
+
+                        pictureBox1.Image = file;
+
+
+
+                    }
+                }
+
+            }
+
+
+        }
+
+        private void btnRemoverJogador_Click(object sender, EventArgs e)
+        {
+            if (dgvGListaJogadores.SelectedCells.Count > 0)
+            {
+                idJogador = (int)dgvGListaJogadores.CurrentRow.Cells[0].Value;
+                string nome = dgvGListaJogadores.CurrentRow.Cells[1].Value.ToString();
+
+                DialogResult confirmar = MessageBox.Show("Deseja eliminar o jogador com o nome " + nome + "?", "Eliminar dados", MessageBoxButtons.YesNo);
+
+                if (confirmar == DialogResult.Yes)
+                {
+                    removerJogador();
+                    atualizarTabelaJogadores();
+                }
+            }
+        }
+
+        private void removerJogador()
+        {
+
+            try
+            {
+
+                foreach (Player jogador in containerDados.PlayerSet)
+                {
+                    if (jogador.Id == idJogador)
+                    {
+                        containerDados.PlayerSet.Remove(jogador);
+                    }
+                }
+                containerDados.SaveChanges();
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
+            {
+                MessageBox.Show("Não é possível eliminar um jogador que está associado a uma equipa. Erro:" + ex.Message, "Eliminar dados");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao eliminar o jogador.", "Eliminar dados");
+            }
+
+
+        }
+
+        private void txtGJogadoresPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void btnInserirEquipa_Click(object sender, EventArgs e)
         {
             gbGEquipasForm.Enabled = true;
             gbGEquipasForm.Visible = true;
             btnEquipaAcao.Text = "Criar";
-        }
-
-        private void btnAlterarEquipa_Click(object sender, EventArgs e)
-        {
-            carregarCancelarEquipas();
-            gbGEquipasForm.Visible = true;
-            btnEquipaAcao.Text = "Guardar";
-
-            Image file;
-            if (dgvGListaEquipas.SelectedCells.Count > 0)
-            {
-                gbGEquipasForm.Enabled = true;
-                idEquipa = (int)dgvGListaEquipas.CurrentRow.Cells[0].Value;
-
-                foreach (Team team in containerDados.TeamSet.OfType<Team>())
-                {
-                    if (team.Id == idEquipa)
-                    {
-                        txtGNomeEquipa.Text = team.Name;
-                        txtGAvatarEquipa.Text = team.Avatar;
-                        file = Image.FromFile(team.Avatar);
-                        pictureBoxAvatarEquipa.Image = file;
-                    }
-                }
-            }
-        }
-
-        private void btnRemoverEquipa_Click(object sender, EventArgs e)
-        {
-            if (dgvGListaEquipas.SelectedCells.Count > 0)
-            {
-                idEquipa = (int)dgvGListaEquipas.CurrentRow.Cells[0].Value;
-                string nome = dgvGListaEquipas.CurrentRow.Cells[1].Value.ToString();
-
-                DialogResult confirmar = MessageBox.Show("Deseja eliminar a equipa com o nome " + nome + "?", "Eliminar dados", MessageBoxButtons.YesNo);
-
-                if (confirmar == DialogResult.Yes)
-                {
-                    removerEquipa();
-                    atualizarTabelaEquipas();
-                }
-            }
         }
 
         private void btnEquipaAcao_Click(object sender, EventArgs e)
@@ -2849,9 +2784,78 @@ namespace Projeto
             }
         }
 
-        private void txtEquipaCancelar_Click(object sender, EventArgs e)
+        private Boolean verificarNomeEquipa(string nome)
         {
-            carregarCancelarEquipas();
+            Boolean existe = false;
+            foreach (Team team in containerDados.TeamSet.OfType<Team>())
+            {
+                if (btnEquipaAcao.Text.Equals("Criar"))
+                {
+                    if (nome.Equals(team.Name))
+                    {
+                        existe = true;
+                        MessageBox.Show("O nome tem de ser único.");
+                    }
+                }
+
+                if (btnEquipaAcao.Text.Equals("Guardar"))
+                {
+                    if (team.Id != idEquipa)
+                    {
+                        if (nome.Equals(team.Name))
+                        {
+                            existe = true;
+                            MessageBox.Show("O nome tem de ser único.");
+                        }
+                    }
+                }
+
+            }
+            return existe;
+        }
+
+        private void alterarEquipaExistente(string nome, string caminho)
+        {
+            Team equipa;
+
+            equipa = containerDados.TeamSet.Find(idEquipa);
+
+            equipa.Name = nome;
+            equipa.Avatar = caminho;
+
+            containerDados.Entry(equipa).State = EntityState.Modified;
+            containerDados.SaveChanges();
+        }
+
+        private void atualizarTabelaEquipas()
+        {
+            dgvGListaEquipas.DataSource = null;
+            this.teamSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Teams.TeamSet);
+            dgvGListaEquipas.DataSource = this.teamSetBindingSource;
+
+            int i = dgvGListaEquipas.Rows.Count;
+
+            dgvGListaEquipas.CurrentCell = dgvGListaEquipas.Rows[i - 1].Cells[0];
+        }
+
+        private void inserirNovaEquipa(string nome, string caminho)
+        {
+
+            try
+            {
+                Team equipa = new Team
+                {
+                    Name = nome,
+                    Avatar = caminho
+                };
+
+                containerDados.TeamSet.Add(equipa);
+                containerDados.SaveChanges();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("A equipa não foi inserida.", "Registo de Equipas");
+            }
         }
 
         private void btnAvatarEquipa_Click(object sender, EventArgs e)
@@ -2866,6 +2870,339 @@ namespace Projeto
                 file = Image.FromFile(caminho);
                 pictureBoxAvatarEquipa.Image = file;
             }
+
+        }
+
+        private void txtEquipaCancelar_Click(object sender, EventArgs e)
+        {
+            carregarCancelarEquipas();
+        }
+
+        private void carregarCancelarEquipas()
+        {
+            txtGNomeEquipa.ResetText();
+            txtGAvatarEquipa.ResetText();
+            pictureBoxAvatarEquipa.Image = null;
+
+            btnEquipaAcao.Text = "Acção";
+
+            gbGEquipasForm.Enabled = false;
+            gbGEquipasForm.Visible = false;
+
+            btnAlterarEquipa.Enabled = false;
+            btnRemoverEquipa.Enabled = false;
+        }
+
+        private void btnAlterarEquipa_Click(object sender, EventArgs e)
+        {
+            carregarCancelarEquipas();
+            gbGEquipasForm.Visible = true;
+            btnEquipaAcao.Text = "Guardar";
+
+            Image file;
+            if (dgvGListaEquipas.SelectedCells.Count > 0)
+            {
+                gbGEquipasForm.Enabled = true;
+                idEquipa = (int)dgvGListaEquipas.CurrentRow.Cells[0].Value;
+
+                foreach (Team team in containerDados.TeamSet.OfType<Team>())
+                {
+                    if (team.Id == idEquipa)
+                    {
+                        txtGNomeEquipa.Text = team.Name;
+                        txtGAvatarEquipa.Text = team.Avatar;
+                        file = Image.FromFile(team.Avatar);
+                        pictureBoxAvatarEquipa.Image = file;
+                    }
+                }
+            }
+        }
+
+        private void gbGEquipasForm_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvGListaEquipas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvGListaEquipas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dgvGListaEquipas.RowCount > 0 && dgvGListaEquipas.SelectedCells.Count > 0)
+            {
+                btnAlterarEquipa.Enabled = true;
+                btnRemoverEquipa.Enabled = true;
+            }
+        }
+
+        private void btnRemoverEquipa_Click(object sender, EventArgs e)
+        {
+            if (dgvGListaEquipas.SelectedCells.Count > 0)
+            {
+                idEquipa = (int)dgvGListaEquipas.CurrentRow.Cells[0].Value;
+                string nome = dgvGListaEquipas.CurrentRow.Cells[1].Value.ToString();
+
+                DialogResult confirmar = MessageBox.Show("Deseja eliminar a equipa com o nome " + nome + "?", "Eliminar dados", MessageBoxButtons.YesNo);
+
+                if (confirmar == DialogResult.Yes)
+                {
+                    removerEquipa();
+                    atualizarTabelaEquipas();
+                }
+            }
+        }
+
+        private void removerEquipa()
+        {
+            try
+            {
+                foreach (Team equipa in containerDados.TeamSet)
+                {
+                    if (equipa.Id == idEquipa)
+                    {
+                        containerDados.TeamSet.Remove(equipa);
+                    }
+                }
+                containerDados.SaveChanges();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao eliminar a equipa.", "Eliminar dados");
+            }
+        }
+
+        private void txtGEquipasPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            if (txtGEquipasPesquisa.Text.Length > 0)
+            {
+                var query = from team in containerDados.TeamSet
+                            where team.Name.Contains(txtGEquipasPesquisa.Text)
+                            select team;
+
+                dgvGListaEquipas.DataSource = query.ToList();
+            }
+            else
+            {
+                atualizarTabelaEquipas();
+            }
+        }
+
+
+
+        /*private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if(cbxpesquisarpor.SelectedIndex != -1)
+            {
+                string pesquisapor = cbxpesquisarpor.SelectedItem.ToString();
+                string pesquisa = txtpesquisa.Text;
+                if (!pesquisa.Equals(""))
+                {
+                    
+                    if (pesquisapor.Equals("Nome"))
+                    {
+                        var query = from player in container.PlayerSet
+                                    where player.Name.Contains(pesquisa)
+                                    select player;
+                        dgvGListaJogadoresPesquisa.DataSource = query.ToList();
+                    }
+                    else if (pesquisapor.Equals("Email"))
+                    {
+                        var query1 = from player in container.PlayerSet
+                                where player.Email.Contains(pesquisa)
+                                select player;
+                        dgvGListaJogadoresPesquisa.DataSource = query1.ToList();
+                    }
+                    else if (pesquisapor.Equals("Nickname"))
+                    {
+                        var query2 = from player in container.PlayerSet
+                                    where player.Nickname.Contains(pesquisa)
+                                    select player;
+                        dgvGListaJogadoresPesquisa.DataSource = query2.ToList();
+                    }
+                    else if (pesquisapor.Equals("Idade"))
+                    {
+                        //int idade = int.Parse(txtpesquisa.Text);
+                        int idade = 0;
+                       
+                        if(int.TryParse(pesquisa, out idade))
+                        {
+                          var query3 = from player in container.PlayerSet
+                                        where player.Age == idade
+                                        select player;
+                          dgvGListaJogadoresPesquisa.DataSource = query3.ToList();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Insira valores numéricos.");
+                        }
+
+
+                            
+                    
+                        
+                    }
+                    
+                }
+                else
+                {
+                    atualizarTabelaJogadoresPesquisa();
+                }
+            }
+        }
+        */
+
+        private void atualizarTabelaJogadoresPesquisa()
+        {
+            dgvGListaJogadoresPesquisa.DataSource = null;
+            this.playerSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Players.PlayerSet);
+            dgvGListaJogadoresPesquisa.DataSource = this.playerSetBindingSource;
+
+            int i = dgvGListaJogadoresPesquisa.Rows.Count;
+
+            dgvGListaJogadoresPesquisa.CurrentCell = dgvGListaJogadoresPesquisa.Rows[i - 1].Cells[0];
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+
+            /*string filtro = " ";
+            if (txtNomeJogador2.Text.Equals("") && txtEmailJogador2.Text.Equals("") && txtNicknameJogador2.Text.Equals("") && nudIdadeJogador2.Value == 0)
+            {
+                filtro = "Nenhum filtro aplicado. Todos os jogadores.";
+            }
+            else
+            {
+                filtro = "Filtro Aplicado\n";
+                if (!txtNomeJogador2.Text.Equals(""))
+                {
+                    filtro += "Nome: " + txtNomeJogador2.Text;
+                }
+                if (!txtEmailJogador2.Text.Equals(""))
+                {
+                    filtro += "\nEmail: " + txtEmailJogador2.Text;
+                }
+                if (!txtNicknameJogador2.Text.Equals(""))
+                {
+                    filtro += "\nNickname: " + txtNicknameJogador2.Text;
+                }
+                if ((int)nudIdadeJogador2.Value != 0)
+                {
+                    filtro += "\nIdade: " + nudIdadeJogador2.Value;
+                }
+
+
+
+                Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Test.pdf", FileMode.Create));
+                doc.Open();
+
+                Paragraph paragraph = new Paragraph(filtro);
+
+                doc.Add(paragraph);
+                
+
+                string[] tit = { "Id", "Nome", "Email", "Nickname", "Idade" };
+                float[] larg = { 0.08f, 0.3f, 0.2f, 0.2f, 0.1f };
+
+                PdfPTable tabela = new PdfPTable(tit.Length);
+
+                tabela.SetWidths(larg);
+
+                for(int i=0, n=tit.Length; i<n; i++){
+                    string titulo = tit[i];
+                    Paragraph p = new Paragraph(tit[i]);
+                    iTextSharp.text.Font tipoletra = FontFactory.GetFont("Arial", 12.0f, 3, new BaseColor(255, 255, 255));
+                    PdfPCell cel = new PdfPCell(p);
+                    tabela.AddCell(cel);
+                }
+
+                //List<Class> myClass = DataGridView.Datasource as List<Class>;
+
+                List<Player> jogadores = dgvGListaJogadoresPesquisa.DataSource as List<Player>;
+                for(int i=0; i<jogadores.Count; i++)
+                {
+                    Player jogador = jogadores[i];
+                    Paragraph id = new Paragraph(jogador.Id.ToString());
+                    PdfPCell cel1 = new PdfPCell(id);
+                    Paragraph nome = new Paragraph(jogador.Name);
+                    PdfPCell cel = new PdfPCell(nome);
+                    Paragraph email = new Paragraph(jogador.Email);
+                    PdfPCell cel2 = new PdfPCell(email);
+                    Paragraph nickname = new Paragraph(jogador.Nickname);
+                    PdfPCell cel3 = new PdfPCell(nickname);
+                    Paragraph idade = new Paragraph(jogador.Age.ToString());
+                    PdfPCell cel4 = new PdfPCell(idade);
+                    tabela.AddCell(cel1);
+                    tabela.AddCell(cel);
+                    tabela.AddCell(cel2);
+                    tabela.AddCell(cel3);
+                    tabela.AddCell(cel4);
+
+
+                }
+
+
+
+                doc.Add(tabela);
+                doc.Close();
+
+                
+
+
+
+            }
+            */
+
+
+
+
+        }
+
+        private void pesquisarJogadores(object sender, EventArgs e)
+        {
+            string nome = txtNomeJogador2.Text;
+            string email = txtEmailJogador2.Text;
+            string nickname = txtNicknameJogador2.Text;
+            int idade = (int)nudIdadeJogador2.Value;
+
+            IQueryable<Player> query = containerDados.PlayerSet;
+
+            if (nome.Length > 0)
+            {
+                query = query.Where(player => player.Name.Contains(nome));
+            }
+
+            if (email.Length > 0)
+            {
+                query = query.Where(player => player.Email.Contains(email));
+            }
+
+            if (nickname.Length > 0)
+            {
+                query = query.Where(player => player.Nickname.Contains(nickname));
+            }
+            if (idade != 0)
+            {
+                query = query.Where(player => player.Age == idade);
+            }
+
+            dgvGListaJogadoresPesquisa.DataSource = query.ToList();
+
+
+
+
+
+        }
+
+        private void tbVerJogadores_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -3032,127 +3369,6 @@ namespace Projeto
             }
         }
 
-        private void inserirNovaEquipa(string nome, string caminho)
-        {
-
-            try
-            {
-                Team equipa = new Team
-                {
-                    Name = nome,
-                    Avatar = caminho
-                };
-
-                containerDados.TeamSet.Add(equipa);
-                containerDados.SaveChanges();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("A equipa não foi inserida.", "Registo de Equipas");
-            }
-        }
-
-        private void alterarEquipaExistente(string nome, string caminho)
-        {
-            Team equipa;
-
-            equipa = containerDados.TeamSet.Find(idEquipa);
-
-            equipa.Name = nome;
-            equipa.Avatar = caminho;
-
-            containerDados.Entry(equipa).State = EntityState.Modified;
-            containerDados.SaveChanges();
-        }
-
-        private void removerEquipa()
-        {
-            try
-            {
-                foreach (Team equipa in containerDados.TeamSet)
-                {
-                    if (equipa.Id == idEquipa)
-                    {
-                        containerDados.TeamSet.Remove(equipa);
-                    }
-                }
-                containerDados.SaveChanges();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Erro ao eliminar a equipa.", "Eliminar dados");
-            }
-        }
-
-        private Boolean verificarNomeEquipa(string nome)
-        {
-            Boolean existe = false;
-            foreach (Team team in containerDados.TeamSet.OfType<Team>())
-            {
-                if (btnEquipaAcao.Text.Equals("Criar"))
-                {
-                    if (nome.Equals(team.Name))
-                    {
-                        existe = true;
-                        MessageBox.Show("O nome tem de ser único.");
-                    }
-                }
-
-                if (btnEquipaAcao.Text.Equals("Guardar"))
-                {
-                    if (team.Id != idEquipa)
-                    {
-                        if (nome.Equals(team.Name))
-                        {
-                            existe = true;
-                            MessageBox.Show("O nome tem de ser único.");
-                        }
-                    }
-                }
-
-            }
-            return existe;
-        }
-
-        private void atualizarTabelaEquipas()
-        {
-            dgvGListaEquipas.DataSource = null;
-            this.teamSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Teams.TeamSet);
-            dgvGListaEquipas.DataSource = this.teamSetBindingSource;
-
-            int i = dgvGListaEquipas.Rows.Count;
-
-            dgvGListaEquipas.CurrentCell = dgvGListaEquipas.Rows[i - 1].Cells[0];
-        }
-
-        private void dgvGListaEquipas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (dgvGListaEquipas.RowCount > 0 && dgvGListaEquipas.SelectedCells.Count > 0)
-            {
-                btnAlterarEquipa.Enabled = true;
-                btnRemoverEquipa.Enabled = true;
-            }
-        }
-
-        private void carregarCancelarEquipas()
-        {
-            txtGNomeEquipa.ResetText();
-            txtGAvatarEquipa.ResetText();
-            pictureBoxAvatarEquipa.Image = null;
-
-            btnEquipaAcao.Text = "Acção";
-
-            gbGEquipasForm.Enabled = false;
-            gbGEquipasForm.Visible = false;
-
-            btnAlterarEquipa.Enabled = false;
-            btnRemoverEquipa.Enabled = false;
-        }
-
-        #endregion
-
-        #region Pesquisa de Equipas
-
         private void tbVerEquipas_Enter(object sender, EventArgs e)
         {
             cbnomejogadorpesquisa.Items.Clear();
@@ -3216,22 +3432,6 @@ namespace Projeto
 
         }
 
-        private void txtGEquipasPesquisa_TextChanged(object sender, EventArgs e)
-        {
-            if (txtGEquipasPesquisa.Text.Length > 0)
-            {
-                var query = from team in containerDados.TeamSet
-                            where team.Name.Contains(txtGEquipasPesquisa.Text)
-                            select team;
-
-                dgvGListaEquipas.DataSource = query.ToList();
-            }
-            else
-            {
-                atualizarTabelaEquipas();
-            }
-        }
-
         private void btlimpar_Click(object sender, EventArgs e)
         {
             tbxnomeequipapesquisa.ResetText();
@@ -3251,6 +3451,178 @@ namespace Projeto
         }
 
         #endregion
+
+        private void tcGestao_Enter(object sender, EventArgs e)
+        {
+            
+
+
+           
+
+
+        }
+
+        private void tbGestaoTorneios_Enter(object sender, EventArgs e)
+        {
+            /*cmbJogador1Jogo.Items.Clear();
+
+            Player jogador1;
+            if(cmbJogador1Jogo.SelectedIndex != -1)
+            {
+                jogador1 = (Player)cmbJogador1Jogo.SelectedItem;
+
+
+            }
+
+                foreach(Player jogador in containerDados.PlayerSet)
+                {
+                    cmbJogador1Jogo.Items.Add(jogador.Name);
+                    cmbJogador2Jogo.Items.Add(jogador.Name);
+                }
+                */
+
+
+            /*carregarJogadoresJogos();
+
+            carregarArbitrosJogos();
+            carregarDecks();
+            */
+            //MessageBox.Show("Olá");
+        }
+
+        private void carregarDecks()
+        {
+            cmbdecks1.Items.Clear();
+            cmbdecks2.Items.Clear();
+
+            Deck deck1;
+
+            foreach (Deck deck in containerDados.DeckSet)
+            {
+                cmbdecks1.Items.Add(deck.Name);
+                cmbdecks2.Items.Add(deck.Name);
+            }
+
+        }
+
+        private void carregarArbitrosJogos()
+        {
+            cmbarbitrojogos.Items.Clear();
+
+            foreach (Referee arbitro in containerDados.UserSet.OfType<Referee>())
+            {
+                cmbarbitrojogos.Items.Add(arbitro.Name);
+            }
+        }
+
+
+
+        private void carregarJogadoresJogos()
+        {
+            cmbequipajogador1.Items.Clear();
+
+            Player jogador1;
+            /*if (cmbJogador1Jogo.SelectedIndex != -1)
+            {
+                jogador1 = (Player)cmbJogador1Jogo.SelectedItem;
+            */
+
+            foreach (Player jogador in containerDados.PlayerSet)
+            {
+                
+                cmbequipajogador1.Items.Add(jogador.Name);
+
+                /*if(jogador.Id != jogador1.Id)
+                {
+
+                }
+                */
+                cmbequipajogador2.Items.Add(jogador.Name);
+            /*}*/
+            }
+
+        }
+
+        private void cmbJogador1Jogo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(radioTeamTournaments.Checked == true)
+            {
+                string nomeequipa1 = cmbequipajogador1.SelectedItem.ToString();
+                cmbequipajogador2.Items.Clear();
+                foreach (Team equipa in containerDados.TeamSet)
+                {
+                    if (!equipa.Name.Equals(nomeequipa1))
+                    {
+                        cmbequipajogador2.Items.Add(equipa.Name);
+                    }
+                }
+            }
+            else if(radioStandardTournaments.Checked == true)
+            {
+                string nomejogador1 = cmbequipajogador1.SelectedItem.ToString();
+                cmbequipajogador2.Items.Clear();
+                foreach (Player jogador in containerDados.PlayerSet)
+                {
+                    if (!jogador.Name.Equals(nomejogador1))
+                    {
+                        cmbequipajogador2.Items.Add(jogador.Name);
+                    }
+                }
+
+            }
+        }
+
+        private Player getPlayer(int i)
+        {
+            int a = 0;
+            Player p = null;
+            foreach (Player jogador in containerDados.PlayerSet)
+            {
+                if(i == a)
+                {
+                    p = jogador;
+                    return p;
+                }
+                a++;
+            }
+            return null;
+        }
+
+        private void btnInserirJogo_Click(object sender, EventArgs e)
+        {
+            //gbGJogosForm.Visible = true;
+            //btnJogoAcao.Text = "Criar";
+
+            gbGJogosForm.Visible = true;
+            gbGTorneiosForm.Visible = false;
+            btnJogoAcao.Text = "Criar";
+
+            if (radioTeamTournaments.Checked == true)
+            {
+                //carregar dados das equipas
+                carregarEquipas();
+            }
+            else if (radioStandardTournaments.Checked == true)
+            {
+                //carregar dados dos jogadores
+                carregarJogadoresJogos();
+            }
+        }
+
+
+        private void carregarEquipas()
+        {
+            cmbequipajogador1.Items.Clear();
+            cmbequipajogador2.Items.Clear();
+
+            Team equipa1;
+
+            foreach (Team equipa in containerDados.TeamSet)
+            {
+                cmbequipajogador1.Items.Add(equipa.Name);
+                cmbequipajogador2.Items.Add(equipa.Name);
+            }
+        }
 
         #region Gestão de Torneios
 
@@ -3657,10 +4029,8 @@ namespace Projeto
         }
 
         #endregion
-
-        #region Gestão de Jogos
-
-        private void btnInserirJogo_Click(object sender, EventArgs e)
+		
+        private void cmbequipajogador2_SelectedIndexChanged(object sender, EventArgs e)
         {
             //gbGJogosForm.Visible = true;
             //btnJogoAcao.Text = "Criar";
@@ -3674,7 +4044,6 @@ namespace Projeto
                 //carregar dados das equipas
                 carregarEquipas();
             }
-
             else if (radioStandardTournaments.Checked == true)
             {
                 //carregar dados dos jogadores
@@ -3690,12 +4059,16 @@ namespace Projeto
 
         private void btngerirjogos_Click(object sender, EventArgs e)
         {
+
             carregarArbitrosJogos();
             carregarDecks();
             if (dgvGTorneiosLista.SelectedRows.Count > 0)
             {
-                idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
 
+
+
+
+                idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
                 if (radioStandardTournaments.Checked == true)
                 {
                     carregarJogadoresJogos();
@@ -3709,8 +4082,13 @@ namespace Projeto
                 }
 
                 gbGTorneiosDados.Enabled = false;
+
+
                 carregarJogosTorneio();
+
             }
+            
+            
         }
 
         private void tbGestaoTorneios_Enter(object sender, EventArgs e)
@@ -3905,10 +4283,6 @@ namespace Projeto
             }
             return null;
         }
-
-        #endregion
-
-        #region Pesquisa de Torneios e Jogos
 
         #endregion
     }
