@@ -3502,6 +3502,7 @@ namespace Projeto
         private void carregarJogadoresJogos()
         {
             cmbequipajogador1.Items.Clear();
+            cmbequipajogador2.Items.Clear();
 
             Player jogador1;
             /*if (cmbJogador1Jogo.SelectedIndex != -1)
@@ -4347,8 +4348,8 @@ namespace Projeto
                             tpDataJogos.Value = jogoequipa.Date;
                             nudNJogo.Value = jogoequipa.Number;
                             int nrarbitro = (int)jogoequipa.RefereeId;
-                            string nomearbitro = getNomeArbitro(nrarbitro);
-                            cmbarbitrojogos.SelectedItem = nomearbitro;
+                            string usernamearbitro = getUsernameArbitro(nrarbitro);
+                            cmbarbitrojogos.SelectedItem = usernamearbitro;
                             int nrequipa1 = (int)jogoequipa.TeamId1;
                             string nomeequipa1 = getNomeEquipa(nrequipa1);
                             cmbequipajogador1.SelectedItem = nomeequipa1;
@@ -4361,7 +4362,7 @@ namespace Projeto
                             int nrdeck2 = (int)jogoequipa.DeckId2;
                             string nomedeck2 = getNomeDeck(nrdeck2);
                             cmbdecks2.SelectedItem = nomedeck2;
-                            txtDescricaoJogo.Text = jogoequipa.Description;
+                            txtDescricaoJogo.Text =jogoequipa.Description;
                         }
                     }
                 }
@@ -4374,8 +4375,8 @@ namespace Projeto
                             tpDataJogos.Value = jogo.Date;
                             nudNJogo.Value = jogo.Number;
                             int nrarbitro = (int)jogo.RefereeId;
-                            string nomearbitro = getNomeArbitro(nrarbitro);
-                            cmbarbitrojogos.SelectedItem = nomearbitro;
+                            string usernamearbitro = getUsernameArbitro(nrarbitro);
+                            cmbarbitrojogos.SelectedItem = usernamearbitro;
                             int nrjogador1 = (int)jogo.PlayerId1;
                             string nomejogador1 = getNomeJogador(nrjogador1);
                             cmbequipajogador1.SelectedItem = nomejogador1;
@@ -4436,17 +4437,17 @@ namespace Projeto
             return nomeequipa;
         }
 
-        private string getNomeArbitro(int idarbitro)
+        private string getUsernameArbitro(int idarbitro)
         {
-            string nomearbitro = "";
+            string usernamearbitro = "";
             foreach(Referee arbitro in containerDados.UserSet.OfType<Referee>())
             {
                 if(arbitro.Id == idarbitro)
                 {
-                    nomearbitro = arbitro.Name;
+                    usernamearbitro = arbitro.Username;
                 }
             }
-            return nomearbitro;
+            return usernamearbitro;
         }
 
         private void btnJogoCancelar_Click(object sender, EventArgs e)

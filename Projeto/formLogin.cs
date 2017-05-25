@@ -45,7 +45,7 @@ namespace Projeto
         /// </summary>
         private void BotaoLoginUtilizador(object sender, EventArgs e)
         {
-            if (txtLoginUser.Text.Length > 0 && txtLoginPass.Text.Length > 0)
+            /*if (txtLoginUser.Text.Length > 0 && txtLoginPass.Text.Length > 0)
             {
                 string usernameForm = txtLoginUser.Text;
 
@@ -54,11 +54,11 @@ namespace Projeto
                 if(AutenticarUser(usernameForm, passwordForm))
                 {                
                     if (VerificarTipoAdministrator(idUtilizador))
-                    {
+                    {*/
                         formMenuAdmin menuAdmin = new formMenuAdmin();
                         menuAdmin.Show();
                         Hide();
-                    }
+                    /*}
 
                     else if(VerificarTipoReferee(idUtilizador))
                     {
@@ -77,7 +77,7 @@ namespace Projeto
             else
             {
                 MessageBox.Show("Preencha todos os campos para efetuar login.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
 
         /// <summary>
