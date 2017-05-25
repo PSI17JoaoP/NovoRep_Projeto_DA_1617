@@ -1147,18 +1147,31 @@ namespace Projeto
 
         #region Pesquisa de Utilizadores
 
+        /// <summary>
+        /// Evento do radio button "Administrador", na tab de Pesquisa de Utilizadores.
+        /// Apenas invoca os métodos ResetPesquisaUtilizadoresForm e RefreshTabelaPesquisaUtilizadores para limpar o form e fazer refresh à tabela.
+        /// </summary>
         private void RadioPesquisarAdministrador(object sender, EventArgs e)
         {
             ResetPesquisaUtilizadoresForm();
             RefreshTabelaPesquisaUtilizadores();
         }
 
+        /// <summary>
+        /// Evento do radio button "Arbitro", na tab de Pesquisa de Utilizadores.
+        /// Apenas invoca os métodos ResetPesquisaUtilizadoresForm e RefreshTabelaPesquisaUtilizadores para limpar o form e fazer refresh à tabela.
+        /// </summary>
         private void RadioPesquisarArbitro(object sender, EventArgs e)
         {
             ResetPesquisaUtilizadoresForm();
             RefreshTabelaPesquisaUtilizadores();
         }
 
+        /// <summary>
+        /// Evento da checkbox "Ativo", na tab de Pesquisa de Utilizadores.
+        /// Indica se o utilizador deseja pesquisar arbitros ativos, isto é, tenham jogos futuros associados.
+        /// Invoca os métodos de pesquisa de Arbitros, dependendo se a checkbox seja ativada.
+        /// </summary>
         private void CheckArbitroAtivo(object sender, EventArgs e)
         {
             if (checkPesquisaArbitroAtivo.Checked == true)
@@ -1172,6 +1185,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do botão "Pesquisar", na tab de Pesquisa de Utilizadores.
+        /// Invoca os métodos de Pesquisa de Utilizadores, dependendo do tipo de utilizador selecionado
+        /// </summary>
         private void PesquisaAvancadaUtilizador(object sender, EventArgs e)
         {
             if (radioPesquisaAdministrador.Checked == true)
@@ -1193,6 +1210,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do botão "Reset", na tab de Pesquisa de Utilizadores
+        /// Apenas invoca os métodos ResetPesquisaUtilizadoresForm e RefreshTabelaPesquisaUtilizadores para limpar o form e fazer refresh à tabela.
+        /// </summary>
         private void BotaoResetPesquisa(object sender, EventArgs e)
         {
             ResetPesquisaUtilizadoresForm();
@@ -1391,6 +1412,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento da tab de Pesquisa de Utilizadores.
+        /// Invoca o método RefreshTabelaPesquisaUtilizadores para carregar os dados para a Data Grid View.
+        /// </summary>
         private void TabPesquisaUtilizadores(object sender, EventArgs e)
         {
             RefreshTabelaPesquisaUtilizadores();
@@ -1703,7 +1728,6 @@ namespace Projeto
             return result;
         }
 
-
         /// <summary>
         /// Procura na base de dados a carta com o mesmo id da carta selecionada
         /// Tenta remover a carta da base de dados
@@ -1743,12 +1767,24 @@ namespace Projeto
         /// </summary>
         private void txtGCartasPesquisa_TextChanged(object sender, EventArgs e)
         {
+            if (txtGCartasPesquisa.Text.Length > 0)
+            {
 
+                var query = from cards in containerDados.CardSet
+                            where cards.Name.Contains(txtGCartasPesquisa.Text)
+                            select cards;
+
+                dgvGCartasLista.DataSource = query.ToList(); dgvGCartasLista.DataSource = query.ToList();
+            }
+            else
+            {
+                RefreshTabelaCartas(); RefreshTabelaCartas();
+            }
         }
 
         #endregion
 
-        #region GestaoBaralhos
+        #region Gestao de Baralhos
 
         /// <summary>
         /// Ativa os botões de Gerir e Eliminar baralhos
@@ -2042,7 +2078,20 @@ namespace Projeto
         /// </summary>
         private void txtGBaralhosPesquisa_TextChanged(object sender, EventArgs e)
         {
+            if (txtGBaralhosPesquisa.Text.Length > 0) if (txtGBaralhosPesquisa.Text.Length > 0)
+            {
 
+                    var query = from decks in containerDados.DeckSet
+                                where decks.Name.Contains(txtGBaralhosPesquisa.Text)
+                                select decks;
+
+                    dgvGBaralhosLista.DataSource = query.ToList(); dgvGBaralhosLista.DataSource = query.ToList();
+            }
+
+            else
+            {
+                RefreshTabelaBaralhos();
+            }
         }
 
         /// <summary>
@@ -2053,7 +2102,14 @@ namespace Projeto
         /// </summary>
         private void lvListaCartas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (lvListaCartas.SelectedItems.Count > 0 && Convert.ToInt32(lblNCartasNoBaralho.Text) < 45)
+            {
+                btnAdicionarCartaBaralho.Enabled = true;
+            }
+            else
+            {
+                btnAdicionarCartaBaralho.Enabled = false; btnAdicionarCartaBaralho.Enabled = false;
+            }
         }
 
         /// <summary>
@@ -2064,7 +2120,14 @@ namespace Projeto
         /// </summary>
         private void lvCartasBaralho_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (lvListaCartas.SelectedItems.Count > 0 && Convert.ToInt32(lblNCartasNoBaralho.Text) < 45)
+            {
+                btnAdicionarCartaBaralho.Enabled = true; btnAdicionarCartaBaralho.Enabled = true;
+            }
+            else
+            {
+                btnAdicionarCartaBaralho.Enabled = false; btnAdicionarCartaBaralho.Enabled = false;
+            }
         }
 
         /// <summary>
@@ -2236,7 +2299,7 @@ namespace Projeto
 
         #endregion
 
-        #region VerCartas
+        #region Pesquisa de Cartas
 
         /// <summary>
         /// Guarda os valores dos campos de pesquisa em variáveis
@@ -2312,9 +2375,10 @@ namespace Projeto
             nudVAtaqueCarta.Value = 0;
             nudVDefesaCarta.Value = 0;
         }
+
         #endregion
 
-        #region VerBaralhos
+        #region Pesquisa de Baralhos
 
         /// <summary>
         /// Obtém os dados necessários dos campos de pesquisa e guarda-os em variáveis
@@ -2646,7 +2710,7 @@ namespace Projeto
         {
 
             carregarCancelarJogadores();
-            gbGJogadoresForm.Enabled = true;
+            gbGJogadoresForm.Visible = true;
             btnJogadoresAcao.Text = "Guardar";
 
 
@@ -2878,7 +2942,7 @@ namespace Projeto
         private void btnAlterarEquipa_Click(object sender, EventArgs e)
         {
             carregarCancelarEquipas();
-            gbGEquipasForm.Enabled = true;
+            gbGEquipasForm.Visible = true;
             btnEquipaAcao.Text = "Guardar";
 
             Image file;
@@ -3644,8 +3708,8 @@ namespace Projeto
         {
             ResetFormTorneios();
             txtTorneioAcao.Text = "Adicionar";
-            gbGTorneiosForm.Enabled = true;
             gbGTorneiosForm.Visible = true;
+            gbGJogosForm.Visible = false;
         }
 
         private void BotaoAlterarTorneio(object sender, EventArgs e)
@@ -3663,10 +3727,9 @@ namespace Projeto
                     tpDataTorneio.Value = torneio.Date;
 
                     txtTorneioAcao.Text = "Aplicar";
-                    gbGTorneiosForm.Enabled = true;
                     gbGTorneiosForm.Visible = true;
-                    gbTipoTorneio.Enabled = false;
                     gbTipoTorneio.Visible = false;
+                    gbGJogosForm.Visible = false;
                 }
 
                 else if (VerificarTipoStandardTournament())
@@ -3678,10 +3741,9 @@ namespace Projeto
                     tpDataTorneio.Value = torneio.Date;
 
                     txtTorneioAcao.Text = "Aplicar";
-                    gbGTorneiosForm.Enabled = true;
                     gbGTorneiosForm.Visible = true;
-                    gbTipoTorneio.Enabled = false;
                     gbTipoTorneio.Visible = false;
+                    gbGJogosForm.Visible = false;
                 }
             }
         }
@@ -4027,7 +4089,7 @@ namespace Projeto
         }
 
         #endregion
-
+		
         private void cmbequipajogador2_SelectedIndexChanged(object sender, EventArgs e)
         {
             /*if (radioTeamTournaments.Checked == true)

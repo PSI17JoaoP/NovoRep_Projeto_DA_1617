@@ -446,7 +446,7 @@
             this.tbMenu.Margin = new System.Windows.Forms.Padding(2);
             this.tbMenu.Name = "tbMenu";
             this.tbMenu.SelectedIndex = 0;
-            this.tbMenu.Size = new System.Drawing.Size(797, 454);
+            this.tbMenu.Size = new System.Drawing.Size(797, 455);
             this.tbMenu.TabIndex = 0;
             // 
             // tpGestao
@@ -456,7 +456,7 @@
             this.tpGestao.Margin = new System.Windows.Forms.Padding(2);
             this.tpGestao.Name = "tpGestao";
             this.tpGestao.Padding = new System.Windows.Forms.Padding(2);
-            this.tpGestao.Size = new System.Drawing.Size(789, 428);
+            this.tpGestao.Size = new System.Drawing.Size(789, 429);
             this.tpGestao.TabIndex = 0;
             this.tpGestao.Text = "Gestão";
             this.tpGestao.UseVisualStyleBackColor = true;
@@ -474,9 +474,8 @@
             this.tcGestao.Margin = new System.Windows.Forms.Padding(2);
             this.tcGestao.Name = "tcGestao";
             this.tcGestao.SelectedIndex = 0;
-            this.tcGestao.Size = new System.Drawing.Size(785, 424);
+            this.tcGestao.Size = new System.Drawing.Size(785, 425);
             this.tcGestao.TabIndex = 0;
-            this.tcGestao.Enter += new System.EventHandler(this.tcGestao_Enter);
             // 
             // tbGestaoJogadores
             // 
@@ -486,7 +485,7 @@
             this.tbGestaoJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoJogadores.Name = "tbGestaoJogadores";
             this.tbGestaoJogadores.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoJogadores.Size = new System.Drawing.Size(777, 398);
+            this.tbGestaoJogadores.Size = new System.Drawing.Size(777, 399);
             this.tbGestaoJogadores.TabIndex = 0;
             this.tbGestaoJogadores.Text = "Jogadores";
             this.tbGestaoJogadores.UseVisualStyleBackColor = true;
@@ -514,7 +513,7 @@
             this.gbGJogadoresForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogadoresForm.Name = "gbGJogadoresForm";
             this.gbGJogadoresForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGJogadoresForm.Size = new System.Drawing.Size(273, 390);
+            this.gbGJogadoresForm.Size = new System.Drawing.Size(273, 391);
             this.gbGJogadoresForm.TabIndex = 7;
             this.gbGJogadoresForm.TabStop = false;
             this.gbGJogadoresForm.Text = "Campos";
@@ -561,7 +560,7 @@
             // btnJogadoresCancelar
             // 
             this.btnJogadoresCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogadoresCancelar.Location = new System.Drawing.Point(193, 350);
+            this.btnJogadoresCancelar.Location = new System.Drawing.Point(193, 351);
             this.btnJogadoresCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogadoresCancelar.Name = "btnJogadoresCancelar";
             this.btnJogadoresCancelar.Size = new System.Drawing.Size(62, 21);
@@ -573,7 +572,7 @@
             // btnJogadoresAcao
             // 
             this.btnJogadoresAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogadoresAcao.Location = new System.Drawing.Point(133, 350);
+            this.btnJogadoresAcao.Location = new System.Drawing.Point(133, 351);
             this.btnJogadoresAcao.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogadoresAcao.Name = "btnJogadoresAcao";
             this.btnJogadoresAcao.Size = new System.Drawing.Size(56, 21);
@@ -663,7 +662,7 @@
             this.gbGJogadoresDados.Controls.Add(this.dgvGListaJogadores);
             this.gbGJogadoresDados.Controls.Add(this.btnInserirJogador);
             this.gbGJogadoresDados.Controls.Add(this.txtGJogadoresPesquisa);
-            this.gbGJogadoresDados.Location = new System.Drawing.Point(4, 3);
+            this.gbGJogadoresDados.Location = new System.Drawing.Point(4, 4);
             this.gbGJogadoresDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogadoresDados.MaximumSize = new System.Drawing.Size(492, 391);
             this.gbGJogadoresDados.MinimumSize = new System.Drawing.Size(492, 391);
@@ -715,6 +714,7 @@
             this.dgvGListaJogadores.AllowUserToAddRows = false;
             this.dgvGListaJogadores.AllowUserToDeleteRows = false;
             this.dgvGListaJogadores.AutoGenerateColumns = false;
+            this.dgvGListaJogadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGListaJogadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGListaJogadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn5,
@@ -730,6 +730,7 @@
             this.dgvGListaJogadores.ReadOnly = true;
             this.dgvGListaJogadores.RowHeadersVisible = false;
             this.dgvGListaJogadores.RowTemplate.Height = 24;
+            this.dgvGListaJogadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGListaJogadores.Size = new System.Drawing.Size(450, 254);
             this.dgvGListaJogadores.TabIndex = 0;
             this.dgvGListaJogadores.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGListaJogadores_CellMouseClick);
@@ -1138,6 +1139,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGListaEquipas.AutoGenerateColumns = false;
+            this.dgvGListaEquipas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGListaEquipas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGListaEquipas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn4,
@@ -1150,7 +1152,8 @@
             this.dgvGListaEquipas.ReadOnly = true;
             this.dgvGListaEquipas.RowHeadersVisible = false;
             this.dgvGListaEquipas.RowTemplate.Height = 24;
-            this.dgvGListaEquipas.Size = new System.Drawing.Size(388, 160);
+            this.dgvGListaEquipas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGListaEquipas.Size = new System.Drawing.Size(388, 161);
             this.dgvGListaEquipas.TabIndex = 3;
             this.dgvGListaEquipas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGListaEquipas_CellContentClick);
             this.dgvGListaEquipas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGListaEquipas_CellMouseClick);
@@ -1206,7 +1209,7 @@
             this.tbGestaoTorneios.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoTorneios.Name = "tbGestaoTorneios";
             this.tbGestaoTorneios.Padding = new System.Windows.Forms.Padding(2);
-            this.tbGestaoTorneios.Size = new System.Drawing.Size(777, 398);
+            this.tbGestaoTorneios.Size = new System.Drawing.Size(777, 399);
             this.tbGestaoTorneios.TabIndex = 2;
             this.tbGestaoTorneios.Text = "Torneios";
             this.tbGestaoTorneios.UseVisualStyleBackColor = true;
@@ -1227,7 +1230,7 @@
             this.gbGJogosDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogosDados.Name = "gbGJogosDados";
             this.gbGJogosDados.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGJogosDados.Size = new System.Drawing.Size(436, 193);
+            this.gbGJogosDados.Size = new System.Drawing.Size(436, 194);
             this.gbGJogosDados.TabIndex = 1;
             this.gbGJogosDados.TabStop = false;
             this.gbGJogosDados.Text = "Jogos";
@@ -1277,13 +1280,13 @@
             this.dgvGJogosLista.RowHeadersVisible = false;
             this.dgvGJogosLista.RowTemplate.Height = 24;
             this.dgvGJogosLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGJogosLista.Size = new System.Drawing.Size(404, 96);
+            this.dgvGJogosLista.Size = new System.Drawing.Size(404, 97);
             this.dgvGJogosLista.TabIndex = 4;
             // 
             // btnAlterarJogo
             // 
             this.btnAlterarJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterarJogo.Location = new System.Drawing.Point(303, 167);
+            this.btnAlterarJogo.Location = new System.Drawing.Point(303, 168);
             this.btnAlterarJogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarJogo.Name = "btnAlterarJogo";
             this.btnAlterarJogo.Size = new System.Drawing.Size(58, 22);
@@ -1295,7 +1298,7 @@
             // btnInserirJogo
             // 
             this.btnInserirJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirJogo.Location = new System.Drawing.Point(241, 167);
+            this.btnInserirJogo.Location = new System.Drawing.Point(241, 168);
             this.btnInserirJogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirJogo.Name = "btnInserirJogo";
             this.btnInserirJogo.Size = new System.Drawing.Size(58, 22);
@@ -1307,7 +1310,7 @@
             // btnRemoverJogo
             // 
             this.btnRemoverJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoverJogo.Location = new System.Drawing.Point(365, 167);
+            this.btnRemoverJogo.Location = new System.Drawing.Point(365, 168);
             this.btnRemoverJogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverJogo.Name = "btnRemoverJogo";
             this.btnRemoverJogo.Size = new System.Drawing.Size(58, 22);
@@ -1454,7 +1457,7 @@
             this.gbGTorneiosInfo.Margin = new System.Windows.Forms.Padding(2);
             this.gbGTorneiosInfo.Name = "gbGTorneiosInfo";
             this.gbGTorneiosInfo.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGTorneiosInfo.Size = new System.Drawing.Size(337, 394);
+            this.gbGTorneiosInfo.Size = new System.Drawing.Size(337, 395);
             this.gbGTorneiosInfo.TabIndex = 2;
             this.gbGTorneiosInfo.TabStop = false;
             // 
@@ -1682,7 +1685,7 @@
             this.gbGTorneiosForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGTorneiosForm.Name = "gbGTorneiosForm";
             this.gbGTorneiosForm.Padding = new System.Windows.Forms.Padding(2);
-            this.gbGTorneiosForm.Size = new System.Drawing.Size(333, 377);
+            this.gbGTorneiosForm.Size = new System.Drawing.Size(333, 378);
             this.gbGTorneiosForm.TabIndex = 1;
             this.gbGTorneiosForm.TabStop = false;
             this.gbGTorneiosForm.Text = "Campos";
@@ -1724,7 +1727,7 @@
             // txtTorneioCancelar
             // 
             this.txtTorneioCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTorneioCancelar.Location = new System.Drawing.Point(261, 267);
+            this.txtTorneioCancelar.Location = new System.Drawing.Point(261, 268);
             this.txtTorneioCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.txtTorneioCancelar.Name = "txtTorneioCancelar";
             this.txtTorneioCancelar.Size = new System.Drawing.Size(62, 21);
@@ -1736,7 +1739,7 @@
             // txtTorneioAcao
             // 
             this.txtTorneioAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTorneioAcao.Location = new System.Drawing.Point(201, 267);
+            this.txtTorneioAcao.Location = new System.Drawing.Point(201, 268);
             this.txtTorneioAcao.Margin = new System.Windows.Forms.Padding(2);
             this.txtTorneioAcao.Name = "txtTorneioAcao";
             this.txtTorneioAcao.Size = new System.Drawing.Size(56, 21);
@@ -1756,7 +1759,7 @@
             this.txtDescricaoTorneio.MinimumSize = new System.Drawing.Size(289, 50);
             this.txtDescricaoTorneio.Multiline = true;
             this.txtDescricaoTorneio.Name = "txtDescricaoTorneio";
-            this.txtDescricaoTorneio.Size = new System.Drawing.Size(301, 117);
+            this.txtDescricaoTorneio.Size = new System.Drawing.Size(301, 118);
             this.txtDescricaoTorneio.TabIndex = 8;
             // 
             // tpDataTorneio
@@ -3259,6 +3262,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGListaEquipasPesquisa.AutoGenerateColumns = false;
+            this.dgvGListaEquipasPesquisa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGListaEquipasPesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGListaEquipasPesquisa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn7,
@@ -3920,7 +3924,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 454);
+            this.ClientSize = new System.Drawing.Size(797, 455);
             this.Controls.Add(this.tbMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
