@@ -14,12 +14,12 @@ namespace Projeto
     
     public partial class TeamGame : Game
     {
-        public int TeamTournamentId { get; set; }
         public Nullable<int> TeamId1 { get; set; }
         public Nullable<int> TeamId2 { get; set; }
+        public Nullable<int> TeamTournamentId { get; set; }
     
-        public virtual TeamTournament Tournament { get; set; }
         public virtual Team Team1 { get; set; }
         public virtual Team Team2 { get; set; }
+        public virtual TeamTournament Tournament { get; set; }
     }
 }

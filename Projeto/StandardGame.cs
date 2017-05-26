@@ -14,12 +14,12 @@ namespace Projeto
     
     public partial class StandardGame : Game
     {
-        public int StandardTournamentId { get; set; }
         public Nullable<int> PlayerId1 { get; set; }
         public Nullable<int> PlayerId2 { get; set; }
+        public Nullable<int> StandardTournamentId { get; set; }
     
-        public virtual StandardTournament Tournament { get; set; }
         public virtual Player Player1 { get; set; }
         public virtual Player Player2 { get; set; }
+        public virtual StandardTournament Tournament { get; set; }
     }
 }

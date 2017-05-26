@@ -40,6 +40,16 @@ namespace Projeto
 
         private int idEquipa;
 
+        /// <summary>
+        /// Variavel privada que guarda o id do torneio selecionado.
+        /// </summary>
+        private int idTorneio;
+
+        private TeamTournament torneioequipaselecionado;
+
+        private int idJogo;
+
+
         public formMenuAdmin()
         {
             InitializeComponent();
@@ -55,6 +65,8 @@ namespace Projeto
 
         private void formMenuAdmin_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Tournaments.TournamentSet' table. You can move, or remove it, as needed.
+            this.tournamentSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Tournaments.TournamentSet);
             // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Players.PlayerSet' table. You can move, or remove it, as needed.
             this.playerSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Players.PlayerSet);
             // TODO: This line of code loads data into the 'bD_DA_ProjetoDataSet_Teams.TeamSet' table. You can move, or remove it, as needed.
@@ -70,18 +82,47 @@ namespace Projeto
 
             radioAdmins.Checked = true;
             radioPesquisaAdministrador.Checked = true;
-        }
-
-        private void btnRemoverTorneio_Click(object sender, EventArgs e)
-        {
-            gbGTorneiosForm.Visible = true;
-            gbGJogosForm.Visible = false;
+            radioTeamTournaments.Checked = true;
         }
 
         private void btnRemoverJogo_Click(object sender, EventArgs e)
         {
             gbGTorneiosForm.Visible = false;
             gbGJogosForm.Visible = true;
+
+            if(dgvGJogosLista.SelectedCells.Count > 0)
+            {
+                idJogo = (int)dgvGJogosLista.CurrentRow.Cells[0].Value;
+
+                DialogResult confirmar = MessageBox.Show("Deseja eliminar o jogador selecionado.", "Eliminação de dados", MessageBoxButtons.YesNo);
+
+                if(confirmar == DialogResult.Yes)
+                {
+                    removerJogo();
+                    refreshTabelaJogos();
+                }
+            }
+            cancelarJogo();
+            gbGJogosForm.Enabled = false;
+        }
+
+        private void removerJogo()
+        {
+            try
+            {
+                foreach(Game jogo in containerDados.GameSet)
+                {
+                    if(jogo.Id == idJogo)
+                    {
+                        containerDados.GameSet.Remove(jogo);
+                    }
+                }
+                containerDados.SaveChanges();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao eliminar o jogo.", "Eliminar dados");
+            }
         }
 
         #region Gestão de Utiilizadores
@@ -115,45 +156,48 @@ namespace Projeto
         /// </summary>
         private void BotaoAlterarUtilizador(object sender, EventArgs e)
         {
-            if(VerificarTipoAdministrator(dgvGUtilizadoresLista.CurrentRow))
+            if (dgvGUtilizadoresLista.SelectedRows.Count > 0)
             {
-                idAdministrador = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
-
-                Administrator admin = (Administrator)containerDados.UserSet.Find(idAdministrador);
-
-                txtUsernameAdministrador.Text = admin.Username;
-                txtEmailAdministrador.Text = admin.Email;
-
-                btnAcaoAdministrador.Text = "Aplicar";
-                gbGAdministradorForm.Visible = true;
-                gbGArbitroForm.Visible = false;
-                gbGUtilizadoresDados.Enabled = false;
-            }
-
-            else if(VerificarTipoReferee(dgvGUtilizadoresLista.CurrentRow))
-            {
-                idArbitro = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
-
-                Referee arbitro = (Referee)containerDados.UserSet.Find(idArbitro);
-
-                txtUsernameArbitro.Text = arbitro.Username;
-                txtNomeArbitro.Text = arbitro.Name;
-                txtAvatarArbitro.Text = arbitro.Avatar;
-
-                if (File.Exists(arbitro.Avatar))
+                if (VerificarTipoAdministrator(dgvGUtilizadoresLista.CurrentRow))
                 {
-                    using (Bitmap imagemAvatar = new Bitmap(arbitro.Avatar))
-                    {
-                        Image avatarArbitro = new Bitmap(imagemAvatar);
-                        pbAvatarArbitro.Image = avatarArbitro;
-                    }
+                    idAdministrador = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
+
+                    Administrator admin = (Administrator)containerDados.UserSet.Find(idAdministrador);
+
+                    txtUsernameAdministrador.Text = admin.Username;
+                    txtEmailAdministrador.Text = admin.Email;
+
+                    btnAcaoAdministrador.Text = "Aplicar";
+                    gbGAdministradorForm.Visible = true;
+                    gbGArbitroForm.Visible = false;
+                    gbGUtilizadoresDados.Enabled = false;
                 }
 
-                btnAcaoArbitro.Text = "Aplicar";
-                txtAvatarArbitro.Enabled = true;
-                gbGAdministradorForm.Visible = false;
-                gbGArbitroForm.Visible = true;
-                gbGUtilizadoresDados.Enabled = false;
+                else if (VerificarTipoReferee(dgvGUtilizadoresLista.CurrentRow))
+                {
+                    idArbitro = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
+
+                    Referee arbitro = (Referee)containerDados.UserSet.Find(idArbitro);
+
+                    txtUsernameArbitro.Text = arbitro.Username;
+                    txtNomeArbitro.Text = arbitro.Name;
+                    txtAvatarArbitro.Text = arbitro.Avatar;
+
+                    if (File.Exists(arbitro.Avatar))
+                    {
+                        using (Bitmap imagemAvatar = new Bitmap(arbitro.Avatar))
+                        {
+                            Image avatarArbitro = new Bitmap(imagemAvatar);
+                            pbAvatarArbitro.Image = avatarArbitro;
+                        }
+                    }
+
+                    btnAcaoArbitro.Text = "Aplicar";
+                    txtAvatarArbitro.Enabled = true;
+                    gbGAdministradorForm.Visible = false;
+                    gbGArbitroForm.Visible = true;
+                    gbGUtilizadoresDados.Enabled = false;
+                }
             }
         }
 
@@ -163,30 +207,33 @@ namespace Projeto
         /// </summary>
         private void BotaoEliminarUtilizador(object sender, EventArgs e)
         {
-            DialogResult confirmacaoEliminar = MessageBox.Show("Tem a certeza que quer eliminar o utilizador '" + dgvGUtilizadoresLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (confirmacaoEliminar == DialogResult.Yes)
+            if (dgvGUtilizadoresLista.SelectedRows.Count > 0)
             {
-                if (VerificarTipoAdministrator(dgvGUtilizadoresLista.CurrentRow))
-                {
-                    if (containerDados.UserSet.OfType<Administrator>().Count() > 1)
-                    {
-                        idAdministrador = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
+                DialogResult confirmacaoEliminar = MessageBox.Show("Tem a certeza que quer eliminar o utilizador '" + dgvGUtilizadoresLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        RemoverAdministrador();
+                if (confirmacaoEliminar == DialogResult.Yes)
+                {
+                    if (VerificarTipoAdministrator(dgvGUtilizadoresLista.CurrentRow))
+                    {
+                        if (containerDados.UserSet.OfType<Administrator>().Count() > 1)
+                        {
+                            idAdministrador = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
+
+                            RemoverAdministrador();
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Tem de existir, no mínimo, uma administrador.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
 
-                    else
+                    else if (VerificarTipoReferee(dgvGUtilizadoresLista.CurrentRow))
                     {
-                        MessageBox.Show("Tem de existir, no mínimo, uma administrador.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        idArbitro = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
+
+                        RemoverArbitro();
                     }
-                }
-
-                else if (VerificarTipoReferee(dgvGUtilizadoresLista.CurrentRow))
-                {
-                    idArbitro = (int)dgvGUtilizadoresLista.CurrentRow.Cells[0].Value;
-
-                    RemoverArbitro();
                 }
             }
         }
@@ -1100,18 +1147,31 @@ namespace Projeto
 
         #region Pesquisa de Utilizadores
 
+        /// <summary>
+        /// Evento do radio button "Administrador", na tab de Pesquisa de Utilizadores.
+        /// Apenas invoca os métodos ResetPesquisaUtilizadoresForm e RefreshTabelaPesquisaUtilizadores para limpar o form e fazer refresh à tabela.
+        /// </summary>
         private void RadioPesquisarAdministrador(object sender, EventArgs e)
         {
             ResetPesquisaUtilizadoresForm();
             RefreshTabelaPesquisaUtilizadores();
         }
 
+        /// <summary>
+        /// Evento do radio button "Arbitro", na tab de Pesquisa de Utilizadores.
+        /// Apenas invoca os métodos ResetPesquisaUtilizadoresForm e RefreshTabelaPesquisaUtilizadores para limpar o form e fazer refresh à tabela.
+        /// </summary>
         private void RadioPesquisarArbitro(object sender, EventArgs e)
         {
             ResetPesquisaUtilizadoresForm();
             RefreshTabelaPesquisaUtilizadores();
         }
 
+        /// <summary>
+        /// Evento da checkbox "Ativo", na tab de Pesquisa de Utilizadores.
+        /// Indica se o utilizador deseja pesquisar arbitros ativos, isto é, tenham jogos futuros associados.
+        /// Invoca os métodos de pesquisa de Arbitros, dependendo se a checkbox seja ativada.
+        /// </summary>
         private void CheckArbitroAtivo(object sender, EventArgs e)
         {
             if (checkPesquisaArbitroAtivo.Checked == true)
@@ -1125,6 +1185,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do botão "Pesquisar", na tab de Pesquisa de Utilizadores.
+        /// Invoca os métodos de Pesquisa de Utilizadores, dependendo do tipo de utilizador selecionado
+        /// </summary>
         private void PesquisaAvancadaUtilizador(object sender, EventArgs e)
         {
             if (radioPesquisaAdministrador.Checked == true)
@@ -1146,6 +1210,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do botão "Reset", na tab de Pesquisa de Utilizadores
+        /// Apenas invoca os métodos ResetPesquisaUtilizadoresForm e RefreshTabelaPesquisaUtilizadores para limpar o form e fazer refresh à tabela.
+        /// </summary>
         private void BotaoResetPesquisa(object sender, EventArgs e)
         {
             ResetPesquisaUtilizadoresForm();
@@ -1344,6 +1412,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento da tab de Pesquisa de Utilizadores.
+        /// Invoca o método RefreshTabelaPesquisaUtilizadores para carregar os dados para a Data Grid View.
+        /// </summary>
         private void TabPesquisaUtilizadores(object sender, EventArgs e)
         {
             RefreshTabelaPesquisaUtilizadores();
@@ -1352,6 +1424,9 @@ namespace Projeto
         #endregion
 
         #region GestaoCartas
+
+
+
 
         /// <summary>
         /// Ativa o formulário para preencher os dados da nova carta.
@@ -1371,6 +1446,7 @@ namespace Projeto
         /// </summary>
         private void btnAlterarCarta_Click(object sender, EventArgs e)
         {
+            gbGCartasForm.Visible = true;
             gbGCartasForm.Enabled = true;
             btnAcaoCarta.Text = "Guardar";
 
@@ -1653,7 +1729,6 @@ namespace Projeto
             return result;
         }
 
-
         /// <summary>
         /// Procura na base de dados a carta com o mesmo id da carta selecionada
         /// Tenta remover a carta da base de dados
@@ -1693,12 +1768,24 @@ namespace Projeto
         /// </summary>
         private void txtGCartasPesquisa_TextChanged(object sender, EventArgs e)
         {
+            if (txtGCartasPesquisa.Text.Length > 0)
+            {
 
+                var query = from cards in containerDados.CardSet
+                            where cards.Name.Contains(txtGCartasPesquisa.Text)
+                            select cards;
+
+                dgvGCartasLista.DataSource = query.ToList(); dgvGCartasLista.DataSource = query.ToList();
+            }
+            else
+            {
+                RefreshTabelaCartas(); RefreshTabelaCartas();
+            }
         }
 
         #endregion
 
-        #region GestaoBaralhos
+        #region Gestao de Baralhos
 
         /// <summary>
         /// Ativa os botões de Gerir e Eliminar baralhos
@@ -1838,8 +1925,11 @@ namespace Projeto
             this.deckSetTableAdapter.Fill(this.bD_DA_ProjetoDataSet_Decks.DeckSet);
             dgvGBaralhosLista.DataSource = deckSetBindingSource;
 
-            int lastrow = dgvGBaralhosLista.Rows.GetLastRow(DataGridViewElementStates.Visible);
-            dgvGBaralhosLista.CurrentCell = dgvGBaralhosLista[0, lastrow];
+            if (dgvGBaralhosLista.Rows.Count > 0)
+            {
+                int lastrow = dgvGBaralhosLista.Rows.GetLastRow(DataGridViewElementStates.Visible);
+                dgvGBaralhosLista.CurrentCell = dgvGBaralhosLista[0, lastrow];
+            }
         }
 
         /// <summary>
@@ -1992,7 +2082,20 @@ namespace Projeto
         /// </summary>
         private void txtGBaralhosPesquisa_TextChanged(object sender, EventArgs e)
         {
+            if (txtGBaralhosPesquisa.Text.Length > 0) if (txtGBaralhosPesquisa.Text.Length > 0)
+            {
 
+                    var query = from decks in containerDados.DeckSet
+                                where decks.Name.Contains(txtGBaralhosPesquisa.Text)
+                                select decks;
+
+                    dgvGBaralhosLista.DataSource = query.ToList(); dgvGBaralhosLista.DataSource = query.ToList();
+            }
+
+            else
+            {
+                RefreshTabelaBaralhos();
+            }
         }
 
         /// <summary>
@@ -2003,7 +2106,14 @@ namespace Projeto
         /// </summary>
         private void lvListaCartas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (lvListaCartas.SelectedItems.Count > 0 && Convert.ToInt32(lblNCartasNoBaralho.Text) < 45)
+            {
+                btnAdicionarCartaBaralho.Enabled = true;
+            }
+            else
+            {
+                btnAdicionarCartaBaralho.Enabled = false;
+            }
         }
 
         /// <summary>
@@ -2014,7 +2124,14 @@ namespace Projeto
         /// </summary>
         private void lvCartasBaralho_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (lvCartasBaralho.SelectedItems.Count > 0)
+            {
+                btnRemoverCartaBaralho.Enabled = true;
+            }
+            else
+            {
+                btnRemoverCartaBaralho.Enabled = false;
+            }
         }
 
         /// <summary>
@@ -2186,7 +2303,7 @@ namespace Projeto
 
         #endregion
 
-        #region VerCartas
+        #region Pesquisa de Cartas
 
         /// <summary>
         /// Guarda os valores dos campos de pesquisa em variáveis
@@ -2262,9 +2379,10 @@ namespace Projeto
             nudVAtaqueCarta.Value = 0;
             nudVDefesaCarta.Value = 0;
         }
+
         #endregion
 
-        #region VerBaralhos
+        #region Pesquisa de Baralhos
 
         /// <summary>
         /// Obtém os dados necessários dos campos de pesquisa e guarda-os em variáveis
@@ -2383,7 +2501,6 @@ namespace Projeto
                        MessageBox.Show("Jogador não inserido com sucesso.");
                    }
                    */
-
                 }
                 else if (btnJogadoresAcao.Text == "Guardar")
                 {
@@ -2395,8 +2512,10 @@ namespace Projeto
                         alterarJogadorExistente(nome, email, nickname, idade, caminho);
                         atualizarTabelaJogadores();
                     }
-
                 }
+
+                gbGJogadoresForm.Enabled = false;
+                gbGJogadoresForm.Visible = false;
             }
         }
 
@@ -2596,7 +2715,7 @@ namespace Projeto
         {
 
             carregarCancelarJogadores();
-            gbGJogadoresForm.Enabled = true;
+            gbGJogadoresForm.Visible = true;
             btnJogadoresAcao.Text = "Guardar";
 
 
@@ -2713,6 +2832,9 @@ namespace Projeto
                         atualizarTabelaEquipas();
                     }
                 }
+
+                gbGEquipasForm.Enabled = false;
+                gbGEquipasForm.Visible = false;
             }
         }
 
@@ -2828,7 +2950,7 @@ namespace Projeto
         private void btnAlterarEquipa_Click(object sender, EventArgs e)
         {
             carregarCancelarEquipas();
-            gbGEquipasForm.Enabled = true;
+            gbGEquipasForm.Visible = true;
             btnEquipaAcao.Text = "Guardar";
 
             Image file;
@@ -2855,15 +2977,11 @@ namespace Projeto
 
         }
 
-        private void dgvGListaEquipas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dgvGListaEquipas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (dgvGListaEquipas.RowCount > 0 && dgvGListaEquipas.SelectedCells.Count > 0)
             {
+                btnGerirEquipa.Enabled = true;
                 btnAlterarEquipa.Enabled = true;
                 btnRemoverEquipa.Enabled = true;
             }
@@ -2921,70 +3039,6 @@ namespace Projeto
             }
         }
 
-
-
-        /*private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if(cbxpesquisarpor.SelectedIndex != -1)
-            {
-                string pesquisapor = cbxpesquisarpor.SelectedItem.ToString();
-                string pesquisa = txtpesquisa.Text;
-                if (!pesquisa.Equals(""))
-                {
-                    
-                    if (pesquisapor.Equals("Nome"))
-                    {
-                        var query = from player in container.PlayerSet
-                                    where player.Name.Contains(pesquisa)
-                                    select player;
-                        dgvGListaJogadoresPesquisa.DataSource = query.ToList();
-                    }
-                    else if (pesquisapor.Equals("Email"))
-                    {
-                        var query1 = from player in container.PlayerSet
-                                where player.Email.Contains(pesquisa)
-                                select player;
-                        dgvGListaJogadoresPesquisa.DataSource = query1.ToList();
-                    }
-                    else if (pesquisapor.Equals("Nickname"))
-                    {
-                        var query2 = from player in container.PlayerSet
-                                    where player.Nickname.Contains(pesquisa)
-                                    select player;
-                        dgvGListaJogadoresPesquisa.DataSource = query2.ToList();
-                    }
-                    else if (pesquisapor.Equals("Idade"))
-                    {
-                        //int idade = int.Parse(txtpesquisa.Text);
-                        int idade = 0;
-                       
-                        if(int.TryParse(pesquisa, out idade))
-                        {
-                          var query3 = from player in container.PlayerSet
-                                        where player.Age == idade
-                                        select player;
-                          dgvGListaJogadoresPesquisa.DataSource = query3.ToList();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Insira valores numéricos.");
-                        }
-
-
-                            
-                    
-                        
-                    }
-                    
-                }
-                else
-                {
-                    atualizarTabelaJogadoresPesquisa();
-                }
-            }
-        }
-        */
-
         private void atualizarTabelaJogadoresPesquisa()
         {
             dgvGListaJogadoresPesquisa.DataSource = null;
@@ -2994,102 +3048,6 @@ namespace Projeto
             int i = dgvGListaJogadoresPesquisa.Rows.Count;
 
             dgvGListaJogadoresPesquisa.CurrentCell = dgvGListaJogadoresPesquisa.Rows[i - 1].Cells[0];
-        }
-
-        private void btnExportar_Click(object sender, EventArgs e)
-        {
-
-            /*string filtro = " ";
-            if (txtNomeJogador2.Text.Equals("") && txtEmailJogador2.Text.Equals("") && txtNicknameJogador2.Text.Equals("") && nudIdadeJogador2.Value == 0)
-            {
-                filtro = "Nenhum filtro aplicado. Todos os jogadores.";
-            }
-            else
-            {
-                filtro = "Filtro Aplicado\n";
-                if (!txtNomeJogador2.Text.Equals(""))
-                {
-                    filtro += "Nome: " + txtNomeJogador2.Text;
-                }
-                if (!txtEmailJogador2.Text.Equals(""))
-                {
-                    filtro += "\nEmail: " + txtEmailJogador2.Text;
-                }
-                if (!txtNicknameJogador2.Text.Equals(""))
-                {
-                    filtro += "\nNickname: " + txtNicknameJogador2.Text;
-                }
-                if ((int)nudIdadeJogador2.Value != 0)
-                {
-                    filtro += "\nIdade: " + nudIdadeJogador2.Value;
-                }
-
-
-
-                Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Test.pdf", FileMode.Create));
-                doc.Open();
-
-                Paragraph paragraph = new Paragraph(filtro);
-
-                doc.Add(paragraph);
-                
-
-                string[] tit = { "Id", "Nome", "Email", "Nickname", "Idade" };
-                float[] larg = { 0.08f, 0.3f, 0.2f, 0.2f, 0.1f };
-
-                PdfPTable tabela = new PdfPTable(tit.Length);
-
-                tabela.SetWidths(larg);
-
-                for(int i=0, n=tit.Length; i<n; i++){
-                    string titulo = tit[i];
-                    Paragraph p = new Paragraph(tit[i]);
-                    iTextSharp.text.Font tipoletra = FontFactory.GetFont("Arial", 12.0f, 3, new BaseColor(255, 255, 255));
-                    PdfPCell cel = new PdfPCell(p);
-                    tabela.AddCell(cel);
-                }
-
-                //List<Class> myClass = DataGridView.Datasource as List<Class>;
-
-                List<Player> jogadores = dgvGListaJogadoresPesquisa.DataSource as List<Player>;
-                for(int i=0; i<jogadores.Count; i++)
-                {
-                    Player jogador = jogadores[i];
-                    Paragraph id = new Paragraph(jogador.Id.ToString());
-                    PdfPCell cel1 = new PdfPCell(id);
-                    Paragraph nome = new Paragraph(jogador.Name);
-                    PdfPCell cel = new PdfPCell(nome);
-                    Paragraph email = new Paragraph(jogador.Email);
-                    PdfPCell cel2 = new PdfPCell(email);
-                    Paragraph nickname = new Paragraph(jogador.Nickname);
-                    PdfPCell cel3 = new PdfPCell(nickname);
-                    Paragraph idade = new Paragraph(jogador.Age.ToString());
-                    PdfPCell cel4 = new PdfPCell(idade);
-                    tabela.AddCell(cel1);
-                    tabela.AddCell(cel);
-                    tabela.AddCell(cel2);
-                    tabela.AddCell(cel3);
-                    tabela.AddCell(cel4);
-
-
-                }
-
-
-
-                doc.Add(tabela);
-                doc.Close();
-
-                
-
-
-
-            }
-            */
-
-
-
-
         }
 
         private void pesquisarJogadores(object sender, EventArgs e)
@@ -3121,11 +3079,6 @@ namespace Projeto
             }
 
             dgvGListaJogadoresPesquisa.DataSource = query.ToList();
-
-
-
-
-
         }
 
         private void tbVerJogadores_Click(object sender, EventArgs e)
@@ -3141,8 +3094,6 @@ namespace Projeto
         private void btnGerirEquipa_Click(object sender, EventArgs e)
         {
             idEquipa = (int)dgvGListaEquipas.CurrentRow.Cells[0].Value;
-            int nrjogadores = 0;
-            //int nrequipas = 0;
 
             ListViewItem linhaJogadoresEquipa;
             ListViewItem linhaListaJogadores;
@@ -3152,14 +3103,10 @@ namespace Projeto
 
             foreach (Player jogador in containerDados.PlayerSet)
             {
-                nrjogadores = 0;
-
                 foreach (TeamPlayers equipasjogadores in containerDados.TeamPlayersSet.Where(tp => tp.TeamId.Equals(idEquipa)))
                 {
                     if (equipasjogadores.PlayerId == jogador.Id)
                     {
-                        nrjogadores += 1;
-
                         linhaJogadoresEquipa = new ListViewItem(jogador.Name);
                         linhaJogadoresEquipa.SubItems.Add(jogador.Email);
                         linhaJogadoresEquipa.SubItems.Add(jogador.Age.ToString());
@@ -3171,10 +3118,10 @@ namespace Projeto
                 }
             }
 
-
             foreach (Player jogador in containerDados.PlayerSet)
             {
                 Boolean temEquipa = false;
+
                 foreach (TeamPlayers equipasjogadores in containerDados.TeamPlayersSet)
                 {
                     if (equipasjogadores.PlayerId == jogador.Id)
@@ -3193,6 +3140,11 @@ namespace Projeto
                 }
             }
 
+            groupBox1.Enabled = true;
+            groupBox2.Enabled = true;
+            btnAdicionarJogador.Enabled = true;
+            btnRetirarJogador.Enabled = true;
+            btnGuardarJogadorEquipa.Enabled = true;
         }
 
         private void btnAdicionarJogador_Click(object sender, EventArgs e)
@@ -3219,40 +3171,12 @@ namespace Projeto
                 btnRetirarJogador.Enabled = true;
                 btnGuardarJogadorEquipa.Enabled = true;
             }
-
-
-
-
-
-
-            /*var selectedItems = lcListaJogadores.SelectedItems;
-            foreach(ListViewItem selectedItem in selectedItems)
-            {
-                
-            }*/
-
-
-
-
-            //MessageBox.Show(jogador1.Text);
-            //Player jogador = getJogador(jogador.Text);
-
         }
 
         private void btnGuardarJogadorEquipa_Click(object sender, EventArgs e)
         {
             Player jogador;
             TeamPlayers equipajogadores;
-
-            /*var idJogadoresAnteriores = from equipasjogadores in container.TeamPlayersSet
-                                        where equipasjogadores.TeamId == idEquipa
-                                        select equipasjogadores;
-            */
-
-            /*context.Projects.Where(p => p.ProjectId == projectId)
-               .ToList().ForEach(p => context.Projects.Remove(p));
-            context.SaveChanges();
-            */
 
             containerDados.TeamPlayersSet.Where(tp => tp.TeamId == idEquipa)
                 .ToList().ForEach(tp => containerDados.TeamPlayersSet.Remove(tp));
@@ -3271,7 +3195,18 @@ namespace Projeto
             }
 
             containerDados.SaveChanges();
+            ResetListViewsEquipas();
+        }
 
+        private void ResetListViewsEquipas()
+        {
+            lcListaJogadores.Items.Clear();
+            lvJogadoresEquipa.Items.Clear();
+            groupBox1.Enabled = false;
+            groupBox2.Enabled = false;
+            btnAdicionarJogador.Enabled = false;
+            btnRetirarJogador.Enabled = false;
+            btnGuardarJogadorEquipa.Enabled = false;
         }
 
         private void btnRetirarJogador_Click(object sender, EventArgs e)
@@ -3326,7 +3261,6 @@ namespace Projeto
 
             if (!nomeequipa.Equals("") && cbnomejogadorpesquisa.SelectedIndex != -1)
             {
-                //MessageBox.Show("Olá1");
                 var query =
                     from equipa in containerDados.TeamSet
                     join equipajogadores in containerDados.TeamPlayersSet on equipa.Id equals equipajogadores.TeamId
@@ -3340,7 +3274,6 @@ namespace Projeto
             {
                 if (!nomeequipa.Equals(""))
                 {
-                    //MessageBox.Show("Ola2");
                     var query =
                         from equipa in containerDados.TeamSet
                         where equipa.Name.Contains(nomeequipa)
@@ -3350,7 +3283,6 @@ namespace Projeto
                 }
                 if (cbnomejogadorpesquisa.SelectedIndex != -1)
                 {
-                    //MessageBox.Show("Olá3");
                     var query =
                     from equipa in containerDados.TeamSet
                     join equipajogadores in containerDados.TeamPlayersSet on equipa.Id equals equipajogadores.TeamId
@@ -3369,9 +3301,6 @@ namespace Projeto
             tbxnomeequipapesquisa.ResetText();
             cbnomejogadorpesquisa.SelectedIndex = -1;
             dgvGListaEquipasPesquisa.DataSource = teamSetBindingSource;
-
-
-
         }
 
         private void limparTabelaPesquisas()
@@ -3384,5 +3313,1037 @@ namespace Projeto
 
         #endregion
 
+        private void tcGestao_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tbGestaoTorneios_Enter(object sender, EventArgs e)
+        {
+            /*cmbJogador1Jogo.Items.Clear();
+
+            Player jogador1;
+            if(cmbJogador1Jogo.SelectedIndex != -1)
+            {
+                jogador1 = (Player)cmbJogador1Jogo.SelectedItem;
+
+
+            }
+
+                foreach(Player jogador in containerDados.PlayerSet)
+                {
+                    cmbJogador1Jogo.Items.Add(jogador.Name);
+                    cmbJogador2Jogo.Items.Add(jogador.Name);
+                }
+                */
+
+
+            /*carregarJogadoresJogos();
+
+            carregarArbitrosJogos();
+            carregarDecks();
+            */
+            //MessageBox.Show("Olá");
+        }
+
+        private void carregarDecks()
+        {
+            cmbdecks1.Items.Clear();
+            cmbdecks2.Items.Clear();
+
+            foreach (Deck deck in containerDados.DeckSet)
+            {
+                cmbdecks1.Items.Add(deck.Name);
+                cmbdecks2.Items.Add(deck.Name);
+            }
+
+        }
+
+        private void carregarArbitrosJogos()
+        {
+            cmbarbitrojogos.Items.Clear();
+
+            foreach (Referee arbitro in containerDados.UserSet.OfType<Referee>())
+            {
+                cmbarbitrojogos.Items.Add(arbitro.Username);
+            }
+        }
+
+
+
+        private void carregarJogadoresJogos()
+        {
+            cmbequipajogador1.Items.Clear();
+            cmbequipajogador2.Items.Clear();
+
+            foreach (Player jogador in containerDados.PlayerSet)
+            {
+                
+                cmbequipajogador1.Items.Add(jogador.Name);
+                cmbequipajogador2.Items.Add(jogador.Name);
+            }
+
+        }
+
+        private void cmbJogador1Jogo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*if (radioTeamTournaments.Checked == true)
+            {
+                if(cmbequipajogador1.SelectedIndex != -1)
+                {
+                    string nomeequipa1 = cmbequipajogador1.SelectedItem.ToString();
+                    cmbequipajogador2.Items.Clear();
+                    foreach (Team equipa in containerDados.TeamSet)
+                    {
+                        if (!equipa.Name.Equals(nomeequipa1))
+                        {
+                            cmbequipajogador2.Items.Add(equipa.Name);
+                        }
+                    }
+                }
+            }
+            else if (radioStandardTournaments.Checked == true)
+            {
+                string nomejogador1 = cmbequipajogador1.SelectedItem.ToString();
+                cmbequipajogador2.Items.Clear();
+                foreach (Player jogador in containerDados.PlayerSet)
+                {
+                    if (!jogador.Name.Equals(nomejogador1))
+                    {
+                        cmbequipajogador2.Items.Add(jogador.Name);
+                    }
+                }
+
+            }*/
+               
+            
+
+            /*if (i != -1)
+            {
+                cmbequipajogador2.SelectedIndex = i;
+            }*/
+
+
+        }
+
+        private Player getPlayer(int i)
+        {
+            int a = 0;
+            Player p = null;
+            foreach (Player jogador in containerDados.PlayerSet)
+            {
+                if(i == a)
+                {
+                    p = jogador;
+                    return p;
+                }
+                a++;
+            }
+            return null;
+        }
+
+        private void btnInserirJogo_Click(object sender, EventArgs e)
+        {
+            //gbGJogosForm.Visible = true;
+            //btnJogoAcao.Text = "Criar";
+
+            gbGJogosForm.Visible = true;
+            gbGTorneiosForm.Visible = false;
+            btnJogoAcao.Text = "Criar";
+            gbGJogosForm.Enabled = true;
+
+            if (radioTeamTournaments.Checked == true)
+            {
+                //carregar dados das equipas
+                carregarEquipas();
+            }
+            else if (radioStandardTournaments.Checked == true)
+            {
+                //carregar dados dos jogadores
+                carregarJogadoresJogos();
+            }
+        }
+
+
+        private void carregarEquipas()
+        {
+            cmbequipajogador1.Items.Clear();
+            cmbequipajogador2.Items.Clear();
+
+            Team equipa1;
+
+            foreach (Team equipa in containerDados.TeamSet)
+            {
+                cmbequipajogador1.Items.Add(equipa.Name);
+                cmbequipajogador2.Items.Add(equipa.Name);
+            }
+        }
+
+        #region Gestão de Torneios
+
+        private void RadioFiltrarTeamTournaments(object sender, EventArgs e)
+        {
+            if(radioTeamTournaments.Checked == true)
+            {
+                txtGTorneiosPesquisa.Clear();
+                RefreshTabelaTorneios();
+            }
+        }
+
+        private void RadioFiltrarStandardTournaments(object sender, EventArgs e)
+        {
+            if(radioStandardTournaments.Checked == true)
+            {
+                txtGTorneiosPesquisa.Clear();
+                RefreshTabelaTorneios();
+            }
+        }
+
+        private void BotaoInserirTorneio(object sender, EventArgs e)
+        {
+            ResetFormTorneios();
+            txtTorneioAcao.Text = "Adicionar";
+            gbGTorneiosForm.Visible = true;
+            gbGJogosForm.Visible = false;
+        }
+
+        private void BotaoAlterarTorneio(object sender, EventArgs e)
+        {
+            if (dgvGTorneiosLista.SelectedRows.Count > 0)
+            {
+                idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+
+                if (VerificarTipoTeamTournament())
+                {
+                    TeamTournament torneio = (TeamTournament)containerDados.TournamentSet.Find(idTorneio);
+
+                    txtNomeTorneio.Text = torneio.Name;
+                    txtDescricaoTorneio.Text = torneio.Description;
+                    tpDataTorneio.Value = torneio.Date;
+
+                    txtTorneioAcao.Text = "Aplicar";
+                    gbGTorneiosForm.Visible = true;
+                    gbTipoTorneio.Visible = false;
+                    gbGJogosForm.Visible = false;
+                }
+
+                else if (VerificarTipoStandardTournament())
+                {
+                    StandardTournament torneio = (StandardTournament)containerDados.TournamentSet.Find(idTorneio);
+
+                    txtNomeTorneio.Text = torneio.Name;
+                    txtDescricaoTorneio.Text = torneio.Description;
+                    tpDataTorneio.Value = torneio.Date;
+
+                    txtTorneioAcao.Text = "Aplicar";
+                    gbGTorneiosForm.Visible = true;
+                    gbTipoTorneio.Visible = false;
+                    gbGJogosForm.Visible = false;
+                }
+            }
+        }
+
+        private void BotaoRemoverTorneio(object sender, EventArgs e)
+        {
+            if (dgvGTorneiosLista.SelectedRows.Count > 0)
+            {
+                DialogResult confirmacaoEliminar = MessageBox.Show("Tem a certeza que quer eliminar o torneio '" + dgvGTorneiosLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (confirmacaoEliminar == DialogResult.Yes)
+                {
+                    idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+
+                    if(VerificarTipoTeamTournament())
+                    {
+                        RemoverTeamTournament();
+                    }
+
+                    else if (VerificarTipoStandardTournament())
+                    {
+                        RemoverStandardTournament();
+                    }
+                }
+            }
+        }
+
+        private void BotaoAcaoTorneio(object sender, EventArgs e)
+        {
+            string nameForm = txtNomeTorneio.Text.Trim();
+            string descriptionForm = txtDescricaoTorneio.Text.Trim();
+            DateTime dataForm = tpDataTorneio.Value;
+
+            if (txtTorneioAcao.Text == "Aplicar")
+            {
+                DialogResult confirmacaoAlterar = MessageBox.Show("Tem a certeza que quer alterar o torneio '" + dgvGTorneiosLista.CurrentRow.Cells[1].Value.ToString() + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if(confirmacaoAlterar == DialogResult.Yes)
+                {
+                    if (nameForm.Length > 0 && descriptionForm.Length > 0)
+                    {
+                        if (containerDados.TournamentSet.Count() > 0)
+                        {
+                            idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+
+                            if (VerificarAlteracoesTournament(nameForm))
+                            {
+                                if (VerificarTipoTeamTournament())
+                                {
+                                    AlterarTeamTournament(nameForm, descriptionForm, dataForm);
+                                }
+
+                                else if (VerificarTipoStandardTournament())
+                                {
+                                    AlterarStandardTournament(nameForm, descriptionForm, dataForm);
+                                }
+
+                                ResetFormTorneios();
+                                gbGTorneiosForm.Visible = false;
+                            }
+
+                            else
+                            {
+                                MessageBox.Show("O torneio editado já existe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Tem de preencher os campos necessários para efetuar as alterações.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            else if (txtTorneioAcao.Text == "Adicionar")
+            {
+                DialogResult confirmacaoAdicionar = MessageBox.Show("Tem a certeza que quer adicionar o torneio '" + nameForm + "'?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if(confirmacaoAdicionar == DialogResult.Yes)
+                {
+                    if (nameForm.Length > 0 && descriptionForm.Length > 0)
+                    {
+                        if (containerDados.UserSet.Count() > 0)
+                        {
+                            if (VerificarDadosTournament(nameForm, descriptionForm))
+                            {
+                                if (radioTipoTorneioTeam.Checked == true)
+                                {
+                                    AdicionarTeamTournament(nameForm, descriptionForm, dataForm);
+                                }
+                                
+                                else if (radioTipoTorneioStandard.Checked == true)
+                                {
+                                    AdicionarStandardTournament(nameForm, descriptionForm, dataForm);
+                                }
+
+                                ResetFormTorneios();
+                                gbGTorneiosForm.Visible = false;
+                            }
+
+                            else
+                            {
+                                MessageBox.Show("O torneio inserido já existe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+                        else
+                        {
+                            if (radioTipoTorneioTeam.Checked == true)
+                            {
+                                AdicionarTeamTournament(nameForm, descriptionForm, dataForm);
+                                ResetFormTorneios();
+                                gbGTorneiosForm.Visible = false;
+                            }
+
+                            else if (radioTipoTorneioStandard.Checked == true)
+                            {
+                                AdicionarStandardTournament(nameForm, descriptionForm, dataForm);
+                                ResetFormTorneios();
+                                gbGTorneiosForm.Visible = false;
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Tem de preencher todos os campos para adicionar o torneio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void BotaoCancelarTorneio(object sender, EventArgs e)
+        {
+            ResetFormTorneios();
+            gbGTorneiosForm.Visible = false;
+        }
+
+        private void AdicionarTeamTournament(string name, string description, DateTime date)
+        {
+            try
+            {
+                TeamTournament novoTournament = new TeamTournament
+                {
+                    Name = name,
+                    Description = description,
+                    Date = date
+                };
+
+                containerDados.TournamentSet.Add(novoTournament);
+                containerDados.SaveChanges();
+                RefreshTabelaTorneios();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na inserção do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AdicionarStandardTournament(string name, string description, DateTime date)
+        {
+            try
+            {
+                StandardTournament novoTournament = new StandardTournament
+                {
+                    Name = name,
+                    Description = description,
+                    Date = date
+                };
+
+                containerDados.TournamentSet.Add(novoTournament);
+                containerDados.SaveChanges();
+                RefreshTabelaTorneios();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na inserção do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AlterarTeamTournament(string name, string description, DateTime date)
+        {
+            try
+            {
+                TeamTournament torneio = (TeamTournament) containerDados.TournamentSet.Find(idTorneio);
+
+                torneio.Name = name;
+                torneio.Description = description;
+                torneio.Date = date;
+
+                containerDados.Entry(torneio).State = EntityState.Modified;
+                containerDados.SaveChanges();
+                RefreshTabelaTorneios();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na edição do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AlterarStandardTournament(string name, string description, DateTime date)
+        {
+            try
+            {
+                StandardTournament torneio = (StandardTournament) containerDados.TournamentSet.Find(idTorneio);
+
+                torneio.Name = name;
+                torneio.Description = description;
+                torneio.Date = date;
+
+                containerDados.Entry(torneio).State = EntityState.Modified;
+                containerDados.SaveChanges();
+                RefreshTabelaTorneios();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na edição do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RemoverTeamTournament()
+        {
+            try
+            {
+                TeamTournament torneio = (TeamTournament) containerDados.TournamentSet.Find(idTorneio);
+
+                containerDados.TournamentSet.Remove(torneio);
+                containerDados.SaveChanges();
+                RefreshTabelaTorneios();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na remoção do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RemoverStandardTournament()
+        {
+            try
+            {
+                StandardTournament torneio = (StandardTournament) containerDados.TournamentSet.Find(idTorneio);
+
+                containerDados.TournamentSet.Remove(torneio);
+                containerDados.SaveChanges();
+                RefreshTabelaTorneios();
+            }
+
+            catch (Exception excecaoErro)
+            {
+                MessageBox.Show("Ocorreu um erro na remoção do torneio." + excecaoErro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RefreshTabelaTorneios()
+        {
+            if(radioTeamTournaments.Checked == true)
+            {
+                dgvGTorneiosLista.DataSource = (from torneiosTeam in containerDados.TournamentSet.OfType<TeamTournament>()
+                                                select new { torneiosTeam.Id, torneiosTeam.Name, torneiosTeam.Date, torneiosTeam.Description} ).ToList();
+            }
+
+            else if (radioStandardTournaments.Checked == true)
+            {
+                dgvGTorneiosLista.DataSource = (from torneiosStandard in containerDados.TournamentSet.OfType<StandardTournament>()
+                                                select new { torneiosStandard.Id, torneiosStandard.Name, torneiosStandard.Date, torneiosStandard.Description }).ToList();
+            }
+        }
+
+        private void ResetFormTorneios()
+        {
+            txtNomeTorneio.Clear();
+            txtDescricaoTorneio.Clear();
+            tpDataTorneio.ResetText();
+            gbGTorneiosDados.Enabled = true;
+            gbTipoTorneio.Enabled = true;
+            gbTipoTorneio.Visible = true;
+        }
+
+        private bool VerificarDadosTournament(string nameTorneio, string descriptionTorneio)
+        {
+            bool naoExisteDados = true;
+
+            foreach (Tournament torneio in containerDados.TournamentSet)
+            {
+                if (torneio.Name == nameTorneio && torneio.Description == descriptionTorneio)
+                {
+                    naoExisteDados = false;
+                }
+            }
+
+            return naoExisteDados;
+        }
+
+        private bool VerificarAlteracoesTournament(string nameTorneio)
+        {
+            bool aplicaAlteracoes = true;
+
+            foreach (Tournament torneio in containerDados.TournamentSet)
+            {
+                if (torneio.Name == nameTorneio && torneio.Id != idTorneio)
+                {
+                    aplicaAlteracoes = false;
+                }
+            }
+
+            return aplicaAlteracoes;
+        }
+		
+        private bool VerificarTipoTeamTournament()
+        {
+            bool isTipoTeamTournament = false;
+
+            foreach (TeamTournament torneioTeam in containerDados.TournamentSet.OfType<TeamTournament>())
+            {
+                if (torneioTeam.Id == idTorneio)
+                {
+                    isTipoTeamTournament = true;
+                }
+            }
+
+            return isTipoTeamTournament;
+        }
+
+        private bool VerificarTipoStandardTournament()
+        {
+            bool isTipoStandardTournament = false;
+
+            foreach (StandardTournament torneioStandard in containerDados.TournamentSet.OfType<StandardTournament>())
+            {
+                if (torneioStandard.Id == idTorneio)
+                {
+                    isTipoStandardTournament = true;
+                }
+            }
+
+            return isTipoStandardTournament;
+        }
+
+        #endregion
+		
+        private void cmbequipajogador2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*if (radioTeamTournaments.Checked == true)
+            {
+                string nomeequipa2 = cmbequipajogador2.SelectedItem.ToString();
+                cmbequipajogador1.Items.Clear();
+                foreach (Team equipa in containerDados.TeamSet)
+                {
+                    if (!equipa.Name.Equals(nomeequipa2))
+                    {
+                        cmbequipajogador1.Items.Add(equipa.Name);
+                    }
+                }
+            }
+            else if (radioStandardTournaments.Checked == true)
+            {
+                string nomejogador2 = cmbequipajogador2.SelectedItem.ToString();
+                cmbequipajogador1.Items.Clear();
+                foreach (Player jogador in containerDados.PlayerSet)
+                {
+                    if (!jogador.Name.Equals(nomejogador2))
+                    {
+                        cmbequipajogador1.Items.Add(jogador.Name);
+                    }
+                }
+            }*/
+        }
+
+        private void btngerirjogos_Click(object sender, EventArgs e)
+        {
+            gbGJogosDados.Enabled = true;
+            carregarArbitrosJogos();
+            carregarDecks();
+            if (dgvGTorneiosLista.SelectedRows.Count > 0)
+            {
+                idTorneio = (int)dgvGTorneiosLista.CurrentRow.Cells[0].Value;
+
+                if (radioStandardTournaments.Checked == true)
+                {
+                    carregarJogadoresJogos();
+                    groupBoxEquipasJogos.Text = "Jogadores";
+
+                }
+
+                else if (radioTeamTournaments.Checked == true)
+                {
+                    carregarEquipasJogos();
+                    groupBoxEquipasJogos.Text = "Equipas";
+                }
+
+                gbGTorneiosDados.Enabled = false;
+
+                refreshTabelaJogos();
+            }     
+        }
+
+        private void carregarEquipasJogos()
+        {
+            cmbequipajogador1.Items.Clear();
+
+            foreach(Team equipa in containerDados.TeamSet)
+            {
+                cmbequipajogador1.Items.Add(equipa.Name);
+                cmbequipajogador2.Items.Add(equipa.Name);
+            }
+        }
+
+        private void btnJogoAcao_Click(object sender, EventArgs e)
+        {
+            if((int)nudNJogo.Value == 0 || cmbarbitrojogos.SelectedIndex == -1 || cmbequipajogador1.SelectedIndex == -1 || cmbequipajogador2.SelectedIndex == -1 || cmbdecks1.SelectedIndex == -1 || cmbdecks2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Preencha os campos corretamente.", "Preenchimento de dados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DateTime data = tpDataJogos.Value;
+                int nrjogo = (int)nudNJogo.Value;
+                string usernamearbitro = cmbarbitrojogos.SelectedItem.ToString();
+                string nomejogador1 = cmbequipajogador1.SelectedItem.ToString();
+                string nomejogador2 = cmbequipajogador2.SelectedItem.ToString();
+                string deck1 = cmbdecks1.SelectedItem.ToString();
+                string deck2 = cmbdecks2.SelectedItem.ToString();
+                string descricao = txtDescricaoJogo.Text;
+
+                if (btnJogoAcao.Text.Equals("Criar")){
+
+                    if(radioStandardTournaments.Checked == true)
+                    {
+                        guardarStandardTournament(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                    }
+                    else if(radioTeamTournaments.Checked == true)
+                    {
+                        guardarTeamTournament(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                    }
+                }
+                else if(btnJogoAcao.Text.Equals("Guardar"))
+                {
+                    if (radioStandardTournaments.Checked == true)
+                    {
+                        alterarStandardTournament(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                    }
+                    else if (radioTeamTournaments.Checked == true)
+                    {
+                        alterarTeamTournament(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                    }
+                }
+                cancelarJogo();
+                gbGJogosForm.Enabled = false;
+            }
+        }
+
+        private void alterarTeamTournament(DateTime data, int nrjogo, string usernamearbitro, string nomeequipa1, string nomeequipa2, string deck1, string deck2, string descricao)
+        {
+            int idarbitro = getIdArbitro(usernamearbitro);
+            int idequipa1 = getIdEquipa(nomeequipa1);
+            int idequipa2 = getIdEquipa(nomeequipa2);
+            int iddeck1 = getIdDeck(deck1);
+            int iddeck2 = getIdDeck(deck2);
+
+            idJogo = (int)dgvGJogosLista.CurrentRow.Cells[0].Value;
+
+            TeamGame jogoequipa = (TeamGame) containerDados.GameSet.Find(idJogo);
+
+            jogoequipa.Date = data;
+            jogoequipa.Number = nrjogo;
+            jogoequipa.RefereeId = idarbitro;
+            jogoequipa.TeamId1 = idequipa1;
+            jogoequipa.TeamId2 = idequipa2;
+            jogoequipa.DeckId1 = iddeck1;
+            jogoequipa.DeckId2 = iddeck2;
+            jogoequipa.Description = descricao;
+
+            containerDados.Entry(jogoequipa).State = EntityState.Modified;
+            containerDados.SaveChanges();
+            refreshTabelaJogos();
+        }
+
+        private void alterarStandardTournament(DateTime data, int nrjogo, string usernamearbitro, string nomejogador1, string nomejogador2, string deck1, string deck2, string descricao)
+        {
+            int idarbitro = getIdArbitro(usernamearbitro);
+            int idjogador1 = getIdJogador(nomejogador1);
+            int idjogador2 = getIdJogador(nomejogador2);
+            int iddeck1 = getIdDeck(deck1);
+            int iddeck2 = getIdDeck(deck2);
+
+            idJogo = (int)dgvGJogosLista.CurrentRow.Cells[0].Value;
+
+            StandardGame jogo = (StandardGame) containerDados.GameSet.Find(idJogo);
+
+            jogo.Date = data;
+            jogo.Number = nrjogo;
+            jogo.RefereeId = idarbitro;
+            jogo.PlayerId1 = idjogador1;
+            jogo.PlayerId2 = idjogador2;
+            jogo.DeckId1 = iddeck1;
+            jogo.DeckId2 = iddeck2;
+            jogo.Description = descricao;
+
+            containerDados.Entry(jogo).State = EntityState.Modified;
+            containerDados.SaveChanges();
+            refreshTabelaJogos();
+        }
+
+        private void guardarTeamTournament(DateTime data, int nrjogo, string usernamearbitro, string nomeequipa1, string nomeequipa2, string deck1, string deck2, string descricao)
+        {
+            int idarbitro = getIdArbitro(usernamearbitro);
+            int idequipa1 = getIdEquipa(nomeequipa1);
+            int idequipa2 = getIdEquipa(nomeequipa2);
+            int iddeck1 = getIdDeck(deck1);
+            int iddeck2 = getIdDeck(deck2);
+
+            try
+            {
+                TeamGame jogoequipa = new TeamGame
+                {
+                    Date = data,
+                    Number = nrjogo,
+                    RefereeId = idarbitro,
+                    TeamId1 = idequipa1,
+                    TeamId2 = idequipa2,
+                    DeckId1 = iddeck1,
+                    DeckId2 = iddeck2,
+                    Description = descricao,
+                    TeamTournamentId = idTorneio
+                };
+                containerDados.GameSet.Add(jogoequipa);
+                containerDados.SaveChanges();
+                refreshTabelaJogos();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro na inserção do jogo de jogadores." + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private int getIdEquipa(string nomeequipa)
+        {
+            int idequipa = 0;
+            foreach(Team equipa in containerDados.TeamSet)
+            {
+                if (equipa.Name.Equals(nomeequipa))
+                {
+                    idequipa = equipa.Id;
+                }
+            }
+            return idequipa;
+        }
+
+        private void guardarStandardTournament(DateTime data, int nrjogo, string usernamearbitro, string nomejogador1, string nomejogador2, string deck1, string deck2, string descricao)
+        {
+
+            int idarbitro = getIdArbitro(usernamearbitro);
+            int idjogador1 = getIdJogador(nomejogador1);
+            int idjogador2 = getIdJogador(nomejogador2);
+            int iddeck1 = getIdDeck(deck1);
+            int iddeck2 = getIdDeck(deck2);
+
+            try
+            {
+                StandardGame jogo = new StandardGame
+                {
+                    Date = data,
+                    Number = nrjogo,
+                    RefereeId = idarbitro,
+                    PlayerId1 = idjogador1,
+                    PlayerId2 = idjogador2,
+                    DeckId1 = iddeck1,
+                    DeckId2 = iddeck2,
+                    Description = descricao,
+                    StandardTournamentId = idTorneio
+                    
+
+                };
+                containerDados.GameSet.Add(jogo);
+                containerDados.SaveChanges();
+                refreshTabelaJogos();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro na inserção do jogo de equipa." + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void refreshTabelaJogos()
+        {
+            if (radioTeamTournaments.Checked == true)
+            {
+                dgvGJogosLista.DataSource = (from games in containerDados.GameSet.OfType<TeamGame>().Where(game => game.TeamTournamentId.Value.Equals(idTorneio))
+                                             select new { games.Id, games.Description, games.Number, games.Date, games.TeamId1, games.TeamId2, games.DeckId1, games.DeckId2 }).ToList();
+            }
+
+             else if(radioStandardTournaments.Checked == true)
+             {
+                dgvGJogosLista.DataSource = (from games in containerDados.GameSet.OfType<StandardGame>().Where(game => game.StandardTournamentId.Value.Equals(idTorneio))
+                                             select new { games.Id, games.Description, games.Number, games.Date, games.PlayerId1, games.PlayerId2, games.DeckId1, games.DeckId2}).ToList();
+            }
+
+            if(dgvGJogosLista.Rows.Count > 0)
+            {
+                dgvGJogosLista.CurrentCell = dgvGJogosLista.Rows[dgvGJogosLista.Rows.Count - 1].Cells[0];
+            }
+        }
+
+        private int getIdDeck(string nomedeck)
+        {
+            int iddeck = 0;
+            foreach(Deck baralho in containerDados.DeckSet)
+            {
+                if (baralho.Name.Equals(nomedeck))
+                {
+                    iddeck = baralho.Id;
+                }
+            }
+            return iddeck;
+        }
+
+        private int getIdJogador(string nomejogador)
+        {
+            int idjogador = 0;
+            foreach(Player jogador in containerDados.PlayerSet)
+            {
+                if (jogador.Name.Equals(nomejogador))
+                {
+                    idjogador = jogador.Id;
+                }
+            }
+            return idjogador;
+        }
+
+        private int getIdArbitro(string usernamearbitro)
+        {
+            int idarbitro = 0;
+            foreach(Referee arbitro in containerDados.UserSet.OfType<Referee>())
+            {
+                if (arbitro.Username.Equals(usernamearbitro))
+                {
+                    idarbitro = arbitro.Id;
+                }
+            }
+            return idarbitro;
+        }
+
+        private void btnAlterarJogo_Click(object sender, EventArgs e)
+        {
+            gbGJogosForm.Enabled = true;
+            gbGJogosForm.Visible = true;
+            btnJogoAcao.Text = "Guardar";
+
+            if(dgvGJogosLista.SelectedCells.Count > 0)
+            {
+                idJogo = (int)dgvGJogosLista.CurrentRow.Cells[0].Value;
+
+                if(radioTeamTournaments.Checked == true)
+                {
+                    foreach(TeamGame jogoequipa in containerDados.GameSet.OfType<TeamGame>())
+                    {
+                        if(jogoequipa.Id == idJogo)
+                        {
+                            tpDataJogos.Value = jogoequipa.Date;
+                            nudNJogo.Value = jogoequipa.Number;
+                            int nrarbitro = (int)jogoequipa.RefereeId;
+                            string usernamearbitro = getUsernameArbitro(nrarbitro);
+                            cmbarbitrojogos.SelectedItem = usernamearbitro;
+                            int nrequipa1 = (int)jogoequipa.TeamId1;
+                            string nomeequipa1 = getNomeEquipa(nrequipa1);
+                            cmbequipajogador1.SelectedItem = nomeequipa1;
+                            int nrequipa2 = (int)jogoequipa.TeamId2;
+                            string nomeequipa2 = getNomeEquipa(nrequipa2);
+                            cmbequipajogador2.SelectedItem = nomeequipa2;
+                            int nrdeck1 = (int)jogoequipa.DeckId1;
+                            string nomedeck1 = getNomeDeck(nrdeck1);
+                            cmbdecks1.SelectedItem = nomedeck1;
+                            int nrdeck2 = (int)jogoequipa.DeckId2;
+                            string nomedeck2 = getNomeDeck(nrdeck2);
+                            cmbdecks2.SelectedItem = nomedeck2;
+                            txtDescricaoJogo.Text =jogoequipa.Description;
+                        }
+                    }
+                }
+                else if(radioStandardTournaments.Checked == true)
+                {
+                    foreach (StandardGame jogo in containerDados.GameSet.OfType<StandardGame>())
+                    {
+                        if (jogo.Id == idJogo)
+                        {
+                            tpDataJogos.Value = jogo.Date;
+                            nudNJogo.Value = jogo.Number;
+                            int nrarbitro = (int)jogo.RefereeId;
+                            string usernamearbitro = getUsernameArbitro(nrarbitro);
+                            cmbarbitrojogos.SelectedItem = usernamearbitro;
+                            int nrjogador1 = (int)jogo.PlayerId1;
+                            string nomejogador1 = getNomeJogador(nrjogador1);
+                            cmbequipajogador1.SelectedItem = nomejogador1;
+                            int nrjogador2 = (int)jogo.PlayerId2;
+                            string nomejogador2 = getNomeJogador(nrjogador2);
+                            cmbequipajogador2.SelectedItem = nomejogador2;
+                            int nrdeck1 = (int)jogo.DeckId1;
+                            string nomedeck1 = getNomeDeck(nrdeck1);
+                            cmbdecks1.SelectedItem = nomedeck1;
+                            int nrdeck2 = (int)jogo.DeckId2;
+                            string nomedeck2 = getNomeDeck(nrdeck2);
+                            cmbdecks2.SelectedItem = nomedeck2;
+                            txtDescricaoJogo.Text = jogo.Description;
+                        }
+                    }
+                }
+
+            }
+            
+        }
+
+        private string getNomeJogador(int nrjogador)
+        {
+            string nomejogador = "";
+            foreach(Player jogador in containerDados.PlayerSet)
+            {
+                if(jogador.Id == nrjogador)
+                {
+                    nomejogador = jogador.Name;
+                }
+            }
+            return nomejogador;
+        }
+
+        private string getNomeDeck(int nrdeck)
+        {
+            string nomedeck = "";
+            foreach(Deck baralho in containerDados.DeckSet)
+            {
+                if(baralho.Id == nrdeck)
+                {
+                    nomedeck = baralho.Name;
+                }
+            }
+            return nomedeck;
+        }
+
+        private string getNomeEquipa(int nrequipa)
+        {
+            string nomeequipa = "";
+            foreach(Team equipa in containerDados.TeamSet)
+            {
+                if(equipa.Id == nrequipa)
+                {
+                    nomeequipa = equipa.Name;
+                }
+            }
+            return nomeequipa;
+        }
+
+        private string getUsernameArbitro(int idarbitro)
+        {
+            string usernamearbitro = "";
+            foreach(Referee arbitro in containerDados.UserSet.OfType<Referee>())
+            {
+                if(arbitro.Id == idarbitro)
+                {
+                    usernamearbitro = arbitro.Username;
+                }
+            }
+            return usernamearbitro;
+        }
+
+        private void btnJogoCancelar_Click(object sender, EventArgs e)
+        {
+            cancelarJogo();
+        }
+
+        private void cancelarJogo()
+        {
+            tpDataJogos.Value = DateTime.Now;
+            nudNJogo.Value = 0;
+            cmbarbitrojogos.SelectedIndex = -1;
+            cmbequipajogador1.SelectedIndex = -1;
+            cmbequipajogador2.SelectedIndex = -1;
+            cmbdecks1.SelectedIndex = -1;
+            cmbdecks2.SelectedIndex = -1;
+            txtDescricaoJogo.ResetText();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cancelarJogo();
+            gbGJogosForm.Enabled = false;
+            gbGJogosDados.Enabled = false;
+            gbGTorneiosDados.Enabled = true;
+        }
+
+        private void groupBoxEquipasJogos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbGJogosForm_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+

@@ -95,6 +95,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD_DA_ProjetoDataSet_Decks.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BD_DA_ProjetoDataSet_Games.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DA_ProjetoDataSet_Games.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BD_DA_ProjetoDataSet_Players.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,6 +109,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BD_DA_ProjetoDataSet_Teams.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD_DA_ProjetoDataSet_Tournaments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_DA_ProjetoDataSet_Tournaments.xsd</DependentUpon>
     </Compile>
     <Compile Include="Card.cs">
       <DependentUpon>DiagramaArcmage.tt</DependentUpon>
@@ -248,6 +258,17 @@
     <None Include="BD_DA_ProjetoDataSet_Decks.xss">
       <DependentUpon>BD_DA_ProjetoDataSet_Decks.xsd</DependentUpon>
     </None>
+    <None Include="BD_DA_ProjetoDataSet_Games.xsc">
+      <DependentUpon>BD_DA_ProjetoDataSet_Games.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Games.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DA_ProjetoDataSet_Games.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Games.xss">
+      <DependentUpon>BD_DA_ProjetoDataSet_Games.xsd</DependentUpon>
+    </None>
     <None Include="BD_DA_ProjetoDataSet_Players.xsc">
       <DependentUpon>BD_DA_ProjetoDataSet_Players.xsd</DependentUpon>
     </None>
@@ -269,6 +290,17 @@
     </None>
     <None Include="BD_DA_ProjetoDataSet_Teams.xss">
       <DependentUpon>BD_DA_ProjetoDataSet_Teams.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Tournaments.xsc">
+      <DependentUpon>BD_DA_ProjetoDataSet_Tournaments.xsd</DependentUpon>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Tournaments.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_DA_ProjetoDataSet_Tournaments.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_DA_ProjetoDataSet_Tournaments.xss">
+      <DependentUpon>BD_DA_ProjetoDataSet_Tournaments.xsd</DependentUpon>
     </None>
     <None Include="DiagramaArcmage.edmx.diagram">
       <DependentUpon>DiagramaArcmage.edmx</DependentUpon>
