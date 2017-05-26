@@ -4312,6 +4312,8 @@ namespace Projeto
         private void btnJogoCancelar_Click(object sender, EventArgs e)
         {
             cancelarJogo();
+            gbGJogosForm.Visible = false;
+            gbGJogosForm.Enabled = false;
         }
 
         private void cancelarJogo()
@@ -4329,6 +4331,8 @@ namespace Projeto
         private void button1_Click(object sender, EventArgs e)
         {
             cancelarJogo();
+            dgvGJogosLista.DataSource = null;
+            gbGJogosForm.Visible = false;
             gbGJogosForm.Enabled = false;
             gbGJogosDados.Enabled = false;
             gbGTorneiosDados.Enabled = true;
