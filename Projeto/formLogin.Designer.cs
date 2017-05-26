@@ -50,20 +50,20 @@
             this.gbLoginImg.Controls.Add(this.label1);
             this.gbLoginImg.Dock = System.Windows.Forms.DockStyle.Left;
             this.gbLoginImg.Location = new System.Drawing.Point(0, 0);
-            this.gbLoginImg.Margin = new System.Windows.Forms.Padding(2);
+            this.gbLoginImg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbLoginImg.Name = "gbLoginImg";
-            this.gbLoginImg.Padding = new System.Windows.Forms.Padding(2);
-            this.gbLoginImg.Size = new System.Drawing.Size(164, 265);
+            this.gbLoginImg.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbLoginImg.Size = new System.Drawing.Size(219, 315);
             this.gbLoginImg.TabIndex = 0;
             this.gbLoginImg.TabStop = false;
             // 
             // pbLogo
             // 
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
-            this.pbLogo.Location = new System.Drawing.Point(9, 65);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.pbLogo.Location = new System.Drawing.Point(12, 80);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(127, 174);
+            this.pbLogo.Size = new System.Drawing.Size(169, 214);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
@@ -72,10 +72,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(40, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 24);
+            this.label1.Size = new System.Drawing.Size(109, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Arcmage";
             // 
@@ -89,20 +88,20 @@
             this.gbLoginDados.Controls.Add(this.label2);
             this.gbLoginDados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbLoginDados.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbLoginDados.Location = new System.Drawing.Point(164, 0);
-            this.gbLoginDados.Margin = new System.Windows.Forms.Padding(2);
+            this.gbLoginDados.Location = new System.Drawing.Point(219, 0);
+            this.gbLoginDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbLoginDados.Name = "gbLoginDados";
-            this.gbLoginDados.Padding = new System.Windows.Forms.Padding(2);
-            this.gbLoginDados.Size = new System.Drawing.Size(218, 265);
+            this.gbLoginDados.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbLoginDados.Size = new System.Drawing.Size(288, 315);
             this.gbLoginDados.TabIndex = 1;
             this.gbLoginDados.TabStop = false;
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(146, 211);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSair.Location = new System.Drawing.Point(195, 260);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(54, 28);
+            this.btnSair.Size = new System.Drawing.Size(72, 34);
             this.btnSair.TabIndex = 5;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -110,10 +109,10 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(82, 211);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogin.Location = new System.Drawing.Point(109, 260);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(54, 28);
+            this.btnLogin.Size = new System.Drawing.Size(72, 34);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Entrar";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -121,54 +120,52 @@
             // 
             // txtLoginPass
             // 
-            this.txtLoginPass.Location = new System.Drawing.Point(82, 141);
-            this.txtLoginPass.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoginPass.Location = new System.Drawing.Point(109, 174);
+            this.txtLoginPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLoginPass.Name = "txtLoginPass";
             this.txtLoginPass.PasswordChar = '*';
-            this.txtLoginPass.Size = new System.Drawing.Size(118, 23);
+            this.txtLoginPass.Size = new System.Drawing.Size(156, 27);
             this.txtLoginPass.TabIndex = 3;
             // 
             // txtLoginUser
             // 
-            this.txtLoginUser.Location = new System.Drawing.Point(82, 84);
-            this.txtLoginUser.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoginUser.Location = new System.Drawing.Point(109, 103);
+            this.txtLoginUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLoginUser.Name = "txtLoginUser";
-            this.txtLoginUser.Size = new System.Drawing.Size(118, 23);
+            this.txtLoginUser.Size = new System.Drawing.Size(156, 27);
             this.txtLoginUser.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 143);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(21, 176);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 17);
+            this.label3.Size = new System.Drawing.Size(71, 22);
             this.label3.TabIndex = 1;
             this.label3.Text = "Password";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 87);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(21, 107);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 17);
+            this.label2.Size = new System.Drawing.Size(68, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "Utilizador";
             // 
             // formLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 265);
+            this.ClientSize = new System.Drawing.Size(507, 315);
             this.Controls.Add(this.gbLoginDados);
             this.Controls.Add(this.gbLoginImg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(398, 303);
-            this.MinimumSize = new System.Drawing.Size(398, 303);
+            this.MaximumSize = new System.Drawing.Size(525, 362);
+            this.MinimumSize = new System.Drawing.Size(525, 362);
             this.Name = "formLogin";
             this.Text = "Arcmage - Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formLogin_FormClosed);
