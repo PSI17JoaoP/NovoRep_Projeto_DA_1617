@@ -1423,7 +1423,7 @@ namespace Projeto
 
         #endregion
 
-        #region GestaoCartas
+        #region Gestao de Cartas
 
 
 
@@ -1780,6 +1780,62 @@ namespace Projeto
             else
             {
                 RefreshTabelaCartas(); RefreshTabelaCartas();
+            }
+        }
+
+
+        private void btnImportarCartas_Click(object sender, EventArgs e)
+        {
+            if (FileDialogImportarCarta.ShowDialog() == DialogResult.OK)
+            {
+                string path = FileDialogImportarCarta.FileName;
+
+                string linha = "";
+                int nCartasTotais = 0;
+                int nCartasImportadas = 0;
+
+                using (StreamReader ficheiro = new StreamReader(path))
+                {   
+                    Card carta;
+                    /**/
+
+                    linha = ficheiro.ReadLine();
+
+                    nCartasTotais = Convert.ToInt32(linha.Substring(2));
+
+                    while (ficheiro.EndOfStream == false)
+                    {
+                        carta = new Card();
+
+                        ficheiro.ReadLine();
+
+                        carta.Name = ficheiro.ReadLine();
+
+                        carta.Faction = ficheiro.ReadLine();
+
+                        carta.Type = ficheiro.ReadLine();
+
+                        carta.Cost = ficheiro.ReadLine();
+
+                        carta.Loyalty = Convert.ToInt32(ficheiro.ReadLine());
+
+                        carta.RuleText = ficheiro.ReadLine();
+
+                        carta.Attack = Convert.ToInt32(ficheiro.ReadLine());
+
+                        carta.Defense = Convert.ToInt32(ficheiro.ReadLine());
+
+
+                        containerDados.CardSet.Add(carta);
+                        nCartasImportadas++;
+                    }
+                }
+
+                containerDados.SaveChanges();
+
+                MessageBox.Show("Importadas " + nCartasImportadas + " de " + nCartasTotais + " cartas do ficheiro");
+
+                RefreshTabelaCartas();
             }
         }
 
@@ -4343,6 +4399,7 @@ namespace Projeto
         {
 
         }
+
     }
 }
 
