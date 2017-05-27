@@ -85,7 +85,7 @@
             this.gbGEquipasForm = new System.Windows.Forms.GroupBox();
             this.pictureBoxAvatarEquipa = new System.Windows.Forms.PictureBox();
             this.btnAvatarEquipa = new System.Windows.Forms.Button();
-            this.txtEquipaCancelar = new System.Windows.Forms.Button();
+            this.btnEquipaCancelar = new System.Windows.Forms.Button();
             this.btnEquipaAcao = new System.Windows.Forms.Button();
             this.txtGAvatarEquipa = new System.Windows.Forms.TextBox();
             this.txtGNomeEquipa = new System.Windows.Forms.TextBox();
@@ -104,7 +104,7 @@
             this.txtGEquipasPesquisa = new System.Windows.Forms.TextBox();
             this.tbGestaoTorneios = new System.Windows.Forms.TabPage();
             this.gbGJogosDados = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelarJogo = new System.Windows.Forms.Button();
             this.labPesquisarJogos = new System.Windows.Forms.Label();
             this.txtGJogosPesquisa = new System.Windows.Forms.TextBox();
             this.dgvGJogosLista = new System.Windows.Forms.DataGridView();
@@ -174,6 +174,7 @@
             this.labFacao = new System.Windows.Forms.Label();
             this.labNomeCarta = new System.Windows.Forms.Label();
             this.gbGCartasDados = new System.Windows.Forms.GroupBox();
+            this.btnImportarCartas = new System.Windows.Forms.Button();
             this.btnRemoverCarta = new System.Windows.Forms.Button();
             this.btnAlterarCarta = new System.Windows.Forms.Button();
             this.btnInserirCarta = new System.Windows.Forms.Button();
@@ -354,6 +355,7 @@
             this.opfProcurarImagem = new System.Windows.Forms.OpenFileDialog();
             this.gameSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_GamesTableAdapters.GameSetTableAdapter();
             this.tournamentSetTableAdapter = new Projeto.BD_DA_ProjetoDataSet_TournamentsTableAdapters.TournamentSetTableAdapter();
+            this.FileDialogImportarCarta = new System.Windows.Forms.OpenFileDialog();
             this.tbMenu.SuspendLayout();
             this.tpGestao.SuspendLayout();
             this.tcGestao.SuspendLayout();
@@ -443,7 +445,7 @@
             this.tbMenu.Controls.Add(this.tbVer);
             this.tbMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbMenu.Location = new System.Drawing.Point(0, 0);
-            this.tbMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbMenu.Margin = new System.Windows.Forms.Padding(2);
             this.tbMenu.Name = "tbMenu";
             this.tbMenu.SelectedIndex = 0;
             this.tbMenu.Size = new System.Drawing.Size(796, 453);
@@ -453,9 +455,9 @@
             // 
             this.tpGestao.Controls.Add(this.tcGestao);
             this.tpGestao.Location = new System.Drawing.Point(4, 22);
-            this.tpGestao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpGestao.Margin = new System.Windows.Forms.Padding(2);
             this.tpGestao.Name = "tpGestao";
-            this.tpGestao.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpGestao.Padding = new System.Windows.Forms.Padding(2);
             this.tpGestao.Size = new System.Drawing.Size(788, 427);
             this.tpGestao.TabIndex = 0;
             this.tpGestao.Text = "Gestão";
@@ -471,7 +473,7 @@
             this.tcGestao.Controls.Add(this.tbGestaoUtilizadores);
             this.tcGestao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcGestao.Location = new System.Drawing.Point(2, 2);
-            this.tcGestao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcGestao.Margin = new System.Windows.Forms.Padding(2);
             this.tcGestao.Name = "tcGestao";
             this.tcGestao.SelectedIndex = 0;
             this.tcGestao.Size = new System.Drawing.Size(784, 423);
@@ -482,9 +484,9 @@
             this.tbGestaoJogadores.Controls.Add(this.gbGJogadoresForm);
             this.tbGestaoJogadores.Controls.Add(this.gbGJogadoresDados);
             this.tbGestaoJogadores.Location = new System.Drawing.Point(4, 22);
-            this.tbGestaoJogadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoJogadores.Name = "tbGestaoJogadores";
-            this.tbGestaoJogadores.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoJogadores.Padding = new System.Windows.Forms.Padding(2);
             this.tbGestaoJogadores.Size = new System.Drawing.Size(776, 397);
             this.tbGestaoJogadores.TabIndex = 0;
             this.tbGestaoJogadores.Text = "Jogadores";
@@ -510,9 +512,9 @@
             this.gbGJogadoresForm.Controls.Add(this.label2);
             this.gbGJogadoresForm.Enabled = false;
             this.gbGJogadoresForm.Location = new System.Drawing.Point(500, 4);
-            this.gbGJogadoresForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGJogadoresForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogadoresForm.Name = "gbGJogadoresForm";
-            this.gbGJogadoresForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGJogadoresForm.Padding = new System.Windows.Forms.Padding(2);
             this.gbGJogadoresForm.Size = new System.Drawing.Size(273, 389);
             this.gbGJogadoresForm.TabIndex = 7;
             this.gbGJogadoresForm.TabStop = false;
@@ -523,7 +525,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(71, 187);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(127, 76);
+            this.pictureBox1.Size = new System.Drawing.Size(90, 90);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
@@ -541,7 +543,7 @@
             // txtAvatar
             // 
             this.txtAvatar.Location = new System.Drawing.Point(71, 162);
-            this.txtAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAvatar.Margin = new System.Windows.Forms.Padding(2);
             this.txtAvatar.Name = "txtAvatar";
             this.txtAvatar.ReadOnly = true;
             this.txtAvatar.Size = new System.Drawing.Size(127, 20);
@@ -561,7 +563,7 @@
             // 
             this.btnJogadoresCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnJogadoresCancelar.Location = new System.Drawing.Point(193, 348);
-            this.btnJogadoresCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnJogadoresCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogadoresCancelar.Name = "btnJogadoresCancelar";
             this.btnJogadoresCancelar.Size = new System.Drawing.Size(62, 21);
             this.btnJogadoresCancelar.TabIndex = 9;
@@ -573,7 +575,7 @@
             // 
             this.btnJogadoresAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnJogadoresAcao.Location = new System.Drawing.Point(133, 348);
-            this.btnJogadoresAcao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnJogadoresAcao.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogadoresAcao.Name = "btnJogadoresAcao";
             this.btnJogadoresAcao.Size = new System.Drawing.Size(56, 21);
             this.btnJogadoresAcao.TabIndex = 8;
@@ -584,7 +586,7 @@
             // nudIdadeJogador
             // 
             this.nudIdadeJogador.Location = new System.Drawing.Point(73, 130);
-            this.nudIdadeJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudIdadeJogador.Margin = new System.Windows.Forms.Padding(2);
             this.nudIdadeJogador.Name = "nudIdadeJogador";
             this.nudIdadeJogador.Size = new System.Drawing.Size(40, 20);
             this.nudIdadeJogador.TabIndex = 7;
@@ -592,7 +594,7 @@
             // txtNickJogador
             // 
             this.txtNickJogador.Location = new System.Drawing.Point(73, 96);
-            this.txtNickJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNickJogador.Margin = new System.Windows.Forms.Padding(2);
             this.txtNickJogador.Name = "txtNickJogador";
             this.txtNickJogador.Size = new System.Drawing.Size(155, 20);
             this.txtNickJogador.TabIndex = 6;
@@ -600,7 +602,7 @@
             // txtEmailJogador
             // 
             this.txtEmailJogador.Location = new System.Drawing.Point(73, 63);
-            this.txtEmailJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmailJogador.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmailJogador.Name = "txtEmailJogador";
             this.txtEmailJogador.Size = new System.Drawing.Size(155, 20);
             this.txtEmailJogador.TabIndex = 5;
@@ -608,7 +610,7 @@
             // txtNomeJogador
             // 
             this.txtNomeJogador.Location = new System.Drawing.Point(73, 28);
-            this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeJogador.Name = "txtNomeJogador";
             this.txtNomeJogador.Size = new System.Drawing.Size(155, 20);
             this.txtNomeJogador.TabIndex = 4;
@@ -663,11 +665,11 @@
             this.gbGJogadoresDados.Controls.Add(this.btnInserirJogador);
             this.gbGJogadoresDados.Controls.Add(this.txtGJogadoresPesquisa);
             this.gbGJogadoresDados.Location = new System.Drawing.Point(4, 2);
-            this.gbGJogadoresDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGJogadoresDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogadoresDados.MaximumSize = new System.Drawing.Size(492, 391);
             this.gbGJogadoresDados.MinimumSize = new System.Drawing.Size(492, 391);
             this.gbGJogadoresDados.Name = "gbGJogadoresDados";
-            this.gbGJogadoresDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGJogadoresDados.Padding = new System.Windows.Forms.Padding(2);
             this.gbGJogadoresDados.Size = new System.Drawing.Size(492, 391);
             this.gbGJogadoresDados.TabIndex = 6;
             this.gbGJogadoresDados.TabStop = false;
@@ -678,7 +680,7 @@
             this.btnRemoverJogador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoverJogador.Enabled = false;
             this.btnRemoverJogador.Location = new System.Drawing.Point(407, 364);
-            this.btnRemoverJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoverJogador.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverJogador.Name = "btnRemoverJogador";
             this.btnRemoverJogador.Size = new System.Drawing.Size(62, 24);
             this.btnRemoverJogador.TabIndex = 2;
@@ -701,7 +703,7 @@
             this.btnAlterarJogador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarJogador.Enabled = false;
             this.btnAlterarJogador.Location = new System.Drawing.Point(345, 364);
-            this.btnAlterarJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlterarJogador.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarJogador.Name = "btnAlterarJogador";
             this.btnAlterarJogador.Size = new System.Drawing.Size(58, 24);
             this.btnAlterarJogador.TabIndex = 1;
@@ -725,7 +727,7 @@
             this.avatarDataGridViewTextBoxColumn});
             this.dgvGListaJogadores.DataSource = this.playerSetBindingSource;
             this.dgvGListaJogadores.Location = new System.Drawing.Point(19, 76);
-            this.dgvGListaJogadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvGListaJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.dgvGListaJogadores.Name = "dgvGListaJogadores";
             this.dgvGListaJogadores.ReadOnly = true;
             this.dgvGListaJogadores.RowHeadersVisible = false;
@@ -733,8 +735,6 @@
             this.dgvGListaJogadores.Size = new System.Drawing.Size(450, 254);
             this.dgvGListaJogadores.TabIndex = 0;
             this.dgvGListaJogadores.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGListaJogadores_CellMouseClick);
-            this.dgvGListaJogadores.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGListaJogadores_CellMouseDoubleClick);
-            this.dgvGListaJogadores.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGListaJogadores_CellMouseEnter);
             // 
             // idDataGridViewTextBoxColumn5
             // 
@@ -792,7 +792,7 @@
             // 
             this.btnInserirJogador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInserirJogador.Location = new System.Drawing.Point(278, 364);
-            this.btnInserirJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInserirJogador.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirJogador.Name = "btnInserirJogador";
             this.btnInserirJogador.Size = new System.Drawing.Size(62, 24);
             this.btnInserirJogador.TabIndex = 0;
@@ -805,7 +805,7 @@
             this.txtGJogadoresPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGJogadoresPesquisa.Location = new System.Drawing.Point(74, 35);
-            this.txtGJogadoresPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGJogadoresPesquisa.Margin = new System.Windows.Forms.Padding(2);
             this.txtGJogadoresPesquisa.Name = "txtGJogadoresPesquisa";
             this.txtGJogadoresPesquisa.Size = new System.Drawing.Size(327, 20);
             this.txtGJogadoresPesquisa.TabIndex = 1;
@@ -820,9 +820,9 @@
             this.tbGestaoEquipas.Controls.Add(this.groupBox2);
             this.tbGestaoEquipas.Controls.Add(this.gbGEquipasDados);
             this.tbGestaoEquipas.Location = new System.Drawing.Point(4, 22);
-            this.tbGestaoEquipas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoEquipas.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoEquipas.Name = "tbGestaoEquipas";
-            this.tbGestaoEquipas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoEquipas.Padding = new System.Windows.Forms.Padding(2);
             this.tbGestaoEquipas.Size = new System.Drawing.Size(776, 397);
             this.tbGestaoEquipas.TabIndex = 1;
             this.tbGestaoEquipas.Text = "Equipas";
@@ -833,9 +833,9 @@
             this.groupBox1.Controls.Add(this.lvJogadoresEquipa);
             this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(4, 228);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(285, 161);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
@@ -850,7 +850,7 @@
             this.cNickname});
             this.lvJogadoresEquipa.FullRowSelect = true;
             this.lvJogadoresEquipa.Location = new System.Drawing.Point(4, 15);
-            this.lvJogadoresEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvJogadoresEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.lvJogadoresEquipa.Name = "lvJogadoresEquipa";
             this.lvJogadoresEquipa.Size = new System.Drawing.Size(277, 142);
             this.lvJogadoresEquipa.TabIndex = 3;
@@ -911,9 +911,9 @@
             this.groupBox2.Controls.Add(this.lcListaJogadores);
             this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(484, 228);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(283, 165);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
@@ -928,7 +928,7 @@
             this.cNickname2});
             this.lcListaJogadores.FullRowSelect = true;
             this.lcListaJogadores.Location = new System.Drawing.Point(4, 17);
-            this.lcListaJogadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lcListaJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.lcListaJogadores.Name = "lcListaJogadores";
             this.lcListaJogadores.Size = new System.Drawing.Size(275, 144);
             this.lcListaJogadores.TabIndex = 0;
@@ -965,9 +965,9 @@
             this.gbGEquipasDados.Controls.Add(this.dgvGListaEquipas);
             this.gbGEquipasDados.Controls.Add(this.txtGEquipasPesquisa);
             this.gbGEquipasDados.Location = new System.Drawing.Point(4, 4);
-            this.gbGEquipasDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGEquipasDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGEquipasDados.Name = "gbGEquipasDados";
-            this.gbGEquipasDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGEquipasDados.Padding = new System.Windows.Forms.Padding(2);
             this.gbGEquipasDados.Size = new System.Drawing.Size(768, 220);
             this.gbGEquipasDados.TabIndex = 12;
             this.gbGEquipasDados.TabStop = false;
@@ -991,7 +991,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbGEquipasForm.Controls.Add(this.pictureBoxAvatarEquipa);
             this.gbGEquipasForm.Controls.Add(this.btnAvatarEquipa);
-            this.gbGEquipasForm.Controls.Add(this.txtEquipaCancelar);
+            this.gbGEquipasForm.Controls.Add(this.btnEquipaCancelar);
             this.gbGEquipasForm.Controls.Add(this.btnEquipaAcao);
             this.gbGEquipasForm.Controls.Add(this.txtGAvatarEquipa);
             this.gbGEquipasForm.Controls.Add(this.txtGNomeEquipa);
@@ -999,9 +999,9 @@
             this.gbGEquipasForm.Controls.Add(this.label7);
             this.gbGEquipasForm.Enabled = false;
             this.gbGEquipasForm.Location = new System.Drawing.Point(519, 17);
-            this.gbGEquipasForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGEquipasForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGEquipasForm.Name = "gbGEquipasForm";
-            this.gbGEquipasForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGEquipasForm.Padding = new System.Windows.Forms.Padding(2);
             this.gbGEquipasForm.Size = new System.Drawing.Size(244, 199);
             this.gbGEquipasForm.TabIndex = 6;
             this.gbGEquipasForm.TabStop = false;
@@ -1012,7 +1012,7 @@
             // 
             this.pictureBoxAvatarEquipa.Location = new System.Drawing.Point(56, 73);
             this.pictureBoxAvatarEquipa.Name = "pictureBoxAvatarEquipa";
-            this.pictureBoxAvatarEquipa.Size = new System.Drawing.Size(93, 72);
+            this.pictureBoxAvatarEquipa.Size = new System.Drawing.Size(70, 70);
             this.pictureBoxAvatarEquipa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAvatarEquipa.TabIndex = 13;
             this.pictureBoxAvatarEquipa.TabStop = false;
@@ -1020,7 +1020,7 @@
             // btnAvatarEquipa
             // 
             this.btnAvatarEquipa.Location = new System.Drawing.Point(204, 44);
-            this.btnAvatarEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAvatarEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.btnAvatarEquipa.Name = "btnAvatarEquipa";
             this.btnAvatarEquipa.Size = new System.Drawing.Size(20, 19);
             this.btnAvatarEquipa.TabIndex = 12;
@@ -1028,23 +1028,23 @@
             this.btnAvatarEquipa.UseVisualStyleBackColor = true;
             this.btnAvatarEquipa.Click += new System.EventHandler(this.btnAvatarEquipa_Click);
             // 
-            // txtEquipaCancelar
+            // btnEquipaCancelar
             // 
-            this.txtEquipaCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEquipaCancelar.Location = new System.Drawing.Point(164, 158);
-            this.txtEquipaCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtEquipaCancelar.Name = "txtEquipaCancelar";
-            this.txtEquipaCancelar.Size = new System.Drawing.Size(62, 21);
-            this.txtEquipaCancelar.TabIndex = 11;
-            this.txtEquipaCancelar.Text = "Cancelar";
-            this.txtEquipaCancelar.UseVisualStyleBackColor = true;
-            this.txtEquipaCancelar.Click += new System.EventHandler(this.txtEquipaCancelar_Click);
+            this.btnEquipaCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEquipaCancelar.Location = new System.Drawing.Point(164, 158);
+            this.btnEquipaCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEquipaCancelar.Name = "btnEquipaCancelar";
+            this.btnEquipaCancelar.Size = new System.Drawing.Size(62, 21);
+            this.btnEquipaCancelar.TabIndex = 11;
+            this.btnEquipaCancelar.Text = "Cancelar";
+            this.btnEquipaCancelar.UseVisualStyleBackColor = true;
+            this.btnEquipaCancelar.Click += new System.EventHandler(this.btnEquipaCancelar_Click);
             // 
             // btnEquipaAcao
             // 
             this.btnEquipaAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEquipaAcao.Location = new System.Drawing.Point(104, 158);
-            this.btnEquipaAcao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEquipaAcao.Margin = new System.Windows.Forms.Padding(2);
             this.btnEquipaAcao.Name = "btnEquipaAcao";
             this.btnEquipaAcao.Size = new System.Drawing.Size(56, 21);
             this.btnEquipaAcao.TabIndex = 10;
@@ -1056,7 +1056,7 @@
             // 
             this.txtGAvatarEquipa.Enabled = false;
             this.txtGAvatarEquipa.Location = new System.Drawing.Point(56, 43);
-            this.txtGAvatarEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGAvatarEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.txtGAvatarEquipa.Name = "txtGAvatarEquipa";
             this.txtGAvatarEquipa.ReadOnly = true;
             this.txtGAvatarEquipa.Size = new System.Drawing.Size(144, 20);
@@ -1065,7 +1065,7 @@
             // txtGNomeEquipa
             // 
             this.txtGNomeEquipa.Location = new System.Drawing.Point(56, 17);
-            this.txtGNomeEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGNomeEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.txtGNomeEquipa.Name = "txtGNomeEquipa";
             this.txtGNomeEquipa.Size = new System.Drawing.Size(148, 20);
             this.txtGNomeEquipa.TabIndex = 3;
@@ -1095,7 +1095,7 @@
             this.btnRemoverEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoverEquipa.Enabled = false;
             this.btnRemoverEquipa.Location = new System.Drawing.Point(426, 166);
-            this.btnRemoverEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoverEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverEquipa.Name = "btnRemoverEquipa";
             this.btnRemoverEquipa.Size = new System.Drawing.Size(62, 24);
             this.btnRemoverEquipa.TabIndex = 2;
@@ -1108,7 +1108,7 @@
             this.btnAlterarEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarEquipa.Enabled = false;
             this.btnAlterarEquipa.Location = new System.Drawing.Point(426, 108);
-            this.btnAlterarEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlterarEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarEquipa.Name = "btnAlterarEquipa";
             this.btnAlterarEquipa.Size = new System.Drawing.Size(62, 24);
             this.btnAlterarEquipa.TabIndex = 1;
@@ -1130,7 +1130,7 @@
             // 
             this.btnInserirEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInserirEquipa.Location = new System.Drawing.Point(426, 80);
-            this.btnInserirEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInserirEquipa.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirEquipa.Name = "btnInserirEquipa";
             this.btnInserirEquipa.Size = new System.Drawing.Size(62, 24);
             this.btnInserirEquipa.TabIndex = 0;
@@ -1154,7 +1154,7 @@
             this.avatarDataGridViewTextBoxColumn1});
             this.dgvGListaEquipas.DataSource = this.teamSetBindingSource;
             this.dgvGListaEquipas.Location = new System.Drawing.Point(19, 57);
-            this.dgvGListaEquipas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvGListaEquipas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvGListaEquipas.Name = "dgvGListaEquipas";
             this.dgvGListaEquipas.ReadOnly = true;
             this.dgvGListaEquipas.RowHeadersVisible = false;
@@ -1212,18 +1212,17 @@
             this.tbGestaoTorneios.Controls.Add(this.gbGTorneiosDados);
             this.tbGestaoTorneios.Controls.Add(this.gbGTorneiosInfo);
             this.tbGestaoTorneios.Location = new System.Drawing.Point(4, 22);
-            this.tbGestaoTorneios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoTorneios.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoTorneios.Name = "tbGestaoTorneios";
-            this.tbGestaoTorneios.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoTorneios.Padding = new System.Windows.Forms.Padding(2);
             this.tbGestaoTorneios.Size = new System.Drawing.Size(776, 397);
             this.tbGestaoTorneios.TabIndex = 2;
             this.tbGestaoTorneios.Text = "Torneios";
             this.tbGestaoTorneios.UseVisualStyleBackColor = true;
-            this.tbGestaoTorneios.Enter += new System.EventHandler(this.tbGestaoTorneios_Enter);
             // 
             // gbGJogosDados
             // 
-            this.gbGJogosDados.Controls.Add(this.button1);
+            this.gbGJogosDados.Controls.Add(this.btnCancelarJogo);
             this.gbGJogosDados.Controls.Add(this.labPesquisarJogos);
             this.gbGJogosDados.Controls.Add(this.txtGJogosPesquisa);
             this.gbGJogosDados.Controls.Add(this.dgvGJogosLista);
@@ -1235,22 +1234,22 @@
             this.gbGJogosDados.Location = new System.Drawing.Point(2, 203);
             this.gbGJogosDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogosDados.Name = "gbGJogosDados";
-            this.gbGJogosDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGJogosDados.Padding = new System.Windows.Forms.Padding(2);
             this.gbGJogosDados.Size = new System.Drawing.Size(435, 192);
             this.gbGJogosDados.TabIndex = 1;
             this.gbGJogosDados.TabStop = false;
             this.gbGJogosDados.Text = "Jogos";
             // 
-            // button1
+            // btnCancelarJogo
             // 
-            this.button1.Location = new System.Drawing.Point(20, 165);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 23);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelarJogo.Location = new System.Drawing.Point(20, 165);
+            this.btnCancelarJogo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelarJogo.Name = "btnCancelarJogo";
+            this.btnCancelarJogo.Size = new System.Drawing.Size(68, 23);
+            this.btnCancelarJogo.TabIndex = 24;
+            this.btnCancelarJogo.Text = "Cancelar";
+            this.btnCancelarJogo.UseVisualStyleBackColor = true;
+            this.btnCancelarJogo.Click += new System.EventHandler(this.btnCancelarJogo_Click);
             // 
             // labPesquisarJogos
             // 
@@ -1267,7 +1266,7 @@
             this.txtGJogosPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGJogosPesquisa.Location = new System.Drawing.Point(74, 24);
-            this.txtGJogosPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGJogosPesquisa.Margin = new System.Windows.Forms.Padding(2);
             this.txtGJogosPesquisa.Name = "txtGJogosPesquisa";
             this.txtGJogosPesquisa.Size = new System.Drawing.Size(318, 20);
             this.txtGJogosPesquisa.TabIndex = 8;
@@ -1281,7 +1280,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGJogosLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGJogosLista.Location = new System.Drawing.Point(19, 57);
-            this.dgvGJogosLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvGJogosLista.Margin = new System.Windows.Forms.Padding(2);
             this.dgvGJogosLista.Name = "dgvGJogosLista";
             this.dgvGJogosLista.ReadOnly = true;
             this.dgvGJogosLista.RowHeadersVisible = false;
@@ -1293,7 +1292,7 @@
             // 
             this.btnAlterarJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarJogo.Location = new System.Drawing.Point(302, 166);
-            this.btnAlterarJogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlterarJogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarJogo.Name = "btnAlterarJogo";
             this.btnAlterarJogo.Size = new System.Drawing.Size(58, 22);
             this.btnAlterarJogo.TabIndex = 3;
@@ -1305,7 +1304,7 @@
             // 
             this.btnInserirJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInserirJogo.Location = new System.Drawing.Point(240, 166);
-            this.btnInserirJogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInserirJogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirJogo.Name = "btnInserirJogo";
             this.btnInserirJogo.Size = new System.Drawing.Size(58, 22);
             this.btnInserirJogo.TabIndex = 2;
@@ -1317,7 +1316,7 @@
             // 
             this.btnRemoverJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoverJogo.Location = new System.Drawing.Point(365, 166);
-            this.btnRemoverJogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoverJogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverJogo.Name = "btnRemoverJogo";
             this.btnRemoverJogo.Size = new System.Drawing.Size(58, 22);
             this.btnRemoverJogo.TabIndex = 1;
@@ -1338,9 +1337,9 @@
             this.gbGTorneiosDados.Controls.Add(this.btnRemoverTorneio);
             this.gbGTorneiosDados.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbGTorneiosDados.Location = new System.Drawing.Point(2, 2);
-            this.gbGTorneiosDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGTorneiosDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGTorneiosDados.Name = "gbGTorneiosDados";
-            this.gbGTorneiosDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGTorneiosDados.Padding = new System.Windows.Forms.Padding(2);
             this.gbGTorneiosDados.Size = new System.Drawing.Size(435, 201);
             this.gbGTorneiosDados.TabIndex = 0;
             this.gbGTorneiosDados.TabStop = false;
@@ -1349,7 +1348,7 @@
             // btngerirjogos
             // 
             this.btngerirjogos.Location = new System.Drawing.Point(365, 168);
-            this.btngerirjogos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btngerirjogos.Margin = new System.Windows.Forms.Padding(2);
             this.btngerirjogos.Name = "btngerirjogos";
             this.btngerirjogos.Size = new System.Drawing.Size(52, 22);
             this.btngerirjogos.TabIndex = 10;
@@ -1361,7 +1360,7 @@
             // 
             this.radioStandardTournaments.AutoSize = true;
             this.radioStandardTournaments.Location = new System.Drawing.Point(77, 171);
-            this.radioStandardTournaments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioStandardTournaments.Margin = new System.Windows.Forms.Padding(2);
             this.radioStandardTournaments.Name = "radioStandardTournaments";
             this.radioStandardTournaments.Size = new System.Drawing.Size(68, 17);
             this.radioStandardTournaments.TabIndex = 9;
@@ -1374,7 +1373,7 @@
             // 
             this.radioTeamTournaments.AutoSize = true;
             this.radioTeamTournaments.Location = new System.Drawing.Point(19, 171);
-            this.radioTeamTournaments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioTeamTournaments.Margin = new System.Windows.Forms.Padding(2);
             this.radioTeamTournaments.Name = "radioTeamTournaments";
             this.radioTeamTournaments.Size = new System.Drawing.Size(52, 17);
             this.radioTeamTournaments.TabIndex = 8;
@@ -1398,7 +1397,7 @@
             this.txtGTorneiosPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGTorneiosPesquisa.Location = new System.Drawing.Point(74, 20);
-            this.txtGTorneiosPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGTorneiosPesquisa.Margin = new System.Windows.Forms.Padding(2);
             this.txtGTorneiosPesquisa.Name = "txtGTorneiosPesquisa";
             this.txtGTorneiosPesquisa.Size = new System.Drawing.Size(318, 20);
             this.txtGTorneiosPesquisa.TabIndex = 6;
@@ -1436,7 +1435,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGTorneiosLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGTorneiosLista.Location = new System.Drawing.Point(19, 51);
-            this.dgvGTorneiosLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvGTorneiosLista.Margin = new System.Windows.Forms.Padding(2);
             this.dgvGTorneiosLista.Name = "dgvGTorneiosLista";
             this.dgvGTorneiosLista.ReadOnly = true;
             this.dgvGTorneiosLista.RowHeadersVisible = false;
@@ -1463,9 +1462,9 @@
             this.gbGTorneiosInfo.Controls.Add(this.gbGTorneiosForm);
             this.gbGTorneiosInfo.Dock = System.Windows.Forms.DockStyle.Right;
             this.gbGTorneiosInfo.Location = new System.Drawing.Point(437, 2);
-            this.gbGTorneiosInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGTorneiosInfo.Margin = new System.Windows.Forms.Padding(2);
             this.gbGTorneiosInfo.Name = "gbGTorneiosInfo";
-            this.gbGTorneiosInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGTorneiosInfo.Padding = new System.Windows.Forms.Padding(2);
             this.gbGTorneiosInfo.Size = new System.Drawing.Size(337, 393);
             this.gbGTorneiosInfo.TabIndex = 2;
             this.gbGTorneiosInfo.TabStop = false;
@@ -1486,21 +1485,20 @@
             this.gbGJogosForm.Controls.Add(this.labDescricao);
             this.gbGJogosForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbGJogosForm.Location = new System.Drawing.Point(2, 15);
-            this.gbGJogosForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGJogosForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGJogosForm.Name = "gbGJogosForm";
-            this.gbGJogosForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGJogosForm.Padding = new System.Windows.Forms.Padding(2);
             this.gbGJogosForm.Size = new System.Drawing.Size(333, 376);
             this.gbGJogosForm.TabIndex = 2;
             this.gbGJogosForm.TabStop = false;
             this.gbGJogosForm.Text = "Campos";
             this.gbGJogosForm.Visible = false;
-            this.gbGJogosForm.Enter += new System.EventHandler(this.gbGJogosForm_Enter);
             // 
             // cmbarbitrojogos
             // 
             this.cmbarbitrojogos.FormattingEnabled = true;
             this.cmbarbitrojogos.Location = new System.Drawing.Point(69, 98);
-            this.cmbarbitrojogos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbarbitrojogos.Margin = new System.Windows.Forms.Padding(2);
             this.cmbarbitrojogos.Name = "cmbarbitrojogos";
             this.cmbarbitrojogos.Size = new System.Drawing.Size(119, 21);
             this.cmbarbitrojogos.TabIndex = 23;
@@ -1521,9 +1519,9 @@
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.cmbdecks1);
             this.groupBox4.Location = new System.Drawing.Point(16, 175);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(296, 47);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
@@ -1533,7 +1531,7 @@
             // 
             this.cmbdecks2.FormattingEnabled = true;
             this.cmbdecks2.Location = new System.Drawing.Point(213, 15);
-            this.cmbdecks2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbdecks2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbdecks2.Name = "cmbdecks2";
             this.cmbdecks2.Size = new System.Drawing.Size(79, 21);
             this.cmbdecks2.TabIndex = 19;
@@ -1552,7 +1550,7 @@
             // 
             this.cmbdecks1.FormattingEnabled = true;
             this.cmbdecks1.Location = new System.Drawing.Point(14, 15);
-            this.cmbdecks1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbdecks1.Margin = new System.Windows.Forms.Padding(2);
             this.cmbdecks1.Name = "cmbdecks1";
             this.cmbdecks1.Size = new System.Drawing.Size(82, 21);
             this.cmbdecks1.TabIndex = 0;
@@ -1563,14 +1561,13 @@
             this.groupBoxEquipasJogos.Controls.Add(this.labVS);
             this.groupBoxEquipasJogos.Controls.Add(this.cmbequipajogador2);
             this.groupBoxEquipasJogos.Location = new System.Drawing.Point(16, 125);
-            this.groupBoxEquipasJogos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxEquipasJogos.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxEquipasJogos.Name = "groupBoxEquipasJogos";
-            this.groupBoxEquipasJogos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxEquipasJogos.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxEquipasJogos.Size = new System.Drawing.Size(296, 46);
             this.groupBoxEquipasJogos.TabIndex = 20;
             this.groupBoxEquipasJogos.TabStop = false;
             this.groupBoxEquipasJogos.Text = "Equipas";
-            this.groupBoxEquipasJogos.Enter += new System.EventHandler(this.groupBoxEquipasJogos_Enter);
             // 
             // cmbequipajogador1
             // 
@@ -1606,7 +1603,7 @@
             // 
             this.btnJogoCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnJogoCancelar.Location = new System.Drawing.Point(261, 351);
-            this.btnJogoCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnJogoCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogoCancelar.Name = "btnJogoCancelar";
             this.btnJogoCancelar.Size = new System.Drawing.Size(62, 21);
             this.btnJogoCancelar.TabIndex = 19;
@@ -1618,7 +1615,7 @@
             // 
             this.btnJogoAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnJogoAcao.Location = new System.Drawing.Point(201, 351);
-            this.btnJogoAcao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnJogoAcao.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogoAcao.Name = "btnJogoAcao";
             this.btnJogoAcao.Size = new System.Drawing.Size(56, 21);
             this.btnJogoAcao.TabIndex = 18;
@@ -1629,7 +1626,7 @@
             // nudNJogo
             // 
             this.nudNJogo.Location = new System.Drawing.Point(69, 66);
-            this.nudNJogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudNJogo.Margin = new System.Windows.Forms.Padding(2);
             this.nudNJogo.Name = "nudNJogo";
             this.nudNJogo.Size = new System.Drawing.Size(38, 20);
             this.nudNJogo.TabIndex = 14;
@@ -1647,7 +1644,7 @@
             // tpDataJogos
             // 
             this.tpDataJogos.Location = new System.Drawing.Point(69, 31);
-            this.tpDataJogos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpDataJogos.Margin = new System.Windows.Forms.Padding(2);
             this.tpDataJogos.Name = "tpDataJogos";
             this.tpDataJogos.Size = new System.Drawing.Size(219, 20);
             this.tpDataJogos.TabIndex = 12;
@@ -1698,9 +1695,9 @@
             this.gbGTorneiosForm.Controls.Add(this.labNomeJogo);
             this.gbGTorneiosForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbGTorneiosForm.Location = new System.Drawing.Point(2, 15);
-            this.gbGTorneiosForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGTorneiosForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGTorneiosForm.Name = "gbGTorneiosForm";
-            this.gbGTorneiosForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGTorneiosForm.Padding = new System.Windows.Forms.Padding(2);
             this.gbGTorneiosForm.Size = new System.Drawing.Size(333, 376);
             this.gbGTorneiosForm.TabIndex = 1;
             this.gbGTorneiosForm.TabStop = false;
@@ -1712,9 +1709,9 @@
             this.gbTipoTorneio.Controls.Add(this.radioTipoTorneioTeam);
             this.gbTipoTorneio.Controls.Add(this.radioTipoTorneioStandard);
             this.gbTipoTorneio.Location = new System.Drawing.Point(20, 218);
-            this.gbTipoTorneio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbTipoTorneio.Margin = new System.Windows.Forms.Padding(2);
             this.gbTipoTorneio.Name = "gbTipoTorneio";
-            this.gbTipoTorneio.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbTipoTorneio.Padding = new System.Windows.Forms.Padding(2);
             this.gbTipoTorneio.Size = new System.Drawing.Size(111, 70);
             this.gbTipoTorneio.TabIndex = 14;
             this.gbTipoTorneio.TabStop = false;
@@ -1724,7 +1721,7 @@
             // 
             this.radioTipoTorneioTeam.AutoSize = true;
             this.radioTipoTorneioTeam.Location = new System.Drawing.Point(11, 21);
-            this.radioTipoTorneioTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioTipoTorneioTeam.Margin = new System.Windows.Forms.Padding(2);
             this.radioTipoTorneioTeam.Name = "radioTipoTorneioTeam";
             this.radioTipoTorneioTeam.Size = new System.Drawing.Size(112, 17);
             this.radioTipoTorneioTeam.TabIndex = 0;
@@ -1736,7 +1733,7 @@
             // 
             this.radioTipoTorneioStandard.AutoSize = true;
             this.radioTipoTorneioStandard.Location = new System.Drawing.Point(11, 40);
-            this.radioTipoTorneioStandard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioTipoTorneioStandard.Margin = new System.Windows.Forms.Padding(2);
             this.radioTipoTorneioStandard.Name = "radioTipoTorneioStandard";
             this.radioTipoTorneioStandard.Size = new System.Drawing.Size(128, 17);
             this.radioTipoTorneioStandard.TabIndex = 1;
@@ -1748,7 +1745,7 @@
             // 
             this.txtTorneioCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTorneioCancelar.Location = new System.Drawing.Point(261, 266);
-            this.txtTorneioCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTorneioCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.txtTorneioCancelar.Name = "txtTorneioCancelar";
             this.txtTorneioCancelar.Size = new System.Drawing.Size(62, 21);
             this.txtTorneioCancelar.TabIndex = 13;
@@ -1760,7 +1757,7 @@
             // 
             this.txtTorneioAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTorneioAcao.Location = new System.Drawing.Point(201, 266);
-            this.txtTorneioAcao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTorneioAcao.Margin = new System.Windows.Forms.Padding(2);
             this.txtTorneioAcao.Name = "txtTorneioAcao";
             this.txtTorneioAcao.Size = new System.Drawing.Size(56, 21);
             this.txtTorneioAcao.TabIndex = 12;
@@ -1774,7 +1771,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescricaoTorneio.Location = new System.Drawing.Point(22, 132);
-            this.txtDescricaoTorneio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescricaoTorneio.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescricaoTorneio.MaximumSize = new System.Drawing.Size(301, 123);
             this.txtDescricaoTorneio.MinimumSize = new System.Drawing.Size(289, 50);
             this.txtDescricaoTorneio.Multiline = true;
@@ -1785,7 +1782,7 @@
             // tpDataTorneio
             // 
             this.tpDataTorneio.Location = new System.Drawing.Point(92, 66);
-            this.tpDataTorneio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpDataTorneio.Margin = new System.Windows.Forms.Padding(2);
             this.tpDataTorneio.Name = "tpDataTorneio";
             this.tpDataTorneio.Size = new System.Drawing.Size(220, 20);
             this.tpDataTorneio.TabIndex = 7;
@@ -1793,7 +1790,7 @@
             // txtNomeTorneio
             // 
             this.txtNomeTorneio.Location = new System.Drawing.Point(92, 32);
-            this.txtNomeTorneio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeTorneio.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeTorneio.Name = "txtNomeTorneio";
             this.txtNomeTorneio.Size = new System.Drawing.Size(220, 20);
             this.txtNomeTorneio.TabIndex = 6;
@@ -1833,9 +1830,9 @@
             this.tbGestaoCartas.Controls.Add(this.gbGCartasForm);
             this.tbGestaoCartas.Controls.Add(this.gbGCartasDados);
             this.tbGestaoCartas.Location = new System.Drawing.Point(4, 22);
-            this.tbGestaoCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoCartas.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoCartas.Name = "tbGestaoCartas";
-            this.tbGestaoCartas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoCartas.Padding = new System.Windows.Forms.Padding(2);
             this.tbGestaoCartas.Size = new System.Drawing.Size(776, 397);
             this.tbGestaoCartas.TabIndex = 3;
             this.tbGestaoCartas.Text = "Cartas";
@@ -1864,9 +1861,9 @@
             this.gbGCartasForm.Controls.Add(this.labFacao);
             this.gbGCartasForm.Controls.Add(this.labNomeCarta);
             this.gbGCartasForm.Location = new System.Drawing.Point(528, 0);
-            this.gbGCartasForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGCartasForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGCartasForm.Name = "gbGCartasForm";
-            this.gbGCartasForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGCartasForm.Padding = new System.Windows.Forms.Padding(2);
             this.gbGCartasForm.Size = new System.Drawing.Size(244, 398);
             this.gbGCartasForm.TabIndex = 1;
             this.gbGCartasForm.TabStop = false;
@@ -1877,7 +1874,7 @@
             // 
             this.btnCartaCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCartaCancelar.Location = new System.Drawing.Point(166, 363);
-            this.btnCartaCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCartaCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCartaCancelar.Name = "btnCartaCancelar";
             this.btnCartaCancelar.Size = new System.Drawing.Size(62, 21);
             this.btnCartaCancelar.TabIndex = 17;
@@ -1889,7 +1886,7 @@
             // 
             this.btnAcaoCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAcaoCarta.Location = new System.Drawing.Point(106, 363);
-            this.btnAcaoCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAcaoCarta.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcaoCarta.Name = "btnAcaoCarta";
             this.btnAcaoCarta.Size = new System.Drawing.Size(56, 21);
             this.btnAcaoCarta.TabIndex = 16;
@@ -1901,7 +1898,7 @@
             // 
             this.nudGDefesaCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nudGDefesaCarta.Location = new System.Drawing.Point(179, 329);
-            this.nudGDefesaCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudGDefesaCarta.Margin = new System.Windows.Forms.Padding(2);
             this.nudGDefesaCarta.Name = "nudGDefesaCarta";
             this.nudGDefesaCarta.Size = new System.Drawing.Size(41, 20);
             this.nudGDefesaCarta.TabIndex = 15;
@@ -1910,7 +1907,7 @@
             // 
             this.nudGAtaqueCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nudGAtaqueCarta.Location = new System.Drawing.Point(62, 329);
-            this.nudGAtaqueCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudGAtaqueCarta.Margin = new System.Windows.Forms.Padding(2);
             this.nudGAtaqueCarta.Name = "nudGAtaqueCarta";
             this.nudGAtaqueCarta.Size = new System.Drawing.Size(41, 20);
             this.nudGAtaqueCarta.TabIndex = 14;
@@ -1921,7 +1918,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGRegrasCarta.Location = new System.Drawing.Point(20, 186);
-            this.txtGRegrasCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGRegrasCarta.Margin = new System.Windows.Forms.Padding(2);
             this.txtGRegrasCarta.Multiline = true;
             this.txtGRegrasCarta.Name = "txtGRegrasCarta";
             this.txtGRegrasCarta.Size = new System.Drawing.Size(210, 130);
@@ -1930,7 +1927,7 @@
             // nudGLealdadeCarta
             // 
             this.nudGLealdadeCarta.Location = new System.Drawing.Point(189, 129);
-            this.nudGLealdadeCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudGLealdadeCarta.Margin = new System.Windows.Forms.Padding(2);
             this.nudGLealdadeCarta.Name = "nudGLealdadeCarta";
             this.nudGLealdadeCarta.Size = new System.Drawing.Size(41, 20);
             this.nudGLealdadeCarta.TabIndex = 12;
@@ -1938,7 +1935,7 @@
             // txtGCustoCarta
             // 
             this.txtGCustoCarta.Location = new System.Drawing.Point(59, 129);
-            this.txtGCustoCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGCustoCarta.Margin = new System.Windows.Forms.Padding(2);
             this.txtGCustoCarta.Name = "txtGCustoCarta";
             this.txtGCustoCarta.Size = new System.Drawing.Size(53, 20);
             this.txtGCustoCarta.TabIndex = 11;
@@ -1955,7 +1952,7 @@
             "Encantamento",
             "Cidade"});
             this.cmbGTipoCarta.Location = new System.Drawing.Point(71, 93);
-            this.cmbGTipoCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbGTipoCarta.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGTipoCarta.Name = "cmbGTipoCarta";
             this.cmbGTipoCarta.Size = new System.Drawing.Size(158, 21);
             this.cmbGTipoCarta.TabIndex = 10;
@@ -1968,7 +1965,7 @@
             "Gaian Love for Life",
             "Uneasy Alliance"});
             this.cmbFacaoCarta.Location = new System.Drawing.Point(71, 62);
-            this.cmbFacaoCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbFacaoCarta.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFacaoCarta.Name = "cmbFacaoCarta";
             this.cmbFacaoCarta.Size = new System.Drawing.Size(158, 21);
             this.cmbFacaoCarta.TabIndex = 9;
@@ -1976,7 +1973,7 @@
             // txtGNomeCarta
             // 
             this.txtGNomeCarta.Location = new System.Drawing.Point(71, 33);
-            this.txtGNomeCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGNomeCarta.Margin = new System.Windows.Forms.Padding(2);
             this.txtGNomeCarta.Name = "txtGNomeCarta";
             this.txtGNomeCarta.Size = new System.Drawing.Size(158, 20);
             this.txtGNomeCarta.TabIndex = 8;
@@ -2068,6 +2065,7 @@
             this.gbGCartasDados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbGCartasDados.Controls.Add(this.btnImportarCartas);
             this.gbGCartasDados.Controls.Add(this.btnRemoverCarta);
             this.gbGCartasDados.Controls.Add(this.btnAlterarCarta);
             this.gbGCartasDados.Controls.Add(this.btnInserirCarta);
@@ -2075,22 +2073,32 @@
             this.gbGCartasDados.Controls.Add(this.labPesquisarCarta);
             this.gbGCartasDados.Controls.Add(this.txtGCartasPesquisa);
             this.gbGCartasDados.Location = new System.Drawing.Point(4, 0);
-            this.gbGCartasDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGCartasDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGCartasDados.MaximumSize = new System.Drawing.Size(525, 403);
             this.gbGCartasDados.MinimumSize = new System.Drawing.Size(292, 317);
             this.gbGCartasDados.Name = "gbGCartasDados";
-            this.gbGCartasDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGCartasDados.Padding = new System.Windows.Forms.Padding(2);
             this.gbGCartasDados.Size = new System.Drawing.Size(522, 398);
             this.gbGCartasDados.TabIndex = 0;
             this.gbGCartasDados.TabStop = false;
             this.gbGCartasDados.Text = "Cartas";
+            // 
+            // btnImportarCartas
+            // 
+            this.btnImportarCartas.Location = new System.Drawing.Point(19, 363);
+            this.btnImportarCartas.Name = "btnImportarCartas";
+            this.btnImportarCartas.Size = new System.Drawing.Size(75, 21);
+            this.btnImportarCartas.TabIndex = 12;
+            this.btnImportarCartas.Text = "Importar ...";
+            this.btnImportarCartas.UseVisualStyleBackColor = true;
+            this.btnImportarCartas.Click += new System.EventHandler(this.btnImportarCartas_Click);
             // 
             // btnRemoverCarta
             // 
             this.btnRemoverCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoverCarta.Enabled = false;
             this.btnRemoverCarta.Location = new System.Drawing.Point(436, 363);
-            this.btnRemoverCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoverCarta.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverCarta.Name = "btnRemoverCarta";
             this.btnRemoverCarta.Size = new System.Drawing.Size(62, 21);
             this.btnRemoverCarta.TabIndex = 11;
@@ -2103,7 +2111,7 @@
             this.btnAlterarCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarCarta.Enabled = false;
             this.btnAlterarCarta.Location = new System.Drawing.Point(374, 363);
-            this.btnAlterarCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlterarCarta.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarCarta.Name = "btnAlterarCarta";
             this.btnAlterarCarta.Size = new System.Drawing.Size(58, 21);
             this.btnAlterarCarta.TabIndex = 10;
@@ -2115,7 +2123,7 @@
             // 
             this.btnInserirCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInserirCarta.Location = new System.Drawing.Point(308, 363);
-            this.btnInserirCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInserirCarta.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirCarta.Name = "btnInserirCarta";
             this.btnInserirCarta.Size = new System.Drawing.Size(62, 21);
             this.btnInserirCarta.TabIndex = 9;
@@ -2145,7 +2153,7 @@
             this.defenseDataGridViewTextBoxColumn});
             this.dgvGCartasLista.DataSource = this.cardSetBindingSource;
             this.dgvGCartasLista.Location = new System.Drawing.Point(19, 76);
-            this.dgvGCartasLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvGCartasLista.Margin = new System.Windows.Forms.Padding(2);
             this.dgvGCartasLista.Name = "dgvGCartasLista";
             this.dgvGCartasLista.ReadOnly = true;
             this.dgvGCartasLista.RowTemplate.Height = 24;
@@ -2243,7 +2251,7 @@
             this.txtGCartasPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGCartasPesquisa.Location = new System.Drawing.Point(74, 37);
-            this.txtGCartasPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGCartasPesquisa.Margin = new System.Windows.Forms.Padding(2);
             this.txtGCartasPesquisa.Name = "txtGCartasPesquisa";
             this.txtGCartasPesquisa.Size = new System.Drawing.Size(426, 20);
             this.txtGCartasPesquisa.TabIndex = 6;
@@ -2254,9 +2262,9 @@
             this.tbGestaoBaralhos.Controls.Add(this.panelGestaoBaralho);
             this.tbGestaoBaralhos.Controls.Add(this.gbGBaralhosDados);
             this.tbGestaoBaralhos.Location = new System.Drawing.Point(4, 22);
-            this.tbGestaoBaralhos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoBaralhos.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoBaralhos.Name = "tbGestaoBaralhos";
-            this.tbGestaoBaralhos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoBaralhos.Padding = new System.Windows.Forms.Padding(2);
             this.tbGestaoBaralhos.Size = new System.Drawing.Size(776, 397);
             this.tbGestaoBaralhos.TabIndex = 4;
             this.tbGestaoBaralhos.Text = "Baralhos";
@@ -2289,7 +2297,7 @@
             this.gbGCartasBotoes.Controls.Add(this.btnCancelarAltBaralho);
             this.gbGCartasBotoes.Controls.Add(this.btnGuardarAltBaralho);
             this.gbGCartasBotoes.Location = new System.Drawing.Point(338, 2);
-            this.gbGCartasBotoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGCartasBotoes.Margin = new System.Windows.Forms.Padding(2);
             this.gbGCartasBotoes.Name = "gbGCartasBotoes";
             this.gbGCartasBotoes.Padding = new System.Windows.Forms.Padding(2);
             this.gbGCartasBotoes.Size = new System.Drawing.Size(96, 192);
@@ -2309,7 +2317,7 @@
             // btnRemoverCartaBaralho
             // 
             this.btnRemoverCartaBaralho.Location = new System.Drawing.Point(27, 89);
-            this.btnRemoverCartaBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoverCartaBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverCartaBaralho.Name = "btnRemoverCartaBaralho";
             this.btnRemoverCartaBaralho.Size = new System.Drawing.Size(41, 24);
             this.btnRemoverCartaBaralho.TabIndex = 13;
@@ -2320,7 +2328,7 @@
             // btnAdicionarCartaBaralho
             // 
             this.btnAdicionarCartaBaralho.Location = new System.Drawing.Point(27, 61);
-            this.btnAdicionarCartaBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdicionarCartaBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionarCartaBaralho.Name = "btnAdicionarCartaBaralho";
             this.btnAdicionarCartaBaralho.Size = new System.Drawing.Size(41, 24);
             this.btnAdicionarCartaBaralho.TabIndex = 14;
@@ -2341,7 +2349,7 @@
             // btnCancelarAltBaralho
             // 
             this.btnCancelarAltBaralho.Location = new System.Drawing.Point(17, 153);
-            this.btnCancelarAltBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarAltBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarAltBaralho.Name = "btnCancelarAltBaralho";
             this.btnCancelarAltBaralho.Size = new System.Drawing.Size(64, 23);
             this.btnCancelarAltBaralho.TabIndex = 11;
@@ -2352,7 +2360,7 @@
             // btnGuardarAltBaralho
             // 
             this.btnGuardarAltBaralho.Location = new System.Drawing.Point(17, 126);
-            this.btnGuardarAltBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarAltBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarAltBaralho.Name = "btnGuardarAltBaralho";
             this.btnGuardarAltBaralho.Size = new System.Drawing.Size(64, 23);
             this.btnGuardarAltBaralho.TabIndex = 12;
@@ -2365,9 +2373,9 @@
             this.gbGCartasnoBaralho.Controls.Add(this.lvCartasBaralho);
             this.gbGCartasnoBaralho.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbGCartasnoBaralho.Location = new System.Drawing.Point(2, 2);
-            this.gbGCartasnoBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGCartasnoBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.gbGCartasnoBaralho.Name = "gbGCartasnoBaralho";
-            this.gbGCartasnoBaralho.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGCartasnoBaralho.Padding = new System.Windows.Forms.Padding(2);
             this.gbGCartasnoBaralho.Size = new System.Drawing.Size(332, 194);
             this.gbGCartasnoBaralho.TabIndex = 2;
             this.gbGCartasnoBaralho.TabStop = false;
@@ -2411,9 +2419,9 @@
             this.gbGListaDeCartas.Controls.Add(this.lvListaCartas);
             this.gbGListaDeCartas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbGListaDeCartas.Location = new System.Drawing.Point(438, 2);
-            this.gbGListaDeCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGListaDeCartas.Margin = new System.Windows.Forms.Padding(2);
             this.gbGListaDeCartas.Name = "gbGListaDeCartas";
-            this.gbGListaDeCartas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGListaDeCartas.Padding = new System.Windows.Forms.Padding(2);
             this.gbGListaDeCartas.Size = new System.Drawing.Size(332, 194);
             this.gbGListaDeCartas.TabIndex = 1;
             this.gbGListaDeCartas.TabStop = false;
@@ -2463,9 +2471,9 @@
             this.gbGBaralhosDados.Controls.Add(this.btnEliminarBaralho);
             this.gbGBaralhosDados.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbGBaralhosDados.Location = new System.Drawing.Point(2, 2);
-            this.gbGBaralhosDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGBaralhosDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGBaralhosDados.Name = "gbGBaralhosDados";
-            this.gbGBaralhosDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGBaralhosDados.Padding = new System.Windows.Forms.Padding(2);
             this.gbGBaralhosDados.Size = new System.Drawing.Size(772, 195);
             this.gbGBaralhosDados.TabIndex = 0;
             this.gbGBaralhosDados.TabStop = false;
@@ -2479,9 +2487,9 @@
             this.gbGBaralhosForm.Controls.Add(this.btnCancelarNovoBaralho);
             this.gbGBaralhosForm.Controls.Add(this.txtNomeBaralho);
             this.gbGBaralhosForm.Location = new System.Drawing.Point(560, 72);
-            this.gbGBaralhosForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGBaralhosForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGBaralhosForm.Name = "gbGBaralhosForm";
-            this.gbGBaralhosForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGBaralhosForm.Padding = new System.Windows.Forms.Padding(2);
             this.gbGBaralhosForm.Size = new System.Drawing.Size(207, 110);
             this.gbGBaralhosForm.TabIndex = 18;
             this.gbGBaralhosForm.TabStop = false;
@@ -2502,7 +2510,7 @@
             // 
             this.btnCriarBaralho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCriarBaralho.Location = new System.Drawing.Point(56, 79);
-            this.btnCriarBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCriarBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.btnCriarBaralho.Name = "btnCriarBaralho";
             this.btnCriarBaralho.Size = new System.Drawing.Size(64, 23);
             this.btnCriarBaralho.TabIndex = 17;
@@ -2514,7 +2522,7 @@
             // 
             this.btnCancelarNovoBaralho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelarNovoBaralho.Location = new System.Drawing.Point(124, 79);
-            this.btnCancelarNovoBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarNovoBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarNovoBaralho.Name = "btnCancelarNovoBaralho";
             this.btnCancelarNovoBaralho.Size = new System.Drawing.Size(64, 23);
             this.btnCancelarNovoBaralho.TabIndex = 16;
@@ -2525,7 +2533,7 @@
             // txtNomeBaralho
             // 
             this.txtNomeBaralho.Location = new System.Drawing.Point(56, 29);
-            this.txtNomeBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeBaralho.Name = "txtNomeBaralho";
             this.txtNomeBaralho.Size = new System.Drawing.Size(132, 20);
             this.txtNomeBaralho.TabIndex = 15;
@@ -2555,7 +2563,7 @@
             this.nameDataGridViewTextBoxColumn1});
             this.dgvGBaralhosLista.DataSource = this.deckSetBindingSource;
             this.dgvGBaralhosLista.Location = new System.Drawing.Point(22, 54);
-            this.dgvGBaralhosLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvGBaralhosLista.Margin = new System.Windows.Forms.Padding(2);
             this.dgvGBaralhosLista.Name = "dgvGBaralhosLista";
             this.dgvGBaralhosLista.ReadOnly = true;
             this.dgvGBaralhosLista.RowTemplate.Height = 24;
@@ -2592,7 +2600,7 @@
             // 
             this.btnInserirBaralho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInserirBaralho.Location = new System.Drawing.Point(488, 83);
-            this.btnInserirBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInserirBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirBaralho.Name = "btnInserirBaralho";
             this.btnInserirBaralho.Size = new System.Drawing.Size(58, 23);
             this.btnInserirBaralho.TabIndex = 10;
@@ -2603,7 +2611,7 @@
             // txtGBaralhosPesquisa
             // 
             this.txtGBaralhosPesquisa.Location = new System.Drawing.Point(76, 19);
-            this.txtGBaralhosPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGBaralhosPesquisa.Margin = new System.Windows.Forms.Padding(2);
             this.txtGBaralhosPesquisa.Name = "txtGBaralhosPesquisa";
             this.txtGBaralhosPesquisa.Size = new System.Drawing.Size(196, 20);
             this.txtGBaralhosPesquisa.TabIndex = 12;
@@ -2614,7 +2622,7 @@
             this.btnGerirBaralho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGerirBaralho.Enabled = false;
             this.btnGerirBaralho.Location = new System.Drawing.Point(488, 120);
-            this.btnGerirBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGerirBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.btnGerirBaralho.Name = "btnGerirBaralho";
             this.btnGerirBaralho.Size = new System.Drawing.Size(58, 23);
             this.btnGerirBaralho.TabIndex = 11;
@@ -2627,7 +2635,7 @@
             this.btnEliminarBaralho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarBaralho.Enabled = false;
             this.btnEliminarBaralho.Location = new System.Drawing.Point(488, 159);
-            this.btnEliminarBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarBaralho.Name = "btnEliminarBaralho";
             this.btnEliminarBaralho.Size = new System.Drawing.Size(58, 23);
             this.btnEliminarBaralho.TabIndex = 8;
@@ -2641,9 +2649,9 @@
             this.tbGestaoUtilizadores.Controls.Add(this.gbGAdministradorForm);
             this.tbGestaoUtilizadores.Controls.Add(this.gbGArbitroForm);
             this.tbGestaoUtilizadores.Location = new System.Drawing.Point(4, 22);
-            this.tbGestaoUtilizadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoUtilizadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbGestaoUtilizadores.Name = "tbGestaoUtilizadores";
-            this.tbGestaoUtilizadores.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoUtilizadores.Padding = new System.Windows.Forms.Padding(2);
             this.tbGestaoUtilizadores.Size = new System.Drawing.Size(776, 397);
             this.tbGestaoUtilizadores.TabIndex = 5;
             this.tbGestaoUtilizadores.Text = "Utilizadores";
@@ -2663,11 +2671,11 @@
             this.gbGUtilizadoresDados.Controls.Add(this.btnInserirUtilizador);
             this.gbGUtilizadoresDados.Controls.Add(this.txtGUtilizadoresPesquisa);
             this.gbGUtilizadoresDados.Location = new System.Drawing.Point(4, 0);
-            this.gbGUtilizadoresDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGUtilizadoresDados.Margin = new System.Windows.Forms.Padding(2);
             this.gbGUtilizadoresDados.MaximumSize = new System.Drawing.Size(525, 406);
             this.gbGUtilizadoresDados.MinimumSize = new System.Drawing.Size(292, 317);
             this.gbGUtilizadoresDados.Name = "gbGUtilizadoresDados";
-            this.gbGUtilizadoresDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGUtilizadoresDados.Padding = new System.Windows.Forms.Padding(2);
             this.gbGUtilizadoresDados.Size = new System.Drawing.Size(522, 400);
             this.gbGUtilizadoresDados.TabIndex = 0;
             this.gbGUtilizadoresDados.TabStop = false;
@@ -2703,7 +2711,7 @@
             // 
             this.btnEliminarUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarUtilizador.Location = new System.Drawing.Point(446, 366);
-            this.btnEliminarUtilizador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarUtilizador.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarUtilizador.Name = "btnEliminarUtilizador";
             this.btnEliminarUtilizador.Size = new System.Drawing.Size(62, 24);
             this.btnEliminarUtilizador.TabIndex = 7;
@@ -2725,7 +2733,7 @@
             // 
             this.btnAlterarUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarUtilizador.Location = new System.Drawing.Point(384, 366);
-            this.btnAlterarUtilizador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlterarUtilizador.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarUtilizador.Name = "btnAlterarUtilizador";
             this.btnAlterarUtilizador.Size = new System.Drawing.Size(58, 24);
             this.btnAlterarUtilizador.TabIndex = 5;
@@ -2743,7 +2751,7 @@
             this.dgvGUtilizadoresLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGUtilizadoresLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGUtilizadoresLista.Location = new System.Drawing.Point(14, 68);
-            this.dgvGUtilizadoresLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvGUtilizadoresLista.Margin = new System.Windows.Forms.Padding(2);
             this.dgvGUtilizadoresLista.Name = "dgvGUtilizadoresLista";
             this.dgvGUtilizadoresLista.ReadOnly = true;
             this.dgvGUtilizadoresLista.RowTemplate.Height = 24;
@@ -2755,7 +2763,7 @@
             // 
             this.btnInserirUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInserirUtilizador.Location = new System.Drawing.Point(318, 366);
-            this.btnInserirUtilizador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInserirUtilizador.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirUtilizador.Name = "btnInserirUtilizador";
             this.btnInserirUtilizador.Size = new System.Drawing.Size(62, 24);
             this.btnInserirUtilizador.TabIndex = 4;
@@ -2768,7 +2776,7 @@
             this.txtGUtilizadoresPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGUtilizadoresPesquisa.Location = new System.Drawing.Point(65, 34);
-            this.txtGUtilizadoresPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGUtilizadoresPesquisa.Margin = new System.Windows.Forms.Padding(2);
             this.txtGUtilizadoresPesquisa.Name = "txtGUtilizadoresPesquisa";
             this.txtGUtilizadoresPesquisa.Size = new System.Drawing.Size(442, 20);
             this.txtGUtilizadoresPesquisa.TabIndex = 6;
@@ -2787,9 +2795,9 @@
             this.gbGAdministradorForm.Controls.Add(this.labPasswordAdministrador);
             this.gbGAdministradorForm.Controls.Add(this.labUsernameAdministrador);
             this.gbGAdministradorForm.Location = new System.Drawing.Point(528, 0);
-            this.gbGAdministradorForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGAdministradorForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGAdministradorForm.Name = "gbGAdministradorForm";
-            this.gbGAdministradorForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGAdministradorForm.Padding = new System.Windows.Forms.Padding(2);
             this.gbGAdministradorForm.Size = new System.Drawing.Size(244, 400);
             this.gbGAdministradorForm.TabIndex = 1;
             this.gbGAdministradorForm.TabStop = false;
@@ -2800,7 +2808,7 @@
             // 
             this.btnCancelarAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelarAdministrador.Location = new System.Drawing.Point(161, 365);
-            this.btnCancelarAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarAdministrador.Name = "btnCancelarAdministrador";
             this.btnCancelarAdministrador.Size = new System.Drawing.Size(62, 25);
             this.btnCancelarAdministrador.TabIndex = 15;
@@ -2812,7 +2820,7 @@
             // 
             this.btnAcaoAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAcaoAdministrador.Location = new System.Drawing.Point(97, 365);
-            this.btnAcaoAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAcaoAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcaoAdministrador.Name = "btnAcaoAdministrador";
             this.btnAcaoAdministrador.Size = new System.Drawing.Size(60, 25);
             this.btnAcaoAdministrador.TabIndex = 14;
@@ -2823,7 +2831,7 @@
             // txtEmailAdministrador
             // 
             this.txtEmailAdministrador.Location = new System.Drawing.Point(51, 96);
-            this.txtEmailAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmailAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmailAdministrador.Name = "txtEmailAdministrador";
             this.txtEmailAdministrador.Size = new System.Drawing.Size(172, 20);
             this.txtEmailAdministrador.TabIndex = 13;
@@ -2831,7 +2839,7 @@
             // txtPasswordAdministrador
             // 
             this.txtPasswordAdministrador.Location = new System.Drawing.Point(72, 65);
-            this.txtPasswordAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPasswordAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.txtPasswordAdministrador.Name = "txtPasswordAdministrador";
             this.txtPasswordAdministrador.Size = new System.Drawing.Size(151, 20);
             this.txtPasswordAdministrador.TabIndex = 8;
@@ -2840,7 +2848,7 @@
             // txtUsernameAdministrador
             // 
             this.txtUsernameAdministrador.Location = new System.Drawing.Point(74, 38);
-            this.txtUsernameAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsernameAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsernameAdministrador.Name = "txtUsernameAdministrador";
             this.txtUsernameAdministrador.Size = new System.Drawing.Size(149, 20);
             this.txtUsernameAdministrador.TabIndex = 7;
@@ -2892,9 +2900,9 @@
             this.gbGArbitroForm.Controls.Add(this.btnAcaoArbitro);
             this.gbGArbitroForm.Controls.Add(this.btnCancelarArbitro);
             this.gbGArbitroForm.Location = new System.Drawing.Point(528, 0);
-            this.gbGArbitroForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGArbitroForm.Margin = new System.Windows.Forms.Padding(2);
             this.gbGArbitroForm.Name = "gbGArbitroForm";
-            this.gbGArbitroForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGArbitroForm.Padding = new System.Windows.Forms.Padding(2);
             this.gbGArbitroForm.Size = new System.Drawing.Size(244, 400);
             this.gbGArbitroForm.TabIndex = 16;
             this.gbGArbitroForm.TabStop = false;
@@ -2923,7 +2931,7 @@
             // txtUsernameArbitro
             // 
             this.txtUsernameArbitro.Location = new System.Drawing.Point(74, 38);
-            this.txtUsernameArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsernameArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsernameArbitro.Name = "txtUsernameArbitro";
             this.txtUsernameArbitro.Size = new System.Drawing.Size(149, 20);
             this.txtUsernameArbitro.TabIndex = 7;
@@ -2941,7 +2949,7 @@
             // txtPasswordArbitro
             // 
             this.txtPasswordArbitro.Location = new System.Drawing.Point(72, 65);
-            this.txtPasswordArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPasswordArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.txtPasswordArbitro.Name = "txtPasswordArbitro";
             this.txtPasswordArbitro.Size = new System.Drawing.Size(151, 20);
             this.txtPasswordArbitro.TabIndex = 8;
@@ -2960,7 +2968,7 @@
             // txtNomeArbitro
             // 
             this.txtNomeArbitro.Location = new System.Drawing.Point(54, 95);
-            this.txtNomeArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeArbitro.Name = "txtNomeArbitro";
             this.txtNomeArbitro.Size = new System.Drawing.Size(169, 20);
             this.txtNomeArbitro.TabIndex = 10;
@@ -2978,7 +2986,7 @@
             // txtAvatarArbitro
             // 
             this.txtAvatarArbitro.Location = new System.Drawing.Point(56, 125);
-            this.txtAvatarArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAvatarArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.txtAvatarArbitro.Name = "txtAvatarArbitro";
             this.txtAvatarArbitro.Size = new System.Drawing.Size(100, 20);
             this.txtAvatarArbitro.TabIndex = 11;
@@ -2986,7 +2994,7 @@
             // btnProcurarAvatar
             // 
             this.btnProcurarAvatar.Location = new System.Drawing.Point(161, 125);
-            this.btnProcurarAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProcurarAvatar.Margin = new System.Windows.Forms.Padding(2);
             this.btnProcurarAvatar.Name = "btnProcurarAvatar";
             this.btnProcurarAvatar.Size = new System.Drawing.Size(62, 20);
             this.btnProcurarAvatar.TabIndex = 12;
@@ -2998,7 +3006,7 @@
             // 
             this.btnAcaoArbitro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAcaoArbitro.Location = new System.Drawing.Point(97, 365);
-            this.btnAcaoArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAcaoArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcaoArbitro.Name = "btnAcaoArbitro";
             this.btnAcaoArbitro.Size = new System.Drawing.Size(60, 25);
             this.btnAcaoArbitro.TabIndex = 14;
@@ -3010,7 +3018,7 @@
             // 
             this.btnCancelarArbitro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelarArbitro.Location = new System.Drawing.Point(161, 365);
-            this.btnCancelarArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarArbitro.Name = "btnCancelarArbitro";
             this.btnCancelarArbitro.Size = new System.Drawing.Size(62, 25);
             this.btnCancelarArbitro.TabIndex = 15;
@@ -3022,9 +3030,9 @@
             // 
             this.tbVer.Controls.Add(this.tcVer);
             this.tbVer.Location = new System.Drawing.Point(4, 22);
-            this.tbVer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVer.Margin = new System.Windows.Forms.Padding(2);
             this.tbVer.Name = "tbVer";
-            this.tbVer.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVer.Padding = new System.Windows.Forms.Padding(2);
             this.tbVer.Size = new System.Drawing.Size(788, 427);
             this.tbVer.TabIndex = 1;
             this.tbVer.Text = "Ver";
@@ -3040,7 +3048,7 @@
             this.tcVer.Controls.Add(this.tbVerUtilizadores);
             this.tcVer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcVer.Location = new System.Drawing.Point(2, 2);
-            this.tcVer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcVer.Margin = new System.Windows.Forms.Padding(2);
             this.tcVer.Name = "tcVer";
             this.tcVer.SelectedIndex = 0;
             this.tcVer.Size = new System.Drawing.Size(784, 423);
@@ -3060,9 +3068,9 @@
             this.tbVerJogadores.Controls.Add(this.btnExportar);
             this.tbVerJogadores.Controls.Add(this.dgvGListaJogadoresPesquisa);
             this.tbVerJogadores.Location = new System.Drawing.Point(4, 22);
-            this.tbVerJogadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerJogadores.Name = "tbVerJogadores";
-            this.tbVerJogadores.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerJogadores.Padding = new System.Windows.Forms.Padding(2);
             this.tbVerJogadores.Size = new System.Drawing.Size(776, 397);
             this.tbVerJogadores.TabIndex = 0;
             this.tbVerJogadores.Text = "Jogadores";
@@ -3219,7 +3227,7 @@
             this.tbVerEquipas.Controls.Add(this.label40);
             this.tbVerEquipas.Controls.Add(this.dgvGListaEquipasPesquisa);
             this.tbVerEquipas.Location = new System.Drawing.Point(4, 22);
-            this.tbVerEquipas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerEquipas.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerEquipas.Name = "tbVerEquipas";
             this.tbVerEquipas.Padding = new System.Windows.Forms.Padding(2);
             this.tbVerEquipas.Size = new System.Drawing.Size(776, 397);
@@ -3321,7 +3329,7 @@
             // tbVerTorneios
             // 
             this.tbVerTorneios.Location = new System.Drawing.Point(4, 22);
-            this.tbVerTorneios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerTorneios.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerTorneios.Name = "tbVerTorneios";
             this.tbVerTorneios.Padding = new System.Windows.Forms.Padding(2);
             this.tbVerTorneios.Size = new System.Drawing.Size(776, 397);
@@ -3348,7 +3356,7 @@
             this.tbVerCartas.Controls.Add(this.label43);
             this.tbVerCartas.Controls.Add(this.dgvVCartasLista);
             this.tbVerCartas.Location = new System.Drawing.Point(4, 22);
-            this.tbVerCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerCartas.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerCartas.Name = "tbVerCartas";
             this.tbVerCartas.Padding = new System.Windows.Forms.Padding(2);
             this.tbVerCartas.Size = new System.Drawing.Size(776, 397);
@@ -3550,7 +3558,7 @@
             this.defenseDataGridViewTextBoxColumn1});
             this.dgvVCartasLista.DataSource = this.cardSetBindingSource;
             this.dgvVCartasLista.Location = new System.Drawing.Point(23, 146);
-            this.dgvVCartasLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvVCartasLista.Margin = new System.Windows.Forms.Padding(2);
             this.dgvVCartasLista.Name = "dgvVCartasLista";
             this.dgvVCartasLista.ReadOnly = true;
             this.dgvVCartasLista.RowTemplate.Height = 24;
@@ -3629,9 +3637,9 @@
             this.tbVerBaralhos.Controls.Add(this.label44);
             this.tbVerBaralhos.Controls.Add(this.txtVNomeBaralho);
             this.tbVerBaralhos.Location = new System.Drawing.Point(4, 22);
-            this.tbVerBaralhos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerBaralhos.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerBaralhos.Name = "tbVerBaralhos";
-            this.tbVerBaralhos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerBaralhos.Padding = new System.Windows.Forms.Padding(2);
             this.tbVerBaralhos.Size = new System.Drawing.Size(776, 397);
             this.tbVerBaralhos.TabIndex = 4;
             this.tbVerBaralhos.Text = "Baralhos";
@@ -3653,7 +3661,7 @@
             this.nameDataGridViewTextBoxColumn3});
             this.dgvVBaralhosLista.DataSource = this.deckSetBindingSource;
             this.dgvVBaralhosLista.Location = new System.Drawing.Point(26, 106);
-            this.dgvVBaralhosLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvVBaralhosLista.Margin = new System.Windows.Forms.Padding(2);
             this.dgvVBaralhosLista.Name = "dgvVBaralhosLista";
             this.dgvVBaralhosLista.ReadOnly = true;
             this.dgvVBaralhosLista.RowTemplate.Height = 24;
@@ -3678,7 +3686,7 @@
             // 
             this.btnVLimparBaralhos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnVLimparBaralhos.Location = new System.Drawing.Point(648, 54);
-            this.btnVLimparBaralhos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVLimparBaralhos.Margin = new System.Windows.Forms.Padding(2);
             this.btnVLimparBaralhos.Name = "btnVLimparBaralhos";
             this.btnVLimparBaralhos.Size = new System.Drawing.Size(56, 27);
             this.btnVLimparBaralhos.TabIndex = 37;
@@ -3692,7 +3700,7 @@
             this.cmbVCartasnoBaralho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVCartasnoBaralho.FormattingEnabled = true;
             this.cmbVCartasnoBaralho.Location = new System.Drawing.Point(433, 57);
-            this.cmbVCartasnoBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbVCartasnoBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.cmbVCartasnoBaralho.Name = "cmbVCartasnoBaralho";
             this.cmbVCartasnoBaralho.Size = new System.Drawing.Size(183, 21);
             this.cmbVCartasnoBaralho.TabIndex = 36;
@@ -3724,7 +3732,7 @@
             // 
             this.txtVNomeBaralho.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtVNomeBaralho.Location = new System.Drawing.Point(143, 58);
-            this.txtVNomeBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVNomeBaralho.Margin = new System.Windows.Forms.Padding(2);
             this.txtVNomeBaralho.Name = "txtVNomeBaralho";
             this.txtVNomeBaralho.Size = new System.Drawing.Size(189, 20);
             this.txtVNomeBaralho.TabIndex = 34;
@@ -3745,7 +3753,7 @@
             this.tbVerUtilizadores.Controls.Add(this.btnResetPesquisa);
             this.tbVerUtilizadores.Controls.Add(this.dgvPesquisaUtilizadores);
             this.tbVerUtilizadores.Location = new System.Drawing.Point(4, 22);
-            this.tbVerUtilizadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerUtilizadores.Margin = new System.Windows.Forms.Padding(2);
             this.tbVerUtilizadores.Name = "tbVerUtilizadores";
             this.tbVerUtilizadores.Padding = new System.Windows.Forms.Padding(2);
             this.tbVerUtilizadores.Size = new System.Drawing.Size(776, 397);
@@ -3947,7 +3955,7 @@
             this.ClientSize = new System.Drawing.Size(796, 453);
             this.Controls.Add(this.tbMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(812, 491);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(812, 491);
@@ -4264,7 +4272,7 @@
         private System.Windows.Forms.GroupBox gbGEquipasForm;
         private System.Windows.Forms.PictureBox pictureBoxAvatarEquipa;
         private System.Windows.Forms.Button btnAvatarEquipa;
-        private System.Windows.Forms.Button txtEquipaCancelar;
+        private System.Windows.Forms.Button btnEquipaCancelar;
         private System.Windows.Forms.Button btnEquipaAcao;
         private System.Windows.Forms.TextBox txtGAvatarEquipa;
         private System.Windows.Forms.TextBox txtGNomeEquipa;
@@ -4389,6 +4397,8 @@
         private System.Windows.Forms.ComboBox cmbdecks1;
         private System.Windows.Forms.GroupBox groupBoxEquipasJogos;
         private System.Windows.Forms.Button btngerirjogos;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancelarJogo;
+        private System.Windows.Forms.OpenFileDialog FileDialogImportarCarta;
+        private System.Windows.Forms.Button btnImportarCartas;
     }
 }
