@@ -18,5 +18,10 @@ namespace Projeto
         public string Name { get; set; }
         public System.DateTime Date { get; set; }
         public string Description { get; set; }
+
+        public override string ToString()
+        {
+            return Description;
+        }
     }
 }
