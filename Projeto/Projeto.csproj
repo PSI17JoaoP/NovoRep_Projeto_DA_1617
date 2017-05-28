@@ -142,11 +142,15 @@
     <Compile Include="FormArbitro_DetalhesJogoS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormArbitro_DetalhesJogoS.Designer.cs" />
+    <Compile Include="FormArbitro_DetalhesJogoS.Designer.cs">
+      <DependentUpon>FormArbitro_DetalhesJogoS.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormArbitro_DetalhesJogoT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormArbitro_DetalhesJogoT.Designer.cs" />
+    <Compile Include="FormArbitro_DetalhesJogoT.Designer.cs">
+      <DependentUpon>FormArbitro_DetalhesJogoT.cs</DependentUpon>
+    </Compile>
     <Compile Include="formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,8 +204,12 @@
     <Compile Include="User.cs">
       <DependentUpon>DiagramaArcmage.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormArbitro_DetalhesJogoS.resx" />
-    <EmbeddedResource Include="FormArbitro_DetalhesJogoT.resx" />
+    <EmbeddedResource Include="FormArbitro_DetalhesJogoS.resx">
+      <DependentUpon>FormArbitro_DetalhesJogoS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormArbitro_DetalhesJogoT.resx">
+      <DependentUpon>FormArbitro_DetalhesJogoT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
