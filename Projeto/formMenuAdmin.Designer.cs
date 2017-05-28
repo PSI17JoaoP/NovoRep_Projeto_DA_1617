@@ -1438,6 +1438,7 @@
             this.txtGTorneiosPesquisa.Name = "txtGTorneiosPesquisa";
             this.txtGTorneiosPesquisa.Size = new System.Drawing.Size(318, 20);
             this.txtGTorneiosPesquisa.TabIndex = 6;
+            this.txtGTorneiosPesquisa.TextChanged += new System.EventHandler(this.PesquisarTorneio);
             // 
             // btnAlterarTorneio
             // 
@@ -3524,7 +3525,6 @@
             this.dtpTorneioData.Name = "dtpTorneioData";
             this.dtpTorneioData.Size = new System.Drawing.Size(97, 20);
             this.dtpTorneioData.TabIndex = 1;
-            this.dtpTorneioData.ValueChanged += new System.EventHandler(this.PesquisarTorneios);
             // 
             // label16
             // 
@@ -4279,7 +4279,6 @@
             this.dtpJogoData.Name = "dtpJogoData";
             this.dtpJogoData.Size = new System.Drawing.Size(97, 20);
             this.dtpJogoData.TabIndex = 12;
-            this.dtpJogoData.ValueChanged += new System.EventHandler(this.PesquisarJogos);
             // 
             // label23
             // 
