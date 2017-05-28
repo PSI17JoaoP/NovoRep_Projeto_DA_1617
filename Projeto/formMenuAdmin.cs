@@ -4319,6 +4319,7 @@ namespace Projeto
 
                     //query = query.Where(torneio => torneio.Date.Equals(dataTorneio));
 
+
                     dgvResultadosTorneios.DataSource = (query.Select(torneio => new { torneio.Id, torneio.Name, torneio.Date, torneio.Description })).ToList();
                 }
 
