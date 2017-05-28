@@ -482,20 +482,20 @@
             this.tbMenu.Controls.Add(this.tbVer);
             this.tbMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbMenu.Location = new System.Drawing.Point(0, 0);
-            this.tbMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbMenu.Name = "tbMenu";
             this.tbMenu.SelectedIndex = 0;
-            this.tbMenu.Size = new System.Drawing.Size(1059, 546);
+            this.tbMenu.Size = new System.Drawing.Size(796, 451);
             this.tbMenu.TabIndex = 0;
             // 
             // tpGestao
             // 
             this.tpGestao.Controls.Add(this.tcGestao);
-            this.tpGestao.Location = new System.Drawing.Point(4, 25);
-            this.tpGestao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpGestao.Location = new System.Drawing.Point(4, 22);
+            this.tpGestao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpGestao.Name = "tpGestao";
-            this.tpGestao.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpGestao.Size = new System.Drawing.Size(1051, 517);
+            this.tpGestao.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpGestao.Size = new System.Drawing.Size(788, 425);
             this.tpGestao.TabIndex = 0;
             this.tpGestao.Text = "Gestão";
             this.tpGestao.UseVisualStyleBackColor = true;
@@ -509,22 +509,22 @@
             this.tcGestao.Controls.Add(this.tbGestaoBaralhos);
             this.tcGestao.Controls.Add(this.tbGestaoUtilizadores);
             this.tcGestao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcGestao.Location = new System.Drawing.Point(3, 2);
-            this.tcGestao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tcGestao.Location = new System.Drawing.Point(2, 2);
+            this.tcGestao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcGestao.Name = "tcGestao";
             this.tcGestao.SelectedIndex = 0;
-            this.tcGestao.Size = new System.Drawing.Size(1045, 513);
+            this.tcGestao.Size = new System.Drawing.Size(784, 421);
             this.tcGestao.TabIndex = 0;
             // 
             // tbGestaoJogadores
             // 
             this.tbGestaoJogadores.Controls.Add(this.gbGJogadoresForm);
             this.tbGestaoJogadores.Controls.Add(this.gbGJogadoresDados);
-            this.tbGestaoJogadores.Location = new System.Drawing.Point(4, 25);
-            this.tbGestaoJogadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbGestaoJogadores.Location = new System.Drawing.Point(4, 22);
+            this.tbGestaoJogadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbGestaoJogadores.Name = "tbGestaoJogadores";
-            this.tbGestaoJogadores.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbGestaoJogadores.Size = new System.Drawing.Size(1037, 484);
+            this.tbGestaoJogadores.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoJogadores.Size = new System.Drawing.Size(776, 395);
             this.tbGestaoJogadores.TabIndex = 0;
             this.tbGestaoJogadores.Text = "Jogadores";
             this.tbGestaoJogadores.UseVisualStyleBackColor = true;
@@ -548,11 +548,11 @@
             this.gbGJogadoresForm.Controls.Add(this.label3);
             this.gbGJogadoresForm.Controls.Add(this.label2);
             this.gbGJogadoresForm.Enabled = false;
-            this.gbGJogadoresForm.Location = new System.Drawing.Point(667, 5);
-            this.gbGJogadoresForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGJogadoresForm.Location = new System.Drawing.Point(500, 4);
+            this.gbGJogadoresForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGJogadoresForm.Name = "gbGJogadoresForm";
-            this.gbGJogadoresForm.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGJogadoresForm.Size = new System.Drawing.Size(364, 467);
+            this.gbGJogadoresForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGJogadoresForm.Size = new System.Drawing.Size(273, 386);
             this.gbGJogadoresForm.TabIndex = 7;
             this.gbGJogadoresForm.TabStop = false;
             this.gbGJogadoresForm.Text = "Campos";
@@ -560,20 +560,18 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(95, 230);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(71, 187);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 111);
+            this.pictureBox1.Size = new System.Drawing.Size(90, 90);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
             // btImagem
             // 
-            this.btImagem.Location = new System.Drawing.Point(276, 197);
-            this.btImagem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btImagem.Location = new System.Drawing.Point(207, 160);
             this.btImagem.Name = "btImagem";
-            this.btImagem.Size = new System.Drawing.Size(47, 28);
+            this.btImagem.Size = new System.Drawing.Size(35, 23);
             this.btImagem.TabIndex = 12;
             this.btImagem.Text = "Q";
             this.btImagem.UseVisualStyleBackColor = true;
@@ -581,29 +579,30 @@
             // 
             // txtAvatar
             // 
-            this.txtAvatar.Location = new System.Drawing.Point(95, 199);
-            this.txtAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAvatar.Location = new System.Drawing.Point(71, 162);
+            this.txtAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAvatar.Name = "txtAvatar";
             this.txtAvatar.ReadOnly = true;
-            this.txtAvatar.Size = new System.Drawing.Size(168, 22);
+            this.txtAvatar.Size = new System.Drawing.Size(127, 20);
             this.txtAvatar.TabIndex = 11;
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(23, 203);
+            this.label36.Location = new System.Drawing.Point(17, 165);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(49, 17);
+            this.label36.Size = new System.Drawing.Size(38, 13);
             this.label36.TabIndex = 10;
             this.label36.Text = "Avatar";
             // 
             // btnJogadoresCancelar
             // 
             this.btnJogadoresCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogadoresCancelar.Location = new System.Drawing.Point(257, 417);
-            this.btnJogadoresCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnJogadoresCancelar.Location = new System.Drawing.Point(193, 345);
+            this.btnJogadoresCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnJogadoresCancelar.Name = "btnJogadoresCancelar";
-            this.btnJogadoresCancelar.Size = new System.Drawing.Size(83, 26);
+            this.btnJogadoresCancelar.Size = new System.Drawing.Size(62, 21);
             this.btnJogadoresCancelar.TabIndex = 9;
             this.btnJogadoresCancelar.Text = "Cancelar";
             this.btnJogadoresCancelar.UseVisualStyleBackColor = true;
@@ -612,10 +611,10 @@
             // btnJogadoresAcao
             // 
             this.btnJogadoresAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogadoresAcao.Location = new System.Drawing.Point(177, 417);
-            this.btnJogadoresAcao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnJogadoresAcao.Location = new System.Drawing.Point(133, 345);
+            this.btnJogadoresAcao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnJogadoresAcao.Name = "btnJogadoresAcao";
-            this.btnJogadoresAcao.Size = new System.Drawing.Size(75, 26);
+            this.btnJogadoresAcao.Size = new System.Drawing.Size(56, 21);
             this.btnJogadoresAcao.TabIndex = 8;
             this.btnJogadoresAcao.Text = "Ação";
             this.btnJogadoresAcao.UseVisualStyleBackColor = true;
@@ -623,69 +622,73 @@
             // 
             // nudIdadeJogador
             // 
-            this.nudIdadeJogador.Location = new System.Drawing.Point(97, 160);
-            this.nudIdadeJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudIdadeJogador.Location = new System.Drawing.Point(73, 130);
+            this.nudIdadeJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudIdadeJogador.Name = "nudIdadeJogador";
-            this.nudIdadeJogador.Size = new System.Drawing.Size(53, 22);
+            this.nudIdadeJogador.Size = new System.Drawing.Size(40, 20);
             this.nudIdadeJogador.TabIndex = 7;
             // 
             // txtNickJogador
             // 
-            this.txtNickJogador.Location = new System.Drawing.Point(97, 118);
-            this.txtNickJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNickJogador.Location = new System.Drawing.Point(73, 96);
+            this.txtNickJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNickJogador.Name = "txtNickJogador";
-            this.txtNickJogador.Size = new System.Drawing.Size(205, 22);
+            this.txtNickJogador.Size = new System.Drawing.Size(155, 20);
             this.txtNickJogador.TabIndex = 6;
             // 
             // txtEmailJogador
             // 
-            this.txtEmailJogador.Location = new System.Drawing.Point(97, 78);
-            this.txtEmailJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmailJogador.Location = new System.Drawing.Point(73, 63);
+            this.txtEmailJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtEmailJogador.Name = "txtEmailJogador";
-            this.txtEmailJogador.Size = new System.Drawing.Size(205, 22);
+            this.txtEmailJogador.Size = new System.Drawing.Size(155, 20);
             this.txtEmailJogador.TabIndex = 5;
             // 
             // txtNomeJogador
             // 
-            this.txtNomeJogador.Location = new System.Drawing.Point(97, 34);
-            this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNomeJogador.Location = new System.Drawing.Point(73, 28);
+            this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomeJogador.Name = "txtNomeJogador";
-            this.txtNomeJogador.Size = new System.Drawing.Size(205, 22);
+            this.txtNomeJogador.Size = new System.Drawing.Size(155, 20);
             this.txtNomeJogador.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 165);
+            this.label5.Location = new System.Drawing.Point(16, 134);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 17);
+            this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 3;
             this.label5.Text = "Idade";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 82);
+            this.label4.Location = new System.Drawing.Point(16, 67);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 17);
+            this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "Email";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 123);
+            this.label3.Location = new System.Drawing.Point(16, 100);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 17);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Nickname";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 39);
+            this.label2.Location = new System.Drawing.Point(16, 32);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nome";
             // 
@@ -698,13 +701,13 @@
             this.gbGJogadoresDados.Controls.Add(this.dgvGListaJogadores);
             this.gbGJogadoresDados.Controls.Add(this.btnInserirJogador);
             this.gbGJogadoresDados.Controls.Add(this.txtGJogadoresPesquisa);
-            this.gbGJogadoresDados.Location = new System.Drawing.Point(5, -9);
-            this.gbGJogadoresDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGJogadoresDados.MaximumSize = new System.Drawing.Size(656, 481);
-            this.gbGJogadoresDados.MinimumSize = new System.Drawing.Size(656, 481);
+            this.gbGJogadoresDados.Location = new System.Drawing.Point(4, -1);
+            this.gbGJogadoresDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGJogadoresDados.MaximumSize = new System.Drawing.Size(492, 391);
+            this.gbGJogadoresDados.MinimumSize = new System.Drawing.Size(492, 391);
             this.gbGJogadoresDados.Name = "gbGJogadoresDados";
-            this.gbGJogadoresDados.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGJogadoresDados.Size = new System.Drawing.Size(656, 481);
+            this.gbGJogadoresDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGJogadoresDados.Size = new System.Drawing.Size(492, 391);
             this.gbGJogadoresDados.TabIndex = 6;
             this.gbGJogadoresDados.TabStop = false;
             this.gbGJogadoresDados.Text = "Jogadores";
@@ -713,10 +716,10 @@
             // 
             this.btnRemoverJogador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoverJogador.Enabled = false;
-            this.btnRemoverJogador.Location = new System.Drawing.Point(543, 448);
-            this.btnRemoverJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoverJogador.Location = new System.Drawing.Point(407, 364);
+            this.btnRemoverJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoverJogador.Name = "btnRemoverJogador";
-            this.btnRemoverJogador.Size = new System.Drawing.Size(83, 30);
+            this.btnRemoverJogador.Size = new System.Drawing.Size(62, 24);
             this.btnRemoverJogador.TabIndex = 2;
             this.btnRemoverJogador.Text = "Eliminar";
             this.btnRemoverJogador.UseVisualStyleBackColor = true;
@@ -725,9 +728,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 46);
+            this.label1.Location = new System.Drawing.Point(16, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Pesquise:";
             // 
@@ -735,10 +739,10 @@
             // 
             this.btnAlterarJogador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarJogador.Enabled = false;
-            this.btnAlterarJogador.Location = new System.Drawing.Point(460, 448);
-            this.btnAlterarJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAlterarJogador.Location = new System.Drawing.Point(345, 364);
+            this.btnAlterarJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAlterarJogador.Name = "btnAlterarJogador";
-            this.btnAlterarJogador.Size = new System.Drawing.Size(77, 30);
+            this.btnAlterarJogador.Size = new System.Drawing.Size(58, 24);
             this.btnAlterarJogador.TabIndex = 1;
             this.btnAlterarJogador.Text = "Alterar";
             this.btnAlterarJogador.UseVisualStyleBackColor = true;
@@ -759,13 +763,13 @@
             this.ageDataGridViewTextBoxColumn,
             this.avatarDataGridViewTextBoxColumn});
             this.dgvGListaJogadores.DataSource = this.playerSetBindingSource;
-            this.dgvGListaJogadores.Location = new System.Drawing.Point(25, 94);
-            this.dgvGListaJogadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvGListaJogadores.Location = new System.Drawing.Point(19, 76);
+            this.dgvGListaJogadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvGListaJogadores.Name = "dgvGListaJogadores";
             this.dgvGListaJogadores.ReadOnly = true;
             this.dgvGListaJogadores.RowHeadersVisible = false;
             this.dgvGListaJogadores.RowTemplate.Height = 24;
-            this.dgvGListaJogadores.Size = new System.Drawing.Size(600, 313);
+            this.dgvGListaJogadores.Size = new System.Drawing.Size(450, 254);
             this.dgvGListaJogadores.TabIndex = 0;
             this.dgvGListaJogadores.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGListaJogadores_CellMouseClick);
             // 
@@ -824,10 +828,10 @@
             // btnInserirJogador
             // 
             this.btnInserirJogador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirJogador.Location = new System.Drawing.Point(371, 448);
-            this.btnInserirJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInserirJogador.Location = new System.Drawing.Point(278, 364);
+            this.btnInserirJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInserirJogador.Name = "btnInserirJogador";
-            this.btnInserirJogador.Size = new System.Drawing.Size(83, 30);
+            this.btnInserirJogador.Size = new System.Drawing.Size(62, 24);
             this.btnInserirJogador.TabIndex = 0;
             this.btnInserirJogador.Text = "Inserir";
             this.btnInserirJogador.UseVisualStyleBackColor = true;
@@ -837,10 +841,10 @@
             // 
             this.txtGJogadoresPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGJogadoresPesquisa.Location = new System.Drawing.Point(99, 43);
-            this.txtGJogadoresPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGJogadoresPesquisa.Location = new System.Drawing.Point(74, 35);
+            this.txtGJogadoresPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGJogadoresPesquisa.Name = "txtGJogadoresPesquisa";
-            this.txtGJogadoresPesquisa.Size = new System.Drawing.Size(435, 22);
+            this.txtGJogadoresPesquisa.Size = new System.Drawing.Size(327, 20);
             this.txtGJogadoresPesquisa.TabIndex = 1;
             this.txtGJogadoresPesquisa.TextChanged += new System.EventHandler(this.txtGJogadoresPesquisa_TextChanged);
             // 
@@ -852,11 +856,11 @@
             this.tbGestaoEquipas.Controls.Add(this.btnAdicionarJogador);
             this.tbGestaoEquipas.Controls.Add(this.groupBox2);
             this.tbGestaoEquipas.Controls.Add(this.gbGEquipasDados);
-            this.tbGestaoEquipas.Location = new System.Drawing.Point(4, 25);
-            this.tbGestaoEquipas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbGestaoEquipas.Location = new System.Drawing.Point(4, 22);
+            this.tbGestaoEquipas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbGestaoEquipas.Name = "tbGestaoEquipas";
-            this.tbGestaoEquipas.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbGestaoEquipas.Size = new System.Drawing.Size(1037, 492);
+            this.tbGestaoEquipas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoEquipas.Size = new System.Drawing.Size(776, 391);
             this.tbGestaoEquipas.TabIndex = 1;
             this.tbGestaoEquipas.Text = "Equipas";
             this.tbGestaoEquipas.UseVisualStyleBackColor = true;
@@ -865,11 +869,11 @@
             // 
             this.groupBox1.Controls.Add(this.lvJogadoresEquipa);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(5, 281);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(4, 228);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(380, 198);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(285, 161);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Jogadores na Equipa";
@@ -882,10 +886,10 @@
             this.cIdade,
             this.cNickname});
             this.lvJogadoresEquipa.FullRowSelect = true;
-            this.lvJogadoresEquipa.Location = new System.Drawing.Point(5, 18);
-            this.lvJogadoresEquipa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvJogadoresEquipa.Location = new System.Drawing.Point(4, 15);
+            this.lvJogadoresEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvJogadoresEquipa.Name = "lvJogadoresEquipa";
-            this.lvJogadoresEquipa.Size = new System.Drawing.Size(368, 174);
+            this.lvJogadoresEquipa.Size = new System.Drawing.Size(277, 142);
             this.lvJogadoresEquipa.TabIndex = 3;
             this.lvJogadoresEquipa.UseCompatibleStateImageBehavior = false;
             this.lvJogadoresEquipa.View = System.Windows.Forms.View.Details;
@@ -909,10 +913,9 @@
             // btnGuardarJogadorEquipa
             // 
             this.btnGuardarJogadorEquipa.Enabled = false;
-            this.btnGuardarJogadorEquipa.Location = new System.Drawing.Point(464, 420);
-            this.btnGuardarJogadorEquipa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardarJogadorEquipa.Location = new System.Drawing.Point(348, 341);
             this.btnGuardarJogadorEquipa.Name = "btnGuardarJogadorEquipa";
-            this.btnGuardarJogadorEquipa.Size = new System.Drawing.Size(100, 28);
+            this.btnGuardarJogadorEquipa.Size = new System.Drawing.Size(75, 23);
             this.btnGuardarJogadorEquipa.TabIndex = 15;
             this.btnGuardarJogadorEquipa.Text = "Guardar";
             this.btnGuardarJogadorEquipa.UseVisualStyleBackColor = true;
@@ -921,10 +924,9 @@
             // btnRetirarJogador
             // 
             this.btnRetirarJogador.Enabled = false;
-            this.btnRetirarJogador.Location = new System.Drawing.Point(464, 350);
-            this.btnRetirarJogador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRetirarJogador.Location = new System.Drawing.Point(348, 284);
             this.btnRetirarJogador.Name = "btnRetirarJogador";
-            this.btnRetirarJogador.Size = new System.Drawing.Size(100, 28);
+            this.btnRetirarJogador.Size = new System.Drawing.Size(75, 23);
             this.btnRetirarJogador.TabIndex = 14;
             this.btnRetirarJogador.Text = ">>";
             this.btnRetirarJogador.UseVisualStyleBackColor = true;
@@ -933,10 +935,9 @@
             // btnAdicionarJogador
             // 
             this.btnAdicionarJogador.Enabled = false;
-            this.btnAdicionarJogador.Location = new System.Drawing.Point(464, 314);
-            this.btnAdicionarJogador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdicionarJogador.Location = new System.Drawing.Point(348, 255);
             this.btnAdicionarJogador.Name = "btnAdicionarJogador";
-            this.btnAdicionarJogador.Size = new System.Drawing.Size(100, 28);
+            this.btnAdicionarJogador.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionarJogador.TabIndex = 13;
             this.btnAdicionarJogador.Text = "<<";
             this.btnAdicionarJogador.UseVisualStyleBackColor = true;
@@ -946,11 +947,11 @@
             // 
             this.groupBox2.Controls.Add(this.lcListaJogadores);
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(645, 281);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(484, 228);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(377, 203);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(283, 165);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de Jogadores";
@@ -963,10 +964,10 @@
             this.cIdade2,
             this.cNickname2});
             this.lcListaJogadores.FullRowSelect = true;
-            this.lcListaJogadores.Location = new System.Drawing.Point(5, 21);
-            this.lcListaJogadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lcListaJogadores.Location = new System.Drawing.Point(4, 17);
+            this.lcListaJogadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lcListaJogadores.Name = "lcListaJogadores";
-            this.lcListaJogadores.Size = new System.Drawing.Size(365, 176);
+            this.lcListaJogadores.Size = new System.Drawing.Size(275, 144);
             this.lcListaJogadores.TabIndex = 0;
             this.lcListaJogadores.UseCompatibleStateImageBehavior = false;
             this.lcListaJogadores.View = System.Windows.Forms.View.Details;
@@ -1000,11 +1001,11 @@
             this.gbGEquipasDados.Controls.Add(this.btnInserirEquipa);
             this.gbGEquipasDados.Controls.Add(this.dgvGListaEquipas);
             this.gbGEquipasDados.Controls.Add(this.txtGEquipasPesquisa);
-            this.gbGEquipasDados.Location = new System.Drawing.Point(5, 5);
-            this.gbGEquipasDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGEquipasDados.Location = new System.Drawing.Point(4, 4);
+            this.gbGEquipasDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGEquipasDados.Name = "gbGEquipasDados";
-            this.gbGEquipasDados.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGEquipasDados.Size = new System.Drawing.Size(1024, 267);
+            this.gbGEquipasDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGEquipasDados.Size = new System.Drawing.Size(768, 213);
             this.gbGEquipasDados.TabIndex = 12;
             this.gbGEquipasDados.TabStop = false;
             this.gbGEquipasDados.Text = "Equipas";
@@ -1013,10 +1014,9 @@
             // 
             this.btnGerirEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGerirEquipa.Enabled = false;
-            this.btnGerirEquipa.Location = new System.Drawing.Point(568, 164);
-            this.btnGerirEquipa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGerirEquipa.Location = new System.Drawing.Point(426, 129);
             this.btnGerirEquipa.Name = "btnGerirEquipa";
-            this.btnGerirEquipa.Size = new System.Drawing.Size(83, 28);
+            this.btnGerirEquipa.Size = new System.Drawing.Size(62, 23);
             this.btnGerirEquipa.TabIndex = 7;
             this.btnGerirEquipa.Text = "Gerir";
             this.btnGerirEquipa.UseVisualStyleBackColor = true;
@@ -1035,11 +1035,11 @@
             this.gbGEquipasForm.Controls.Add(this.label8);
             this.gbGEquipasForm.Controls.Add(this.label7);
             this.gbGEquipasForm.Enabled = false;
-            this.gbGEquipasForm.Location = new System.Drawing.Point(692, 21);
-            this.gbGEquipasForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGEquipasForm.Location = new System.Drawing.Point(519, 17);
+            this.gbGEquipasForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGEquipasForm.Name = "gbGEquipasForm";
-            this.gbGEquipasForm.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGEquipasForm.Size = new System.Drawing.Size(325, 241);
+            this.gbGEquipasForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGEquipasForm.Size = new System.Drawing.Size(244, 192);
             this.gbGEquipasForm.TabIndex = 6;
             this.gbGEquipasForm.TabStop = false;
             this.gbGEquipasForm.Text = "Campos";
@@ -1047,20 +1047,19 @@
             // 
             // pictureBoxAvatarEquipa
             // 
-            this.pictureBoxAvatarEquipa.Location = new System.Drawing.Point(75, 90);
-            this.pictureBoxAvatarEquipa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxAvatarEquipa.Location = new System.Drawing.Point(56, 73);
             this.pictureBoxAvatarEquipa.Name = "pictureBoxAvatarEquipa";
-            this.pictureBoxAvatarEquipa.Size = new System.Drawing.Size(93, 86);
+            this.pictureBoxAvatarEquipa.Size = new System.Drawing.Size(70, 70);
             this.pictureBoxAvatarEquipa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAvatarEquipa.TabIndex = 13;
             this.pictureBoxAvatarEquipa.TabStop = false;
             // 
             // btnAvatarEquipa
             // 
-            this.btnAvatarEquipa.Location = new System.Drawing.Point(272, 54);
-            this.btnAvatarEquipa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAvatarEquipa.Location = new System.Drawing.Point(204, 44);
+            this.btnAvatarEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAvatarEquipa.Name = "btnAvatarEquipa";
-            this.btnAvatarEquipa.Size = new System.Drawing.Size(27, 23);
+            this.btnAvatarEquipa.Size = new System.Drawing.Size(20, 19);
             this.btnAvatarEquipa.TabIndex = 12;
             this.btnAvatarEquipa.Text = "Q";
             this.btnAvatarEquipa.UseVisualStyleBackColor = true;
@@ -1069,10 +1068,10 @@
             // btnEquipaCancelar
             // 
             this.btnEquipaCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEquipaCancelar.Location = new System.Drawing.Point(219, 191);
-            this.btnEquipaCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEquipaCancelar.Location = new System.Drawing.Point(164, 151);
+            this.btnEquipaCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEquipaCancelar.Name = "btnEquipaCancelar";
-            this.btnEquipaCancelar.Size = new System.Drawing.Size(83, 26);
+            this.btnEquipaCancelar.Size = new System.Drawing.Size(62, 21);
             this.btnEquipaCancelar.TabIndex = 11;
             this.btnEquipaCancelar.Text = "Cancelar";
             this.btnEquipaCancelar.UseVisualStyleBackColor = true;
@@ -1081,10 +1080,10 @@
             // btnEquipaAcao
             // 
             this.btnEquipaAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEquipaAcao.Location = new System.Drawing.Point(139, 191);
-            this.btnEquipaAcao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEquipaAcao.Location = new System.Drawing.Point(104, 151);
+            this.btnEquipaAcao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEquipaAcao.Name = "btnEquipaAcao";
-            this.btnEquipaAcao.Size = new System.Drawing.Size(75, 26);
+            this.btnEquipaAcao.Size = new System.Drawing.Size(56, 21);
             this.btnEquipaAcao.TabIndex = 10;
             this.btnEquipaAcao.Text = "Ação";
             this.btnEquipaAcao.UseVisualStyleBackColor = true;
@@ -1093,36 +1092,38 @@
             // txtGAvatarEquipa
             // 
             this.txtGAvatarEquipa.Enabled = false;
-            this.txtGAvatarEquipa.Location = new System.Drawing.Point(75, 53);
-            this.txtGAvatarEquipa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGAvatarEquipa.Location = new System.Drawing.Point(56, 43);
+            this.txtGAvatarEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGAvatarEquipa.Name = "txtGAvatarEquipa";
             this.txtGAvatarEquipa.ReadOnly = true;
-            this.txtGAvatarEquipa.Size = new System.Drawing.Size(191, 22);
+            this.txtGAvatarEquipa.Size = new System.Drawing.Size(144, 20);
             this.txtGAvatarEquipa.TabIndex = 4;
             // 
             // txtGNomeEquipa
             // 
-            this.txtGNomeEquipa.Location = new System.Drawing.Point(75, 21);
-            this.txtGNomeEquipa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGNomeEquipa.Location = new System.Drawing.Point(56, 17);
+            this.txtGNomeEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGNomeEquipa.Name = "txtGNomeEquipa";
-            this.txtGNomeEquipa.Size = new System.Drawing.Size(196, 22);
+            this.txtGNomeEquipa.Size = new System.Drawing.Size(148, 20);
             this.txtGNomeEquipa.TabIndex = 3;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 62);
+            this.label8.Location = new System.Drawing.Point(20, 50);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 17);
+            this.label8.Size = new System.Drawing.Size(38, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "Avatar";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 25);
+            this.label7.Location = new System.Drawing.Point(17, 20);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 17);
+            this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Nome";
             // 
@@ -1130,10 +1131,10 @@
             // 
             this.btnRemoverEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoverEquipa.Enabled = false;
-            this.btnRemoverEquipa.Location = new System.Drawing.Point(568, 201);
-            this.btnRemoverEquipa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoverEquipa.Location = new System.Drawing.Point(426, 159);
+            this.btnRemoverEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoverEquipa.Name = "btnRemoverEquipa";
-            this.btnRemoverEquipa.Size = new System.Drawing.Size(83, 30);
+            this.btnRemoverEquipa.Size = new System.Drawing.Size(62, 24);
             this.btnRemoverEquipa.TabIndex = 2;
             this.btnRemoverEquipa.Text = "Eliminar";
             this.btnRemoverEquipa.UseVisualStyleBackColor = true;
@@ -1143,10 +1144,10 @@
             // 
             this.btnAlterarEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarEquipa.Enabled = false;
-            this.btnAlterarEquipa.Location = new System.Drawing.Point(568, 129);
-            this.btnAlterarEquipa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAlterarEquipa.Location = new System.Drawing.Point(426, 101);
+            this.btnAlterarEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAlterarEquipa.Name = "btnAlterarEquipa";
-            this.btnAlterarEquipa.Size = new System.Drawing.Size(83, 30);
+            this.btnAlterarEquipa.Size = new System.Drawing.Size(62, 24);
             this.btnAlterarEquipa.TabIndex = 1;
             this.btnAlterarEquipa.Text = "Alterar";
             this.btnAlterarEquipa.UseVisualStyleBackColor = true;
@@ -1155,19 +1156,20 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 31);
+            this.label6.Location = new System.Drawing.Point(16, 25);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 17);
+            this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Pesquise:";
             // 
             // btnInserirEquipa
             // 
             this.btnInserirEquipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirEquipa.Location = new System.Drawing.Point(568, 95);
-            this.btnInserirEquipa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInserirEquipa.Location = new System.Drawing.Point(426, 73);
+            this.btnInserirEquipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInserirEquipa.Name = "btnInserirEquipa";
-            this.btnInserirEquipa.Size = new System.Drawing.Size(83, 30);
+            this.btnInserirEquipa.Size = new System.Drawing.Size(62, 24);
             this.btnInserirEquipa.TabIndex = 0;
             this.btnInserirEquipa.Text = "Inserir";
             this.btnInserirEquipa.UseVisualStyleBackColor = true;
@@ -1188,14 +1190,14 @@
             this.nameDataGridViewTextBoxColumn4,
             this.avatarDataGridViewTextBoxColumn1});
             this.dgvGListaEquipas.DataSource = this.teamSetBindingSource;
-            this.dgvGListaEquipas.Location = new System.Drawing.Point(25, 70);
-            this.dgvGListaEquipas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvGListaEquipas.Location = new System.Drawing.Point(19, 57);
+            this.dgvGListaEquipas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvGListaEquipas.Name = "dgvGListaEquipas";
             this.dgvGListaEquipas.ReadOnly = true;
             this.dgvGListaEquipas.RowHeadersVisible = false;
             this.dgvGListaEquipas.RowTemplate.Height = 24;
             this.dgvGListaEquipas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGListaEquipas.Size = new System.Drawing.Size(500, 167);
+            this.dgvGListaEquipas.Size = new System.Drawing.Size(375, 132);
             this.dgvGListaEquipas.TabIndex = 3;
             this.dgvGListaEquipas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGListaEquipas_CellMouseClick);
             // 
@@ -1234,10 +1236,10 @@
             // 
             this.txtGEquipasPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGEquipasPesquisa.Location = new System.Drawing.Point(97, 27);
-            this.txtGEquipasPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGEquipasPesquisa.Location = new System.Drawing.Point(73, 22);
+            this.txtGEquipasPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGEquipasPesquisa.Name = "txtGEquipasPesquisa";
-            this.txtGEquipasPesquisa.Size = new System.Drawing.Size(391, 22);
+            this.txtGEquipasPesquisa.Size = new System.Drawing.Size(294, 20);
             this.txtGEquipasPesquisa.TabIndex = 4;
             this.txtGEquipasPesquisa.TextChanged += new System.EventHandler(this.txtGEquipasPesquisa_TextChanged);
             // 
@@ -1246,11 +1248,11 @@
             this.tbGestaoTorneios.Controls.Add(this.gbGJogosDados);
             this.tbGestaoTorneios.Controls.Add(this.gbGTorneiosDados);
             this.tbGestaoTorneios.Controls.Add(this.gbGTorneiosInfo);
-            this.tbGestaoTorneios.Location = new System.Drawing.Point(4, 25);
-            this.tbGestaoTorneios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbGestaoTorneios.Location = new System.Drawing.Point(4, 22);
+            this.tbGestaoTorneios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbGestaoTorneios.Name = "tbGestaoTorneios";
-            this.tbGestaoTorneios.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbGestaoTorneios.Size = new System.Drawing.Size(1037, 492);
+            this.tbGestaoTorneios.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoTorneios.Size = new System.Drawing.Size(776, 395);
             this.tbGestaoTorneios.TabIndex = 2;
             this.tbGestaoTorneios.Text = "Torneios";
             this.tbGestaoTorneios.UseVisualStyleBackColor = true;
@@ -1266,21 +1268,21 @@
             this.gbGJogosDados.Controls.Add(this.btnRemoverJogo);
             this.gbGJogosDados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbGJogosDados.Enabled = false;
-            this.gbGJogosDados.Location = new System.Drawing.Point(3, 249);
-            this.gbGJogosDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGJogosDados.Location = new System.Drawing.Point(2, 203);
+            this.gbGJogosDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGJogosDados.Name = "gbGJogosDados";
-            this.gbGJogosDados.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGJogosDados.Size = new System.Drawing.Size(582, 241);
+            this.gbGJogosDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGJogosDados.Size = new System.Drawing.Size(435, 190);
             this.gbGJogosDados.TabIndex = 1;
             this.gbGJogosDados.TabStop = false;
             this.gbGJogosDados.Text = "Jogos";
             // 
             // btnCancelarJogo
             // 
-            this.btnCancelarJogo.Location = new System.Drawing.Point(27, 203);
-            this.btnCancelarJogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelarJogo.Location = new System.Drawing.Point(20, 165);
+            this.btnCancelarJogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelarJogo.Name = "btnCancelarJogo";
-            this.btnCancelarJogo.Size = new System.Drawing.Size(91, 28);
+            this.btnCancelarJogo.Size = new System.Drawing.Size(68, 23);
             this.btnCancelarJogo.TabIndex = 24;
             this.btnCancelarJogo.Text = "Cancelar";
             this.btnCancelarJogo.UseVisualStyleBackColor = true;
@@ -1289,9 +1291,10 @@
             // labPesquisarJogos
             // 
             this.labPesquisarJogos.AutoSize = true;
-            this.labPesquisarJogos.Location = new System.Drawing.Point(23, 33);
+            this.labPesquisarJogos.Location = new System.Drawing.Point(17, 27);
+            this.labPesquisarJogos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labPesquisarJogos.Name = "labPesquisarJogos";
-            this.labPesquisarJogos.Size = new System.Drawing.Size(70, 17);
+            this.labPesquisarJogos.Size = new System.Drawing.Size(53, 13);
             this.labPesquisarJogos.TabIndex = 9;
             this.labPesquisarJogos.Text = "Pesquise:";
             // 
@@ -1299,10 +1302,10 @@
             // 
             this.txtGJogosPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGJogosPesquisa.Location = new System.Drawing.Point(99, 30);
-            this.txtGJogosPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGJogosPesquisa.Location = new System.Drawing.Point(74, 24);
+            this.txtGJogosPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGJogosPesquisa.Name = "txtGJogosPesquisa";
-            this.txtGJogosPesquisa.Size = new System.Drawing.Size(425, 22);
+            this.txtGJogosPesquisa.Size = new System.Drawing.Size(319, 20);
             this.txtGJogosPesquisa.TabIndex = 8;
             // 
             // dgvGJogosLista
@@ -1313,22 +1316,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGJogosLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGJogosLista.Location = new System.Drawing.Point(25, 70);
-            this.dgvGJogosLista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvGJogosLista.Location = new System.Drawing.Point(19, 57);
+            this.dgvGJogosLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvGJogosLista.Name = "dgvGJogosLista";
             this.dgvGJogosLista.ReadOnly = true;
             this.dgvGJogosLista.RowHeadersVisible = false;
             this.dgvGJogosLista.RowTemplate.Height = 24;
-            this.dgvGJogosLista.Size = new System.Drawing.Size(541, 122);
+            this.dgvGJogosLista.Size = new System.Drawing.Size(405, 93);
             this.dgvGJogosLista.TabIndex = 4;
             // 
             // btnAlterarJogo
             // 
             this.btnAlterarJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterarJogo.Location = new System.Drawing.Point(405, 209);
-            this.btnAlterarJogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAlterarJogo.Location = new System.Drawing.Point(303, 164);
+            this.btnAlterarJogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAlterarJogo.Name = "btnAlterarJogo";
-            this.btnAlterarJogo.Size = new System.Drawing.Size(77, 27);
+            this.btnAlterarJogo.Size = new System.Drawing.Size(58, 22);
             this.btnAlterarJogo.TabIndex = 3;
             this.btnAlterarJogo.Text = "Alterar";
             this.btnAlterarJogo.UseVisualStyleBackColor = true;
@@ -1337,10 +1340,10 @@
             // btnInserirJogo
             // 
             this.btnInserirJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirJogo.Location = new System.Drawing.Point(322, 209);
-            this.btnInserirJogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInserirJogo.Location = new System.Drawing.Point(241, 164);
+            this.btnInserirJogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInserirJogo.Name = "btnInserirJogo";
-            this.btnInserirJogo.Size = new System.Drawing.Size(77, 27);
+            this.btnInserirJogo.Size = new System.Drawing.Size(58, 22);
             this.btnInserirJogo.TabIndex = 2;
             this.btnInserirJogo.Text = "Inserir";
             this.btnInserirJogo.UseVisualStyleBackColor = true;
@@ -1349,10 +1352,10 @@
             // btnRemoverJogo
             // 
             this.btnRemoverJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoverJogo.Location = new System.Drawing.Point(489, 209);
-            this.btnRemoverJogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoverJogo.Location = new System.Drawing.Point(366, 164);
+            this.btnRemoverJogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoverJogo.Name = "btnRemoverJogo";
-            this.btnRemoverJogo.Size = new System.Drawing.Size(77, 27);
+            this.btnRemoverJogo.Size = new System.Drawing.Size(58, 22);
             this.btnRemoverJogo.TabIndex = 1;
             this.btnRemoverJogo.Text = "Eliminar";
             this.btnRemoverJogo.UseVisualStyleBackColor = true;
@@ -1370,21 +1373,21 @@
             this.gbGTorneiosDados.Controls.Add(this.dgvGTorneiosLista);
             this.gbGTorneiosDados.Controls.Add(this.btnRemoverTorneio);
             this.gbGTorneiosDados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbGTorneiosDados.Location = new System.Drawing.Point(3, 2);
-            this.gbGTorneiosDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGTorneiosDados.Location = new System.Drawing.Point(2, 2);
+            this.gbGTorneiosDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGTorneiosDados.Name = "gbGTorneiosDados";
-            this.gbGTorneiosDados.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGTorneiosDados.Size = new System.Drawing.Size(582, 247);
+            this.gbGTorneiosDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGTorneiosDados.Size = new System.Drawing.Size(435, 201);
             this.gbGTorneiosDados.TabIndex = 0;
             this.gbGTorneiosDados.TabStop = false;
             this.gbGTorneiosDados.Text = "Torneios";
             // 
             // btngerirjogos
             // 
-            this.btngerirjogos.Location = new System.Drawing.Point(487, 207);
-            this.btngerirjogos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btngerirjogos.Location = new System.Drawing.Point(365, 168);
+            this.btngerirjogos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btngerirjogos.Name = "btngerirjogos";
-            this.btngerirjogos.Size = new System.Drawing.Size(69, 27);
+            this.btngerirjogos.Size = new System.Drawing.Size(52, 22);
             this.btngerirjogos.TabIndex = 10;
             this.btngerirjogos.Text = "Gerir";
             this.btngerirjogos.UseVisualStyleBackColor = true;
@@ -1393,10 +1396,10 @@
             // radioStandardTournaments
             // 
             this.radioStandardTournaments.AutoSize = true;
-            this.radioStandardTournaments.Location = new System.Drawing.Point(103, 210);
-            this.radioStandardTournaments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioStandardTournaments.Location = new System.Drawing.Point(77, 171);
+            this.radioStandardTournaments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioStandardTournaments.Name = "radioStandardTournaments";
-            this.radioStandardTournaments.Size = new System.Drawing.Size(87, 21);
+            this.radioStandardTournaments.Size = new System.Drawing.Size(68, 17);
             this.radioStandardTournaments.TabIndex = 9;
             this.radioStandardTournaments.TabStop = true;
             this.radioStandardTournaments.Text = "Standard";
@@ -1406,10 +1409,10 @@
             // radioTeamTournaments
             // 
             this.radioTeamTournaments.AutoSize = true;
-            this.radioTeamTournaments.Location = new System.Drawing.Point(25, 210);
-            this.radioTeamTournaments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioTeamTournaments.Location = new System.Drawing.Point(19, 171);
+            this.radioTeamTournaments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioTeamTournaments.Name = "radioTeamTournaments";
-            this.radioTeamTournaments.Size = new System.Drawing.Size(65, 21);
+            this.radioTeamTournaments.Size = new System.Drawing.Size(52, 17);
             this.radioTeamTournaments.TabIndex = 8;
             this.radioTeamTournaments.TabStop = true;
             this.radioTeamTournaments.Text = "Team";
@@ -1419,9 +1422,10 @@
             // labPesquisarTorneio
             // 
             this.labPesquisarTorneio.AutoSize = true;
-            this.labPesquisarTorneio.Location = new System.Drawing.Point(23, 28);
+            this.labPesquisarTorneio.Location = new System.Drawing.Point(17, 23);
+            this.labPesquisarTorneio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labPesquisarTorneio.Name = "labPesquisarTorneio";
-            this.labPesquisarTorneio.Size = new System.Drawing.Size(70, 17);
+            this.labPesquisarTorneio.Size = new System.Drawing.Size(53, 13);
             this.labPesquisarTorneio.TabIndex = 7;
             this.labPesquisarTorneio.Text = "Pesquise:";
             // 
@@ -1429,20 +1433,20 @@
             // 
             this.txtGTorneiosPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGTorneiosPesquisa.Location = new System.Drawing.Point(99, 25);
-            this.txtGTorneiosPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGTorneiosPesquisa.Location = new System.Drawing.Point(74, 20);
+            this.txtGTorneiosPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGTorneiosPesquisa.Name = "txtGTorneiosPesquisa";
-            this.txtGTorneiosPesquisa.Size = new System.Drawing.Size(425, 22);
+            this.txtGTorneiosPesquisa.Size = new System.Drawing.Size(319, 20);
             this.txtGTorneiosPesquisa.TabIndex = 6;
             this.txtGTorneiosPesquisa.TextChanged += new System.EventHandler(this.PesquisarTorneio);
             // 
             // btnAlterarTorneio
             // 
             this.btnAlterarTorneio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterarTorneio.Location = new System.Drawing.Point(322, 207);
-            this.btnAlterarTorneio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAlterarTorneio.Location = new System.Drawing.Point(241, 168);
+            this.btnAlterarTorneio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAlterarTorneio.Name = "btnAlterarTorneio";
-            this.btnAlterarTorneio.Size = new System.Drawing.Size(77, 27);
+            this.btnAlterarTorneio.Size = new System.Drawing.Size(58, 22);
             this.btnAlterarTorneio.TabIndex = 3;
             this.btnAlterarTorneio.Text = "Alterar";
             this.btnAlterarTorneio.UseVisualStyleBackColor = true;
@@ -1451,10 +1455,10 @@
             // btnInserirTorneio
             // 
             this.btnInserirTorneio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirTorneio.Location = new System.Drawing.Point(239, 207);
-            this.btnInserirTorneio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInserirTorneio.Location = new System.Drawing.Point(178, 168);
+            this.btnInserirTorneio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInserirTorneio.Name = "btnInserirTorneio";
-            this.btnInserirTorneio.Size = new System.Drawing.Size(77, 27);
+            this.btnInserirTorneio.Size = new System.Drawing.Size(58, 22);
             this.btnInserirTorneio.TabIndex = 2;
             this.btnInserirTorneio.Text = "Inserir";
             this.btnInserirTorneio.UseVisualStyleBackColor = true;
@@ -1468,23 +1472,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGTorneiosLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGTorneiosLista.Location = new System.Drawing.Point(25, 63);
-            this.dgvGTorneiosLista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvGTorneiosLista.Location = new System.Drawing.Point(19, 51);
+            this.dgvGTorneiosLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvGTorneiosLista.Name = "dgvGTorneiosLista";
             this.dgvGTorneiosLista.ReadOnly = true;
             this.dgvGTorneiosLista.RowHeadersVisible = false;
             this.dgvGTorneiosLista.RowTemplate.Height = 24;
             this.dgvGTorneiosLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGTorneiosLista.Size = new System.Drawing.Size(533, 126);
+            this.dgvGTorneiosLista.Size = new System.Drawing.Size(399, 102);
             this.dgvGTorneiosLista.TabIndex = 1;
             // 
             // btnRemoverTorneio
             // 
             this.btnRemoverTorneio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoverTorneio.Location = new System.Drawing.Point(406, 207);
-            this.btnRemoverTorneio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoverTorneio.Location = new System.Drawing.Point(303, 168);
+            this.btnRemoverTorneio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoverTorneio.Name = "btnRemoverTorneio";
-            this.btnRemoverTorneio.Size = new System.Drawing.Size(77, 27);
+            this.btnRemoverTorneio.Size = new System.Drawing.Size(58, 22);
             this.btnRemoverTorneio.TabIndex = 0;
             this.btnRemoverTorneio.Text = "Eliminar";
             this.btnRemoverTorneio.UseVisualStyleBackColor = true;
@@ -1495,11 +1499,11 @@
             this.gbGTorneiosInfo.Controls.Add(this.gbGJogosForm);
             this.gbGTorneiosInfo.Controls.Add(this.gbGTorneiosForm);
             this.gbGTorneiosInfo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gbGTorneiosInfo.Location = new System.Drawing.Point(585, 2);
-            this.gbGTorneiosInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGTorneiosInfo.Location = new System.Drawing.Point(437, 2);
+            this.gbGTorneiosInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGTorneiosInfo.Name = "gbGTorneiosInfo";
-            this.gbGTorneiosInfo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGTorneiosInfo.Size = new System.Drawing.Size(449, 488);
+            this.gbGTorneiosInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGTorneiosInfo.Size = new System.Drawing.Size(337, 391);
             this.gbGTorneiosInfo.TabIndex = 2;
             this.gbGTorneiosInfo.TabStop = false;
             // 
@@ -1518,11 +1522,11 @@
             this.gbGJogosForm.Controls.Add(this.txtDescricaoJogo);
             this.gbGJogosForm.Controls.Add(this.labDescricao);
             this.gbGJogosForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbGJogosForm.Location = new System.Drawing.Point(3, 17);
-            this.gbGJogosForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGJogosForm.Location = new System.Drawing.Point(2, 15);
+            this.gbGJogosForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGJogosForm.Name = "gbGJogosForm";
-            this.gbGJogosForm.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGJogosForm.Size = new System.Drawing.Size(443, 469);
+            this.gbGJogosForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGJogosForm.Size = new System.Drawing.Size(333, 374);
             this.gbGJogosForm.TabIndex = 2;
             this.gbGJogosForm.TabStop = false;
             this.gbGJogosForm.Text = "Campos";
@@ -1531,18 +1535,19 @@
             // cmbarbitrojogos
             // 
             this.cmbarbitrojogos.FormattingEnabled = true;
-            this.cmbarbitrojogos.Location = new System.Drawing.Point(92, 121);
-            this.cmbarbitrojogos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbarbitrojogos.Location = new System.Drawing.Point(69, 98);
+            this.cmbarbitrojogos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbarbitrojogos.Name = "cmbarbitrojogos";
-            this.cmbarbitrojogos.Size = new System.Drawing.Size(157, 24);
+            this.cmbarbitrojogos.Size = new System.Drawing.Size(119, 21);
             this.cmbarbitrojogos.TabIndex = 23;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(25, 124);
+            this.label15.Location = new System.Drawing.Point(19, 101);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 17);
+            this.label15.Size = new System.Drawing.Size(40, 13);
             this.label15.TabIndex = 22;
             this.label15.Text = "Árbitro:";
             // 
@@ -1551,11 +1556,11 @@
             this.groupBox4.Controls.Add(this.cmbdecks2);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.cmbdecks1);
-            this.groupBox4.Location = new System.Drawing.Point(21, 215);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Location = new System.Drawing.Point(16, 175);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(395, 58);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Size = new System.Drawing.Size(296, 47);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Decks";
@@ -1563,28 +1568,29 @@
             // cmbdecks2
             // 
             this.cmbdecks2.FormattingEnabled = true;
-            this.cmbdecks2.Location = new System.Drawing.Point(284, 18);
-            this.cmbdecks2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbdecks2.Location = new System.Drawing.Point(213, 15);
+            this.cmbdecks2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbdecks2.Name = "cmbdecks2";
-            this.cmbdecks2.Size = new System.Drawing.Size(104, 24);
+            this.cmbdecks2.Size = new System.Drawing.Size(79, 21);
             this.cmbdecks2.TabIndex = 19;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(183, 22);
+            this.label14.Location = new System.Drawing.Point(137, 18);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(26, 17);
+            this.label14.Size = new System.Drawing.Size(21, 13);
             this.label14.TabIndex = 18;
             this.label14.Text = "VS";
             // 
             // cmbdecks1
             // 
             this.cmbdecks1.FormattingEnabled = true;
-            this.cmbdecks1.Location = new System.Drawing.Point(19, 18);
-            this.cmbdecks1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbdecks1.Location = new System.Drawing.Point(14, 15);
+            this.cmbdecks1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbdecks1.Name = "cmbdecks1";
-            this.cmbdecks1.Size = new System.Drawing.Size(108, 24);
+            this.cmbdecks1.Size = new System.Drawing.Size(82, 21);
             this.cmbdecks1.TabIndex = 0;
             // 
             // groupBoxEquipasJogos
@@ -1592,11 +1598,11 @@
             this.groupBoxEquipasJogos.Controls.Add(this.cmbequipajogador1);
             this.groupBoxEquipasJogos.Controls.Add(this.labVS);
             this.groupBoxEquipasJogos.Controls.Add(this.cmbequipajogador2);
-            this.groupBoxEquipasJogos.Location = new System.Drawing.Point(21, 154);
-            this.groupBoxEquipasJogos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxEquipasJogos.Location = new System.Drawing.Point(16, 125);
+            this.groupBoxEquipasJogos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxEquipasJogos.Name = "groupBoxEquipasJogos";
-            this.groupBoxEquipasJogos.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxEquipasJogos.Size = new System.Drawing.Size(395, 57);
+            this.groupBoxEquipasJogos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxEquipasJogos.Size = new System.Drawing.Size(296, 46);
             this.groupBoxEquipasJogos.TabIndex = 20;
             this.groupBoxEquipasJogos.TabStop = false;
             this.groupBoxEquipasJogos.Text = "Equipas";
@@ -1604,39 +1610,40 @@
             // cmbequipajogador1
             // 
             this.cmbequipajogador1.FormattingEnabled = true;
-            this.cmbequipajogador1.Location = new System.Drawing.Point(19, 22);
-            this.cmbequipajogador1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbequipajogador1.Location = new System.Drawing.Point(14, 18);
+            this.cmbequipajogador1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbequipajogador1.Name = "cmbequipajogador1";
-            this.cmbequipajogador1.Size = new System.Drawing.Size(108, 24);
+            this.cmbequipajogador1.Size = new System.Drawing.Size(82, 21);
             this.cmbequipajogador1.TabIndex = 15;
             this.cmbequipajogador1.SelectedIndexChanged += new System.EventHandler(this.cmbJogador1Jogo_SelectedIndexChanged);
             // 
             // labVS
             // 
             this.labVS.AutoSize = true;
-            this.labVS.Location = new System.Drawing.Point(183, 26);
+            this.labVS.Location = new System.Drawing.Point(137, 21);
+            this.labVS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labVS.Name = "labVS";
-            this.labVS.Size = new System.Drawing.Size(26, 17);
+            this.labVS.Size = new System.Drawing.Size(21, 13);
             this.labVS.TabIndex = 17;
             this.labVS.Text = "VS";
             // 
             // cmbequipajogador2
             // 
             this.cmbequipajogador2.FormattingEnabled = true;
-            this.cmbequipajogador2.Location = new System.Drawing.Point(284, 20);
-            this.cmbequipajogador2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbequipajogador2.Location = new System.Drawing.Point(213, 16);
+            this.cmbequipajogador2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbequipajogador2.Name = "cmbequipajogador2";
-            this.cmbequipajogador2.Size = new System.Drawing.Size(104, 24);
+            this.cmbequipajogador2.Size = new System.Drawing.Size(79, 21);
             this.cmbequipajogador2.TabIndex = 16;
             this.cmbequipajogador2.SelectedIndexChanged += new System.EventHandler(this.cmbequipajogador2_SelectedIndexChanged);
             // 
             // btnJogoCancelar
             // 
             this.btnJogoCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogoCancelar.Location = new System.Drawing.Point(347, 438);
-            this.btnJogoCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnJogoCancelar.Location = new System.Drawing.Point(261, 348);
+            this.btnJogoCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnJogoCancelar.Name = "btnJogoCancelar";
-            this.btnJogoCancelar.Size = new System.Drawing.Size(83, 26);
+            this.btnJogoCancelar.Size = new System.Drawing.Size(62, 21);
             this.btnJogoCancelar.TabIndex = 19;
             this.btnJogoCancelar.Text = "Cancelar";
             this.btnJogoCancelar.UseVisualStyleBackColor = true;
@@ -1645,10 +1652,10 @@
             // btnJogoAcao
             // 
             this.btnJogoAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJogoAcao.Location = new System.Drawing.Point(267, 438);
-            this.btnJogoAcao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnJogoAcao.Location = new System.Drawing.Point(201, 348);
+            this.btnJogoAcao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnJogoAcao.Name = "btnJogoAcao";
-            this.btnJogoAcao.Size = new System.Drawing.Size(75, 26);
+            this.btnJogoAcao.Size = new System.Drawing.Size(56, 21);
             this.btnJogoAcao.TabIndex = 18;
             this.btnJogoAcao.Text = "Ação";
             this.btnJogoAcao.UseVisualStyleBackColor = true;
@@ -1656,35 +1663,37 @@
             // 
             // nudNJogo
             // 
-            this.nudNJogo.Location = new System.Drawing.Point(92, 81);
-            this.nudNJogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudNJogo.Location = new System.Drawing.Point(69, 66);
+            this.nudNJogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudNJogo.Name = "nudNJogo";
-            this.nudNJogo.Size = new System.Drawing.Size(51, 22);
+            this.nudNJogo.Size = new System.Drawing.Size(38, 20);
             this.nudNJogo.TabIndex = 14;
             // 
             // labNumJogo
             // 
             this.labNumJogo.AutoSize = true;
-            this.labNumJogo.Location = new System.Drawing.Point(27, 84);
+            this.labNumJogo.Location = new System.Drawing.Point(20, 68);
+            this.labNumJogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labNumJogo.Name = "labNumJogo";
-            this.labNumJogo.Size = new System.Drawing.Size(58, 17);
+            this.labNumJogo.Size = new System.Drawing.Size(45, 13);
             this.labNumJogo.TabIndex = 13;
             this.labNumJogo.Text = "Nº Jogo";
             // 
             // tpDataJogos
             // 
-            this.tpDataJogos.Location = new System.Drawing.Point(92, 38);
-            this.tpDataJogos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpDataJogos.Location = new System.Drawing.Point(69, 31);
+            this.tpDataJogos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpDataJogos.Name = "tpDataJogos";
-            this.tpDataJogos.Size = new System.Drawing.Size(291, 22);
+            this.tpDataJogos.Size = new System.Drawing.Size(219, 20);
             this.tpDataJogos.TabIndex = 12;
             // 
             // labData
             // 
             this.labData.AutoSize = true;
-            this.labData.Location = new System.Drawing.Point(25, 39);
+            this.labData.Location = new System.Drawing.Point(19, 32);
+            this.labData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labData.Name = "labData";
-            this.labData.Size = new System.Drawing.Size(38, 17);
+            this.labData.Size = new System.Drawing.Size(30, 13);
             this.labData.TabIndex = 11;
             this.labData.Text = "Data";
             // 
@@ -1693,20 +1702,21 @@
             this.txtDescricaoJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescricaoJogo.Location = new System.Drawing.Point(24, 310);
-            this.txtDescricaoJogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDescricaoJogo.MinimumSize = new System.Drawing.Size(271, 42);
+            this.txtDescricaoJogo.Location = new System.Drawing.Point(18, 252);
+            this.txtDescricaoJogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescricaoJogo.MinimumSize = new System.Drawing.Size(204, 35);
             this.txtDescricaoJogo.Multiline = true;
             this.txtDescricaoJogo.Name = "txtDescricaoJogo";
-            this.txtDescricaoJogo.Size = new System.Drawing.Size(390, 111);
+            this.txtDescricaoJogo.Size = new System.Drawing.Size(295, 83);
             this.txtDescricaoJogo.TabIndex = 10;
             // 
             // labDescricao
             // 
             this.labDescricao.AutoSize = true;
-            this.labDescricao.Location = new System.Drawing.Point(27, 287);
+            this.labDescricao.Location = new System.Drawing.Point(20, 233);
+            this.labDescricao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labDescricao.Name = "labDescricao";
-            this.labDescricao.Size = new System.Drawing.Size(71, 17);
+            this.labDescricao.Size = new System.Drawing.Size(55, 13);
             this.labDescricao.TabIndex = 9;
             this.labDescricao.Text = "Descrição";
             // 
@@ -1722,11 +1732,11 @@
             this.gbGTorneiosForm.Controls.Add(this.labDataJogo);
             this.gbGTorneiosForm.Controls.Add(this.labNomeJogo);
             this.gbGTorneiosForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbGTorneiosForm.Location = new System.Drawing.Point(3, 17);
-            this.gbGTorneiosForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGTorneiosForm.Location = new System.Drawing.Point(2, 15);
+            this.gbGTorneiosForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGTorneiosForm.Name = "gbGTorneiosForm";
-            this.gbGTorneiosForm.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGTorneiosForm.Size = new System.Drawing.Size(443, 469);
+            this.gbGTorneiosForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGTorneiosForm.Size = new System.Drawing.Size(333, 374);
             this.gbGTorneiosForm.TabIndex = 1;
             this.gbGTorneiosForm.TabStop = false;
             this.gbGTorneiosForm.Text = "Campos";
@@ -1736,11 +1746,11 @@
             // 
             this.gbTipoTorneio.Controls.Add(this.radioTipoTorneioTeam);
             this.gbTipoTorneio.Controls.Add(this.radioTipoTorneioStandard);
-            this.gbTipoTorneio.Location = new System.Drawing.Point(27, 268);
-            this.gbTipoTorneio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbTipoTorneio.Location = new System.Drawing.Point(20, 218);
+            this.gbTipoTorneio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbTipoTorneio.Name = "gbTipoTorneio";
-            this.gbTipoTorneio.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbTipoTorneio.Size = new System.Drawing.Size(148, 86);
+            this.gbTipoTorneio.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbTipoTorneio.Size = new System.Drawing.Size(111, 70);
             this.gbTipoTorneio.TabIndex = 14;
             this.gbTipoTorneio.TabStop = false;
             this.gbTipoTorneio.Text = "Tipo de Torneio";
@@ -1748,10 +1758,10 @@
             // radioTipoTorneioTeam
             // 
             this.radioTipoTorneioTeam.AutoSize = true;
-            this.radioTipoTorneioTeam.Location = new System.Drawing.Point(15, 26);
-            this.radioTipoTorneioTeam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioTipoTorneioTeam.Location = new System.Drawing.Point(11, 21);
+            this.radioTipoTorneioTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioTipoTorneioTeam.Name = "radioTipoTorneioTeam";
-            this.radioTipoTorneioTeam.Size = new System.Drawing.Size(146, 21);
+            this.radioTipoTorneioTeam.Size = new System.Drawing.Size(112, 17);
             this.radioTipoTorneioTeam.TabIndex = 0;
             this.radioTipoTorneioTeam.TabStop = true;
             this.radioTipoTorneioTeam.Text = "Team Tournament";
@@ -1760,10 +1770,10 @@
             // radioTipoTorneioStandard
             // 
             this.radioTipoTorneioStandard.AutoSize = true;
-            this.radioTipoTorneioStandard.Location = new System.Drawing.Point(15, 49);
-            this.radioTipoTorneioStandard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioTipoTorneioStandard.Location = new System.Drawing.Point(11, 40);
+            this.radioTipoTorneioStandard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioTipoTorneioStandard.Name = "radioTipoTorneioStandard";
-            this.radioTipoTorneioStandard.Size = new System.Drawing.Size(168, 21);
+            this.radioTipoTorneioStandard.Size = new System.Drawing.Size(128, 17);
             this.radioTipoTorneioStandard.TabIndex = 1;
             this.radioTipoTorneioStandard.TabStop = true;
             this.radioTipoTorneioStandard.Text = "Standard Tournament";
@@ -1772,10 +1782,10 @@
             // txtTorneioCancelar
             // 
             this.txtTorneioCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTorneioCancelar.Location = new System.Drawing.Point(347, 333);
-            this.txtTorneioCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTorneioCancelar.Location = new System.Drawing.Point(261, 263);
+            this.txtTorneioCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTorneioCancelar.Name = "txtTorneioCancelar";
-            this.txtTorneioCancelar.Size = new System.Drawing.Size(83, 26);
+            this.txtTorneioCancelar.Size = new System.Drawing.Size(62, 21);
             this.txtTorneioCancelar.TabIndex = 13;
             this.txtTorneioCancelar.Text = "Cancelar";
             this.txtTorneioCancelar.UseVisualStyleBackColor = true;
@@ -1784,10 +1794,10 @@
             // txtTorneioAcao
             // 
             this.txtTorneioAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTorneioAcao.Location = new System.Drawing.Point(267, 333);
-            this.txtTorneioAcao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTorneioAcao.Location = new System.Drawing.Point(201, 263);
+            this.txtTorneioAcao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTorneioAcao.Name = "txtTorneioAcao";
-            this.txtTorneioAcao.Size = new System.Drawing.Size(75, 26);
+            this.txtTorneioAcao.Size = new System.Drawing.Size(56, 21);
             this.txtTorneioAcao.TabIndex = 12;
             this.txtTorneioAcao.Text = "Ação";
             this.txtTorneioAcao.UseVisualStyleBackColor = true;
@@ -1798,55 +1808,58 @@
             this.txtDescricaoTorneio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescricaoTorneio.Location = new System.Drawing.Point(29, 162);
-            this.txtDescricaoTorneio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDescricaoTorneio.MaximumSize = new System.Drawing.Size(400, 150);
-            this.txtDescricaoTorneio.MinimumSize = new System.Drawing.Size(384, 61);
+            this.txtDescricaoTorneio.Location = new System.Drawing.Point(22, 132);
+            this.txtDescricaoTorneio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescricaoTorneio.MaximumSize = new System.Drawing.Size(301, 123);
+            this.txtDescricaoTorneio.MinimumSize = new System.Drawing.Size(289, 50);
             this.txtDescricaoTorneio.Multiline = true;
             this.txtDescricaoTorneio.Name = "txtDescricaoTorneio";
-            this.txtDescricaoTorneio.Size = new System.Drawing.Size(399, 148);
+            this.txtDescricaoTorneio.Size = new System.Drawing.Size(301, 114);
             this.txtDescricaoTorneio.TabIndex = 8;
             // 
             // tpDataTorneio
             // 
-            this.tpDataTorneio.Location = new System.Drawing.Point(123, 81);
-            this.tpDataTorneio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpDataTorneio.Location = new System.Drawing.Point(92, 66);
+            this.tpDataTorneio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpDataTorneio.Name = "tpDataTorneio";
-            this.tpDataTorneio.Size = new System.Drawing.Size(292, 22);
+            this.tpDataTorneio.Size = new System.Drawing.Size(220, 20);
             this.tpDataTorneio.TabIndex = 7;
             // 
             // txtNomeTorneio
             // 
-            this.txtNomeTorneio.Location = new System.Drawing.Point(123, 39);
-            this.txtNomeTorneio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNomeTorneio.Location = new System.Drawing.Point(92, 32);
+            this.txtNomeTorneio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomeTorneio.Name = "txtNomeTorneio";
-            this.txtNomeTorneio.Size = new System.Drawing.Size(292, 22);
+            this.txtNomeTorneio.Size = new System.Drawing.Size(220, 20);
             this.txtNomeTorneio.TabIndex = 6;
             // 
             // labDescricaoJogo
             // 
             this.labDescricaoJogo.AutoSize = true;
-            this.labDescricaoJogo.Location = new System.Drawing.Point(27, 130);
+            this.labDescricaoJogo.Location = new System.Drawing.Point(20, 106);
+            this.labDescricaoJogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labDescricaoJogo.Name = "labDescricaoJogo";
-            this.labDescricaoJogo.Size = new System.Drawing.Size(71, 17);
+            this.labDescricaoJogo.Size = new System.Drawing.Size(55, 13);
             this.labDescricaoJogo.TabIndex = 5;
             this.labDescricaoJogo.Text = "Descrição";
             // 
             // labDataJogo
             // 
             this.labDataJogo.AutoSize = true;
-            this.labDataJogo.Location = new System.Drawing.Point(27, 86);
+            this.labDataJogo.Location = new System.Drawing.Point(20, 70);
+            this.labDataJogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labDataJogo.Name = "labDataJogo";
-            this.labDataJogo.Size = new System.Drawing.Size(38, 17);
+            this.labDataJogo.Size = new System.Drawing.Size(30, 13);
             this.labDataJogo.TabIndex = 4;
             this.labDataJogo.Text = "Data";
             // 
             // labNomeJogo
             // 
             this.labNomeJogo.AutoSize = true;
-            this.labNomeJogo.Location = new System.Drawing.Point(27, 46);
+            this.labNomeJogo.Location = new System.Drawing.Point(20, 37);
+            this.labNomeJogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labNomeJogo.Name = "labNomeJogo";
-            this.labNomeJogo.Size = new System.Drawing.Size(45, 17);
+            this.labNomeJogo.Size = new System.Drawing.Size(35, 13);
             this.labNomeJogo.TabIndex = 3;
             this.labNomeJogo.Text = "Nome";
             // 
@@ -1854,11 +1867,11 @@
             // 
             this.tbGestaoCartas.Controls.Add(this.gbGCartasForm);
             this.tbGestaoCartas.Controls.Add(this.gbGCartasDados);
-            this.tbGestaoCartas.Location = new System.Drawing.Point(4, 25);
-            this.tbGestaoCartas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbGestaoCartas.Location = new System.Drawing.Point(4, 22);
+            this.tbGestaoCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbGestaoCartas.Name = "tbGestaoCartas";
-            this.tbGestaoCartas.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbGestaoCartas.Size = new System.Drawing.Size(1037, 492);
+            this.tbGestaoCartas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoCartas.Size = new System.Drawing.Size(776, 391);
             this.tbGestaoCartas.TabIndex = 3;
             this.tbGestaoCartas.Text = "Cartas";
             this.tbGestaoCartas.UseVisualStyleBackColor = true;
@@ -1885,11 +1898,11 @@
             this.gbGCartasForm.Controls.Add(this.labTipo);
             this.gbGCartasForm.Controls.Add(this.labFacao);
             this.gbGCartasForm.Controls.Add(this.labNomeCarta);
-            this.gbGCartasForm.Location = new System.Drawing.Point(704, 0);
-            this.gbGCartasForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGCartasForm.Location = new System.Drawing.Point(528, 0);
+            this.gbGCartasForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGCartasForm.Name = "gbGCartasForm";
-            this.gbGCartasForm.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGCartasForm.Size = new System.Drawing.Size(325, 486);
+            this.gbGCartasForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGCartasForm.Size = new System.Drawing.Size(244, 391);
             this.gbGCartasForm.TabIndex = 1;
             this.gbGCartasForm.TabStop = false;
             this.gbGCartasForm.Text = "Campos";
@@ -1898,10 +1911,10 @@
             // btnCartaCancelar
             // 
             this.btnCartaCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCartaCancelar.Location = new System.Drawing.Point(221, 443);
-            this.btnCartaCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCartaCancelar.Location = new System.Drawing.Point(166, 356);
+            this.btnCartaCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCartaCancelar.Name = "btnCartaCancelar";
-            this.btnCartaCancelar.Size = new System.Drawing.Size(83, 26);
+            this.btnCartaCancelar.Size = new System.Drawing.Size(62, 21);
             this.btnCartaCancelar.TabIndex = 17;
             this.btnCartaCancelar.Text = "Cancelar";
             this.btnCartaCancelar.UseVisualStyleBackColor = true;
@@ -1910,10 +1923,10 @@
             // btnAcaoCarta
             // 
             this.btnAcaoCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAcaoCarta.Location = new System.Drawing.Point(141, 443);
-            this.btnAcaoCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAcaoCarta.Location = new System.Drawing.Point(106, 356);
+            this.btnAcaoCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAcaoCarta.Name = "btnAcaoCarta";
-            this.btnAcaoCarta.Size = new System.Drawing.Size(75, 26);
+            this.btnAcaoCarta.Size = new System.Drawing.Size(56, 21);
             this.btnAcaoCarta.TabIndex = 16;
             this.btnAcaoCarta.Text = "Ação";
             this.btnAcaoCarta.UseVisualStyleBackColor = true;
@@ -1922,19 +1935,19 @@
             // nudGDefesaCarta
             // 
             this.nudGDefesaCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudGDefesaCarta.Location = new System.Drawing.Point(239, 401);
-            this.nudGDefesaCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudGDefesaCarta.Location = new System.Drawing.Point(179, 322);
+            this.nudGDefesaCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudGDefesaCarta.Name = "nudGDefesaCarta";
-            this.nudGDefesaCarta.Size = new System.Drawing.Size(55, 22);
+            this.nudGDefesaCarta.Size = new System.Drawing.Size(41, 20);
             this.nudGDefesaCarta.TabIndex = 15;
             // 
             // nudGAtaqueCarta
             // 
             this.nudGAtaqueCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudGAtaqueCarta.Location = new System.Drawing.Point(83, 401);
-            this.nudGAtaqueCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudGAtaqueCarta.Location = new System.Drawing.Point(62, 322);
+            this.nudGAtaqueCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudGAtaqueCarta.Name = "nudGAtaqueCarta";
-            this.nudGAtaqueCarta.Size = new System.Drawing.Size(55, 22);
+            this.nudGAtaqueCarta.Size = new System.Drawing.Size(41, 20);
             this.nudGAtaqueCarta.TabIndex = 14;
             // 
             // txtGRegrasCarta
@@ -1942,27 +1955,27 @@
             this.txtGRegrasCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGRegrasCarta.Location = new System.Drawing.Point(27, 229);
-            this.txtGRegrasCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGRegrasCarta.Location = new System.Drawing.Point(20, 186);
+            this.txtGRegrasCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGRegrasCarta.Multiline = true;
             this.txtGRegrasCarta.Name = "txtGRegrasCarta";
-            this.txtGRegrasCarta.Size = new System.Drawing.Size(279, 155);
+            this.txtGRegrasCarta.Size = new System.Drawing.Size(210, 123);
             this.txtGRegrasCarta.TabIndex = 13;
             // 
             // nudGLealdadeCarta
             // 
-            this.nudGLealdadeCarta.Location = new System.Drawing.Point(252, 159);
-            this.nudGLealdadeCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudGLealdadeCarta.Location = new System.Drawing.Point(189, 129);
+            this.nudGLealdadeCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudGLealdadeCarta.Name = "nudGLealdadeCarta";
-            this.nudGLealdadeCarta.Size = new System.Drawing.Size(55, 22);
+            this.nudGLealdadeCarta.Size = new System.Drawing.Size(41, 20);
             this.nudGLealdadeCarta.TabIndex = 12;
             // 
             // txtGCustoCarta
             // 
-            this.txtGCustoCarta.Location = new System.Drawing.Point(79, 159);
-            this.txtGCustoCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGCustoCarta.Location = new System.Drawing.Point(59, 129);
+            this.txtGCustoCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGCustoCarta.Name = "txtGCustoCarta";
-            this.txtGCustoCarta.Size = new System.Drawing.Size(69, 22);
+            this.txtGCustoCarta.Size = new System.Drawing.Size(53, 20);
             this.txtGCustoCarta.TabIndex = 11;
             // 
             // cmbGTipoCarta
@@ -1976,10 +1989,10 @@
             "Magia",
             "Encantamento",
             "Cidade"});
-            this.cmbGTipoCarta.Location = new System.Drawing.Point(95, 114);
-            this.cmbGTipoCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbGTipoCarta.Location = new System.Drawing.Point(71, 93);
+            this.cmbGTipoCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbGTipoCarta.Name = "cmbGTipoCarta";
-            this.cmbGTipoCarta.Size = new System.Drawing.Size(209, 24);
+            this.cmbGTipoCarta.Size = new System.Drawing.Size(158, 21);
             this.cmbGTipoCarta.TabIndex = 10;
             // 
             // cmbFacaoCarta
@@ -1989,27 +2002,28 @@
             this.cmbFacaoCarta.Items.AddRange(new object[] {
             "Gaian Love for Life",
             "Uneasy Alliance"});
-            this.cmbFacaoCarta.Location = new System.Drawing.Point(95, 76);
-            this.cmbFacaoCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbFacaoCarta.Location = new System.Drawing.Point(71, 62);
+            this.cmbFacaoCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbFacaoCarta.Name = "cmbFacaoCarta";
-            this.cmbFacaoCarta.Size = new System.Drawing.Size(209, 24);
+            this.cmbFacaoCarta.Size = new System.Drawing.Size(158, 21);
             this.cmbFacaoCarta.TabIndex = 9;
             // 
             // txtGNomeCarta
             // 
-            this.txtGNomeCarta.Location = new System.Drawing.Point(95, 41);
-            this.txtGNomeCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGNomeCarta.Location = new System.Drawing.Point(71, 33);
+            this.txtGNomeCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGNomeCarta.Name = "txtGNomeCarta";
-            this.txtGNomeCarta.Size = new System.Drawing.Size(209, 22);
+            this.txtGNomeCarta.Size = new System.Drawing.Size(158, 20);
             this.txtGNomeCarta.TabIndex = 8;
             // 
             // labDefesa
             // 
             this.labDefesa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labDefesa.AutoSize = true;
-            this.labDefesa.Location = new System.Drawing.Point(179, 404);
+            this.labDefesa.Location = new System.Drawing.Point(134, 324);
+            this.labDefesa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labDefesa.Name = "labDefesa";
-            this.labDefesa.Size = new System.Drawing.Size(53, 17);
+            this.labDefesa.Size = new System.Drawing.Size(41, 13);
             this.labDefesa.TabIndex = 7;
             this.labDefesa.Text = "Defesa";
             // 
@@ -2017,63 +2031,70 @@
             // 
             this.labAtaque.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labAtaque.AutoSize = true;
-            this.labAtaque.Location = new System.Drawing.Point(23, 404);
+            this.labAtaque.Location = new System.Drawing.Point(17, 324);
+            this.labAtaque.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labAtaque.Name = "labAtaque";
-            this.labAtaque.Size = new System.Drawing.Size(53, 17);
+            this.labAtaque.Size = new System.Drawing.Size(41, 13);
             this.labAtaque.TabIndex = 6;
             this.labAtaque.Text = "Ataque";
             // 
             // labRegras
             // 
             this.labRegras.AutoSize = true;
-            this.labRegras.Location = new System.Drawing.Point(24, 199);
+            this.labRegras.Location = new System.Drawing.Point(18, 162);
+            this.labRegras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labRegras.Name = "labRegras";
-            this.labRegras.Size = new System.Drawing.Size(54, 17);
+            this.labRegras.Size = new System.Drawing.Size(41, 13);
             this.labRegras.TabIndex = 5;
             this.labRegras.Text = "Regras";
             // 
             // labLealdade
             // 
             this.labLealdade.AutoSize = true;
-            this.labLealdade.Location = new System.Drawing.Point(179, 161);
+            this.labLealdade.Location = new System.Drawing.Point(134, 131);
+            this.labLealdade.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labLealdade.Name = "labLealdade";
-            this.labLealdade.Size = new System.Drawing.Size(67, 17);
+            this.labLealdade.Size = new System.Drawing.Size(51, 13);
             this.labLealdade.TabIndex = 4;
             this.labLealdade.Text = "Lealdade";
             // 
             // labCusto
             // 
             this.labCusto.AutoSize = true;
-            this.labCusto.Location = new System.Drawing.Point(24, 162);
+            this.labCusto.Location = new System.Drawing.Point(18, 132);
+            this.labCusto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labCusto.Name = "labCusto";
-            this.labCusto.Size = new System.Drawing.Size(44, 17);
+            this.labCusto.Size = new System.Drawing.Size(34, 13);
             this.labCusto.TabIndex = 3;
             this.labCusto.Text = "Custo";
             // 
             // labTipo
             // 
             this.labTipo.AutoSize = true;
-            this.labTipo.Location = new System.Drawing.Point(23, 122);
+            this.labTipo.Location = new System.Drawing.Point(17, 99);
+            this.labTipo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labTipo.Name = "labTipo";
-            this.labTipo.Size = new System.Drawing.Size(36, 17);
+            this.labTipo.Size = new System.Drawing.Size(28, 13);
             this.labTipo.TabIndex = 2;
             this.labTipo.Text = "Tipo";
             // 
             // labFacao
             // 
             this.labFacao.AutoSize = true;
-            this.labFacao.Location = new System.Drawing.Point(24, 85);
+            this.labFacao.Location = new System.Drawing.Point(18, 69);
+            this.labFacao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labFacao.Name = "labFacao";
-            this.labFacao.Size = new System.Drawing.Size(47, 17);
+            this.labFacao.Size = new System.Drawing.Size(37, 13);
             this.labFacao.TabIndex = 1;
             this.labFacao.Text = "Fação";
             // 
             // labNomeCarta
             // 
             this.labNomeCarta.AutoSize = true;
-            this.labNomeCarta.Location = new System.Drawing.Point(23, 46);
+            this.labNomeCarta.Location = new System.Drawing.Point(17, 37);
+            this.labNomeCarta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labNomeCarta.Name = "labNomeCarta";
-            this.labNomeCarta.Size = new System.Drawing.Size(45, 17);
+            this.labNomeCarta.Size = new System.Drawing.Size(35, 13);
             this.labNomeCarta.TabIndex = 0;
             this.labNomeCarta.Text = "Nome";
             // 
@@ -2089,23 +2110,22 @@
             this.gbGCartasDados.Controls.Add(this.dgvGCartasLista);
             this.gbGCartasDados.Controls.Add(this.labPesquisarCarta);
             this.gbGCartasDados.Controls.Add(this.txtGCartasPesquisa);
-            this.gbGCartasDados.Location = new System.Drawing.Point(5, 0);
-            this.gbGCartasDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGCartasDados.MaximumSize = new System.Drawing.Size(700, 496);
-            this.gbGCartasDados.MinimumSize = new System.Drawing.Size(389, 390);
+            this.gbGCartasDados.Location = new System.Drawing.Point(4, 0);
+            this.gbGCartasDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGCartasDados.MaximumSize = new System.Drawing.Size(525, 403);
+            this.gbGCartasDados.MinimumSize = new System.Drawing.Size(292, 317);
             this.gbGCartasDados.Name = "gbGCartasDados";
-            this.gbGCartasDados.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGCartasDados.Size = new System.Drawing.Size(696, 486);
+            this.gbGCartasDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGCartasDados.Size = new System.Drawing.Size(522, 391);
             this.gbGCartasDados.TabIndex = 0;
             this.gbGCartasDados.TabStop = false;
             this.gbGCartasDados.Text = "Cartas";
             // 
             // btnImportarCartas
             // 
-            this.btnImportarCartas.Location = new System.Drawing.Point(25, 447);
-            this.btnImportarCartas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImportarCartas.Location = new System.Drawing.Point(19, 363);
             this.btnImportarCartas.Name = "btnImportarCartas";
-            this.btnImportarCartas.Size = new System.Drawing.Size(100, 26);
+            this.btnImportarCartas.Size = new System.Drawing.Size(75, 21);
             this.btnImportarCartas.TabIndex = 12;
             this.btnImportarCartas.Text = "Importar ...";
             this.btnImportarCartas.UseVisualStyleBackColor = true;
@@ -2115,10 +2135,10 @@
             // 
             this.btnRemoverCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoverCarta.Enabled = false;
-            this.btnRemoverCarta.Location = new System.Drawing.Point(581, 443);
-            this.btnRemoverCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoverCarta.Location = new System.Drawing.Point(436, 356);
+            this.btnRemoverCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoverCarta.Name = "btnRemoverCarta";
-            this.btnRemoverCarta.Size = new System.Drawing.Size(83, 26);
+            this.btnRemoverCarta.Size = new System.Drawing.Size(62, 21);
             this.btnRemoverCarta.TabIndex = 11;
             this.btnRemoverCarta.Text = "Eliminar";
             this.btnRemoverCarta.UseVisualStyleBackColor = true;
@@ -2128,10 +2148,10 @@
             // 
             this.btnAlterarCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarCarta.Enabled = false;
-            this.btnAlterarCarta.Location = new System.Drawing.Point(499, 443);
-            this.btnAlterarCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAlterarCarta.Location = new System.Drawing.Point(374, 356);
+            this.btnAlterarCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAlterarCarta.Name = "btnAlterarCarta";
-            this.btnAlterarCarta.Size = new System.Drawing.Size(77, 26);
+            this.btnAlterarCarta.Size = new System.Drawing.Size(58, 21);
             this.btnAlterarCarta.TabIndex = 10;
             this.btnAlterarCarta.Text = "Alterar";
             this.btnAlterarCarta.UseVisualStyleBackColor = true;
@@ -2140,10 +2160,10 @@
             // btnInserirCarta
             // 
             this.btnInserirCarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirCarta.Location = new System.Drawing.Point(411, 443);
-            this.btnInserirCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInserirCarta.Location = new System.Drawing.Point(308, 356);
+            this.btnInserirCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInserirCarta.Name = "btnInserirCarta";
-            this.btnInserirCarta.Size = new System.Drawing.Size(83, 26);
+            this.btnInserirCarta.Size = new System.Drawing.Size(62, 21);
             this.btnInserirCarta.TabIndex = 9;
             this.btnInserirCarta.Text = "Inserir";
             this.btnInserirCarta.UseVisualStyleBackColor = true;
@@ -2170,13 +2190,13 @@
             this.attackDataGridViewTextBoxColumn,
             this.defenseDataGridViewTextBoxColumn});
             this.dgvGCartasLista.DataSource = this.cardSetBindingSource;
-            this.dgvGCartasLista.Location = new System.Drawing.Point(25, 94);
-            this.dgvGCartasLista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvGCartasLista.Location = new System.Drawing.Point(19, 76);
+            this.dgvGCartasLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvGCartasLista.Name = "dgvGCartasLista";
             this.dgvGCartasLista.ReadOnly = true;
             this.dgvGCartasLista.RowTemplate.Height = 24;
             this.dgvGCartasLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGCartasLista.Size = new System.Drawing.Size(641, 326);
+            this.dgvGCartasLista.Size = new System.Drawing.Size(481, 261);
             this.dgvGCartasLista.TabIndex = 8;
             this.dgvGCartasLista.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGCartasLista_CellEnter);
             this.dgvGCartasLista.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGCartasLista_CellLeave);
@@ -2257,9 +2277,10 @@
             // labPesquisarCarta
             // 
             this.labPesquisarCarta.AutoSize = true;
-            this.labPesquisarCarta.Location = new System.Drawing.Point(23, 49);
+            this.labPesquisarCarta.Location = new System.Drawing.Point(17, 40);
+            this.labPesquisarCarta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labPesquisarCarta.Name = "labPesquisarCarta";
-            this.labPesquisarCarta.Size = new System.Drawing.Size(70, 17);
+            this.labPesquisarCarta.Size = new System.Drawing.Size(53, 13);
             this.labPesquisarCarta.TabIndex = 7;
             this.labPesquisarCarta.Text = "Pesquise:";
             // 
@@ -2267,10 +2288,10 @@
             // 
             this.txtGCartasPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGCartasPesquisa.Location = new System.Drawing.Point(99, 46);
-            this.txtGCartasPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGCartasPesquisa.Location = new System.Drawing.Point(74, 37);
+            this.txtGCartasPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGCartasPesquisa.Name = "txtGCartasPesquisa";
-            this.txtGCartasPesquisa.Size = new System.Drawing.Size(567, 22);
+            this.txtGCartasPesquisa.Size = new System.Drawing.Size(426, 20);
             this.txtGCartasPesquisa.TabIndex = 6;
             this.txtGCartasPesquisa.TextChanged += new System.EventHandler(this.txtGCartasPesquisa_TextChanged);
             // 
@@ -2278,11 +2299,11 @@
             // 
             this.tbGestaoBaralhos.Controls.Add(this.panelGestaoBaralho);
             this.tbGestaoBaralhos.Controls.Add(this.gbGBaralhosDados);
-            this.tbGestaoBaralhos.Location = new System.Drawing.Point(4, 25);
-            this.tbGestaoBaralhos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbGestaoBaralhos.Location = new System.Drawing.Point(4, 22);
+            this.tbGestaoBaralhos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbGestaoBaralhos.Name = "tbGestaoBaralhos";
-            this.tbGestaoBaralhos.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbGestaoBaralhos.Size = new System.Drawing.Size(1037, 492);
+            this.tbGestaoBaralhos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoBaralhos.Size = new System.Drawing.Size(776, 391);
             this.tbGestaoBaralhos.TabIndex = 4;
             this.tbGestaoBaralhos.Text = "Baralhos";
             this.tbGestaoBaralhos.UseVisualStyleBackColor = true;
@@ -2291,19 +2312,18 @@
             // 
             this.panelGestaoBaralho.ColumnCount = 3;
             this.panelGestaoBaralho.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelGestaoBaralho.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.panelGestaoBaralho.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.panelGestaoBaralho.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelGestaoBaralho.Controls.Add(this.gbGCartasBotoes, 1, 0);
             this.panelGestaoBaralho.Controls.Add(this.gbGCartasnoBaralho, 0, 0);
             this.panelGestaoBaralho.Controls.Add(this.gbGListaDeCartas, 2, 0);
             this.panelGestaoBaralho.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGestaoBaralho.Enabled = false;
-            this.panelGestaoBaralho.Location = new System.Drawing.Point(3, 242);
-            this.panelGestaoBaralho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelGestaoBaralho.Location = new System.Drawing.Point(2, 197);
             this.panelGestaoBaralho.Name = "panelGestaoBaralho";
             this.panelGestaoBaralho.RowCount = 1;
             this.panelGestaoBaralho.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelGestaoBaralho.Size = new System.Drawing.Size(1031, 248);
+            this.panelGestaoBaralho.Size = new System.Drawing.Size(772, 192);
             this.panelGestaoBaralho.TabIndex = 1;
             // 
             // gbGCartasBotoes
@@ -2314,29 +2334,30 @@
             this.gbGCartasBotoes.Controls.Add(this.lblNCartasTotais);
             this.gbGCartasBotoes.Controls.Add(this.btnCancelarAltBaralho);
             this.gbGCartasBotoes.Controls.Add(this.btnGuardarAltBaralho);
-            this.gbGCartasBotoes.Location = new System.Drawing.Point(452, 2);
-            this.gbGCartasBotoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGCartasBotoes.Location = new System.Drawing.Point(338, 2);
+            this.gbGCartasBotoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGCartasBotoes.Name = "gbGCartasBotoes";
-            this.gbGCartasBotoes.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGCartasBotoes.Size = new System.Drawing.Size(127, 235);
+            this.gbGCartasBotoes.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGCartasBotoes.Size = new System.Drawing.Size(95, 188);
             this.gbGCartasBotoes.TabIndex = 15;
             this.gbGCartasBotoes.TabStop = false;
             // 
             // lblNCartasNoBaralho
             // 
-            this.lblNCartasNoBaralho.Location = new System.Drawing.Point(27, 44);
+            this.lblNCartasNoBaralho.Location = new System.Drawing.Point(20, 36);
+            this.lblNCartasNoBaralho.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNCartasNoBaralho.Name = "lblNCartasNoBaralho";
-            this.lblNCartasNoBaralho.Size = new System.Drawing.Size(36, 17);
+            this.lblNCartasNoBaralho.Size = new System.Drawing.Size(27, 14);
             this.lblNCartasNoBaralho.TabIndex = 5;
             this.lblNCartasNoBaralho.Text = "0";
             this.lblNCartasNoBaralho.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // btnRemoverCartaBaralho
             // 
-            this.btnRemoverCartaBaralho.Location = new System.Drawing.Point(36, 110);
-            this.btnRemoverCartaBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoverCartaBaralho.Location = new System.Drawing.Point(27, 89);
+            this.btnRemoverCartaBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoverCartaBaralho.Name = "btnRemoverCartaBaralho";
-            this.btnRemoverCartaBaralho.Size = new System.Drawing.Size(55, 30);
+            this.btnRemoverCartaBaralho.Size = new System.Drawing.Size(41, 24);
             this.btnRemoverCartaBaralho.TabIndex = 13;
             this.btnRemoverCartaBaralho.Text = ">>";
             this.btnRemoverCartaBaralho.UseVisualStyleBackColor = true;
@@ -2344,10 +2365,10 @@
             // 
             // btnAdicionarCartaBaralho
             // 
-            this.btnAdicionarCartaBaralho.Location = new System.Drawing.Point(36, 75);
-            this.btnAdicionarCartaBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdicionarCartaBaralho.Location = new System.Drawing.Point(27, 61);
+            this.btnAdicionarCartaBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdicionarCartaBaralho.Name = "btnAdicionarCartaBaralho";
-            this.btnAdicionarCartaBaralho.Size = new System.Drawing.Size(55, 30);
+            this.btnAdicionarCartaBaralho.Size = new System.Drawing.Size(41, 24);
             this.btnAdicionarCartaBaralho.TabIndex = 14;
             this.btnAdicionarCartaBaralho.Text = "<<";
             this.btnAdicionarCartaBaralho.UseVisualStyleBackColor = true;
@@ -2356,18 +2377,19 @@
             // lblNCartasTotais
             // 
             this.lblNCartasTotais.AutoSize = true;
-            this.lblNCartasTotais.Location = new System.Drawing.Point(59, 44);
+            this.lblNCartasTotais.Location = new System.Drawing.Point(44, 36);
+            this.lblNCartasTotais.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNCartasTotais.Name = "lblNCartasTotais";
-            this.lblNCartasTotais.Size = new System.Drawing.Size(28, 17);
+            this.lblNCartasTotais.Size = new System.Drawing.Size(24, 13);
             this.lblNCartasTotais.TabIndex = 4;
             this.lblNCartasTotais.Text = "/45";
             // 
             // btnCancelarAltBaralho
             // 
-            this.btnCancelarAltBaralho.Location = new System.Drawing.Point(23, 188);
-            this.btnCancelarAltBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelarAltBaralho.Location = new System.Drawing.Point(17, 153);
+            this.btnCancelarAltBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelarAltBaralho.Name = "btnCancelarAltBaralho";
-            this.btnCancelarAltBaralho.Size = new System.Drawing.Size(85, 28);
+            this.btnCancelarAltBaralho.Size = new System.Drawing.Size(64, 23);
             this.btnCancelarAltBaralho.TabIndex = 11;
             this.btnCancelarAltBaralho.Text = "Cancelar";
             this.btnCancelarAltBaralho.UseVisualStyleBackColor = true;
@@ -2375,10 +2397,10 @@
             // 
             // btnGuardarAltBaralho
             // 
-            this.btnGuardarAltBaralho.Location = new System.Drawing.Point(23, 155);
-            this.btnGuardarAltBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardarAltBaralho.Location = new System.Drawing.Point(17, 126);
+            this.btnGuardarAltBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardarAltBaralho.Name = "btnGuardarAltBaralho";
-            this.btnGuardarAltBaralho.Size = new System.Drawing.Size(85, 28);
+            this.btnGuardarAltBaralho.Size = new System.Drawing.Size(64, 23);
             this.btnGuardarAltBaralho.TabIndex = 12;
             this.btnGuardarAltBaralho.Text = "Guardar";
             this.btnGuardarAltBaralho.UseVisualStyleBackColor = true;
@@ -2388,11 +2410,11 @@
             // 
             this.gbGCartasnoBaralho.Controls.Add(this.lvCartasBaralho);
             this.gbGCartasnoBaralho.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbGCartasnoBaralho.Location = new System.Drawing.Point(3, 2);
-            this.gbGCartasnoBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGCartasnoBaralho.Location = new System.Drawing.Point(2, 2);
+            this.gbGCartasnoBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGCartasnoBaralho.Name = "gbGCartasnoBaralho";
-            this.gbGCartasnoBaralho.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGCartasnoBaralho.Size = new System.Drawing.Size(443, 244);
+            this.gbGCartasnoBaralho.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGCartasnoBaralho.Size = new System.Drawing.Size(332, 188);
             this.gbGCartasnoBaralho.TabIndex = 2;
             this.gbGCartasnoBaralho.TabStop = false;
             this.gbGCartasnoBaralho.Text = "Cartas do Baralho";
@@ -2405,11 +2427,11 @@
             this.chQtd});
             this.lvCartasBaralho.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvCartasBaralho.FullRowSelect = true;
-            this.lvCartasBaralho.Location = new System.Drawing.Point(3, 17);
-            this.lvCartasBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvCartasBaralho.Location = new System.Drawing.Point(2, 15);
+            this.lvCartasBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvCartasBaralho.MultiSelect = false;
             this.lvCartasBaralho.Name = "lvCartasBaralho";
-            this.lvCartasBaralho.Size = new System.Drawing.Size(437, 225);
+            this.lvCartasBaralho.Size = new System.Drawing.Size(328, 171);
             this.lvCartasBaralho.TabIndex = 1;
             this.lvCartasBaralho.UseCompatibleStateImageBehavior = false;
             this.lvCartasBaralho.View = System.Windows.Forms.View.Details;
@@ -2434,11 +2456,11 @@
             // 
             this.gbGListaDeCartas.Controls.Add(this.lvListaCartas);
             this.gbGListaDeCartas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbGListaDeCartas.Location = new System.Drawing.Point(585, 2);
-            this.gbGListaDeCartas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGListaDeCartas.Location = new System.Drawing.Point(438, 2);
+            this.gbGListaDeCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGListaDeCartas.Name = "gbGListaDeCartas";
-            this.gbGListaDeCartas.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGListaDeCartas.Size = new System.Drawing.Size(443, 244);
+            this.gbGListaDeCartas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGListaDeCartas.Size = new System.Drawing.Size(332, 188);
             this.gbGListaDeCartas.TabIndex = 1;
             this.gbGListaDeCartas.TabStop = false;
             this.gbGListaDeCartas.Text = "Lista de Cartas";
@@ -2451,11 +2473,11 @@
             this.cQtd});
             this.lvListaCartas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvListaCartas.FullRowSelect = true;
-            this.lvListaCartas.Location = new System.Drawing.Point(3, 17);
-            this.lvListaCartas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvListaCartas.Location = new System.Drawing.Point(2, 15);
+            this.lvListaCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvListaCartas.MultiSelect = false;
             this.lvListaCartas.Name = "lvListaCartas";
-            this.lvListaCartas.Size = new System.Drawing.Size(437, 225);
+            this.lvListaCartas.Size = new System.Drawing.Size(328, 171);
             this.lvListaCartas.TabIndex = 1;
             this.lvListaCartas.UseCompatibleStateImageBehavior = false;
             this.lvListaCartas.View = System.Windows.Forms.View.Details;
@@ -2486,11 +2508,11 @@
             this.gbGBaralhosDados.Controls.Add(this.btnGerirBaralho);
             this.gbGBaralhosDados.Controls.Add(this.btnEliminarBaralho);
             this.gbGBaralhosDados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbGBaralhosDados.Location = new System.Drawing.Point(3, 2);
-            this.gbGBaralhosDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGBaralhosDados.Location = new System.Drawing.Point(2, 2);
+            this.gbGBaralhosDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGBaralhosDados.Name = "gbGBaralhosDados";
-            this.gbGBaralhosDados.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGBaralhosDados.Size = new System.Drawing.Size(1031, 240);
+            this.gbGBaralhosDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGBaralhosDados.Size = new System.Drawing.Size(772, 195);
             this.gbGBaralhosDados.TabIndex = 0;
             this.gbGBaralhosDados.TabStop = false;
             this.gbGBaralhosDados.Text = "Baralhos";
@@ -2502,11 +2524,11 @@
             this.gbGBaralhosForm.Controls.Add(this.btnCriarBaralho);
             this.gbGBaralhosForm.Controls.Add(this.btnCancelarNovoBaralho);
             this.gbGBaralhosForm.Controls.Add(this.txtNomeBaralho);
-            this.gbGBaralhosForm.Location = new System.Drawing.Point(749, 89);
-            this.gbGBaralhosForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGBaralhosForm.Location = new System.Drawing.Point(561, 72);
+            this.gbGBaralhosForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGBaralhosForm.Name = "gbGBaralhosForm";
-            this.gbGBaralhosForm.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGBaralhosForm.Size = new System.Drawing.Size(276, 135);
+            this.gbGBaralhosForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGBaralhosForm.Size = new System.Drawing.Size(207, 110);
             this.gbGBaralhosForm.TabIndex = 18;
             this.gbGBaralhosForm.TabStop = false;
             this.gbGBaralhosForm.Text = "Campo";
@@ -2515,19 +2537,20 @@
             // labNomeBaralho
             // 
             this.labNomeBaralho.AutoSize = true;
-            this.labNomeBaralho.Location = new System.Drawing.Point(23, 39);
+            this.labNomeBaralho.Location = new System.Drawing.Point(17, 32);
+            this.labNomeBaralho.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labNomeBaralho.Name = "labNomeBaralho";
-            this.labNomeBaralho.Size = new System.Drawing.Size(45, 17);
+            this.labNomeBaralho.Size = new System.Drawing.Size(35, 13);
             this.labNomeBaralho.TabIndex = 14;
             this.labNomeBaralho.Text = "Nome";
             // 
             // btnCriarBaralho
             // 
             this.btnCriarBaralho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCriarBaralho.Location = new System.Drawing.Point(75, 97);
-            this.btnCriarBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCriarBaralho.Location = new System.Drawing.Point(56, 79);
+            this.btnCriarBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCriarBaralho.Name = "btnCriarBaralho";
-            this.btnCriarBaralho.Size = new System.Drawing.Size(85, 28);
+            this.btnCriarBaralho.Size = new System.Drawing.Size(64, 23);
             this.btnCriarBaralho.TabIndex = 17;
             this.btnCriarBaralho.Text = "Criar";
             this.btnCriarBaralho.UseVisualStyleBackColor = true;
@@ -2536,10 +2559,10 @@
             // btnCancelarNovoBaralho
             // 
             this.btnCancelarNovoBaralho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarNovoBaralho.Location = new System.Drawing.Point(165, 97);
-            this.btnCancelarNovoBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelarNovoBaralho.Location = new System.Drawing.Point(124, 79);
+            this.btnCancelarNovoBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelarNovoBaralho.Name = "btnCancelarNovoBaralho";
-            this.btnCancelarNovoBaralho.Size = new System.Drawing.Size(85, 28);
+            this.btnCancelarNovoBaralho.Size = new System.Drawing.Size(64, 23);
             this.btnCancelarNovoBaralho.TabIndex = 16;
             this.btnCancelarNovoBaralho.Text = "Cancelar";
             this.btnCancelarNovoBaralho.UseVisualStyleBackColor = true;
@@ -2547,18 +2570,19 @@
             // 
             // txtNomeBaralho
             // 
-            this.txtNomeBaralho.Location = new System.Drawing.Point(75, 36);
-            this.txtNomeBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNomeBaralho.Location = new System.Drawing.Point(56, 29);
+            this.txtNomeBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomeBaralho.Name = "txtNomeBaralho";
-            this.txtNomeBaralho.Size = new System.Drawing.Size(175, 22);
+            this.txtNomeBaralho.Size = new System.Drawing.Size(132, 20);
             this.txtNomeBaralho.TabIndex = 15;
             // 
             // labPesquisarBaralho
             // 
             this.labPesquisarBaralho.AutoSize = true;
-            this.labPesquisarBaralho.Location = new System.Drawing.Point(25, 27);
+            this.labPesquisarBaralho.Location = new System.Drawing.Point(19, 22);
+            this.labPesquisarBaralho.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labPesquisarBaralho.Name = "labPesquisarBaralho";
-            this.labPesquisarBaralho.Size = new System.Drawing.Size(70, 17);
+            this.labPesquisarBaralho.Size = new System.Drawing.Size(53, 13);
             this.labPesquisarBaralho.TabIndex = 13;
             this.labPesquisarBaralho.Text = "Pesquise:";
             // 
@@ -2576,12 +2600,12 @@
             this.idDataGridViewTextBoxColumn1,
             this.nameDataGridViewTextBoxColumn1});
             this.dgvGBaralhosLista.DataSource = this.deckSetBindingSource;
-            this.dgvGBaralhosLista.Location = new System.Drawing.Point(29, 66);
-            this.dgvGBaralhosLista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvGBaralhosLista.Location = new System.Drawing.Point(22, 54);
+            this.dgvGBaralhosLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvGBaralhosLista.Name = "dgvGBaralhosLista";
             this.dgvGBaralhosLista.ReadOnly = true;
             this.dgvGBaralhosLista.RowTemplate.Height = 24;
-            this.dgvGBaralhosLista.Size = new System.Drawing.Size(610, 158);
+            this.dgvGBaralhosLista.Size = new System.Drawing.Size(457, 128);
             this.dgvGBaralhosLista.TabIndex = 9;
             this.dgvGBaralhosLista.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGBaralhosLista_CellEnter);
             this.dgvGBaralhosLista.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGBaralhosLista_CellLeave);
@@ -2613,10 +2637,10 @@
             // btnInserirBaralho
             // 
             this.btnInserirBaralho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirBaralho.Location = new System.Drawing.Point(653, 102);
-            this.btnInserirBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInserirBaralho.Location = new System.Drawing.Point(489, 83);
+            this.btnInserirBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInserirBaralho.Name = "btnInserirBaralho";
-            this.btnInserirBaralho.Size = new System.Drawing.Size(77, 28);
+            this.btnInserirBaralho.Size = new System.Drawing.Size(58, 23);
             this.btnInserirBaralho.TabIndex = 10;
             this.btnInserirBaralho.Text = "Inserir";
             this.btnInserirBaralho.UseVisualStyleBackColor = true;
@@ -2624,10 +2648,10 @@
             // 
             // txtGBaralhosPesquisa
             // 
-            this.txtGBaralhosPesquisa.Location = new System.Drawing.Point(101, 23);
-            this.txtGBaralhosPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGBaralhosPesquisa.Location = new System.Drawing.Point(76, 19);
+            this.txtGBaralhosPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGBaralhosPesquisa.Name = "txtGBaralhosPesquisa";
-            this.txtGBaralhosPesquisa.Size = new System.Drawing.Size(260, 22);
+            this.txtGBaralhosPesquisa.Size = new System.Drawing.Size(196, 20);
             this.txtGBaralhosPesquisa.TabIndex = 12;
             this.txtGBaralhosPesquisa.TextChanged += new System.EventHandler(this.txtGBaralhosPesquisa_TextChanged);
             // 
@@ -2635,10 +2659,10 @@
             // 
             this.btnGerirBaralho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGerirBaralho.Enabled = false;
-            this.btnGerirBaralho.Location = new System.Drawing.Point(653, 148);
-            this.btnGerirBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGerirBaralho.Location = new System.Drawing.Point(489, 120);
+            this.btnGerirBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGerirBaralho.Name = "btnGerirBaralho";
-            this.btnGerirBaralho.Size = new System.Drawing.Size(77, 28);
+            this.btnGerirBaralho.Size = new System.Drawing.Size(58, 23);
             this.btnGerirBaralho.TabIndex = 11;
             this.btnGerirBaralho.Text = "Gerir";
             this.btnGerirBaralho.UseVisualStyleBackColor = true;
@@ -2648,10 +2672,10 @@
             // 
             this.btnEliminarBaralho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarBaralho.Enabled = false;
-            this.btnEliminarBaralho.Location = new System.Drawing.Point(653, 196);
-            this.btnEliminarBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarBaralho.Location = new System.Drawing.Point(489, 159);
+            this.btnEliminarBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminarBaralho.Name = "btnEliminarBaralho";
-            this.btnEliminarBaralho.Size = new System.Drawing.Size(77, 28);
+            this.btnEliminarBaralho.Size = new System.Drawing.Size(58, 23);
             this.btnEliminarBaralho.TabIndex = 8;
             this.btnEliminarBaralho.Text = "Eliminar";
             this.btnEliminarBaralho.UseVisualStyleBackColor = true;
@@ -2662,11 +2686,11 @@
             this.tbGestaoUtilizadores.Controls.Add(this.gbGUtilizadoresDados);
             this.tbGestaoUtilizadores.Controls.Add(this.gbGAdministradorForm);
             this.tbGestaoUtilizadores.Controls.Add(this.gbGArbitroForm);
-            this.tbGestaoUtilizadores.Location = new System.Drawing.Point(4, 25);
-            this.tbGestaoUtilizadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbGestaoUtilizadores.Location = new System.Drawing.Point(4, 22);
+            this.tbGestaoUtilizadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbGestaoUtilizadores.Name = "tbGestaoUtilizadores";
-            this.tbGestaoUtilizadores.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbGestaoUtilizadores.Size = new System.Drawing.Size(1037, 492);
+            this.tbGestaoUtilizadores.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGestaoUtilizadores.Size = new System.Drawing.Size(776, 391);
             this.tbGestaoUtilizadores.TabIndex = 5;
             this.tbGestaoUtilizadores.Text = "Utilizadores";
             this.tbGestaoUtilizadores.UseVisualStyleBackColor = true;
@@ -2684,13 +2708,13 @@
             this.gbGUtilizadoresDados.Controls.Add(this.dgvGUtilizadoresLista);
             this.gbGUtilizadoresDados.Controls.Add(this.btnInserirUtilizador);
             this.gbGUtilizadoresDados.Controls.Add(this.txtGUtilizadoresPesquisa);
-            this.gbGUtilizadoresDados.Location = new System.Drawing.Point(5, 0);
-            this.gbGUtilizadoresDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGUtilizadoresDados.MaximumSize = new System.Drawing.Size(700, 500);
-            this.gbGUtilizadoresDados.MinimumSize = new System.Drawing.Size(389, 390);
+            this.gbGUtilizadoresDados.Location = new System.Drawing.Point(4, 0);
+            this.gbGUtilizadoresDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGUtilizadoresDados.MaximumSize = new System.Drawing.Size(525, 406);
+            this.gbGUtilizadoresDados.MinimumSize = new System.Drawing.Size(292, 317);
             this.gbGUtilizadoresDados.Name = "gbGUtilizadoresDados";
-            this.gbGUtilizadoresDados.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGUtilizadoresDados.Size = new System.Drawing.Size(696, 489);
+            this.gbGUtilizadoresDados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGUtilizadoresDados.Size = new System.Drawing.Size(522, 393);
             this.gbGUtilizadoresDados.TabIndex = 0;
             this.gbGUtilizadoresDados.TabStop = false;
             this.gbGUtilizadoresDados.Text = "Utilizadores";
@@ -2699,10 +2723,9 @@
             // 
             this.radioAdmins.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioAdmins.AutoSize = true;
-            this.radioAdmins.Location = new System.Drawing.Point(19, 458);
-            this.radioAdmins.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioAdmins.Location = new System.Drawing.Point(13, 372);
             this.radioAdmins.Name = "radioAdmins";
-            this.radioAdmins.Size = new System.Drawing.Size(131, 21);
+            this.radioAdmins.Size = new System.Drawing.Size(99, 17);
             this.radioAdmins.TabIndex = 10;
             this.radioAdmins.TabStop = true;
             this.radioAdmins.Text = "Administradores";
@@ -2713,10 +2736,9 @@
             // 
             this.radioArbitros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioArbitros.AutoSize = true;
-            this.radioArbitros.Location = new System.Drawing.Point(161, 458);
-            this.radioArbitros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioArbitros.Location = new System.Drawing.Point(119, 372);
             this.radioArbitros.Name = "radioArbitros";
-            this.radioArbitros.Size = new System.Drawing.Size(78, 21);
+            this.radioArbitros.Size = new System.Drawing.Size(60, 17);
             this.radioArbitros.TabIndex = 9;
             this.radioArbitros.TabStop = true;
             this.radioArbitros.Text = "Arbitros";
@@ -2726,10 +2748,10 @@
             // btnEliminarUtilizador
             // 
             this.btnEliminarUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminarUtilizador.Location = new System.Drawing.Point(595, 447);
-            this.btnEliminarUtilizador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarUtilizador.Location = new System.Drawing.Point(446, 359);
+            this.btnEliminarUtilizador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminarUtilizador.Name = "btnEliminarUtilizador";
-            this.btnEliminarUtilizador.Size = new System.Drawing.Size(83, 30);
+            this.btnEliminarUtilizador.Size = new System.Drawing.Size(62, 24);
             this.btnEliminarUtilizador.TabIndex = 7;
             this.btnEliminarUtilizador.Text = "Eliminar";
             this.btnEliminarUtilizador.UseVisualStyleBackColor = true;
@@ -2738,19 +2760,20 @@
             // labPesquisarUtilizador
             // 
             this.labPesquisarUtilizador.AutoSize = true;
-            this.labPesquisarUtilizador.Location = new System.Drawing.Point(11, 44);
+            this.labPesquisarUtilizador.Location = new System.Drawing.Point(8, 36);
+            this.labPesquisarUtilizador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labPesquisarUtilizador.Name = "labPesquisarUtilizador";
-            this.labPesquisarUtilizador.Size = new System.Drawing.Size(70, 17);
+            this.labPesquisarUtilizador.Size = new System.Drawing.Size(53, 13);
             this.labPesquisarUtilizador.TabIndex = 8;
             this.labPesquisarUtilizador.Text = "Pesquise:";
             // 
             // btnAlterarUtilizador
             // 
             this.btnAlterarUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterarUtilizador.Location = new System.Drawing.Point(512, 447);
-            this.btnAlterarUtilizador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAlterarUtilizador.Location = new System.Drawing.Point(384, 359);
+            this.btnAlterarUtilizador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAlterarUtilizador.Name = "btnAlterarUtilizador";
-            this.btnAlterarUtilizador.Size = new System.Drawing.Size(77, 30);
+            this.btnAlterarUtilizador.Size = new System.Drawing.Size(58, 24);
             this.btnAlterarUtilizador.TabIndex = 5;
             this.btnAlterarUtilizador.Text = "Alterar";
             this.btnAlterarUtilizador.UseVisualStyleBackColor = true;
@@ -2765,22 +2788,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGUtilizadoresLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGUtilizadoresLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGUtilizadoresLista.Location = new System.Drawing.Point(19, 84);
-            this.dgvGUtilizadoresLista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvGUtilizadoresLista.Location = new System.Drawing.Point(14, 68);
+            this.dgvGUtilizadoresLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvGUtilizadoresLista.Name = "dgvGUtilizadoresLista";
             this.dgvGUtilizadoresLista.ReadOnly = true;
             this.dgvGUtilizadoresLista.RowTemplate.Height = 24;
             this.dgvGUtilizadoresLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGUtilizadoresLista.Size = new System.Drawing.Size(659, 347);
+            this.dgvGUtilizadoresLista.Size = new System.Drawing.Size(494, 278);
             this.dgvGUtilizadoresLista.TabIndex = 3;
             // 
             // btnInserirUtilizador
             // 
             this.btnInserirUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInserirUtilizador.Location = new System.Drawing.Point(424, 447);
-            this.btnInserirUtilizador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInserirUtilizador.Location = new System.Drawing.Point(318, 359);
+            this.btnInserirUtilizador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInserirUtilizador.Name = "btnInserirUtilizador";
-            this.btnInserirUtilizador.Size = new System.Drawing.Size(83, 30);
+            this.btnInserirUtilizador.Size = new System.Drawing.Size(62, 24);
             this.btnInserirUtilizador.TabIndex = 4;
             this.btnInserirUtilizador.Text = "Inserir";
             this.btnInserirUtilizador.UseVisualStyleBackColor = true;
@@ -2790,10 +2813,10 @@
             // 
             this.txtGUtilizadoresPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGUtilizadoresPesquisa.Location = new System.Drawing.Point(87, 42);
-            this.txtGUtilizadoresPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGUtilizadoresPesquisa.Location = new System.Drawing.Point(65, 34);
+            this.txtGUtilizadoresPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGUtilizadoresPesquisa.Name = "txtGUtilizadoresPesquisa";
-            this.txtGUtilizadoresPesquisa.Size = new System.Drawing.Size(588, 22);
+            this.txtGUtilizadoresPesquisa.Size = new System.Drawing.Size(442, 20);
             this.txtGUtilizadoresPesquisa.TabIndex = 6;
             this.txtGUtilizadoresPesquisa.TextChanged += new System.EventHandler(this.PesquisarUtilizador);
             // 
@@ -2809,11 +2832,11 @@
             this.gbGAdministradorForm.Controls.Add(this.labEmailAdministrador);
             this.gbGAdministradorForm.Controls.Add(this.labPasswordAdministrador);
             this.gbGAdministradorForm.Controls.Add(this.labUsernameAdministrador);
-            this.gbGAdministradorForm.Location = new System.Drawing.Point(704, 0);
-            this.gbGAdministradorForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGAdministradorForm.Location = new System.Drawing.Point(528, 0);
+            this.gbGAdministradorForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGAdministradorForm.Name = "gbGAdministradorForm";
-            this.gbGAdministradorForm.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGAdministradorForm.Size = new System.Drawing.Size(325, 489);
+            this.gbGAdministradorForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGAdministradorForm.Size = new System.Drawing.Size(244, 393);
             this.gbGAdministradorForm.TabIndex = 1;
             this.gbGAdministradorForm.TabStop = false;
             this.gbGAdministradorForm.Text = "Campos";
@@ -2822,10 +2845,10 @@
             // btnCancelarAdministrador
             // 
             this.btnCancelarAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarAdministrador.Location = new System.Drawing.Point(215, 446);
-            this.btnCancelarAdministrador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelarAdministrador.Location = new System.Drawing.Point(161, 358);
+            this.btnCancelarAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelarAdministrador.Name = "btnCancelarAdministrador";
-            this.btnCancelarAdministrador.Size = new System.Drawing.Size(83, 31);
+            this.btnCancelarAdministrador.Size = new System.Drawing.Size(62, 25);
             this.btnCancelarAdministrador.TabIndex = 15;
             this.btnCancelarAdministrador.Text = "Cancelar";
             this.btnCancelarAdministrador.UseVisualStyleBackColor = true;
@@ -2834,10 +2857,10 @@
             // btnAcaoAdministrador
             // 
             this.btnAcaoAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAcaoAdministrador.Location = new System.Drawing.Point(129, 446);
-            this.btnAcaoAdministrador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAcaoAdministrador.Location = new System.Drawing.Point(97, 358);
+            this.btnAcaoAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAcaoAdministrador.Name = "btnAcaoAdministrador";
-            this.btnAcaoAdministrador.Size = new System.Drawing.Size(80, 31);
+            this.btnAcaoAdministrador.Size = new System.Drawing.Size(60, 25);
             this.btnAcaoAdministrador.TabIndex = 14;
             this.btnAcaoAdministrador.Text = "Ação";
             this.btnAcaoAdministrador.UseVisualStyleBackColor = true;
@@ -2845,53 +2868,56 @@
             // 
             // txtEmailAdministrador
             // 
-            this.txtEmailAdministrador.Location = new System.Drawing.Point(68, 118);
-            this.txtEmailAdministrador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmailAdministrador.Location = new System.Drawing.Point(51, 96);
+            this.txtEmailAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtEmailAdministrador.Name = "txtEmailAdministrador";
-            this.txtEmailAdministrador.Size = new System.Drawing.Size(228, 22);
+            this.txtEmailAdministrador.Size = new System.Drawing.Size(172, 20);
             this.txtEmailAdministrador.TabIndex = 13;
             // 
             // txtPasswordAdministrador
             // 
-            this.txtPasswordAdministrador.Location = new System.Drawing.Point(96, 80);
-            this.txtPasswordAdministrador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPasswordAdministrador.Location = new System.Drawing.Point(72, 65);
+            this.txtPasswordAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPasswordAdministrador.Name = "txtPasswordAdministrador";
-            this.txtPasswordAdministrador.Size = new System.Drawing.Size(200, 22);
+            this.txtPasswordAdministrador.Size = new System.Drawing.Size(151, 20);
             this.txtPasswordAdministrador.TabIndex = 8;
             this.txtPasswordAdministrador.UseSystemPasswordChar = true;
             // 
             // txtUsernameAdministrador
             // 
-            this.txtUsernameAdministrador.Location = new System.Drawing.Point(99, 47);
-            this.txtUsernameAdministrador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsernameAdministrador.Location = new System.Drawing.Point(74, 38);
+            this.txtUsernameAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsernameAdministrador.Name = "txtUsernameAdministrador";
-            this.txtUsernameAdministrador.Size = new System.Drawing.Size(197, 22);
+            this.txtUsernameAdministrador.Size = new System.Drawing.Size(149, 20);
             this.txtUsernameAdministrador.TabIndex = 7;
             // 
             // labEmailAdministrador
             // 
             this.labEmailAdministrador.AutoSize = true;
-            this.labEmailAdministrador.Location = new System.Drawing.Point(20, 122);
+            this.labEmailAdministrador.Location = new System.Drawing.Point(15, 99);
+            this.labEmailAdministrador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labEmailAdministrador.Name = "labEmailAdministrador";
-            this.labEmailAdministrador.Size = new System.Drawing.Size(42, 17);
+            this.labEmailAdministrador.Size = new System.Drawing.Size(32, 13);
             this.labEmailAdministrador.TabIndex = 6;
             this.labEmailAdministrador.Text = "Email";
             // 
             // labPasswordAdministrador
             // 
             this.labPasswordAdministrador.AutoSize = true;
-            this.labPasswordAdministrador.Location = new System.Drawing.Point(20, 84);
+            this.labPasswordAdministrador.Location = new System.Drawing.Point(15, 68);
+            this.labPasswordAdministrador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labPasswordAdministrador.Name = "labPasswordAdministrador";
-            this.labPasswordAdministrador.Size = new System.Drawing.Size(69, 17);
+            this.labPasswordAdministrador.Size = new System.Drawing.Size(53, 13);
             this.labPasswordAdministrador.TabIndex = 2;
             this.labPasswordAdministrador.Text = "Password";
             // 
             // labUsernameAdministrador
             // 
             this.labUsernameAdministrador.AutoSize = true;
-            this.labUsernameAdministrador.Location = new System.Drawing.Point(20, 50);
+            this.labUsernameAdministrador.Location = new System.Drawing.Point(15, 41);
+            this.labUsernameAdministrador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labUsernameAdministrador.Name = "labUsernameAdministrador";
-            this.labUsernameAdministrador.Size = new System.Drawing.Size(73, 17);
+            this.labUsernameAdministrador.Size = new System.Drawing.Size(55, 13);
             this.labUsernameAdministrador.TabIndex = 1;
             this.labUsernameAdministrador.Text = "Username";
             // 
@@ -2911,11 +2937,11 @@
             this.gbGArbitroForm.Controls.Add(this.btnProcurarAvatar);
             this.gbGArbitroForm.Controls.Add(this.btnAcaoArbitro);
             this.gbGArbitroForm.Controls.Add(this.btnCancelarArbitro);
-            this.gbGArbitroForm.Location = new System.Drawing.Point(704, 0);
-            this.gbGArbitroForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGArbitroForm.Location = new System.Drawing.Point(528, 0);
+            this.gbGArbitroForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbGArbitroForm.Name = "gbGArbitroForm";
-            this.gbGArbitroForm.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGArbitroForm.Size = new System.Drawing.Size(325, 489);
+            this.gbGArbitroForm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGArbitroForm.Size = new System.Drawing.Size(244, 393);
             this.gbGArbitroForm.TabIndex = 16;
             this.gbGArbitroForm.TabStop = false;
             this.gbGArbitroForm.Text = "Campos";
@@ -2923,10 +2949,9 @@
             // 
             // pbAvatarArbitro
             // 
-            this.pbAvatarArbitro.Location = new System.Drawing.Point(75, 185);
-            this.pbAvatarArbitro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbAvatarArbitro.Location = new System.Drawing.Point(56, 150);
             this.pbAvatarArbitro.Name = "pbAvatarArbitro";
-            this.pbAvatarArbitro.Size = new System.Drawing.Size(120, 111);
+            this.pbAvatarArbitro.Size = new System.Drawing.Size(90, 90);
             this.pbAvatarArbitro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbAvatarArbitro.TabIndex = 16;
             this.pbAvatarArbitro.TabStop = false;
@@ -2934,78 +2959,82 @@
             // labUsernameArbitro
             // 
             this.labUsernameArbitro.AutoSize = true;
-            this.labUsernameArbitro.Location = new System.Drawing.Point(20, 50);
+            this.labUsernameArbitro.Location = new System.Drawing.Point(15, 41);
+            this.labUsernameArbitro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labUsernameArbitro.Name = "labUsernameArbitro";
-            this.labUsernameArbitro.Size = new System.Drawing.Size(73, 17);
+            this.labUsernameArbitro.Size = new System.Drawing.Size(55, 13);
             this.labUsernameArbitro.TabIndex = 1;
             this.labUsernameArbitro.Text = "Username";
             // 
             // txtUsernameArbitro
             // 
-            this.txtUsernameArbitro.Location = new System.Drawing.Point(99, 47);
-            this.txtUsernameArbitro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsernameArbitro.Location = new System.Drawing.Point(74, 38);
+            this.txtUsernameArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsernameArbitro.Name = "txtUsernameArbitro";
-            this.txtUsernameArbitro.Size = new System.Drawing.Size(197, 22);
+            this.txtUsernameArbitro.Size = new System.Drawing.Size(149, 20);
             this.txtUsernameArbitro.TabIndex = 7;
             // 
             // labPasswordArbitro
             // 
             this.labPasswordArbitro.AutoSize = true;
-            this.labPasswordArbitro.Location = new System.Drawing.Point(20, 84);
+            this.labPasswordArbitro.Location = new System.Drawing.Point(15, 68);
+            this.labPasswordArbitro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labPasswordArbitro.Name = "labPasswordArbitro";
-            this.labPasswordArbitro.Size = new System.Drawing.Size(69, 17);
+            this.labPasswordArbitro.Size = new System.Drawing.Size(53, 13);
             this.labPasswordArbitro.TabIndex = 2;
             this.labPasswordArbitro.Text = "Password";
             // 
             // txtPasswordArbitro
             // 
-            this.txtPasswordArbitro.Location = new System.Drawing.Point(96, 80);
-            this.txtPasswordArbitro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPasswordArbitro.Location = new System.Drawing.Point(72, 65);
+            this.txtPasswordArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPasswordArbitro.Name = "txtPasswordArbitro";
-            this.txtPasswordArbitro.Size = new System.Drawing.Size(200, 22);
+            this.txtPasswordArbitro.Size = new System.Drawing.Size(151, 20);
             this.txtPasswordArbitro.TabIndex = 8;
             this.txtPasswordArbitro.UseSystemPasswordChar = true;
             // 
             // labNomeArbitro
             // 
             this.labNomeArbitro.AutoSize = true;
-            this.labNomeArbitro.Location = new System.Drawing.Point(20, 121);
+            this.labNomeArbitro.Location = new System.Drawing.Point(15, 98);
+            this.labNomeArbitro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labNomeArbitro.Name = "labNomeArbitro";
-            this.labNomeArbitro.Size = new System.Drawing.Size(45, 17);
+            this.labNomeArbitro.Size = new System.Drawing.Size(35, 13);
             this.labNomeArbitro.TabIndex = 3;
             this.labNomeArbitro.Text = "Nome";
             // 
             // txtNomeArbitro
             // 
-            this.txtNomeArbitro.Location = new System.Drawing.Point(72, 117);
-            this.txtNomeArbitro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNomeArbitro.Location = new System.Drawing.Point(54, 95);
+            this.txtNomeArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomeArbitro.Name = "txtNomeArbitro";
-            this.txtNomeArbitro.Size = new System.Drawing.Size(224, 22);
+            this.txtNomeArbitro.Size = new System.Drawing.Size(169, 20);
             this.txtNomeArbitro.TabIndex = 10;
             // 
             // labAvatarArbitro
             // 
             this.labAvatarArbitro.AutoSize = true;
-            this.labAvatarArbitro.Location = new System.Drawing.Point(20, 158);
+            this.labAvatarArbitro.Location = new System.Drawing.Point(15, 128);
+            this.labAvatarArbitro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labAvatarArbitro.Name = "labAvatarArbitro";
-            this.labAvatarArbitro.Size = new System.Drawing.Size(49, 17);
+            this.labAvatarArbitro.Size = new System.Drawing.Size(38, 13);
             this.labAvatarArbitro.TabIndex = 5;
             this.labAvatarArbitro.Text = "Avatar";
             // 
             // txtAvatarArbitro
             // 
-            this.txtAvatarArbitro.Location = new System.Drawing.Point(75, 154);
-            this.txtAvatarArbitro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAvatarArbitro.Location = new System.Drawing.Point(56, 125);
+            this.txtAvatarArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAvatarArbitro.Name = "txtAvatarArbitro";
-            this.txtAvatarArbitro.Size = new System.Drawing.Size(132, 22);
+            this.txtAvatarArbitro.Size = new System.Drawing.Size(100, 20);
             this.txtAvatarArbitro.TabIndex = 11;
             // 
             // btnProcurarAvatar
             // 
-            this.btnProcurarAvatar.Location = new System.Drawing.Point(215, 154);
-            this.btnProcurarAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnProcurarAvatar.Location = new System.Drawing.Point(161, 125);
+            this.btnProcurarAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProcurarAvatar.Name = "btnProcurarAvatar";
-            this.btnProcurarAvatar.Size = new System.Drawing.Size(83, 25);
+            this.btnProcurarAvatar.Size = new System.Drawing.Size(62, 20);
             this.btnProcurarAvatar.TabIndex = 12;
             this.btnProcurarAvatar.Text = "Procurar";
             this.btnProcurarAvatar.UseVisualStyleBackColor = true;
@@ -3014,10 +3043,10 @@
             // btnAcaoArbitro
             // 
             this.btnAcaoArbitro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAcaoArbitro.Location = new System.Drawing.Point(129, 446);
-            this.btnAcaoArbitro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAcaoArbitro.Location = new System.Drawing.Point(97, 358);
+            this.btnAcaoArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAcaoArbitro.Name = "btnAcaoArbitro";
-            this.btnAcaoArbitro.Size = new System.Drawing.Size(80, 31);
+            this.btnAcaoArbitro.Size = new System.Drawing.Size(60, 25);
             this.btnAcaoArbitro.TabIndex = 14;
             this.btnAcaoArbitro.Text = "Ação";
             this.btnAcaoArbitro.UseVisualStyleBackColor = true;
@@ -3026,10 +3055,10 @@
             // btnCancelarArbitro
             // 
             this.btnCancelarArbitro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarArbitro.Location = new System.Drawing.Point(215, 446);
-            this.btnCancelarArbitro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelarArbitro.Location = new System.Drawing.Point(161, 358);
+            this.btnCancelarArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelarArbitro.Name = "btnCancelarArbitro";
-            this.btnCancelarArbitro.Size = new System.Drawing.Size(83, 31);
+            this.btnCancelarArbitro.Size = new System.Drawing.Size(62, 25);
             this.btnCancelarArbitro.TabIndex = 15;
             this.btnCancelarArbitro.Text = "Cancelar";
             this.btnCancelarArbitro.UseVisualStyleBackColor = true;
@@ -3038,11 +3067,11 @@
             // tbVer
             // 
             this.tbVer.Controls.Add(this.tcVer);
-            this.tbVer.Location = new System.Drawing.Point(4, 25);
-            this.tbVer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbVer.Location = new System.Drawing.Point(4, 22);
+            this.tbVer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbVer.Name = "tbVer";
-            this.tbVer.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbVer.Size = new System.Drawing.Size(1051, 517);
+            this.tbVer.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVer.Size = new System.Drawing.Size(788, 425);
             this.tbVer.TabIndex = 1;
             this.tbVer.Text = "Ver";
             this.tbVer.UseVisualStyleBackColor = true;
@@ -3056,11 +3085,11 @@
             this.tcVer.Controls.Add(this.tbVerBaralhos);
             this.tcVer.Controls.Add(this.tbVerUtilizadores);
             this.tcVer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcVer.Location = new System.Drawing.Point(3, 2);
-            this.tcVer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tcVer.Location = new System.Drawing.Point(2, 2);
+            this.tcVer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcVer.Name = "tcVer";
             this.tcVer.SelectedIndex = 0;
-            this.tcVer.Size = new System.Drawing.Size(1045, 513);
+            this.tcVer.Size = new System.Drawing.Size(784, 421);
             this.tcVer.TabIndex = 0;
             this.tcVer.Enter += new System.EventHandler(this.TabPesquisaUtilizadores);
             // 
@@ -3075,88 +3104,80 @@
             this.tbVerJogadores.Controls.Add(this.txtNomeJogador2);
             this.tbVerJogadores.Controls.Add(this.label37);
             this.tbVerJogadores.Controls.Add(this.dgvGListaJogadoresPesquisa);
-            this.tbVerJogadores.Location = new System.Drawing.Point(4, 25);
-            this.tbVerJogadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbVerJogadores.Location = new System.Drawing.Point(4, 22);
+            this.tbVerJogadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbVerJogadores.Name = "tbVerJogadores";
-            this.tbVerJogadores.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbVerJogadores.Size = new System.Drawing.Size(1037, 484);
+            this.tbVerJogadores.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerJogadores.Size = new System.Drawing.Size(776, 395);
             this.tbVerJogadores.TabIndex = 0;
             this.tbVerJogadores.Text = "Jogadores";
             this.tbVerJogadores.UseVisualStyleBackColor = true;
             // 
             // nudIdadeJogador2
             // 
-            this.nudIdadeJogador2.Location = new System.Drawing.Point(631, 98);
-            this.nudIdadeJogador2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudIdadeJogador2.Location = new System.Drawing.Point(473, 80);
             this.nudIdadeJogador2.Name = "nudIdadeJogador2";
-            this.nudIdadeJogador2.Size = new System.Drawing.Size(84, 22);
+            this.nudIdadeJogador2.Size = new System.Drawing.Size(63, 20);
             this.nudIdadeJogador2.TabIndex = 23;
             this.nudIdadeJogador2.ValueChanged += new System.EventHandler(this.pesquisarJogadores);
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(561, 101);
-            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label39.Location = new System.Drawing.Point(421, 82);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(47, 17);
+            this.label39.Size = new System.Drawing.Size(37, 13);
             this.label39.TabIndex = 22;
             this.label39.Text = "Idade:";
             // 
             // txtNicknameJogador2
             // 
-            this.txtNicknameJogador2.Location = new System.Drawing.Point(124, 94);
-            this.txtNicknameJogador2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNicknameJogador2.Location = new System.Drawing.Point(93, 76);
             this.txtNicknameJogador2.Name = "txtNicknameJogador2";
-            this.txtNicknameJogador2.Size = new System.Drawing.Size(372, 22);
+            this.txtNicknameJogador2.Size = new System.Drawing.Size(280, 20);
             this.txtNicknameJogador2.TabIndex = 21;
             this.txtNicknameJogador2.TextChanged += new System.EventHandler(this.pesquisarJogadores);
             // 
             // txtnickname
             // 
             this.txtnickname.AutoSize = true;
-            this.txtnickname.Location = new System.Drawing.Point(45, 97);
-            this.txtnickname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtnickname.Location = new System.Drawing.Point(34, 79);
             this.txtnickname.Name = "txtnickname";
-            this.txtnickname.Size = new System.Drawing.Size(74, 17);
+            this.txtnickname.Size = new System.Drawing.Size(58, 13);
             this.txtnickname.TabIndex = 20;
             this.txtnickname.Text = "Nickname:";
             // 
             // txtEmailJogador2
             // 
-            this.txtEmailJogador2.Location = new System.Drawing.Point(631, 33);
-            this.txtEmailJogador2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmailJogador2.Location = new System.Drawing.Point(473, 27);
             this.txtEmailJogador2.Name = "txtEmailJogador2";
-            this.txtEmailJogador2.Size = new System.Drawing.Size(339, 22);
+            this.txtEmailJogador2.Size = new System.Drawing.Size(255, 20);
             this.txtEmailJogador2.TabIndex = 19;
             this.txtEmailJogador2.TextChanged += new System.EventHandler(this.pesquisarJogadores);
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(561, 37);
-            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label38.Location = new System.Drawing.Point(421, 30);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(46, 17);
+            this.label38.Size = new System.Drawing.Size(35, 13);
             this.label38.TabIndex = 18;
             this.label38.Text = "Email:";
             // 
             // txtNomeJogador2
             // 
-            this.txtNomeJogador2.Location = new System.Drawing.Point(124, 33);
-            this.txtNomeJogador2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNomeJogador2.Location = new System.Drawing.Point(93, 27);
             this.txtNomeJogador2.Name = "txtNomeJogador2";
-            this.txtNomeJogador2.Size = new System.Drawing.Size(372, 22);
+            this.txtNomeJogador2.Size = new System.Drawing.Size(280, 20);
             this.txtNomeJogador2.TabIndex = 17;
             this.txtNomeJogador2.TextChanged += new System.EventHandler(this.pesquisarJogadores);
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(45, 37);
-            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label37.Location = new System.Drawing.Point(34, 30);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(49, 17);
+            this.label37.Size = new System.Drawing.Size(38, 13);
             this.label37.TabIndex = 16;
             this.label37.Text = "Nome:";
             // 
@@ -3175,13 +3196,12 @@
             this.ageDataGridViewTextBoxColumn1,
             this.avatarDataGridViewTextBoxColumn2});
             this.dgvGListaJogadoresPesquisa.DataSource = this.playerSetBindingSource;
-            this.dgvGListaJogadoresPesquisa.Location = new System.Drawing.Point(31, 142);
-            this.dgvGListaJogadoresPesquisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvGListaJogadoresPesquisa.Location = new System.Drawing.Point(23, 115);
             this.dgvGListaJogadoresPesquisa.Name = "dgvGListaJogadoresPesquisa";
             this.dgvGListaJogadoresPesquisa.ReadOnly = true;
             this.dgvGListaJogadoresPesquisa.RowHeadersVisible = false;
             this.dgvGListaJogadoresPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGListaJogadoresPesquisa.Size = new System.Drawing.Size(971, 320);
+            this.dgvGListaJogadoresPesquisa.Size = new System.Drawing.Size(728, 260);
             this.dgvGListaJogadoresPesquisa.TabIndex = 14;
             // 
             // idDataGridViewTextBoxColumn6
@@ -3234,21 +3254,20 @@
             this.tbVerEquipas.Controls.Add(this.tbxnomeequipapesquisa);
             this.tbVerEquipas.Controls.Add(this.label40);
             this.tbVerEquipas.Controls.Add(this.dgvGListaEquipasPesquisa);
-            this.tbVerEquipas.Location = new System.Drawing.Point(4, 25);
-            this.tbVerEquipas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbVerEquipas.Location = new System.Drawing.Point(4, 22);
+            this.tbVerEquipas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbVerEquipas.Name = "tbVerEquipas";
-            this.tbVerEquipas.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbVerEquipas.Size = new System.Drawing.Size(1037, 492);
+            this.tbVerEquipas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerEquipas.Size = new System.Drawing.Size(776, 391);
             this.tbVerEquipas.TabIndex = 1;
             this.tbVerEquipas.Text = "Equipas";
             this.tbVerEquipas.UseVisualStyleBackColor = true;
             // 
             // btlimpar
             // 
-            this.btlimpar.Location = new System.Drawing.Point(795, 42);
-            this.btlimpar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btlimpar.Location = new System.Drawing.Point(596, 34);
             this.btlimpar.Name = "btlimpar";
-            this.btlimpar.Size = new System.Drawing.Size(100, 28);
+            this.btlimpar.Size = new System.Drawing.Size(75, 23);
             this.btlimpar.TabIndex = 11;
             this.btlimpar.Text = "Limpar";
             this.btlimpar.UseVisualStyleBackColor = true;
@@ -3258,29 +3277,26 @@
             // 
             this.cbnomejogadorpesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbnomejogadorpesquisa.FormattingEnabled = true;
-            this.cbnomejogadorpesquisa.Location = new System.Drawing.Point(585, 44);
-            this.cbnomejogadorpesquisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbnomejogadorpesquisa.Location = new System.Drawing.Point(439, 36);
             this.cbnomejogadorpesquisa.Name = "cbnomejogadorpesquisa";
-            this.cbnomejogadorpesquisa.Size = new System.Drawing.Size(173, 24);
+            this.cbnomejogadorpesquisa.Size = new System.Drawing.Size(131, 21);
             this.cbnomejogadorpesquisa.TabIndex = 10;
             this.cbnomejogadorpesquisa.SelectedIndexChanged += new System.EventHandler(this.pesquisarEquipas);
             // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(453, 48);
-            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label41.Location = new System.Drawing.Point(340, 39);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(124, 17);
+            this.label41.Size = new System.Drawing.Size(93, 13);
             this.label41.TabIndex = 9;
             this.label41.Text = "Contém o jogador:";
             // 
             // tbxnomeequipapesquisa
             // 
-            this.tbxnomeequipapesquisa.Location = new System.Drawing.Point(123, 44);
-            this.tbxnomeequipapesquisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxnomeequipapesquisa.Location = new System.Drawing.Point(92, 36);
             this.tbxnomeequipapesquisa.Name = "tbxnomeequipapesquisa";
-            this.tbxnomeequipapesquisa.Size = new System.Drawing.Size(281, 22);
+            this.tbxnomeequipapesquisa.Size = new System.Drawing.Size(212, 20);
             this.tbxnomeequipapesquisa.TabIndex = 8;
             this.tbxnomeequipapesquisa.Click += new System.EventHandler(this.pesquisarEquipas);
             this.tbxnomeequipapesquisa.TextChanged += new System.EventHandler(this.pesquisarEquipas);
@@ -3288,10 +3304,9 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(64, 48);
-            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label40.Location = new System.Drawing.Point(48, 39);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(49, 17);
+            this.label40.Size = new System.Drawing.Size(38, 13);
             this.label40.TabIndex = 7;
             this.label40.Text = "Nome:";
             // 
@@ -3310,13 +3325,12 @@
             this.nameDataGridViewTextBoxColumn7,
             this.avatarDataGridViewTextBoxColumn3});
             this.dgvGListaEquipasPesquisa.DataSource = this.teamSetBindingSource;
-            this.dgvGListaEquipasPesquisa.Location = new System.Drawing.Point(44, 116);
-            this.dgvGListaEquipasPesquisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvGListaEquipasPesquisa.Location = new System.Drawing.Point(33, 94);
             this.dgvGListaEquipasPesquisa.Name = "dgvGListaEquipasPesquisa";
             this.dgvGListaEquipasPesquisa.ReadOnly = true;
             this.dgvGListaEquipasPesquisa.RowHeadersVisible = false;
             this.dgvGListaEquipasPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGListaEquipasPesquisa.Size = new System.Drawing.Size(971, 375);
+            this.dgvGListaEquipasPesquisa.Size = new System.Drawing.Size(728, 301);
             this.dgvGListaEquipasPesquisa.TabIndex = 6;
             // 
             // idDataGridViewTextBoxColumn7
@@ -3346,11 +3360,11 @@
             this.tbVerTorneios.Controls.Add(this.gbResultadosTorneios);
             this.tbVerTorneios.Controls.Add(this.gbPesquisarJogos);
             this.tbVerTorneios.Controls.Add(this.gbPesquisarTorneios);
-            this.tbVerTorneios.Location = new System.Drawing.Point(4, 25);
-            this.tbVerTorneios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbVerTorneios.Location = new System.Drawing.Point(4, 22);
+            this.tbVerTorneios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbVerTorneios.Name = "tbVerTorneios";
-            this.tbVerTorneios.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbVerTorneios.Size = new System.Drawing.Size(1037, 484);
+            this.tbVerTorneios.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerTorneios.Size = new System.Drawing.Size(776, 395);
             this.tbVerTorneios.TabIndex = 2;
             this.tbVerTorneios.Text = "Torneios";
             this.tbVerTorneios.UseVisualStyleBackColor = true;
@@ -3359,11 +3373,9 @@
             // gbResultadosJogos
             // 
             this.gbResultadosJogos.Controls.Add(this.dgvResultadosJogos);
-            this.gbResultadosJogos.Location = new System.Drawing.Point(567, 272);
-            this.gbResultadosJogos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbResultadosJogos.Location = new System.Drawing.Point(425, 221);
             this.gbResultadosJogos.Name = "gbResultadosJogos";
-            this.gbResultadosJogos.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbResultadosJogos.Size = new System.Drawing.Size(461, 210);
+            this.gbResultadosJogos.Size = new System.Drawing.Size(346, 171);
             this.gbResultadosJogos.TabIndex = 3;
             this.gbResultadosJogos.TabStop = false;
             this.gbResultadosJogos.Text = "Resultados";
@@ -3371,20 +3383,17 @@
             // dgvResultadosJogos
             // 
             this.dgvResultadosJogos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultadosJogos.Location = new System.Drawing.Point(8, 23);
-            this.dgvResultadosJogos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvResultadosJogos.Location = new System.Drawing.Point(6, 19);
             this.dgvResultadosJogos.Name = "dgvResultadosJogos";
-            this.dgvResultadosJogos.Size = new System.Drawing.Size(445, 180);
+            this.dgvResultadosJogos.Size = new System.Drawing.Size(334, 146);
             this.dgvResultadosJogos.TabIndex = 0;
             // 
             // gbResultadosTorneios
             // 
             this.gbResultadosTorneios.Controls.Add(this.dgvResultadosTorneios);
-            this.gbResultadosTorneios.Location = new System.Drawing.Point(567, 6);
-            this.gbResultadosTorneios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbResultadosTorneios.Location = new System.Drawing.Point(425, 5);
             this.gbResultadosTorneios.Name = "gbResultadosTorneios";
-            this.gbResultadosTorneios.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbResultadosTorneios.Size = new System.Drawing.Size(461, 258);
+            this.gbResultadosTorneios.Size = new System.Drawing.Size(346, 210);
             this.gbResultadosTorneios.TabIndex = 2;
             this.gbResultadosTorneios.TabStop = false;
             this.gbResultadosTorneios.Text = "Resultados";
@@ -3392,10 +3401,9 @@
             // dgvResultadosTorneios
             // 
             this.dgvResultadosTorneios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultadosTorneios.Location = new System.Drawing.Point(8, 23);
-            this.dgvResultadosTorneios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvResultadosTorneios.Location = new System.Drawing.Point(6, 19);
             this.dgvResultadosTorneios.Name = "dgvResultadosTorneios";
-            this.dgvResultadosTorneios.Size = new System.Drawing.Size(445, 228);
+            this.dgvResultadosTorneios.Size = new System.Drawing.Size(334, 185);
             this.dgvResultadosTorneios.TabIndex = 0;
             // 
             // gbPesquisarJogos
@@ -3415,11 +3423,9 @@
             this.gbPesquisarJogos.Controls.Add(this.label21);
             this.gbPesquisarJogos.Controls.Add(this.labJogoJogadorEquipa);
             this.gbPesquisarJogos.Controls.Add(this.label19);
-            this.gbPesquisarJogos.Location = new System.Drawing.Point(7, 272);
-            this.gbPesquisarJogos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbPesquisarJogos.Location = new System.Drawing.Point(5, 221);
             this.gbPesquisarJogos.Name = "gbPesquisarJogos";
-            this.gbPesquisarJogos.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbPesquisarJogos.Size = new System.Drawing.Size(552, 210);
+            this.gbPesquisarJogos.Size = new System.Drawing.Size(414, 171);
             this.gbPesquisarJogos.TabIndex = 1;
             this.gbPesquisarJogos.TabStop = false;
             this.gbPesquisarJogos.Text = "Jogos";
@@ -3427,53 +3433,48 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(344, 74);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Location = new System.Drawing.Point(258, 60);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(38, 17);
+            this.label23.Size = new System.Drawing.Size(30, 13);
             this.label23.TabIndex = 13;
             this.label23.Text = "Data";
             // 
             // dtpJogoData
             // 
             this.dtpJogoData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpJogoData.Location = new System.Drawing.Point(392, 70);
-            this.dtpJogoData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpJogoData.Location = new System.Drawing.Point(294, 57);
             this.dtpJogoData.Name = "dtpJogoData";
-            this.dtpJogoData.Size = new System.Drawing.Size(128, 22);
+            this.dtpJogoData.Size = new System.Drawing.Size(97, 20);
             this.dtpJogoData.TabIndex = 12;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(344, 39);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Location = new System.Drawing.Point(258, 32);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(23, 17);
+            this.label20.Size = new System.Drawing.Size(19, 13);
             this.label20.TabIndex = 11;
             this.label20.Text = "Nº";
             // 
             // nupJogoNumero
             // 
-            this.nupJogoNumero.Location = new System.Drawing.Point(392, 36);
-            this.nupJogoNumero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nupJogoNumero.Location = new System.Drawing.Point(294, 29);
             this.nupJogoNumero.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.nupJogoNumero.Name = "nupJogoNumero";
-            this.nupJogoNumero.Size = new System.Drawing.Size(44, 22);
+            this.nupJogoNumero.Size = new System.Drawing.Size(33, 20);
             this.nupJogoNumero.TabIndex = 10;
             this.nupJogoNumero.ValueChanged += new System.EventHandler(this.PesquisarJogos);
             // 
             // radioPesquisarJogosStandard
             // 
             this.radioPesquisarJogosStandard.AutoSize = true;
-            this.radioPesquisarJogosStandard.Location = new System.Drawing.Point(81, 182);
-            this.radioPesquisarJogosStandard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioPesquisarJogosStandard.Location = new System.Drawing.Point(61, 148);
             this.radioPesquisarJogosStandard.Name = "radioPesquisarJogosStandard";
-            this.radioPesquisarJogosStandard.Size = new System.Drawing.Size(87, 21);
+            this.radioPesquisarJogosStandard.Size = new System.Drawing.Size(68, 17);
             this.radioPesquisarJogosStandard.TabIndex = 9;
             this.radioPesquisarJogosStandard.TabStop = true;
             this.radioPesquisarJogosStandard.Text = "Standard";
@@ -3483,10 +3484,9 @@
             // radioPesquisarJogosTeam
             // 
             this.radioPesquisarJogosTeam.AutoSize = true;
-            this.radioPesquisarJogosTeam.Location = new System.Drawing.Point(8, 182);
-            this.radioPesquisarJogosTeam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioPesquisarJogosTeam.Location = new System.Drawing.Point(6, 148);
             this.radioPesquisarJogosTeam.Name = "radioPesquisarJogosTeam";
-            this.radioPesquisarJogosTeam.Size = new System.Drawing.Size(65, 21);
+            this.radioPesquisarJogosTeam.Size = new System.Drawing.Size(52, 17);
             this.radioPesquisarJogosTeam.TabIndex = 8;
             this.radioPesquisarJogosTeam.TabStop = true;
             this.radioPesquisarJogosTeam.Text = "Team";
@@ -3495,10 +3495,9 @@
             // 
             // btnLimparJogos
             // 
-            this.btnLimparJogos.Location = new System.Drawing.Point(421, 164);
-            this.btnLimparJogos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimparJogos.Location = new System.Drawing.Point(316, 133);
             this.btnLimparJogos.Name = "btnLimparJogos";
-            this.btnLimparJogos.Size = new System.Drawing.Size(100, 28);
+            this.btnLimparJogos.Size = new System.Drawing.Size(75, 23);
             this.btnLimparJogos.TabIndex = 7;
             this.btnLimparJogos.Text = "Limpar";
             this.btnLimparJogos.UseVisualStyleBackColor = true;
@@ -3506,80 +3505,72 @@
             // 
             // txtJogoNome
             // 
-            this.txtJogoNome.Location = new System.Drawing.Point(108, 36);
-            this.txtJogoNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtJogoNome.Location = new System.Drawing.Point(81, 29);
             this.txtJogoNome.Name = "txtJogoNome";
-            this.txtJogoNome.Size = new System.Drawing.Size(211, 22);
+            this.txtJogoNome.Size = new System.Drawing.Size(159, 20);
             this.txtJogoNome.TabIndex = 7;
             this.txtJogoNome.TextChanged += new System.EventHandler(this.PesquisarJogos);
             // 
             // comboJogoArbitro
             // 
             this.comboJogoArbitro.FormattingEnabled = true;
-            this.comboJogoArbitro.Location = new System.Drawing.Point(140, 138);
-            this.comboJogoArbitro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboJogoArbitro.Location = new System.Drawing.Point(105, 112);
             this.comboJogoArbitro.Name = "comboJogoArbitro";
-            this.comboJogoArbitro.Size = new System.Drawing.Size(160, 24);
+            this.comboJogoArbitro.Size = new System.Drawing.Size(121, 21);
             this.comboJogoArbitro.TabIndex = 6;
             this.comboJogoArbitro.SelectedIndexChanged += new System.EventHandler(this.PesquisarJogos);
             // 
             // comboJogoDeck
             // 
             this.comboJogoDeck.FormattingEnabled = true;
-            this.comboJogoDeck.Location = new System.Drawing.Point(143, 103);
-            this.comboJogoDeck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboJogoDeck.Location = new System.Drawing.Point(107, 84);
             this.comboJogoDeck.Name = "comboJogoDeck";
-            this.comboJogoDeck.Size = new System.Drawing.Size(160, 24);
+            this.comboJogoDeck.Size = new System.Drawing.Size(121, 21);
             this.comboJogoDeck.TabIndex = 5;
             this.comboJogoDeck.SelectedIndexChanged += new System.EventHandler(this.PesquisarJogos);
             // 
             // comboJogoJogadorEquipa
             // 
             this.comboJogoJogadorEquipa.FormattingEnabled = true;
-            this.comboJogoJogadorEquipa.Location = new System.Drawing.Point(159, 70);
-            this.comboJogoJogadorEquipa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboJogoJogadorEquipa.Location = new System.Drawing.Point(119, 57);
             this.comboJogoJogadorEquipa.Name = "comboJogoJogadorEquipa";
-            this.comboJogoJogadorEquipa.Size = new System.Drawing.Size(160, 24);
+            this.comboJogoJogadorEquipa.Size = new System.Drawing.Size(121, 21);
             this.comboJogoJogadorEquipa.TabIndex = 4;
             this.comboJogoJogadorEquipa.SelectedIndexChanged += new System.EventHandler(this.PesquisarJogos);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(27, 142);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Location = new System.Drawing.Point(20, 115);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(114, 17);
+            this.label22.Size = new System.Drawing.Size(85, 13);
             this.label22.TabIndex = 3;
             this.label22.Text = "Contem o Arbitro";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(27, 107);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Location = new System.Drawing.Point(20, 87);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(104, 17);
+            this.label21.Size = new System.Drawing.Size(81, 13);
             this.label21.TabIndex = 2;
             this.label21.Text = "Contem o Deck";
             // 
             // labJogoJogadorEquipa
             // 
             this.labJogoJogadorEquipa.AutoSize = true;
-            this.labJogoJogadorEquipa.Location = new System.Drawing.Point(27, 74);
-            this.labJogoJogadorEquipa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labJogoJogadorEquipa.Location = new System.Drawing.Point(20, 60);
             this.labJogoJogadorEquipa.Name = "labJogoJogadorEquipa";
-            this.labJogoJogadorEquipa.Size = new System.Drawing.Size(124, 17);
+            this.labJogoJogadorEquipa.Size = new System.Drawing.Size(93, 13);
             this.labJogoJogadorEquipa.TabIndex = 1;
             this.labJogoJogadorEquipa.Text = "Contem o Jogador";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(27, 39);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Location = new System.Drawing.Point(20, 32);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(71, 17);
+            this.label19.Size = new System.Drawing.Size(55, 13);
             this.label19.TabIndex = 0;
             this.label19.Text = "Descrição";
             // 
@@ -3594,11 +3585,9 @@
             this.gbPesquisarTorneios.Controls.Add(this.label17);
             this.gbPesquisarTorneios.Controls.Add(this.dtpTorneioData);
             this.gbPesquisarTorneios.Controls.Add(this.label16);
-            this.gbPesquisarTorneios.Location = new System.Drawing.Point(7, 6);
-            this.gbPesquisarTorneios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbPesquisarTorneios.Location = new System.Drawing.Point(5, 5);
             this.gbPesquisarTorneios.Name = "gbPesquisarTorneios";
-            this.gbPesquisarTorneios.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbPesquisarTorneios.Size = new System.Drawing.Size(552, 258);
+            this.gbPesquisarTorneios.Size = new System.Drawing.Size(414, 210);
             this.gbPesquisarTorneios.TabIndex = 0;
             this.gbPesquisarTorneios.TabStop = false;
             this.gbPesquisarTorneios.Text = "Torneios";
@@ -3606,10 +3595,9 @@
             // radioPesquisarTorneiosStandard
             // 
             this.radioPesquisarTorneiosStandard.AutoSize = true;
-            this.radioPesquisarTorneiosStandard.Location = new System.Drawing.Point(81, 230);
-            this.radioPesquisarTorneiosStandard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioPesquisarTorneiosStandard.Location = new System.Drawing.Point(61, 187);
             this.radioPesquisarTorneiosStandard.Name = "radioPesquisarTorneiosStandard";
-            this.radioPesquisarTorneiosStandard.Size = new System.Drawing.Size(87, 21);
+            this.radioPesquisarTorneiosStandard.Size = new System.Drawing.Size(68, 17);
             this.radioPesquisarTorneiosStandard.TabIndex = 10;
             this.radioPesquisarTorneiosStandard.TabStop = true;
             this.radioPesquisarTorneiosStandard.Text = "Standard";
@@ -3619,10 +3607,9 @@
             // radioPesquisarTorneiosTeam
             // 
             this.radioPesquisarTorneiosTeam.AutoSize = true;
-            this.radioPesquisarTorneiosTeam.Location = new System.Drawing.Point(8, 230);
-            this.radioPesquisarTorneiosTeam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioPesquisarTorneiosTeam.Location = new System.Drawing.Point(6, 187);
             this.radioPesquisarTorneiosTeam.Name = "radioPesquisarTorneiosTeam";
-            this.radioPesquisarTorneiosTeam.Size = new System.Drawing.Size(65, 21);
+            this.radioPesquisarTorneiosTeam.Size = new System.Drawing.Size(52, 17);
             this.radioPesquisarTorneiosTeam.TabIndex = 9;
             this.radioPesquisarTorneiosTeam.TabStop = true;
             this.radioPesquisarTorneiosTeam.Text = "Team";
@@ -3631,10 +3618,9 @@
             // 
             // btnLimparTorneios
             // 
-            this.btnLimparTorneios.Location = new System.Drawing.Point(421, 209);
-            this.btnLimparTorneios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimparTorneios.Location = new System.Drawing.Point(316, 170);
             this.btnLimparTorneios.Name = "btnLimparTorneios";
-            this.btnLimparTorneios.Size = new System.Drawing.Size(100, 28);
+            this.btnLimparTorneios.Size = new System.Drawing.Size(75, 23);
             this.btnLimparTorneios.TabIndex = 6;
             this.btnLimparTorneios.Text = "Limpar";
             this.btnLimparTorneios.UseVisualStyleBackColor = true;
@@ -3642,59 +3628,53 @@
             // 
             // txtTorneioDescricao
             // 
-            this.txtTorneioDescricao.Location = new System.Drawing.Point(108, 86);
-            this.txtTorneioDescricao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTorneioDescricao.Location = new System.Drawing.Point(81, 70);
             this.txtTorneioDescricao.Multiline = true;
             this.txtTorneioDescricao.Name = "txtTorneioDescricao";
-            this.txtTorneioDescricao.Size = new System.Drawing.Size(315, 102);
+            this.txtTorneioDescricao.Size = new System.Drawing.Size(237, 84);
             this.txtTorneioDescricao.TabIndex = 5;
             this.txtTorneioDescricao.TextChanged += new System.EventHandler(this.PesquisarTorneios);
             // 
             // txtTorneioNome
             // 
-            this.txtTorneioNome.Location = new System.Drawing.Point(81, 30);
-            this.txtTorneioNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTorneioNome.Location = new System.Drawing.Point(61, 24);
             this.txtTorneioNome.Name = "txtTorneioNome";
-            this.txtTorneioNome.Size = new System.Drawing.Size(159, 22);
+            this.txtTorneioNome.Size = new System.Drawing.Size(120, 20);
             this.txtTorneioNome.TabIndex = 4;
             this.txtTorneioNome.TextChanged += new System.EventHandler(this.PesquisarTorneios);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(261, 33);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(196, 27);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(38, 17);
+            this.label18.Size = new System.Drawing.Size(30, 13);
             this.label18.TabIndex = 3;
             this.label18.Text = "Data";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(27, 90);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(20, 73);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(71, 17);
+            this.label17.Size = new System.Drawing.Size(55, 13);
             this.label17.TabIndex = 2;
             this.label17.Text = "Descrição";
             // 
             // dtpTorneioData
             // 
             this.dtpTorneioData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTorneioData.Location = new System.Drawing.Point(309, 30);
-            this.dtpTorneioData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpTorneioData.Location = new System.Drawing.Point(232, 24);
             this.dtpTorneioData.Name = "dtpTorneioData";
-            this.dtpTorneioData.Size = new System.Drawing.Size(128, 22);
+            this.dtpTorneioData.Size = new System.Drawing.Size(97, 20);
             this.dtpTorneioData.TabIndex = 1;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(27, 33);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(20, 27);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(45, 17);
+            this.label16.Size = new System.Drawing.Size(35, 13);
             this.label16.TabIndex = 0;
             this.label16.Text = "Nome";
             // 
@@ -3716,11 +3696,11 @@
             this.tbVerCartas.Controls.Add(this.label42);
             this.tbVerCartas.Controls.Add(this.label43);
             this.tbVerCartas.Controls.Add(this.dgvVCartasLista);
-            this.tbVerCartas.Location = new System.Drawing.Point(4, 25);
-            this.tbVerCartas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbVerCartas.Location = new System.Drawing.Point(4, 22);
+            this.tbVerCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbVerCartas.Name = "tbVerCartas";
-            this.tbVerCartas.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbVerCartas.Size = new System.Drawing.Size(1037, 492);
+            this.tbVerCartas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerCartas.Size = new System.Drawing.Size(776, 391);
             this.tbVerCartas.TabIndex = 3;
             this.tbVerCartas.Text = "Cartas";
             this.tbVerCartas.UseVisualStyleBackColor = true;
@@ -3728,10 +3708,10 @@
             // btnVLimparCartas
             // 
             this.btnVLimparCartas.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnVLimparCartas.Location = new System.Drawing.Point(840, 105);
-            this.btnVLimparCartas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVLimparCartas.Location = new System.Drawing.Point(630, 85);
+            this.btnVLimparCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVLimparCartas.Name = "btnVLimparCartas";
-            this.btnVLimparCartas.Size = new System.Drawing.Size(99, 33);
+            this.btnVLimparCartas.Size = new System.Drawing.Size(74, 27);
             this.btnVLimparCartas.TabIndex = 46;
             this.btnVLimparCartas.Text = "Limpar";
             this.btnVLimparCartas.UseVisualStyleBackColor = true;
@@ -3740,40 +3720,40 @@
             // nudVDefesaCarta
             // 
             this.nudVDefesaCarta.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.nudVDefesaCarta.Location = new System.Drawing.Point(669, 107);
-            this.nudVDefesaCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudVDefesaCarta.Location = new System.Drawing.Point(502, 87);
+            this.nudVDefesaCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudVDefesaCarta.Name = "nudVDefesaCarta";
-            this.nudVDefesaCarta.Size = new System.Drawing.Size(55, 22);
+            this.nudVDefesaCarta.Size = new System.Drawing.Size(41, 20);
             this.nudVDefesaCarta.TabIndex = 45;
             this.nudVDefesaCarta.ValueChanged += new System.EventHandler(this.pesquisaCartas);
             // 
             // nudVAtaqueCarta
             // 
             this.nudVAtaqueCarta.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.nudVAtaqueCarta.Location = new System.Drawing.Point(525, 105);
-            this.nudVAtaqueCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudVAtaqueCarta.Location = new System.Drawing.Point(394, 85);
+            this.nudVAtaqueCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudVAtaqueCarta.Name = "nudVAtaqueCarta";
-            this.nudVAtaqueCarta.Size = new System.Drawing.Size(55, 22);
+            this.nudVAtaqueCarta.Size = new System.Drawing.Size(41, 20);
             this.nudVAtaqueCarta.TabIndex = 44;
             this.nudVAtaqueCarta.ValueChanged += new System.EventHandler(this.pesquisaCartas);
             // 
             // nudVLealdadeCarta
             // 
             this.nudVLealdadeCarta.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.nudVLealdadeCarta.Location = new System.Drawing.Point(381, 107);
-            this.nudVLealdadeCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudVLealdadeCarta.Location = new System.Drawing.Point(286, 87);
+            this.nudVLealdadeCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudVLealdadeCarta.Name = "nudVLealdadeCarta";
-            this.nudVLealdadeCarta.Size = new System.Drawing.Size(55, 22);
+            this.nudVLealdadeCarta.Size = new System.Drawing.Size(41, 20);
             this.nudVLealdadeCarta.TabIndex = 43;
             this.nudVLealdadeCarta.ValueChanged += new System.EventHandler(this.pesquisaCartas);
             // 
             // txtVCustoCarta
             // 
             this.txtVCustoCarta.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtVCustoCarta.Location = new System.Drawing.Point(201, 103);
-            this.txtVCustoCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtVCustoCarta.Location = new System.Drawing.Point(151, 84);
+            this.txtVCustoCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtVCustoCarta.Name = "txtVCustoCarta";
-            this.txtVCustoCarta.Size = new System.Drawing.Size(69, 22);
+            this.txtVCustoCarta.Size = new System.Drawing.Size(53, 20);
             this.txtVCustoCarta.TabIndex = 42;
             this.txtVCustoCarta.TextChanged += new System.EventHandler(this.pesquisaCartas);
             // 
@@ -3789,10 +3769,10 @@
             "Magia",
             "Encantamento",
             "Cidade"});
-            this.cmbVTipoCarta.Location = new System.Drawing.Point(817, 53);
-            this.cmbVTipoCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbVTipoCarta.Location = new System.Drawing.Point(613, 43);
+            this.cmbVTipoCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbVTipoCarta.Name = "cmbVTipoCarta";
-            this.cmbVTipoCarta.Size = new System.Drawing.Size(180, 24);
+            this.cmbVTipoCarta.Size = new System.Drawing.Size(136, 21);
             this.cmbVTipoCarta.TabIndex = 41;
             this.cmbVTipoCarta.SelectedIndexChanged += new System.EventHandler(this.pesquisaCartas);
             // 
@@ -3804,20 +3784,20 @@
             this.cmbVFacaoCarta.Items.AddRange(new object[] {
             "Gaian Love for Life",
             "Uneasy Alliance"});
-            this.cmbVFacaoCarta.Location = new System.Drawing.Point(503, 50);
-            this.cmbVFacaoCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbVFacaoCarta.Location = new System.Drawing.Point(377, 41);
+            this.cmbVFacaoCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbVFacaoCarta.Name = "cmbVFacaoCarta";
-            this.cmbVFacaoCarta.Size = new System.Drawing.Size(196, 24);
+            this.cmbVFacaoCarta.Size = new System.Drawing.Size(148, 21);
             this.cmbVFacaoCarta.TabIndex = 40;
             this.cmbVFacaoCarta.SelectedIndexChanged += new System.EventHandler(this.pesquisaCartas);
             // 
             // txtVNomeCarta
             // 
             this.txtVNomeCarta.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtVNomeCarta.Location = new System.Drawing.Point(129, 50);
-            this.txtVNomeCarta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtVNomeCarta.Location = new System.Drawing.Point(97, 41);
+            this.txtVNomeCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtVNomeCarta.Name = "txtVNomeCarta";
-            this.txtVNomeCarta.Size = new System.Drawing.Size(261, 22);
+            this.txtVNomeCarta.Size = new System.Drawing.Size(197, 20);
             this.txtVNomeCarta.TabIndex = 39;
             this.txtVNomeCarta.TextChanged += new System.EventHandler(this.pesquisaCartas);
             // 
@@ -3825,9 +3805,10 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(609, 110);
+            this.label9.Location = new System.Drawing.Point(457, 89);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 17);
+            this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 38;
             this.label9.Text = "Defesa";
             // 
@@ -3835,9 +3816,10 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(465, 110);
+            this.label10.Location = new System.Drawing.Point(349, 89);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 17);
+            this.label10.Size = new System.Drawing.Size(41, 13);
             this.label10.TabIndex = 37;
             this.label10.Text = "Ataque";
             // 
@@ -3845,9 +3827,10 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(308, 110);
+            this.label11.Location = new System.Drawing.Point(231, 89);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 17);
+            this.label11.Size = new System.Drawing.Size(51, 13);
             this.label11.TabIndex = 36;
             this.label11.Text = "Lealdade";
             // 
@@ -3855,9 +3838,10 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(151, 106);
+            this.label12.Location = new System.Drawing.Point(113, 86);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 17);
+            this.label12.Size = new System.Drawing.Size(34, 13);
             this.label12.TabIndex = 35;
             this.label12.Text = "Custo";
             // 
@@ -3865,9 +3849,10 @@
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(763, 57);
+            this.label13.Location = new System.Drawing.Point(572, 46);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(36, 17);
+            this.label13.Size = new System.Drawing.Size(28, 13);
             this.label13.TabIndex = 34;
             this.label13.Text = "Tipo";
             // 
@@ -3875,9 +3860,10 @@
             // 
             this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(448, 54);
+            this.label42.Location = new System.Drawing.Point(336, 44);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(47, 17);
+            this.label42.Size = new System.Drawing.Size(37, 13);
             this.label42.TabIndex = 33;
             this.label42.Text = "Fação";
             // 
@@ -3885,9 +3871,10 @@
             // 
             this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(27, 54);
+            this.label43.Location = new System.Drawing.Point(20, 44);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(95, 17);
+            this.label43.Size = new System.Drawing.Size(73, 13);
             this.label43.TabIndex = 32;
             this.label43.Text = "Nome contém";
             // 
@@ -3911,12 +3898,12 @@
             this.attackDataGridViewTextBoxColumn1,
             this.defenseDataGridViewTextBoxColumn1});
             this.dgvVCartasLista.DataSource = this.cardSetBindingSource;
-            this.dgvVCartasLista.Location = new System.Drawing.Point(31, 180);
-            this.dgvVCartasLista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvVCartasLista.Location = new System.Drawing.Point(23, 146);
+            this.dgvVCartasLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvVCartasLista.Name = "dgvVCartasLista";
             this.dgvVCartasLista.ReadOnly = true;
             this.dgvVCartasLista.RowTemplate.Height = 24;
-            this.dgvVCartasLista.Size = new System.Drawing.Size(987, 324);
+            this.dgvVCartasLista.Size = new System.Drawing.Size(740, 259);
             this.dgvVCartasLista.TabIndex = 31;
             // 
             // idDataGridViewTextBoxColumn2
@@ -3990,11 +3977,11 @@
             this.tbVerBaralhos.Controls.Add(this.label45);
             this.tbVerBaralhos.Controls.Add(this.label44);
             this.tbVerBaralhos.Controls.Add(this.txtVNomeBaralho);
-            this.tbVerBaralhos.Location = new System.Drawing.Point(4, 25);
-            this.tbVerBaralhos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbVerBaralhos.Location = new System.Drawing.Point(4, 22);
+            this.tbVerBaralhos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbVerBaralhos.Name = "tbVerBaralhos";
-            this.tbVerBaralhos.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbVerBaralhos.Size = new System.Drawing.Size(1037, 492);
+            this.tbVerBaralhos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerBaralhos.Size = new System.Drawing.Size(776, 391);
             this.tbVerBaralhos.TabIndex = 4;
             this.tbVerBaralhos.Text = "Baralhos";
             this.tbVerBaralhos.UseVisualStyleBackColor = true;
@@ -4014,12 +4001,12 @@
             this.idDataGridViewTextBoxColumn3,
             this.nameDataGridViewTextBoxColumn3});
             this.dgvVBaralhosLista.DataSource = this.deckSetBindingSource;
-            this.dgvVBaralhosLista.Location = new System.Drawing.Point(35, 130);
-            this.dgvVBaralhosLista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvVBaralhosLista.Location = new System.Drawing.Point(26, 106);
+            this.dgvVBaralhosLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvVBaralhosLista.Name = "dgvVBaralhosLista";
             this.dgvVBaralhosLista.ReadOnly = true;
             this.dgvVBaralhosLista.RowTemplate.Height = 24;
-            this.dgvVBaralhosLista.Size = new System.Drawing.Size(963, 324);
+            this.dgvVBaralhosLista.Size = new System.Drawing.Size(722, 259);
             this.dgvVBaralhosLista.TabIndex = 38;
             // 
             // idDataGridViewTextBoxColumn3
@@ -4039,10 +4026,10 @@
             // btnVLimparBaralhos
             // 
             this.btnVLimparBaralhos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnVLimparBaralhos.Location = new System.Drawing.Point(864, 66);
-            this.btnVLimparBaralhos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVLimparBaralhos.Location = new System.Drawing.Point(648, 54);
+            this.btnVLimparBaralhos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVLimparBaralhos.Name = "btnVLimparBaralhos";
-            this.btnVLimparBaralhos.Size = new System.Drawing.Size(75, 33);
+            this.btnVLimparBaralhos.Size = new System.Drawing.Size(56, 27);
             this.btnVLimparBaralhos.TabIndex = 37;
             this.btnVLimparBaralhos.Text = "Limpar";
             this.btnVLimparBaralhos.UseVisualStyleBackColor = true;
@@ -4053,10 +4040,10 @@
             this.cmbVCartasnoBaralho.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbVCartasnoBaralho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVCartasnoBaralho.FormattingEnabled = true;
-            this.cmbVCartasnoBaralho.Location = new System.Drawing.Point(577, 70);
-            this.cmbVCartasnoBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbVCartasnoBaralho.Location = new System.Drawing.Point(433, 57);
+            this.cmbVCartasnoBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbVCartasnoBaralho.Name = "cmbVCartasnoBaralho";
-            this.cmbVCartasnoBaralho.Size = new System.Drawing.Size(243, 24);
+            this.cmbVCartasnoBaralho.Size = new System.Drawing.Size(183, 21);
             this.cmbVCartasnoBaralho.TabIndex = 36;
             this.cmbVCartasnoBaralho.SelectedIndexChanged += new System.EventHandler(this.pesquisaCartas);
             // 
@@ -4064,9 +4051,10 @@
             // 
             this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(467, 74);
+            this.label45.Location = new System.Drawing.Point(350, 60);
+            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(104, 17);
+            this.label45.Size = new System.Drawing.Size(79, 13);
             this.label45.TabIndex = 35;
             this.label45.Text = "Contém a carta";
             // 
@@ -4074,19 +4062,20 @@
             // 
             this.label44.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(89, 74);
+            this.label44.Location = new System.Drawing.Point(67, 60);
+            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(95, 17);
+            this.label44.Size = new System.Drawing.Size(73, 13);
             this.label44.TabIndex = 33;
             this.label44.Text = "Nome contém";
             // 
             // txtVNomeBaralho
             // 
             this.txtVNomeBaralho.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtVNomeBaralho.Location = new System.Drawing.Point(191, 71);
-            this.txtVNomeBaralho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtVNomeBaralho.Location = new System.Drawing.Point(143, 58);
+            this.txtVNomeBaralho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtVNomeBaralho.Name = "txtVNomeBaralho";
-            this.txtVNomeBaralho.Size = new System.Drawing.Size(251, 22);
+            this.txtVNomeBaralho.Size = new System.Drawing.Size(189, 20);
             this.txtVNomeBaralho.TabIndex = 34;
             this.txtVNomeBaralho.TextChanged += new System.EventHandler(this.pesquisaBaralhos);
             // 
@@ -4104,11 +4093,11 @@
             this.tbVerUtilizadores.Controls.Add(this.btnPesquisarUtilizador);
             this.tbVerUtilizadores.Controls.Add(this.btnResetPesquisa);
             this.tbVerUtilizadores.Controls.Add(this.dgvPesquisaUtilizadores);
-            this.tbVerUtilizadores.Location = new System.Drawing.Point(4, 25);
-            this.tbVerUtilizadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbVerUtilizadores.Location = new System.Drawing.Point(4, 22);
+            this.tbVerUtilizadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbVerUtilizadores.Name = "tbVerUtilizadores";
-            this.tbVerUtilizadores.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbVerUtilizadores.Size = new System.Drawing.Size(1037, 492);
+            this.tbVerUtilizadores.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbVerUtilizadores.Size = new System.Drawing.Size(776, 391);
             this.tbVerUtilizadores.TabIndex = 5;
             this.tbVerUtilizadores.Text = "Utilizadores";
             this.tbVerUtilizadores.UseVisualStyleBackColor = true;
@@ -4116,10 +4105,9 @@
             // labPesquisarPor
             // 
             this.labPesquisarPor.AutoSize = true;
-            this.labPesquisarPor.Location = new System.Drawing.Point(40, 39);
-            this.labPesquisarPor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labPesquisarPor.Location = new System.Drawing.Point(30, 32);
             this.labPesquisarPor.Name = "labPesquisarPor";
-            this.labPesquisarPor.Size = new System.Drawing.Size(100, 17);
+            this.labPesquisarPor.Size = new System.Drawing.Size(74, 13);
             this.labPesquisarPor.TabIndex = 0;
             this.labPesquisarPor.Text = "Pesquisar por:";
             // 
@@ -4127,10 +4115,9 @@
             // 
             this.radioPesquisaAdministrador.AutoSize = true;
             this.radioPesquisaAdministrador.Checked = true;
-            this.radioPesquisaAdministrador.Location = new System.Drawing.Point(147, 37);
-            this.radioPesquisaAdministrador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioPesquisaAdministrador.Location = new System.Drawing.Point(110, 30);
             this.radioPesquisaAdministrador.Name = "radioPesquisaAdministrador";
-            this.radioPesquisaAdministrador.Size = new System.Drawing.Size(116, 21);
+            this.radioPesquisaAdministrador.Size = new System.Drawing.Size(88, 17);
             this.radioPesquisaAdministrador.TabIndex = 2;
             this.radioPesquisaAdministrador.TabStop = true;
             this.radioPesquisaAdministrador.Text = "Administrador";
@@ -4140,10 +4127,9 @@
             // radioPesquisaArbitro
             // 
             this.radioPesquisaArbitro.AutoSize = true;
-            this.radioPesquisaArbitro.Location = new System.Drawing.Point(272, 37);
-            this.radioPesquisaArbitro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioPesquisaArbitro.Location = new System.Drawing.Point(204, 30);
             this.radioPesquisaArbitro.Name = "radioPesquisaArbitro";
-            this.radioPesquisaArbitro.Size = new System.Drawing.Size(71, 21);
+            this.radioPesquisaArbitro.Size = new System.Drawing.Size(55, 17);
             this.radioPesquisaArbitro.TabIndex = 3;
             this.radioPesquisaArbitro.Text = "Arbitro";
             this.radioPesquisaArbitro.UseVisualStyleBackColor = true;
@@ -4152,54 +4138,48 @@
             // labPesquisaUsername
             // 
             this.labPesquisaUsername.AutoSize = true;
-            this.labPesquisaUsername.Location = new System.Drawing.Point(131, 96);
-            this.labPesquisaUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labPesquisaUsername.Location = new System.Drawing.Point(98, 78);
             this.labPesquisaUsername.Name = "labPesquisaUsername";
-            this.labPesquisaUsername.Size = new System.Drawing.Size(77, 17);
+            this.labPesquisaUsername.Size = new System.Drawing.Size(58, 13);
             this.labPesquisaUsername.TabIndex = 1;
             this.labPesquisaUsername.Text = "Username:";
             // 
             // txtPesquisaUsername
             // 
-            this.txtPesquisaUsername.Location = new System.Drawing.Point(212, 92);
-            this.txtPesquisaUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPesquisaUsername.Location = new System.Drawing.Point(159, 75);
             this.txtPesquisaUsername.Name = "txtPesquisaUsername";
-            this.txtPesquisaUsername.Size = new System.Drawing.Size(132, 22);
+            this.txtPesquisaUsername.Size = new System.Drawing.Size(100, 20);
             this.txtPesquisaUsername.TabIndex = 6;
             // 
             // labPesquisaNomeEmail
             // 
             this.labPesquisaNomeEmail.AutoSize = true;
-            this.labPesquisaNomeEmail.Location = new System.Drawing.Point(367, 96);
-            this.labPesquisaNomeEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labPesquisaNomeEmail.Location = new System.Drawing.Point(275, 78);
             this.labPesquisaNomeEmail.Name = "labPesquisaNomeEmail";
-            this.labPesquisaNomeEmail.Size = new System.Drawing.Size(49, 17);
+            this.labPesquisaNomeEmail.Size = new System.Drawing.Size(38, 13);
             this.labPesquisaNomeEmail.TabIndex = 5;
             this.labPesquisaNomeEmail.Text = "Nome:";
             // 
             // txtPesquisaNomeArbitro
             // 
-            this.txtPesquisaNomeArbitro.Location = new System.Drawing.Point(425, 92);
-            this.txtPesquisaNomeArbitro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPesquisaNomeArbitro.Location = new System.Drawing.Point(319, 75);
             this.txtPesquisaNomeArbitro.Name = "txtPesquisaNomeArbitro";
-            this.txtPesquisaNomeArbitro.Size = new System.Drawing.Size(180, 22);
+            this.txtPesquisaNomeArbitro.Size = new System.Drawing.Size(136, 20);
             this.txtPesquisaNomeArbitro.TabIndex = 8;
             // 
             // txtPesquisaEmailAdministrador
             // 
-            this.txtPesquisaEmailAdministrador.Location = new System.Drawing.Point(425, 92);
-            this.txtPesquisaEmailAdministrador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPesquisaEmailAdministrador.Location = new System.Drawing.Point(319, 75);
             this.txtPesquisaEmailAdministrador.Name = "txtPesquisaEmailAdministrador";
-            this.txtPesquisaEmailAdministrador.Size = new System.Drawing.Size(207, 22);
+            this.txtPesquisaEmailAdministrador.Size = new System.Drawing.Size(156, 20);
             this.txtPesquisaEmailAdministrador.TabIndex = 7;
             // 
             // checkPesquisaArbitroAtivo
             // 
             this.checkPesquisaArbitroAtivo.AutoSize = true;
-            this.checkPesquisaArbitroAtivo.Location = new System.Drawing.Point(661, 95);
-            this.checkPesquisaArbitroAtivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkPesquisaArbitroAtivo.Location = new System.Drawing.Point(496, 77);
             this.checkPesquisaArbitroAtivo.Name = "checkPesquisaArbitroAtivo";
-            this.checkPesquisaArbitroAtivo.Size = new System.Drawing.Size(61, 21);
+            this.checkPesquisaArbitroAtivo.Size = new System.Drawing.Size(50, 17);
             this.checkPesquisaArbitroAtivo.TabIndex = 11;
             this.checkPesquisaArbitroAtivo.Text = "Ativo";
             this.checkPesquisaArbitroAtivo.UseVisualStyleBackColor = true;
@@ -4207,10 +4187,9 @@
             // 
             // btnPesquisarUtilizador
             // 
-            this.btnPesquisarUtilizador.Location = new System.Drawing.Point(752, 90);
-            this.btnPesquisarUtilizador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPesquisarUtilizador.Location = new System.Drawing.Point(564, 73);
             this.btnPesquisarUtilizador.Name = "btnPesquisarUtilizador";
-            this.btnPesquisarUtilizador.Size = new System.Drawing.Size(100, 28);
+            this.btnPesquisarUtilizador.Size = new System.Drawing.Size(75, 23);
             this.btnPesquisarUtilizador.TabIndex = 10;
             this.btnPesquisarUtilizador.Text = "Pesquisar";
             this.btnPesquisarUtilizador.UseVisualStyleBackColor = true;
@@ -4218,10 +4197,9 @@
             // 
             // btnResetPesquisa
             // 
-            this.btnResetPesquisa.Location = new System.Drawing.Point(872, 90);
-            this.btnResetPesquisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnResetPesquisa.Location = new System.Drawing.Point(654, 73);
             this.btnResetPesquisa.Name = "btnResetPesquisa";
-            this.btnResetPesquisa.Size = new System.Drawing.Size(100, 28);
+            this.btnResetPesquisa.Size = new System.Drawing.Size(75, 23);
             this.btnResetPesquisa.TabIndex = 12;
             this.btnResetPesquisa.Text = "Reset";
             this.btnResetPesquisa.UseVisualStyleBackColor = true;
@@ -4233,11 +4211,10 @@
             this.dgvPesquisaUtilizadores.AllowUserToDeleteRows = false;
             this.dgvPesquisaUtilizadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPesquisaUtilizadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPesquisaUtilizadores.Location = new System.Drawing.Point(25, 146);
-            this.dgvPesquisaUtilizadores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPesquisaUtilizadores.Location = new System.Drawing.Point(19, 119);
             this.dgvPesquisaUtilizadores.Name = "dgvPesquisaUtilizadores";
             this.dgvPesquisaUtilizadores.ReadOnly = true;
-            this.dgvPesquisaUtilizadores.Size = new System.Drawing.Size(987, 322);
+            this.dgvPesquisaUtilizadores.Size = new System.Drawing.Size(740, 262);
             this.dgvPesquisaUtilizadores.TabIndex = 9;
             // 
             // gameSetBindingSource
@@ -4314,15 +4291,15 @@
             // 
             // formMenuAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 546);
+            this.ClientSize = new System.Drawing.Size(796, 451);
             this.Controls.Add(this.tbMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(1077, 593);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(812, 489);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1077, 593);
+            this.MinimumSize = new System.Drawing.Size(812, 489);
             this.Name = "formMenuAdmin";
             this.Text = "Arcmage - Menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formMenuAdmin_FormClosed);

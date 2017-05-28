@@ -3867,13 +3867,13 @@ namespace Projeto
             if (radioTeamTournaments.Checked == true)
             {
                 dgvGJogosLista.DataSource = (from games in containerDados.GameSet.OfType<TeamGame>().Where(game => game.TeamTournamentId.Value.Equals(idTorneio))
-                                             select new { games.Id, games.Description, games.Number, games.Date, Team1 = games.Team1.Name, Team2 = games.Team2.Name, Deck1 = games.Deck1.Name, Deck2 = games.Deck2.Name }).ToList();
+                                             select new { games.Id, games.Description, games.Number, games.Date, Tournament = games.Tournament.Name, Referee = games.Referee.Username, Team1 = games.Team1.Name, Team2 = games.Team2.Name, Deck1 = games.Deck1.Name, Deck2 = games.Deck2.Name }).ToList();
             }
 
             else if (radioStandardTournaments.Checked == true)
             {
                 dgvGJogosLista.DataSource = (from games in containerDados.GameSet.OfType<StandardGame>().Where(game => game.StandardTournamentId.Value.Equals(idTorneio))
-                                             select new { games.Id, games.Description, games.Number, games.Date, Player1 = games.Player1.Nickname, Player2 = games.Player2.Nickname, Deck1 = games.Deck1.Name, Deck2 = games.Deck2.Name }).ToList();
+                                             select new { games.Id, games.Description, games.Number, games.Date, Tournament = games.Tournament.Name, Referee = games.Referee.Username, Player1 = games.Player1.Nickname, Player2 = games.Player2.Nickname, Deck1 = games.Deck1.Name, Deck2 = games.Deck2.Name }).ToList();
             }
 
             if (dgvGJogosLista.Rows.Count > 0)
@@ -4425,6 +4425,7 @@ namespace Projeto
             if(radioPesquisarTorneiosTeam.Checked == true)
             {
                 RefreshTabelaResultadosPesquisaTorneios();
+                ResetFormPesquisaTorneios();
             }
         }
 
@@ -4437,6 +4438,7 @@ namespace Projeto
             if (radioPesquisarTorneiosStandard.Checked == true)
             {
                 RefreshTabelaResultadosPesquisaTorneios();
+                ResetFormPesquisaTorneios();
             }
         }
 
@@ -4488,7 +4490,7 @@ namespace Projeto
                         query = query.Where(torneio => torneio.Name.Contains(nomeTorneio));
                     }
 
-                    else if (descricaoTorneio.Length > 0)
+                    if (descricaoTorneio.Length > 0)
                     {
                         query = query.Where(torneio => torneio.Description.Contains(descricaoTorneio));
                     }
@@ -4557,6 +4559,7 @@ namespace Projeto
             if (radioPesquisarJogosTeam.Checked == true)
             {
                 RefreshTabelaResultadosPesquisaJogos();
+                ResetFormPesquisaJogos();
                 CarregarComboJogadorEquipa();
             }
         }
@@ -4571,6 +4574,7 @@ namespace Projeto
             if (radioPesquisarJogosStandard.Checked == true)
             {
                 RefreshTabelaResultadosPesquisaJogos();
+                ResetFormPesquisaJogos();
                 CarregarComboJogadorEquipa();
             }
         }
@@ -4599,12 +4603,12 @@ namespace Projeto
                 jogadorEquipaJogo = comboJogoJogadorEquipa.Text.Trim();
             }
 
-            else if (comboJogoDeck.SelectedIndex != -1)
+            if (comboJogoDeck.SelectedIndex != -1)
             {
                 deckJogo = comboJogoDeck.Text.Trim();
             }
 
-            else if (comboJogoArbitro.SelectedIndex != -1)
+            if (comboJogoArbitro.SelectedIndex != -1)
             {
                 arbitroJogo = comboJogoArbitro.Text.Trim();
             }
@@ -4622,17 +4626,17 @@ namespace Projeto
 
                     if (jogadorEquipaJogo != "")
                     {
-                        query = query.Where(jogo => (jogo.Team1.Name.Contains(jogadorEquipaJogo) || jogo.Team2.Name.Contains(jogadorEquipaJogo)));
+                        query = query.Where(jogo => (jogo.Team1.Name.Equals(jogadorEquipaJogo) || jogo.Team2.Name.Equals(jogadorEquipaJogo)));
                     }
 
                     if (deckJogo != "")
                     {
-                        query = query.Where(jogo => (jogo.Deck1.Name.Contains(deckJogo) || jogo.Deck1.Name.Contains(deckJogo)));
+                        query = query.Where(jogo => (jogo.Deck1.Name.Equals(deckJogo) || jogo.Deck1.Name.Equals(deckJogo)));
                     }
 
                     if (arbitroJogo != "")
                     {
-                        query = query.Where(jogo => jogo.Referee.Username.Contains(arbitroJogo));
+                        query = query.Where(jogo => jogo.Referee.Username.Equals(arbitroJogo));
                     }
 
                     query = query.Where(jogo => jogo.Number >= numeroJogo);
@@ -4653,17 +4657,17 @@ namespace Projeto
 
                     if (jogadorEquipaJogo != "")
                     {
-                        query = query.Where(jogo => (jogo.Player1.Nickname.Contains(jogadorEquipaJogo) || jogo.Player2.Nickname.Contains(jogadorEquipaJogo)));
+                        query = query.Where(jogo => (jogo.Player1.Nickname.Equals(jogadorEquipaJogo) || jogo.Player2.Nickname.Equals(jogadorEquipaJogo)));
                     }
 
                     if (deckJogo != "")
                     {
-                        query = query.Where(jogo => (jogo.Deck1.Name.Contains(deckJogo) || jogo.Deck1.Name.Contains(deckJogo)));
+                        query = query.Where(jogo => (jogo.Deck1.Name.Equals(deckJogo) || jogo.Deck1.Name.Equals(deckJogo)));
                     }
 
                     if (arbitroJogo != "")
                     {
-                        query = query.Where(jogo => jogo.Referee.Username.Contains(arbitroJogo));
+                        query = query.Where(jogo => jogo.Referee.Username.Equals(arbitroJogo));
                     }
 
                     query = query.Where(jogo => jogo.Number >= numeroJogo);

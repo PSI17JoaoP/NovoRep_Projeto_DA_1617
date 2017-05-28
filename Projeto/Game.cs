@@ -18,12 +18,12 @@ namespace Projeto
         public string Description { get; set; }
         public System.DateTime Date { get; set; }
         public int Number { get; set; }
-        public Nullable<int> RefereeId { get; set; }
         public Nullable<int> DeckId1 { get; set; }
         public Nullable<int> DeckId2 { get; set; }
+        public Nullable<int> RefereeId { get; set; }
     
-        public virtual Referee Referee { get; set; }
         public virtual Deck Deck1 { get; set; }
         public virtual Deck Deck2 { get; set; }
+        public virtual Referee Referee { get; set; }
     }
 }
