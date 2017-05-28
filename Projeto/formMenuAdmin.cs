@@ -3837,13 +3837,13 @@ namespace Projeto
             if (radioTeamTournaments.Checked == true)
             {
                 dgvGJogosLista.DataSource = (from games in containerDados.GameSet.OfType<TeamGame>().Where(game => game.TeamTournamentId.Value.Equals(idTorneio))
-                                             select new { games.Id, games.Description, games.Number, games.Date, games.TeamId1, games.TeamId2, games.DeckId1, games.DeckId2 }).ToList();
+                                             select new { games.Id, games.Description, games.Number, games.Date, Team1 = games.Team1.Name, Team2 = games.Team2.Name, Deck1 = games.Deck1.Name, Deck2 = games.Deck2.Name }).ToList();
             }
 
             else if (radioStandardTournaments.Checked == true)
             {
                 dgvGJogosLista.DataSource = (from games in containerDados.GameSet.OfType<StandardGame>().Where(game => game.StandardTournamentId.Value.Equals(idTorneio))
-                                             select new { games.Id, games.Description, games.Number, games.Date, games.PlayerId1, games.PlayerId2, games.DeckId1, games.DeckId2 }).ToList();
+                                             select new { games.Id, games.Description, games.Number, games.Date, Player1 = games.Player1.Nickname, Player2 = games.Player2.Nickname, Deck1 = games.Deck1.Name, Deck2 = games.Deck2.Name }).ToList();
             }
 
             if (dgvGJogosLista.Rows.Count > 0)
