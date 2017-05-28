@@ -4462,14 +4462,15 @@ namespace Projeto
                 {
                     IQueryable<TeamTournament> query = containerDados.TournamentSet.OfType<TeamTournament>();
 
+
                     if (nomeTorneio.Length > 0)
                     {
-                        query.Where(torneio => torneio.Name.Contains(nomeTorneio));
+                        query = query.Where(torneio => torneio.Name.Contains(nomeTorneio));
                     }
 
-                    else if (descricaoTorneio.Length > 0)
+                    if (descricaoTorneio.Length > 0)
                     {
-                        query.Where(torneio => torneio.Description.Contains(descricaoTorneio));
+                        query = query.Where(torneio => torneio.Description.Contains(descricaoTorneio));
                     }
 
                     //query = query.Where(torneio => torneio.Date.Equals(dataTorneio));
@@ -4484,12 +4485,12 @@ namespace Projeto
 
                     if (nomeTorneio.Length > 0)
                     {
-                        query.Where(torneio => torneio.Name.Contains(nomeTorneio));
+                        query = query.Where(torneio => torneio.Name.Contains(nomeTorneio));
                     }
 
                     else if (descricaoTorneio.Length > 0)
                     {
-                        query.Where(torneio => torneio.Description.Contains(descricaoTorneio));
+                        query = query.Where(torneio => torneio.Description.Contains(descricaoTorneio));
                     }
 
                     //query = query.Where(torneio => torneio.Date.Equals(dataTorneio));
@@ -4729,7 +4730,7 @@ namespace Projeto
                 labJogoJogadorEquipa.Text = "Contem a Equipa";
                 comboJogoJogadorEquipa.Items.Clear();
 
-                foreach (Team equipa in containerDados.TeamSet.OfType<Team>())
+                foreach (Team equipa in containerDados.TeamSet)
                 {
                     comboJogoJogadorEquipa.Items.Add(equipa.Name);
                 }
@@ -4740,7 +4741,7 @@ namespace Projeto
                 labJogoJogadorEquipa.Text = "Contem o Jogador";
                 comboJogoJogadorEquipa.Items.Clear();
 
-                foreach (Player jogador in containerDados.GameSet.OfType<Player>())
+                foreach (Player jogador in containerDados.PlayerSet)
                 {
                     comboJogoJogadorEquipa.Items.Add(jogador.Nickname);
                 }
