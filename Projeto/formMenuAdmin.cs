@@ -295,6 +295,7 @@ namespace Projeto
 
         /// <summary>
         /// Evento do botão no formulário de preenchimento do Arbitro, que realiza as funções de "Adicionar" ou "Aplicar".
+        /// Executa as validações de dados e do ficheiro de imagem. Se passar as validações, executa os métodos da funcionalidade desejada.
         /// </summary>
         private void BotaoAcaoArbitro(object sender, EventArgs e)
         {
@@ -882,7 +883,7 @@ namespace Projeto
 
         /// <summary>
         /// Método para fazer reset ao formulário de preenchimento do Arbitro.
-        /// Limpa os dados presentes de formulário.
+        /// Limpa os dados presentes do formulário.
         /// </summary>
         private void ResetFormAdministrador()
         {
@@ -894,7 +895,7 @@ namespace Projeto
 
         /// <summary>
         /// Método para fazer reset ao formulário de preenchimento do Administrador.
-        /// Limpa os dados presentes de formulário.
+        /// Limpa os dados presentes do formulário.
         /// </summary>
         private void ResetFormArbitro()
         {
@@ -915,7 +916,7 @@ namespace Projeto
         /// </summary>
         /// <param name="usernameAdministrador">Username do Administrador</param>
         /// <param name="emailAdministrador">Email do Administrador</param>
-        /// <returns></returns>
+        /// <returns>Variavel Boolean "naoExisteDados"</returns>
         private bool VerificarDadosAdmnistrador(string usernameAdministrador, string emailAdministrador)
         {
             bool naoExisteDados = true;
@@ -1175,6 +1176,13 @@ namespace Projeto
             RefreshTabelaPesquisaUtilizadores();
         }
 
+        /// <summary>
+        /// Método para pesquisar administradores, segundo os dados inseridos no form de pesquisa.
+        /// Segundo o username e email inseridos, executa uma query LINQ e apresenta os dados.
+        /// As pesquisa são feitas nos DataSets e, não no container, devido à existência de dados não desejados para mostrar.
+        /// </summary>
+        /// <param name="username">Username do Admin</param>
+        /// <param name="email">Email do Admin</param>
         private void PesquisarAdminstrador(string username, string email)
         {
             IEnumerable<BD_DA_ProjetoDataSet_Administradores.UserSetRow> queryLinq;
@@ -1222,6 +1230,13 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método para pesquisar arbitros, segundo os dados inseridos no form de pesquisa.
+        /// Segundo o username e nome inseridos, executa uma query LINQ e apresenta os dados.
+        /// As pesquisa são feitas nos DataSets e, não no container, devido à existência de dados não desejados para mostrar.
+        /// </summary>
+        /// <param name="username">Username do arbitro</param>
+        /// <param name="name">Nome do arbitro</param>
         private void PesquisarArbitros(string username, string name)
         {
             IEnumerable<BD_DA_ProjetoDataSet_Arbitros.UserSetRow> queryLinq;
@@ -1269,6 +1284,13 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método para pesquisar arbitros ativos, isto é, arbitros com jogos pendentes, segundo os dados inseridos no form de pesquisa.
+        /// Segundo o username e nome inseridos, executa uma query LINQ e apresenta os dados.
+        /// As pesquisa são feitas nos DataSets e, não no container, devido à existência de dados não desejados para mostrar.
+        /// </summary>
+        /// <param name="username">Username do arbitro</param>
+        /// <param name="name">Nome do arbitro</param>
         private void PesquisarArbitrosAtivos(string username, string name)
         {
             IEnumerable<BD_DA_ProjetoDataSet_Arbitros.UserSetRow> queryLinq;
@@ -1324,6 +1346,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método para fazer refresh à DataGridView (Tabela) na tab de Pesquisa de Utilizadores.
+        /// Muda a Data Source da Data Grid View para o tipo do utilizador correspondente.
+        /// </summary>
         private void RefreshTabelaPesquisaUtilizadores()
         {
             if (radioPesquisaAdministrador.Checked == true)
@@ -1341,6 +1367,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método para fazer reset ao form de pesquisa de Utilizadores.
+        /// Limpa o form relativamente ao tipo de utilizador.
+        /// </summary>
         private void ResetPesquisaUtilizadoresForm()
         {
             if (radioPesquisaAdministrador.Checked == true)
@@ -1378,7 +1408,7 @@ namespace Projeto
 
         #endregion
 
-        #region GestaoCartas
+        #region Gestao de Cartas
 
         /// <summary>
         /// Ativa o formulário para preencher os dados da nova carta.
@@ -3856,6 +3886,10 @@ namespace Projeto
 
         #region Gestão de Torneios
 
+        /// <summary>
+        /// Evento do radio button "Team".
+        /// Invoca o método RefreshTabelaTorneios para fazer refresh à tabela.
+        /// </summary>
         private void RadioFiltrarTeamTournaments(object sender, EventArgs e)
         {
             if(radioTeamTournaments.Checked == true)
@@ -3865,6 +3899,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do radio button "Standard".
+        /// Invoca o método RefreshTabelaTorneios para fazer refresh à tabela.
+        /// </summary>
         private void RadioFiltrarStandardTournaments(object sender, EventArgs e)
         {
             if(radioStandardTournaments.Checked == true)
@@ -3874,6 +3912,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do botão "Inserir" da tab de Torneios.
+        /// Faz reset ao formulário e mostra o mesmo.
+        /// </summary>
         private void BotaoInserirTorneio(object sender, EventArgs e)
         {
             ResetFormTorneios();
@@ -3882,6 +3924,10 @@ namespace Projeto
             gbGJogosForm.Visible = false;
         }
 
+        /// <summary>
+        /// Evento do botão "Alterar" da tab de Torneios.
+        /// Prepara e mostra o formulário com os dados do torneio selecionado.
+        /// </summary>
         private void BotaoAlterarTorneio(object sender, EventArgs e)
         {
             if (dgvGTorneiosLista.SelectedRows.Count > 0)
@@ -3918,6 +3964,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do botão "Eliminar" da tab de Torneios.
+        /// Mostra uma mensagem de confirmação a perguntar se deseja remover o torneio. Se sim, remove-o.
+        /// </summary>
         private void BotaoRemoverTorneio(object sender, EventArgs e)
         {
             if (dgvGTorneiosLista.SelectedRows.Count > 0)
@@ -3941,6 +3991,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do botão no formulário de preenchimento do Torneio, que realiza as funções de "Adicionar" ou "Aplicar".
+        /// Executa as validações de dados. Se passar as validações, executa os métodos da funcionalidade desejada.
+        /// </summary>
         private void BotaoAcaoTorneio(object sender, EventArgs e)
         {
             string nameForm = txtNomeTorneio.Text.Trim();
@@ -4047,12 +4101,59 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do botão "Cancelar" no formulário de preenchimento do Torneio.
+        /// Faz reset ao formulário.
+        /// </summary>
         private void BotaoCancelarTorneio(object sender, EventArgs e)
         {
             ResetFormTorneios();
             gbGTorneiosForm.Visible = false;
         }
 
+        /// <summary>
+        /// Evento de pesquisar torneios, quando o utilizador insere dados na Textbox de pesquisar.
+        /// Executa uma query Linq em que o nome do torneio contem o que for inserido na Textbox e põe os resultados na Data Grid View correspondente.
+        /// </summary>
+        private void PesquisarTorneio(object sender, EventArgs e)
+        {
+            string nomeTorneio = txtGTorneiosPesquisa.Text.Trim();
+
+            if (nomeTorneio.Length > 0)
+            {
+                if (radioTeamTournaments.Checked == true)
+                {
+                    var query = from torneios in containerDados.TournamentSet.OfType<TeamTournament>()
+                                where torneios.Name.Contains(nomeTorneio)
+                                select new { torneios.Id, torneios.Name, torneios.Date, torneios.Description };
+
+                    dgvGTorneiosLista.DataSource = query.ToList();
+                }
+
+                else if (radioStandardTournaments.Checked == true)
+                {
+                    var query = from torneios in containerDados.TournamentSet.OfType<StandardTournament>()
+                                where torneios.Name.Contains(nomeTorneio)
+                                select new { torneios.Id, torneios.Name, torneios.Date, torneios.Description };
+
+                    dgvGTorneiosLista.DataSource = query.ToList();
+                }
+            }
+
+            else
+            {
+                RefreshTabelaTorneios();
+            }
+        }
+
+        /// <summary>
+        /// Método de inserção de um torneio Team.
+        /// Cria uma instancia da classe TeamTournament com os dados enviados por parêmetro e insere a instância no DataSet "UserSet".
+        /// No final, faz refresh da tabela através do método RefreshTabelaTorneios.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="date"></param>
         private void AdicionarTeamTournament(string name, string description, DateTime date)
         {
             try
@@ -4075,6 +4176,14 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método de inserção de um torneio Standard.
+        /// Cria uma instancia da classe StandardTournament com os dados enviados por parêmetro e insere a instância no DataSet "UserSet".
+        /// No final, faz refresh da tabela através do método RefreshTabelaTorneios.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="date"></param>
         private void AdicionarStandardTournament(string name, string description, DateTime date)
         {
             try
@@ -4097,6 +4206,14 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método da alteração de um torneio Team.
+        /// Pesquisa pelo torneio com o id idTorneio, e guarda os novos dados no mesmo.
+        /// No final, guarda as alterações na base de dados e faz refresh da tabela através do método RefreshTabelaTorneios.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="date"></param>
         private void AlterarTeamTournament(string name, string description, DateTime date)
         {
             try
@@ -4118,6 +4235,14 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método da alteração de um torneio Standard.
+        /// Pesquisa pelo torneio com o id idTorneio, e guarda os novos dados no mesmo.
+        /// No final, guarda as alterações na base de dados e faz refresh da tabela através do método RefreshTabelaTorneios.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="date"></param>
         private void AlterarStandardTournament(string name, string description, DateTime date)
         {
             try
@@ -4139,6 +4264,11 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método de remoção de um torneio Team.
+        /// Remove um torneio Team do Data Set "TournamentSet".
+        /// De seguida, guarda as modificações do TournamentSet na base de dados e faz refresh à tabela.
+        /// </summary>
         private void RemoverTeamTournament()
         {
             try
@@ -4156,6 +4286,11 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método de remoção de um torneio Standard.
+        /// Remove um torneio Standard do Data Set "TournamentSet".
+        /// De seguida, guarda as modificações do TournamentSet na base de dados e faz refresh à tabela.
+        /// </summary>
         private void RemoverStandardTournament()
         {
             try
@@ -4173,6 +4308,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método para fazer refresh à DataGridView (Tabela) na tab dos Torneios.
+        /// Muda a Data Source da Data Grid View para o tipo do torneio correspondente.
+        /// </summary>
         private void RefreshTabelaTorneios()
         {
             if(radioTeamTournaments.Checked == true)
@@ -4188,6 +4327,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método para fazer reset ao formulário de preenchimento do Torneio.
+        /// Limpa os dados presentes do formulário.
+        /// </summary>
         private void ResetFormTorneios()
         {
             txtNomeTorneio.Clear();
@@ -4273,6 +4416,10 @@ namespace Projeto
 
         #region Torneios
 
+        /// <summary>
+        /// Evento do radio button "Team", na zona de pesquisa de Torneios.
+        /// Apenas invoca o método RefreshTabelaResultadosPesquisaTorneios para fazer refresh à tabela.
+        /// </summary>
         private void RadioPesquisarTorneiosTeam(object sender, EventArgs e)
         {
             if(radioPesquisarTorneiosTeam.Checked == true)
@@ -4281,6 +4428,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do radio button "Standard", na zona de pesquisa de Torneios.
+        /// Apenas invoca o método RefreshTabelaResultadosPesquisaTorneios para fazer refresh à tabela.
+        /// </summary>
         private void RadioPesquisarTorneiosStandard(object sender, EventArgs e)
         {
             if (radioPesquisarTorneiosStandard.Checked == true)
@@ -4289,6 +4440,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do botão "Limpar", na zona de pesquisa de Torneios.
+        /// Apenas invoca o método ResetFormPesquisaTorneios e RefreshTabelaResultadosPesquisaTorneios para limpar o form e fazer refresh à tabela.
+        /// </summary>
         private void BotaoLimparTorneios(object sender, EventArgs e)
         {
             ResetFormPesquisaTorneios();
@@ -4349,6 +4504,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método para fazer reset ao form de pesquisa de Torneios.
+        /// Apenas limpa o form.
+        /// </summary>
         private void ResetFormPesquisaTorneios()
         {
             txtTorneioNome.Clear();
@@ -4356,18 +4515,24 @@ namespace Projeto
             txtTorneioDescricao.Clear();
         }
 
+        /// <summary>
+        /// Método para fazer refresh à DataGridView (Tabela) na zona de pesquisa de Torneios.
+        /// Muda a Data Source da Data Grid View para o tipo do torneio correspondente.
+        /// </summary>
         private void RefreshTabelaResultadosPesquisaTorneios()
         {
             try
             {
                 if (radioPesquisarTorneiosTeam.Checked == true)
                 {
-                    dgvResultadosTorneios.DataSource = (from torneio in containerDados.TournamentSet.OfType<TeamTournament>() select new { torneio.Id, torneio.Name, torneio.Date, torneio.Description }).ToList();
+                    dgvResultadosTorneios.DataSource = (from torneio in containerDados.TournamentSet.OfType<TeamTournament>()
+                                                        select new { torneio.Id, torneio.Name, torneio.Date, torneio.Description }).ToList();
                 }
 
                 else if (radioPesquisarTorneiosStandard.Checked == true)
                 {
-                    dgvResultadosTorneios.DataSource = (from torneio in containerDados.TournamentSet.OfType<StandardTournament>() select new { torneio.Id, torneio.Name, torneio.Date, torneio.Description }).ToList();
+                    dgvResultadosTorneios.DataSource = (from torneio in containerDados.TournamentSet.OfType<StandardTournament>()
+                                                        select new { torneio.Id, torneio.Name, torneio.Date, torneio.Description }).ToList();
                 }
             }
 
@@ -4381,6 +4546,11 @@ namespace Projeto
 
         #region Jogos
 
+        /// <summary>
+        /// Evento do radio button "Team", na zona de Pesquisa de Jogos.
+        /// Invoca o método RefreshTabelaResultadosPesquisaJogos para fazer refresh à tabela e,
+        /// o método CarregarComboJogadorEquipa para carregar a combo box de Jogadores/Equipas com o tipo especifico ao tipo do jogo.
+        /// </summary>
         private void RadioPesquisarJogosTeam(object sender, EventArgs e)
         {
             if (radioPesquisarJogosTeam.Checked == true)
@@ -4390,6 +4560,11 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do radio button "Standard", na zona de Pesquisa de Jogos.
+        /// Invoca o método RefreshTabelaResultadosPesquisaJogos para fazer refresh à tabela e,
+        /// o método CarregarComboJogadorEquipa para carregar a combo box de Jogadores/Equipas com o tipo especifico ao tipo do jogo.
+        /// </summary>
         private void RadioPesquisarJogosStandard(object sender, EventArgs e)
         {
             if (radioPesquisarJogosStandard.Checked == true)
@@ -4399,6 +4574,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Evento do botão "Limpar", na zona de pesquisa de Jogos.
+        /// Apenas invoca o método ResetFormPesquisaJogos e RefreshTabelaResultadosPesquisaJogos para limpar o form e fazer refresh à tabela.
+        /// </summary>
         private void BotaoLimparJogos(object sender, EventArgs e)
         {
             ResetFormPesquisaJogos();
@@ -4500,6 +4679,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método para fazer reset ao form de pesquisa de Jogos.
+        /// Apenas limpa o form.
+        /// </summary>
         private void ResetFormPesquisaJogos()
         {
             txtJogoNome.Clear();
@@ -4509,6 +4692,10 @@ namespace Projeto
             nupJogoNumero.ResetText();
         }
 
+        /// <summary>
+        /// Método para fazer refresh à DataGridView (Tabela) na zona de pesquisa de Jogos.
+        /// Muda a Data Source da Data Grid View para o tipo do jogo correspondente.
+        /// </summary>
         private void RefreshTabelaResultadosPesquisaJogos()
         {
             try
@@ -4532,6 +4719,9 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método para carregar Equipas ou Jogadores na combo box correspondente, consoante o tipo de Jogo selecionado.
+        /// </summary>
         private void CarregarComboJogadorEquipa()
         {
             if (radioPesquisarJogosTeam.Checked == true)
@@ -4557,6 +4747,9 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método para carregar Baralhos na combo box correspondente.
+        /// </summary>
         private void CarregarComboDeck()
         {
             comboJogoDeck.Items.Clear();
@@ -4567,6 +4760,9 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Método para carregar Arbitros na combo box correspondente.
+        /// </summary>
         private void CarregarComboArbitro()
         {
             comboJogoArbitro.Items.Clear();
