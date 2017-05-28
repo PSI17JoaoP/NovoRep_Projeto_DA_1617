@@ -4643,7 +4643,7 @@ namespace Projeto
 
                     //query.Where(jogo => jogo.Date.Equals(dataJogo));
 
-                    dgvResultadosJogos.DataSource = (query.Select(jogo => new { jogo.Id, jogo.Description, jogo.Date, jogo.Number, jogo.Tournament.Name, Referee = jogo.Referee.Username, Player1 = jogo.Team1.Name, Player2 = jogo.Team2.Name })).ToList();
+                    dgvResultadosJogos.DataSource = (query.Select(jogo => new { jogo.Id, jogo.Description, jogo.Date, jogo.Number, Tournament = jogo.Tournament.Name, Referee = jogo.Referee.Username, Player1 = jogo.Team1.Name, Player2 = jogo.Team2.Name })).ToList();
                 }
 
                 else if (radioPesquisarJogosStandard.Checked == true)
@@ -4674,7 +4674,7 @@ namespace Projeto
 
                     //query.Where(jogo => jogo.Date.Equals(dataJogo));
 
-                    dgvResultadosJogos.DataSource = (query.Select(jogo => new { jogo.Id, jogo.Description, jogo.Date, jogo.Number, jogo.Tournament.Name, Referee = jogo.Referee.Username, Player1 = jogo.Player1.Nickname, Player2 = jogo.Player2.Nickname })).ToList();
+                    dgvResultadosJogos.DataSource = (query.Select(jogo => new { jogo.Id, jogo.Description, jogo.Date, jogo.Number, Tournament = jogo.Tournament.Name, Referee = jogo.Referee.Username, Player1 = jogo.Player1.Nickname, Player2 = jogo.Player2.Nickname })).ToList();
                 }
             }
 
@@ -4708,13 +4708,13 @@ namespace Projeto
                 if (radioPesquisarJogosTeam.Checked == true)
                 {
                     dgvResultadosJogos.DataSource = (from jogo in containerDados.GameSet.OfType<TeamGame>()
-                                                     select new { jogo.Id, jogo.Description, jogo.Date, jogo.Number, jogo.Tournament.Name, Referee = jogo.Referee.Username, Player1 = jogo.Team1.Name, Player2 = jogo.Team2.Name }).ToList();
+                                                     select new { jogo.Id, jogo.Description, jogo.Date, jogo.Number, Tournament = jogo.Tournament.Name, Referee = jogo.Referee.Username, Player1 = jogo.Team1.Name, Player2 = jogo.Team2.Name }).ToList();
                 }
 
                 else if (radioPesquisarJogosStandard.Checked == true)
                 {
                     dgvResultadosJogos.DataSource = (from jogo in containerDados.GameSet.OfType<StandardGame>()
-                                                     select new { jogo.Id, jogo.Description, jogo.Date, jogo.Number, jogo.Tournament.Name, Referee = jogo.Referee.Username, Player1 = jogo.Player1.Nickname, Player2 = jogo.Player2.Nickname }).ToList();
+                                                     select new { jogo.Id, jogo.Description, jogo.Date, jogo.Number, Tournament = jogo.Tournament.Name, Referee = jogo.Referee.Username, Player1 = jogo.Player1.Nickname, Player2 = jogo.Player2.Nickname }).ToList();
                 }
             }
 
