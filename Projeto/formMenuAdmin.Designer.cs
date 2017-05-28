@@ -270,7 +270,6 @@
             this.label38 = new System.Windows.Forms.Label();
             this.txtNomeJogador2 = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.btnExportar = new System.Windows.Forms.Button();
             this.dgvGListaJogadoresPesquisa = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -382,6 +381,10 @@
             this.radioPesquisarJogosStandard = new System.Windows.Forms.RadioButton();
             this.radioPesquisarTorneiosTeam = new System.Windows.Forms.RadioButton();
             this.radioPesquisarTorneiosStandard = new System.Windows.Forms.RadioButton();
+            this.nupJogoNumero = new System.Windows.Forms.NumericUpDown();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dtpJogoData = new System.Windows.Forms.DateTimePicker();
+            this.label23 = new System.Windows.Forms.Label();
             this.tbMenu.SuspendLayout();
             this.tpGestao.SuspendLayout();
             this.tcGestao.SuspendLayout();
@@ -470,6 +473,7 @@
             this.gbResultadosJogos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultadosTorneios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultadosJogos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupJogoNumero)).BeginInit();
             this.SuspendLayout();
             // 
             // tbMenu
@@ -3098,7 +3102,6 @@
             this.tbVerJogadores.Controls.Add(this.label38);
             this.tbVerJogadores.Controls.Add(this.txtNomeJogador2);
             this.tbVerJogadores.Controls.Add(this.label37);
-            this.tbVerJogadores.Controls.Add(this.btnExportar);
             this.tbVerJogadores.Controls.Add(this.dgvGListaJogadoresPesquisa);
             this.tbVerJogadores.Location = new System.Drawing.Point(4, 22);
             this.tbVerJogadores.Margin = new System.Windows.Forms.Padding(2);
@@ -3176,15 +3179,6 @@
             this.label37.Size = new System.Drawing.Size(38, 13);
             this.label37.TabIndex = 16;
             this.label37.Text = "Nome:";
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.Location = new System.Drawing.Point(612, 77);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(75, 23);
-            this.btnExportar.TabIndex = 15;
-            this.btnExportar.Text = "Exportar";
-            this.btnExportar.UseVisualStyleBackColor = true;
             // 
             // dgvGListaJogadoresPesquisa
             // 
@@ -3373,9 +3367,14 @@
             this.tbVerTorneios.TabIndex = 2;
             this.tbVerTorneios.Text = "Torneios";
             this.tbVerTorneios.UseVisualStyleBackColor = true;
+            this.tbVerTorneios.Enter += new System.EventHandler(this.TabVerTorneios);
             // 
             // gbPesquisarJogos
             // 
+            this.gbPesquisarJogos.Controls.Add(this.label23);
+            this.gbPesquisarJogos.Controls.Add(this.dtpJogoData);
+            this.gbPesquisarJogos.Controls.Add(this.label20);
+            this.gbPesquisarJogos.Controls.Add(this.nupJogoNumero);
             this.gbPesquisarJogos.Controls.Add(this.radioPesquisarJogosStandard);
             this.gbPesquisarJogos.Controls.Add(this.radioPesquisarJogosTeam);
             this.gbPesquisarJogos.Controls.Add(this.btnLimparJogos);
@@ -3389,17 +3388,18 @@
             this.gbPesquisarJogos.Controls.Add(this.label19);
             this.gbPesquisarJogos.Location = new System.Drawing.Point(5, 221);
             this.gbPesquisarJogos.Name = "gbPesquisarJogos";
-            this.gbPesquisarJogos.Size = new System.Drawing.Size(333, 171);
+            this.gbPesquisarJogos.Size = new System.Drawing.Size(414, 171);
             this.gbPesquisarJogos.TabIndex = 1;
             this.gbPesquisarJogos.TabStop = false;
             this.gbPesquisarJogos.Text = "Jogos";
             // 
             // txtJogoNome
             // 
-            this.txtJogoNome.Location = new System.Drawing.Point(61, 29);
+            this.txtJogoNome.Location = new System.Drawing.Point(81, 29);
             this.txtJogoNome.Name = "txtJogoNome";
-            this.txtJogoNome.Size = new System.Drawing.Size(179, 20);
+            this.txtJogoNome.Size = new System.Drawing.Size(159, 20);
             this.txtJogoNome.TabIndex = 7;
+            this.txtJogoNome.TextChanged += new System.EventHandler(this.PesquisarJogos);
             // 
             // comboJogoArbitro
             // 
@@ -3408,6 +3408,7 @@
             this.comboJogoArbitro.Name = "comboJogoArbitro";
             this.comboJogoArbitro.Size = new System.Drawing.Size(121, 21);
             this.comboJogoArbitro.TabIndex = 6;
+            this.comboJogoArbitro.SelectedIndexChanged += new System.EventHandler(this.PesquisarJogos);
             // 
             // comboJogoDeck
             // 
@@ -3416,6 +3417,7 @@
             this.comboJogoDeck.Name = "comboJogoDeck";
             this.comboJogoDeck.Size = new System.Drawing.Size(121, 21);
             this.comboJogoDeck.TabIndex = 5;
+            this.comboJogoDeck.SelectedIndexChanged += new System.EventHandler(this.PesquisarJogos);
             // 
             // comboJogoJogadorEquipa
             // 
@@ -3424,6 +3426,7 @@
             this.comboJogoJogadorEquipa.Name = "comboJogoJogadorEquipa";
             this.comboJogoJogadorEquipa.Size = new System.Drawing.Size(121, 21);
             this.comboJogoJogadorEquipa.TabIndex = 4;
+            this.comboJogoJogadorEquipa.SelectedIndexChanged += new System.EventHandler(this.PesquisarJogos);
             // 
             // label22
             // 
@@ -3457,9 +3460,9 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(20, 32);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(35, 13);
+            this.label19.Size = new System.Drawing.Size(55, 13);
             this.label19.TabIndex = 0;
-            this.label19.Text = "Nome";
+            this.label19.Text = "Descrição";
             // 
             // gbPesquisarTorneios
             // 
@@ -3474,7 +3477,7 @@
             this.gbPesquisarTorneios.Controls.Add(this.label16);
             this.gbPesquisarTorneios.Location = new System.Drawing.Point(5, 5);
             this.gbPesquisarTorneios.Name = "gbPesquisarTorneios";
-            this.gbPesquisarTorneios.Size = new System.Drawing.Size(333, 210);
+            this.gbPesquisarTorneios.Size = new System.Drawing.Size(414, 210);
             this.gbPesquisarTorneios.TabIndex = 0;
             this.gbPesquisarTorneios.TabStop = false;
             this.gbPesquisarTorneios.Text = "Torneios";
@@ -3484,8 +3487,9 @@
             this.txtTorneioDescricao.Location = new System.Drawing.Point(81, 70);
             this.txtTorneioDescricao.Multiline = true;
             this.txtTorneioDescricao.Name = "txtTorneioDescricao";
-            this.txtTorneioDescricao.Size = new System.Drawing.Size(237, 94);
+            this.txtTorneioDescricao.Size = new System.Drawing.Size(237, 84);
             this.txtTorneioDescricao.TabIndex = 5;
+            this.txtTorneioDescricao.TextChanged += new System.EventHandler(this.PesquisarTorneios);
             // 
             // txtTorneioNome
             // 
@@ -3493,6 +3497,7 @@
             this.txtTorneioNome.Name = "txtTorneioNome";
             this.txtTorneioNome.Size = new System.Drawing.Size(120, 20);
             this.txtTorneioNome.TabIndex = 4;
+            this.txtTorneioNome.TextChanged += new System.EventHandler(this.PesquisarTorneios);
             // 
             // label18
             // 
@@ -3515,10 +3520,11 @@
             // dtpTorneioData
             // 
             this.dtpTorneioData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTorneioData.Location = new System.Drawing.Point(232, 21);
+            this.dtpTorneioData.Location = new System.Drawing.Point(232, 24);
             this.dtpTorneioData.Name = "dtpTorneioData";
-            this.dtpTorneioData.Size = new System.Drawing.Size(86, 20);
+            this.dtpTorneioData.Size = new System.Drawing.Size(97, 20);
             this.dtpTorneioData.TabIndex = 1;
+            this.dtpTorneioData.ValueChanged += new System.EventHandler(this.PesquisarTorneios);
             // 
             // label16
             // 
@@ -4143,9 +4149,9 @@
             // gbResultadosTorneios
             // 
             this.gbResultadosTorneios.Controls.Add(this.dgvResultadosTorneios);
-            this.gbResultadosTorneios.Location = new System.Drawing.Point(344, 5);
+            this.gbResultadosTorneios.Location = new System.Drawing.Point(425, 5);
             this.gbResultadosTorneios.Name = "gbResultadosTorneios";
-            this.gbResultadosTorneios.Size = new System.Drawing.Size(427, 210);
+            this.gbResultadosTorneios.Size = new System.Drawing.Size(346, 210);
             this.gbResultadosTorneios.TabIndex = 2;
             this.gbResultadosTorneios.TabStop = false;
             this.gbResultadosTorneios.Text = "Resultados";
@@ -4153,37 +4159,39 @@
             // gbResultadosJogos
             // 
             this.gbResultadosJogos.Controls.Add(this.dgvResultadosJogos);
-            this.gbResultadosJogos.Location = new System.Drawing.Point(344, 221);
+            this.gbResultadosJogos.Location = new System.Drawing.Point(425, 221);
             this.gbResultadosJogos.Name = "gbResultadosJogos";
-            this.gbResultadosJogos.Size = new System.Drawing.Size(427, 171);
+            this.gbResultadosJogos.Size = new System.Drawing.Size(346, 171);
             this.gbResultadosJogos.TabIndex = 3;
             this.gbResultadosJogos.TabStop = false;
             this.gbResultadosJogos.Text = "Resultados";
             // 
             // btnLimparTorneios
             // 
-            this.btnLimparTorneios.Location = new System.Drawing.Point(243, 170);
+            this.btnLimparTorneios.Location = new System.Drawing.Point(316, 170);
             this.btnLimparTorneios.Name = "btnLimparTorneios";
             this.btnLimparTorneios.Size = new System.Drawing.Size(75, 23);
             this.btnLimparTorneios.TabIndex = 6;
             this.btnLimparTorneios.Text = "Limpar";
             this.btnLimparTorneios.UseVisualStyleBackColor = true;
+            this.btnLimparTorneios.Click += new System.EventHandler(this.BotaoLimparTorneios);
             // 
             // btnLimparJogos
             // 
-            this.btnLimparJogos.Location = new System.Drawing.Point(243, 132);
+            this.btnLimparJogos.Location = new System.Drawing.Point(316, 133);
             this.btnLimparJogos.Name = "btnLimparJogos";
             this.btnLimparJogos.Size = new System.Drawing.Size(75, 23);
             this.btnLimparJogos.TabIndex = 7;
             this.btnLimparJogos.Text = "Limpar";
             this.btnLimparJogos.UseVisualStyleBackColor = true;
+            this.btnLimparJogos.Click += new System.EventHandler(this.BotaoLimparJogos);
             // 
             // dgvResultadosTorneios
             // 
             this.dgvResultadosTorneios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResultadosTorneios.Location = new System.Drawing.Point(6, 19);
             this.dgvResultadosTorneios.Name = "dgvResultadosTorneios";
-            this.dgvResultadosTorneios.Size = new System.Drawing.Size(415, 185);
+            this.dgvResultadosTorneios.Size = new System.Drawing.Size(334, 185);
             this.dgvResultadosTorneios.TabIndex = 0;
             // 
             // dgvResultadosJogos
@@ -4191,7 +4199,7 @@
             this.dgvResultadosJogos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResultadosJogos.Location = new System.Drawing.Point(6, 19);
             this.dgvResultadosJogos.Name = "dgvResultadosJogos";
-            this.dgvResultadosJogos.Size = new System.Drawing.Size(415, 146);
+            this.dgvResultadosJogos.Size = new System.Drawing.Size(334, 146);
             this.dgvResultadosJogos.TabIndex = 0;
             // 
             // radioPesquisarJogosTeam
@@ -4204,6 +4212,7 @@
             this.radioPesquisarJogosTeam.TabStop = true;
             this.radioPesquisarJogosTeam.Text = "Team";
             this.radioPesquisarJogosTeam.UseVisualStyleBackColor = true;
+            this.radioPesquisarJogosTeam.CheckedChanged += new System.EventHandler(this.RadioPesquisarJogosTeam);
             // 
             // radioPesquisarJogosStandard
             // 
@@ -4215,6 +4224,7 @@
             this.radioPesquisarJogosStandard.TabStop = true;
             this.radioPesquisarJogosStandard.Text = "Standard";
             this.radioPesquisarJogosStandard.UseVisualStyleBackColor = true;
+            this.radioPesquisarJogosStandard.CheckedChanged += new System.EventHandler(this.RadioPesquisarJogosStandard);
             // 
             // radioPesquisarTorneiosTeam
             // 
@@ -4226,6 +4236,7 @@
             this.radioPesquisarTorneiosTeam.TabStop = true;
             this.radioPesquisarTorneiosTeam.Text = "Team";
             this.radioPesquisarTorneiosTeam.UseVisualStyleBackColor = true;
+            this.radioPesquisarTorneiosTeam.CheckedChanged += new System.EventHandler(this.RadioPesquisarTorneiosTeam);
             // 
             // radioPesquisarTorneiosStandard
             // 
@@ -4237,6 +4248,47 @@
             this.radioPesquisarTorneiosStandard.TabStop = true;
             this.radioPesquisarTorneiosStandard.Text = "Standard";
             this.radioPesquisarTorneiosStandard.UseVisualStyleBackColor = true;
+            this.radioPesquisarTorneiosStandard.CheckedChanged += new System.EventHandler(this.RadioPesquisarTorneiosStandard);
+            // 
+            // nupJogoNumero
+            // 
+            this.nupJogoNumero.Location = new System.Drawing.Point(294, 29);
+            this.nupJogoNumero.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.nupJogoNumero.Name = "nupJogoNumero";
+            this.nupJogoNumero.Size = new System.Drawing.Size(33, 20);
+            this.nupJogoNumero.TabIndex = 10;
+            this.nupJogoNumero.ValueChanged += new System.EventHandler(this.PesquisarJogos);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(258, 32);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(19, 13);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "Nº";
+            // 
+            // dtpJogoData
+            // 
+            this.dtpJogoData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpJogoData.Location = new System.Drawing.Point(294, 57);
+            this.dtpJogoData.Name = "dtpJogoData";
+            this.dtpJogoData.Size = new System.Drawing.Size(97, 20);
+            this.dtpJogoData.TabIndex = 12;
+            this.dtpJogoData.ValueChanged += new System.EventHandler(this.PesquisarJogos);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(258, 60);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(30, 13);
+            this.label23.TabIndex = 13;
+            this.label23.Text = "Data";
             // 
             // formMenuAdmin
             // 
@@ -4367,6 +4419,7 @@
             this.gbResultadosJogos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultadosTorneios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultadosJogos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupJogoNumero)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4603,7 +4656,6 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox txtNomeJogador2;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.DataGridView dgvGListaJogadoresPesquisa;
         private System.Windows.Forms.Button btlimpar;
         private System.Windows.Forms.ComboBox cbnomejogadorpesquisa;
@@ -4725,5 +4777,9 @@
         private System.Windows.Forms.RadioButton radioPesquisarJogosTeam;
         private System.Windows.Forms.RadioButton radioPesquisarTorneiosStandard;
         private System.Windows.Forms.RadioButton radioPesquisarTorneiosTeam;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.NumericUpDown nupJogoNumero;
+        private System.Windows.Forms.DateTimePicker dtpJogoData;
+        private System.Windows.Forms.Label label23;
     }
 }

@@ -3854,10 +3854,6 @@ namespace Projeto
 
         #endregion
 
-        #region Pesquisa de Jogos
-
-        #endregion
-
         #region Gestão de Torneios
 
         private void RadioFiltrarTeamTournaments(object sender, EventArgs e)
@@ -4264,9 +4260,327 @@ namespace Projeto
 
         #endregion
 
-        #region Pesquisa de Torneios
+        #region Pesquisa de Torneios e Jogos
+
+        private void TabVerTorneios(object sender, EventArgs e)
+        {
+            radioPesquisarTorneiosTeam.Checked = true;
+            radioPesquisarJogosTeam.Checked = true;
+
+            CarregarComboDeck();
+            CarregarComboArbitro();
+        }
+
+        #region Torneios
+
+        private void RadioPesquisarTorneiosTeam(object sender, EventArgs e)
+        {
+            if(radioPesquisarTorneiosTeam.Checked == true)
+            {
+                RefreshTabelaResultadosPesquisaTorneios();
+            }
+        }
+
+        private void RadioPesquisarTorneiosStandard(object sender, EventArgs e)
+        {
+            if (radioPesquisarTorneiosStandard.Checked == true)
+            {
+                RefreshTabelaResultadosPesquisaTorneios();
+            }
+        }
+
+        private void BotaoLimparTorneios(object sender, EventArgs e)
+        {
+            ResetFormPesquisaTorneios();
+            RefreshTabelaResultadosPesquisaTorneios();
+        }
+
+        private void PesquisarTorneios(object sender, EventArgs e)
+        {
+            string nomeTorneio = txtTorneioNome.Text.Trim();
+            string descricaoTorneio = txtTorneioDescricao.Text.Trim();
+            //DateTime dataTorneio = dtpTorneioData.Value.Date;
+
+            try
+            {
+                if (radioPesquisarTorneiosTeam.Checked == true)
+                {
+                    IQueryable<TeamTournament> query = containerDados.TournamentSet.OfType<TeamTournament>();
+
+                    if (nomeTorneio.Length > 0)
+                    {
+                        query.Where(torneio => torneio.Name.Contains(nomeTorneio));
+                    }
+
+                    else if (descricaoTorneio.Length > 0)
+                    {
+                        query.Where(torneio => torneio.Description.Contains(descricaoTorneio));
+                    }
+
+                    //query = query.Where(torneio => torneio.Date.Equals(dataTorneio));
+
+                    dgvResultadosTorneios.DataSource = (query.Select(torneio => new { torneio.Id, torneio.Name, torneio.Date, torneio.Description })).ToList();
+                }
+
+                else if (radioPesquisarTorneiosStandard.Checked == true)
+                {
+                    IQueryable<StandardTournament> query = containerDados.TournamentSet.OfType<StandardTournament>();
+
+                    if (nomeTorneio.Length > 0)
+                    {
+                        query.Where(torneio => torneio.Name.Contains(nomeTorneio));
+                    }
+
+                    else if (descricaoTorneio.Length > 0)
+                    {
+                        query.Where(torneio => torneio.Description.Contains(descricaoTorneio));
+                    }
+
+                    //query = query.Where(torneio => torneio.Date.Equals(dataTorneio));
+
+                    dgvResultadosTorneios.DataSource = (query.Select(torneio => new { torneio.Id, torneio.Name, torneio.Date, torneio.Description })).ToList();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro na pesquisa de torneios\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ResetFormPesquisaTorneios()
+        {
+            txtTorneioNome.Clear();
+            dtpTorneioData.ResetText();
+            txtTorneioDescricao.Clear();
+        }
+
+        private void RefreshTabelaResultadosPesquisaTorneios()
+        {
+            try
+            {
+                if (radioPesquisarTorneiosTeam.Checked == true)
+                {
+                    dgvResultadosTorneios.DataSource = (from torneio in containerDados.TournamentSet.OfType<TeamTournament>() select new { torneio.Id, torneio.Name, torneio.Date, torneio.Description }).ToList();
+                }
+
+                else if (radioPesquisarTorneiosStandard.Checked == true)
+                {
+                    dgvResultadosTorneios.DataSource = (from torneio in containerDados.TournamentSet.OfType<StandardTournament>() select new { torneio.Id, torneio.Name, torneio.Date, torneio.Description }).ToList();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro no carregamento dos torneios.\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         #endregion
+
+        #region Jogos
+
+        private void RadioPesquisarJogosTeam(object sender, EventArgs e)
+        {
+            if (radioPesquisarJogosTeam.Checked == true)
+            {
+                RefreshTabelaResultadosPesquisaJogos();
+                CarregarComboJogadorEquipa();
+            }
+        }
+
+        private void RadioPesquisarJogosStandard(object sender, EventArgs e)
+        {
+            if (radioPesquisarJogosStandard.Checked == true)
+            {
+                RefreshTabelaResultadosPesquisaJogos();
+                CarregarComboJogadorEquipa();
+            }
+        }
+
+        private void BotaoLimparJogos(object sender, EventArgs e)
+        {
+            ResetFormPesquisaJogos();
+            RefreshTabelaResultadosPesquisaJogos();
+        }
+
+        private void PesquisarJogos(object sender, EventArgs e)
+        {
+            string descricaoJogo = txtJogoNome.Text.Trim();
+            int numeroJogo = (int) nupJogoNumero.Value;
+            //DateTime dataJogo = dtpJogoData.Value.Date;
+            string jogadorEquipaJogo = "";
+            string deckJogo = "";
+            string arbitroJogo = "";
+
+            if (comboJogoJogadorEquipa.SelectedIndex != -1)
+            {
+                jogadorEquipaJogo = comboJogoJogadorEquipa.Text.Trim();
+            }
+
+            else if (comboJogoDeck.SelectedIndex != -1)
+            {
+                deckJogo = comboJogoDeck.Text.Trim();
+            }
+
+            else if (comboJogoArbitro.SelectedIndex != -1)
+            {
+                arbitroJogo = comboJogoArbitro.Text.Trim();
+            }
+
+            try
+            {
+                if (radioPesquisarJogosTeam.Checked == true)
+                {
+                    IQueryable<TeamGame> query = containerDados.GameSet.OfType<TeamGame>();
+
+                    if (descricaoJogo.Length > 0)
+                    {
+                        query.Where(jogo => jogo.Description.Contains(descricaoJogo));
+                    }
+
+                    else if (jogadorEquipaJogo != "")
+                    {
+                        query.Where(jogo => (jogo.Team1.Name.Contains(jogadorEquipaJogo) || jogo.Team2.Name.Contains(jogadorEquipaJogo)));
+                    }
+
+                    else if (deckJogo != "")
+                    {
+                        query.Where(jogo => (jogo.Deck1.Name.Contains(deckJogo) || jogo.Deck1.Name.Contains(deckJogo)));
+                    }
+
+                    else if (arbitroJogo != "")
+                    {
+                        query.Where(jogo => jogo.Referee.Username.Contains(arbitroJogo));
+                    }
+
+                    query.Where(jogo => jogo.Number >= numeroJogo);
+
+                    //query.Where(jogo => jogo.Date.Equals(dataJogo));
+
+                    dgvResultadosJogos.DataSource = (query.Select(jogo => new { jogo.Id, jogo.Description, jogo.Date, jogo.Number, jogo.Tournament.Name, Referee = jogo.Referee.Username, Player1 = jogo.Team1.Name, Player2 = jogo.Team2.Name })).ToList();
+                }
+
+                else if (radioPesquisarJogosStandard.Checked == true)
+                {
+                    IQueryable<StandardGame> query = containerDados.GameSet.OfType<StandardGame>();
+
+                    if (descricaoJogo.Length > 0)
+                    {
+                        query.Where(jogo => jogo.Description.Contains(descricaoJogo));
+                    }
+
+                    else if (jogadorEquipaJogo != "")
+                    {
+                        query.Where(jogo => (jogo.Player1.Nickname.Contains(jogadorEquipaJogo) || jogo.Player2.Nickname.Contains(jogadorEquipaJogo)));
+                    }
+
+                    else if (deckJogo != "")
+                    {
+                        query.Where(jogo => (jogo.Deck1.Name.Contains(deckJogo) || jogo.Deck1.Name.Contains(deckJogo)));
+                    }
+
+                    else if (arbitroJogo != "")
+                    {
+                        query.Where(jogo => jogo.Referee.Username.Contains(arbitroJogo));
+                    }
+
+                    query.Where(jogo => jogo.Number >= numeroJogo);
+
+                    //query.Where(jogo => jogo.Date.Equals(dataJogo));
+
+                    dgvResultadosJogos.DataSource = (query.Select(jogo => new { jogo.Id, jogo.Description, jogo.Date, jogo.Number, jogo.Tournament.Name, Referee = jogo.Referee.Username, Player1 = jogo.Player1.Nickname, Player2 = jogo.Player2.Nickname })).ToList();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro na pesquisa de jogos.\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ResetFormPesquisaJogos()
+        {
+            txtJogoNome.Clear();
+            comboJogoJogadorEquipa.SelectedIndex = -1;
+            comboJogoDeck.SelectedIndex = -1;
+            comboJogoArbitro.SelectedIndex = -1;
+            nupJogoNumero.ResetText();
+        }
+
+        private void RefreshTabelaResultadosPesquisaJogos()
+        {
+            try
+            {
+                if (radioPesquisarJogosTeam.Checked == true)
+                {
+                    dgvResultadosJogos.DataSource = (from jogo in containerDados.GameSet.OfType<TeamGame>()
+                                                     select new { jogo.Id, jogo.Description, jogo.Date, jogo.Number, jogo.Tournament.Name, Referee = jogo.Referee.Username, Player1 = jogo.Team1.Name, Player2 = jogo.Team2.Name }).ToList();
+                }
+
+                else if (radioPesquisarJogosStandard.Checked == true)
+                {
+                    dgvResultadosJogos.DataSource = (from jogo in containerDados.GameSet.OfType<StandardGame>()
+                                                     select new { jogo.Id, jogo.Description, jogo.Date, jogo.Number, jogo.Tournament.Name, Referee = jogo.Referee.Username, Player1 = jogo.Player1.Nickname, Player2 = jogo.Player2.Nickname }).ToList();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro no carregamento dos jogos.\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CarregarComboJogadorEquipa()
+        {
+            if (radioPesquisarJogosTeam.Checked == true)
+            {
+                labJogoJogadorEquipa.Text = "Contem a Equipa";
+                comboJogoJogadorEquipa.Items.Clear();
+
+                foreach (Team equipa in containerDados.TeamSet.OfType<Team>())
+                {
+                    comboJogoJogadorEquipa.Items.Add(equipa.Name);
+                }
+            }
+
+            else if (radioPesquisarJogosStandard.Checked == true)
+            {
+                labJogoJogadorEquipa.Text = "Contem o Jogador";
+                comboJogoJogadorEquipa.Items.Clear();
+
+                foreach (Player jogador in containerDados.GameSet.OfType<Player>())
+                {
+                    comboJogoJogadorEquipa.Items.Add(jogador.Nickname);
+                }
+            }
+        }
+
+        private void CarregarComboDeck()
+        {
+            comboJogoDeck.Items.Clear();
+
+            foreach(Deck deck in containerDados.DeckSet)
+            {
+                comboJogoDeck.Items.Add(deck.Name);
+            }
+        }
+
+        private void CarregarComboArbitro()
+        {
+            comboJogoArbitro.Items.Clear();
+
+            foreach (Referee arbitro in containerDados.UserSet.OfType<Referee>())
+            {
+                comboJogoArbitro.Items.Add(arbitro.Username);
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+        #region WIP
 
         private void tbGestaoTorneios_Enter(object sender, EventArgs e)
         {
@@ -4362,6 +4676,8 @@ namespace Projeto
                 }
             }*/
         }
+
+        #endregion
     }
 }
 
