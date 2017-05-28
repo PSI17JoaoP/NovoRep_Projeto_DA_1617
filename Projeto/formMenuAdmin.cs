@@ -4617,25 +4617,25 @@ namespace Projeto
 
                     if (descricaoJogo.Length > 0)
                     {
-                        query.Where(jogo => jogo.Description.Contains(descricaoJogo));
+                        query = query.Where(jogo => jogo.Description.Contains(descricaoJogo));
                     }
 
-                    else if (jogadorEquipaJogo != "")
+                    if (jogadorEquipaJogo != "")
                     {
-                        query.Where(jogo => (jogo.Team1.Name.Contains(jogadorEquipaJogo) || jogo.Team2.Name.Contains(jogadorEquipaJogo)));
+                        query = query.Where(jogo => (jogo.Team1.Name.Contains(jogadorEquipaJogo) || jogo.Team2.Name.Contains(jogadorEquipaJogo)));
                     }
 
-                    else if (deckJogo != "")
+                    if (deckJogo != "")
                     {
-                        query.Where(jogo => (jogo.Deck1.Name.Contains(deckJogo) || jogo.Deck1.Name.Contains(deckJogo)));
+                        query = query.Where(jogo => (jogo.Deck1.Name.Contains(deckJogo) || jogo.Deck1.Name.Contains(deckJogo)));
                     }
 
-                    else if (arbitroJogo != "")
+                    if (arbitroJogo != "")
                     {
-                        query.Where(jogo => jogo.Referee.Username.Contains(arbitroJogo));
+                        query = query.Where(jogo => jogo.Referee.Username.Contains(arbitroJogo));
                     }
 
-                    query.Where(jogo => jogo.Number >= numeroJogo);
+                    query = query.Where(jogo => jogo.Number >= numeroJogo);
 
                     //query.Where(jogo => jogo.Date.Equals(dataJogo));
 
@@ -4648,25 +4648,25 @@ namespace Projeto
 
                     if (descricaoJogo.Length > 0)
                     {
-                        query.Where(jogo => jogo.Description.Contains(descricaoJogo));
+                        query = query.Where(jogo => jogo.Description.Contains(descricaoJogo));
                     }
 
-                    else if (jogadorEquipaJogo != "")
+                    if (jogadorEquipaJogo != "")
                     {
-                        query.Where(jogo => (jogo.Player1.Nickname.Contains(jogadorEquipaJogo) || jogo.Player2.Nickname.Contains(jogadorEquipaJogo)));
+                        query = query.Where(jogo => (jogo.Player1.Nickname.Contains(jogadorEquipaJogo) || jogo.Player2.Nickname.Contains(jogadorEquipaJogo)));
                     }
 
-                    else if (deckJogo != "")
+                    if (deckJogo != "")
                     {
-                        query.Where(jogo => (jogo.Deck1.Name.Contains(deckJogo) || jogo.Deck1.Name.Contains(deckJogo)));
+                        query = query.Where(jogo => (jogo.Deck1.Name.Contains(deckJogo) || jogo.Deck1.Name.Contains(deckJogo)));
                     }
 
-                    else if (arbitroJogo != "")
+                    if (arbitroJogo != "")
                     {
-                        query.Where(jogo => jogo.Referee.Username.Contains(arbitroJogo));
+                        query = query.Where(jogo => jogo.Referee.Username.Contains(arbitroJogo));
                     }
 
-                    query.Where(jogo => jogo.Number >= numeroJogo);
+                    query = query.Where(jogo => jogo.Number >= numeroJogo);
 
                     //query.Where(jogo => jogo.Date.Equals(dataJogo));
 
