@@ -140,7 +140,6 @@ namespace Projeto
 
                     txtUsernameArbitro.Text = arbitro.Username;
                     txtNomeArbitro.Text = arbitro.Name;
-                    txtAvatarArbitro.Text = arbitro.Avatar;
 
                     if (File.Exists(arbitro.Avatar))
                     {
@@ -148,7 +147,26 @@ namespace Projeto
                         {
                             Image avatarArbitro = new Bitmap(imagemAvatar);
                             pbAvatarArbitro.Image = avatarArbitro;
+                            txtAvatarArbitro.Text = arbitro.Avatar;
                         }
+                    }
+
+                    else if (File.Exists(Environment.CurrentDirectory + "ArcmageADM/arbitros/avatars" + arbitro.Username + ".png"))
+                    {
+                        string pathRelativo = Environment.CurrentDirectory + "ArcmageADM/arbitros/avatars" + arbitro.Username + ".png";
+
+                        using (Bitmap imagemAvatar = new Bitmap(pathRelativo))
+                        {
+                            Image avatarArbitro = new Bitmap(imagemAvatar);
+                            pbAvatarArbitro.Image = avatarArbitro;
+                        }
+
+                        arbitro.Avatar = pathRelativo;
+
+                        containerDados.Entry(arbitro).State = EntityState.Modified;
+                        containerDados.SaveChanges();
+
+                        txtAvatarArbitro.Text = arbitro.Avatar;
                     }
 
                     btnAcaoArbitro.Text = "Aplicar";
@@ -2509,7 +2527,6 @@ namespace Projeto
                         txtEmailJogador.Text = player.Email;
                         txtNickJogador.Text = player.Nickname;
                         nudIdadeJogador.Value = (int)player.Age;
-                        txtAvatar.Text = player.Avatar;
 
                         if (File.Exists(player.Avatar))
                         {
@@ -2517,7 +2534,26 @@ namespace Projeto
                             {
                                 Image avatarJogador = new Bitmap(imagemAvatar);
                                 pictureBox1.Image = avatarJogador;
+                                txtAvatar.Text = player.Avatar;
                             }
+                        }
+
+                        else if (File.Exists(Environment.CurrentDirectory + "ArcmageADM/jogadores/avatars" + player.Name + ".png"))
+                        {
+                            string pathRelativo = Environment.CurrentDirectory + "ArcmageADM/jogadores/avatars" + player.Name + ".png";
+
+                            using (Bitmap imagemAvatar = new Bitmap(pathRelativo))
+                            {
+                                Image avatarJogador = new Bitmap(imagemAvatar);
+                                pictureBox1.Image = avatarJogador;
+                            }
+
+                            player.Avatar = pathRelativo;
+
+                            containerDados.Entry(player).State = EntityState.Modified;
+                            containerDados.SaveChanges();
+
+                            txtAvatar.Text = player.Avatar;
                         }
                     }
                 }
@@ -2868,7 +2904,6 @@ namespace Projeto
                     if (team.Id == idEquipa)
                     {
                         txtGNomeEquipa.Text = team.Name;
-                        txtGAvatarEquipa.Text = team.Avatar;
 
                         if (File.Exists(team.Avatar))
                         {
@@ -2876,7 +2911,26 @@ namespace Projeto
                             {
                                 Image avatarEquipa = new Bitmap(imagemAvatar);
                                 pictureBoxAvatarEquipa.Image = avatarEquipa;
+                                txtGAvatarEquipa.Text = team.Avatar;
                             }
+                        }
+
+                        else if (File.Exists(Environment.CurrentDirectory + "ArcmageADM/equipas/avatars" + team.Name + ".png"))
+                        {
+                            string pathRelativo = Environment.CurrentDirectory + "ArcmageADM/equipas/avatars" + team.Name + ".png";
+
+                            using (Bitmap imagemAvatar = new Bitmap(pathRelativo))
+                            {
+                                Image avatarEquipa = new Bitmap(imagemAvatar);
+                                pictureBoxAvatarEquipa.Image = avatarEquipa;
+                            }
+
+                            team.Avatar = pathRelativo;
+
+                            containerDados.Entry(team).State = EntityState.Modified;
+                            containerDados.SaveChanges();
+
+                            txtGAvatarEquipa.Text = team.Avatar;
                         }
                     }
                 }
