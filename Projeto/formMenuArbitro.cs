@@ -25,7 +25,7 @@ namespace Projeto
         /// <summary>
         /// Variável usada para interagir com a base de dados
         /// </summary>
-        private DiagramaArcmageContainer container;
+        public DiagramaArcmageContainer container;
 
         /// <summary>
         /// Variável que guarda o ID do árbitro que iniciou sessão
@@ -107,7 +107,7 @@ namespace Projeto
                 StandardGame jogo = container.GameSet.OfType<StandardGame>()
                         .Where(g => g.Description.Equals(descricao)).First();
 
-                FormArbitro_DetalhesJogoS detalhes = new FormArbitro_DetalhesJogoS(jogo);
+                FormArbitro_DetalhesJogoS detalhes = new FormArbitro_DetalhesJogoS(jogo, this);
                 detalhes.ShowDialog();
 
                 lvStandardJ.Items.Clear();
@@ -159,7 +159,7 @@ namespace Projeto
             TeamGame jogo = container.GameSet.OfType<TeamGame>()
                     .Where(g => g.Description.Equals(descricao)).First();
 
-            FormArbitro_DetalhesJogoT detalhes = new FormArbitro_DetalhesJogoT(jogo);
+            FormArbitro_DetalhesJogoT detalhes = new FormArbitro_DetalhesJogoT(jogo, this);
             detalhes.ShowDialog();
 
             lvTeamJ.Items.Clear();
