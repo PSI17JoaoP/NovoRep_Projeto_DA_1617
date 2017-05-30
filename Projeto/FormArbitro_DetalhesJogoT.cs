@@ -12,31 +12,29 @@ namespace Projeto
 {
     public partial class FormArbitro_DetalhesJogoT : Form
     {
-        /// <summary>
-        /// Variável usada para interagir com a base de dados
-        /// </summary>
-        private DiagramaArcmageContainer container;
 
         TeamGame jogo;
 
-        public FormArbitro_DetalhesJogoT(TeamGame infoJogo)
+        formMenuArbitro form;
+
+        public FormArbitro_DetalhesJogoT(TeamGame infoJogo, formMenuArbitro arbitro)
         {
             InitializeComponent();
 
-            container = new DiagramaArcmageContainer();
+            form = arbitro;
             jogo = infoJogo;
-
+            
             //Carregar comboboxes
 
             //Baralhos
-            foreach (Deck item in container.DeckSet)
+            foreach (Deck item in form.container.DeckSet)
             {
                 cmbDeck1.Items.Add(item.Name);
                 cmbDeck2.Items.Add(item.Name);
             }
 
             //Equipas
-            foreach (Team item in container.TeamSet)
+            foreach (Team item in form.container.TeamSet)
             {
                 cmbParticipante1.Items.Add(item.Name);
                 cmbParticipante2.Items.Add(item.Name);
@@ -67,10 +65,10 @@ namespace Projeto
                 string d1 = cmbDeck1.SelectedItem.ToString();
                 string d2 = cmbDeck2.SelectedItem.ToString();
 
-                Team equipa1 = container.TeamSet.Where(j => j.Name.Equals(t1)).First();
-                Team equipa2 = container.TeamSet.Where(j => j.Name.Equals(t2)).First();
-                Deck deck1 = container.DeckSet.Where(d => d.Name.Equals(d1)).First();
-                Deck deck2 = container.DeckSet.Where(d => d.Name.Equals(d2)).First();
+                Team equipa1 = form.container.TeamSet.Where(j => j.Name.Equals(t1)).First();
+                Team equipa2 = form.container.TeamSet.Where(j => j.Name.Equals(t2)).First();
+                Deck deck1 = form.container.DeckSet.Where(d => d.Name.Equals(d1)).First();
+                Deck deck2 = form.container.DeckSet.Where(d => d.Name.Equals(d2)).First();
 
 
                 jogo.Description = txtDescricao.Text;
@@ -85,7 +83,7 @@ namespace Projeto
                 jogo.Deck2 = deck2;
                 jogo.DeckId2 = deck2.Id;
 
-                container.SaveChanges();
+                form.container.SaveChanges();
 
                 MessageBox.Show("Alterações guardadas com sucesso!", "Sucesso");
 
