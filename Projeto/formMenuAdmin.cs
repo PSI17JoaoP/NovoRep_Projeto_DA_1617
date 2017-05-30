@@ -140,15 +140,22 @@ namespace Projeto
 
                     txtUsernameArbitro.Text = arbitro.Username;
                     txtNomeArbitro.Text = arbitro.Name;
-                    txtAvatarArbitro.Text = arbitro.Avatar;
 
-                    if (File.Exists(arbitro.Avatar))
+                    string pathImagem = Environment.CurrentDirectory + arbitro.Avatar;
+
+                    if (File.Exists(pathImagem))
                     {
-                        using (Bitmap imagemAvatar = new Bitmap(arbitro.Avatar))
+                        using (Bitmap imagemAvatar = new Bitmap(pathImagem))
                         {
                             Image avatarArbitro = new Bitmap(imagemAvatar);
                             pbAvatarArbitro.Image = avatarArbitro;
+                            txtAvatarArbitro.Text = arbitro.Avatar;
                         }
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Não foi possivél abrir o avatar do árbitro.\nA imagem foi eliminada manualmente.\nInsira uma nova imagem e clique no botão 'Aplicar'", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                     btnAcaoArbitro.Text = "Aplicar";
@@ -302,7 +309,7 @@ namespace Projeto
             string usernameForm = txtUsernameArbitro.Text.Trim();
             string nomeForm = txtNomeArbitro.Text.Trim();
             string avatarPathAbsoluto = txtAvatarArbitro.Text.Trim();
-            string avatarPathRelative = GetPathRelativeImagem(avatarPathAbsoluto, usernameForm, "/arbitros/avatars");
+            string avatarPathRelative = GetPathRelativeImagem(usernameForm, "\\arbitros\\avatars");
 
             if (btnAcaoArbitro.Text == "Aplicar")
             {
@@ -812,11 +819,11 @@ namespace Projeto
         /// <param name="avatarPathAbsoluto">Caminho absoluto do avatar</param>
         /// <param name="usernameArbitro">Username do Arbitro</param>
         /// <returns></returns>
-        private string GetPathRelativeImagem(string avatarPathAbsoluto, string nomeImagem, string pathPasta)
+        private string GetPathRelativeImagem(string nomeImagem, string pathSubpastas)
         {
-            DirectoryInfo avatarPath = Directory.CreateDirectory(Environment.CurrentDirectory + "/ArcmageADM" + pathPasta);
+            Directory.CreateDirectory(Environment.CurrentDirectory + "\\ArcmageADM" + pathSubpastas);
 
-            string avatarPathRelative = avatarPath.FullName + "\\" + nomeImagem + ".png";
+            string avatarPathRelative = "\\ArcmageADM" + pathSubpastas + "\\" + nomeImagem + ".png";
 
             return avatarPathRelative;
         }
@@ -826,10 +833,12 @@ namespace Projeto
         /// Encontra a imagem através do caminho absoluto (a pasta onde se encontra) e, se for diferente do caminho relativo (onde irá ser guardada),
         /// isto é, se a imagem escolhida é diferente do que a atual, elimina e faz uma nova cópia para o caminho relativo.
         /// </summary>
-        /// <param name="avatarPathRelative">Caminho relativo do avatar</param>
+        /// <param name="avatarPathSubpastas">Caminho relativo do avatar</param>
         /// <param name="avatarPathAbsoluto">Caminho absoluto do avatar</param>
-        private void GuardarImagem(string avatarPathRelative, string avatarPathAbsoluto)
+        private void GuardarImagem(string avatarPathSubpasta, string avatarPathAbsoluto)
         {
+            string avatarPathRelative = Environment.CurrentDirectory + avatarPathSubpasta;
+
             if (File.Exists(avatarPathRelative))
             {
                 if(avatarPathAbsoluto != avatarPathRelative)
@@ -2516,15 +2525,22 @@ namespace Projeto
                         txtEmailJogador.Text = player.Email;
                         txtNickJogador.Text = player.Nickname;
                         nudIdadeJogador.Value = (int)player.Age;
-                        txtAvatar.Text = player.Avatar;
 
-                        if (File.Exists(player.Avatar))
+                        string pathImagem = Environment.CurrentDirectory + player.Avatar;
+
+                        if (File.Exists(pathImagem))
                         {
-                            using (Bitmap imagemAvatar = new Bitmap(player.Avatar))
+                            using (Bitmap imagemAvatar = new Bitmap(pathImagem))
                             {
                                 Image avatarJogador = new Bitmap(imagemAvatar);
                                 pictureBox1.Image = avatarJogador;
+                                txtAvatar.Text = player.Avatar;
                             }
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Não foi possivél abrir o avatar do jogador.\nA imagem foi eliminada manualmente.\nInsira uma nova imagem e clique no botão 'Aplicar'", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
@@ -2568,7 +2584,7 @@ namespace Projeto
             string nickname = txtNickJogador.Text.Trim();
             int idade = (int)nudIdadeJogador.Value;
             string caminhoAbsoluto = txtAvatar.Text.Trim();
-            string caminhoRelative = GetPathRelativeImagem(caminhoAbsoluto, nome, "/jogadores/avatars");
+            string caminhoRelative = GetPathRelativeImagem(nome, "\\jogadores\\avatars");
 
             //validar se estão preenchidos
             if (nome.Length == 0 || email.Length == 0 || nickname.Length == 0 || idade == 0 || caminhoAbsoluto.Length == 0)
@@ -2959,15 +2975,20 @@ namespace Projeto
                     if (team.Id == idEquipa)
                     {
                         txtGNomeEquipa.Text = team.Name;
-                        txtGAvatarEquipa.Text = team.Avatar;
 
-                        if (File.Exists(team.Avatar))
+                        if (File.Exists(Environment.CurrentDirectory + team.Avatar))
                         {
                             using (Bitmap imagemAvatar = new Bitmap(team.Avatar))
                             {
                                 Image avatarEquipa = new Bitmap(imagemAvatar);
                                 pictureBoxAvatarEquipa.Image = avatarEquipa;
+                                txtGAvatarEquipa.Text = team.Avatar;
                             }
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Não foi possivél abrir o avatar da equipa.\nA imagem foi eliminada manualmente.\nInsira uma nova imagem e clique no botão 'Aplicar'", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
@@ -3005,7 +3026,7 @@ namespace Projeto
         {
             string nome = txtGNomeEquipa.Text.Trim();
             string caminhoAbsoluto = txtGAvatarEquipa.Text.Trim();
-            string caminhoRelative = GetPathRelativeImagem(caminhoAbsoluto, nome, "/equipas/avatars");
+            string caminhoRelative = GetPathRelativeImagem(nome, "\\equipas\\avatars");
 
             if (nome.Equals("") || caminhoAbsoluto.Equals(""))
             {

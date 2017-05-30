@@ -87,6 +87,8 @@ namespace Projeto
                 container.SaveChanges();
 
                 MessageBox.Show("Alterações guardadas com sucesso!", "Sucesso");
+
+                Close();
             }
         }
     }
