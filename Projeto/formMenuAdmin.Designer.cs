@@ -105,8 +105,6 @@
             this.tbGestaoTorneios = new System.Windows.Forms.TabPage();
             this.gbGJogosDados = new System.Windows.Forms.GroupBox();
             this.btnCancelarJogo = new System.Windows.Forms.Button();
-            this.labPesquisarJogos = new System.Windows.Forms.Label();
-            this.txtGJogosPesquisa = new System.Windows.Forms.TextBox();
             this.dgvGJogosLista = new System.Windows.Forms.DataGridView();
             this.btnAlterarJogo = new System.Windows.Forms.Button();
             this.btnInserirJogo = new System.Windows.Forms.Button();
@@ -237,15 +235,6 @@
             this.dgvGUtilizadoresLista = new System.Windows.Forms.DataGridView();
             this.btnInserirUtilizador = new System.Windows.Forms.Button();
             this.txtGUtilizadoresPesquisa = new System.Windows.Forms.TextBox();
-            this.gbGAdministradorForm = new System.Windows.Forms.GroupBox();
-            this.btnCancelarAdministrador = new System.Windows.Forms.Button();
-            this.btnAcaoAdministrador = new System.Windows.Forms.Button();
-            this.txtEmailAdministrador = new System.Windows.Forms.TextBox();
-            this.txtPasswordAdministrador = new System.Windows.Forms.TextBox();
-            this.txtUsernameAdministrador = new System.Windows.Forms.TextBox();
-            this.labEmailAdministrador = new System.Windows.Forms.Label();
-            this.labPasswordAdministrador = new System.Windows.Forms.Label();
-            this.labUsernameAdministrador = new System.Windows.Forms.Label();
             this.gbGArbitroForm = new System.Windows.Forms.GroupBox();
             this.pbAvatarArbitro = new System.Windows.Forms.PictureBox();
             this.labUsernameArbitro = new System.Windows.Forms.Label();
@@ -259,6 +248,15 @@
             this.btnProcurarAvatar = new System.Windows.Forms.Button();
             this.btnAcaoArbitro = new System.Windows.Forms.Button();
             this.btnCancelarArbitro = new System.Windows.Forms.Button();
+            this.gbGAdministradorForm = new System.Windows.Forms.GroupBox();
+            this.btnCancelarAdministrador = new System.Windows.Forms.Button();
+            this.btnAcaoAdministrador = new System.Windows.Forms.Button();
+            this.txtEmailAdministrador = new System.Windows.Forms.TextBox();
+            this.txtPasswordAdministrador = new System.Windows.Forms.TextBox();
+            this.txtUsernameAdministrador = new System.Windows.Forms.TextBox();
+            this.labEmailAdministrador = new System.Windows.Forms.Label();
+            this.labPasswordAdministrador = new System.Windows.Forms.Label();
+            this.labUsernameAdministrador = new System.Windows.Forms.Label();
             this.tbVer = new System.Windows.Forms.TabPage();
             this.tcVer = new System.Windows.Forms.TabControl();
             this.tbVerJogadores = new System.Windows.Forms.TabPage();
@@ -439,9 +437,9 @@
             this.tbGestaoUtilizadores.SuspendLayout();
             this.gbGUtilizadoresDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGUtilizadoresLista)).BeginInit();
-            this.gbGAdministradorForm.SuspendLayout();
             this.gbGArbitroForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatarArbitro)).BeginInit();
+            this.gbGAdministradorForm.SuspendLayout();
             this.tbVer.SuspendLayout();
             this.tcVer.SuspendLayout();
             this.tbVerJogadores.SuspendLayout();
@@ -1260,8 +1258,6 @@
             // gbGJogosDados
             // 
             this.gbGJogosDados.Controls.Add(this.btnCancelarJogo);
-            this.gbGJogosDados.Controls.Add(this.labPesquisarJogos);
-            this.gbGJogosDados.Controls.Add(this.txtGJogosPesquisa);
             this.gbGJogosDados.Controls.Add(this.dgvGJogosLista);
             this.gbGJogosDados.Controls.Add(this.btnAlterarJogo);
             this.gbGJogosDados.Controls.Add(this.btnInserirJogo);
@@ -1288,6 +1284,7 @@
             this.btnCancelarJogo.UseVisualStyleBackColor = true;
             this.btnCancelarJogo.Click += new System.EventHandler(this.btnCancelarJogo_Click);
             // 
+<<<<<<< HEAD
             // labPesquisarJogos
             // 
             this.labPesquisarJogos.AutoSize = true;
@@ -1308,6 +1305,8 @@
             this.txtGJogosPesquisa.Size = new System.Drawing.Size(319, 20);
             this.txtGJogosPesquisa.TabIndex = 8;
             // 
+=======
+>>>>>>> be2022e63ebe197ad6abdc21bbd8feb0ea8fc795
             // dgvGJogosLista
             // 
             this.dgvGJogosLista.AllowUserToAddRows = false;
@@ -1534,6 +1533,7 @@
             // 
             // cmbarbitrojogos
             // 
+            this.cmbarbitrojogos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbarbitrojogos.FormattingEnabled = true;
             this.cmbarbitrojogos.Location = new System.Drawing.Point(69, 98);
             this.cmbarbitrojogos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -1567,12 +1567,14 @@
             // 
             // cmbdecks2
             // 
+            this.cmbdecks2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbdecks2.FormattingEnabled = true;
             this.cmbdecks2.Location = new System.Drawing.Point(213, 15);
             this.cmbdecks2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbdecks2.Name = "cmbdecks2";
             this.cmbdecks2.Size = new System.Drawing.Size(79, 21);
             this.cmbdecks2.TabIndex = 19;
+            this.cmbdecks2.DropDownClosed += new System.EventHandler(this.cmbdecks2_DropDownClosed);
             // 
             // label14
             // 
@@ -1586,12 +1588,14 @@
             // 
             // cmbdecks1
             // 
+            this.cmbdecks1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbdecks1.FormattingEnabled = true;
             this.cmbdecks1.Location = new System.Drawing.Point(14, 15);
             this.cmbdecks1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbdecks1.Name = "cmbdecks1";
             this.cmbdecks1.Size = new System.Drawing.Size(82, 21);
             this.cmbdecks1.TabIndex = 0;
+            this.cmbdecks1.DropDownClosed += new System.EventHandler(this.cmbdecks1_DropDownClosed);
             // 
             // groupBoxEquipasJogos
             // 
@@ -1609,13 +1613,14 @@
             // 
             // cmbequipajogador1
             // 
+            this.cmbequipajogador1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbequipajogador1.FormattingEnabled = true;
             this.cmbequipajogador1.Location = new System.Drawing.Point(14, 18);
             this.cmbequipajogador1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbequipajogador1.Name = "cmbequipajogador1";
             this.cmbequipajogador1.Size = new System.Drawing.Size(82, 21);
             this.cmbequipajogador1.TabIndex = 15;
-            this.cmbequipajogador1.SelectedIndexChanged += new System.EventHandler(this.cmbJogador1Jogo_SelectedIndexChanged);
+            this.cmbequipajogador1.DropDownClosed += new System.EventHandler(this.cmbequipajogador1_DropDownClosed);
             // 
             // labVS
             // 
@@ -1629,13 +1634,14 @@
             // 
             // cmbequipajogador2
             // 
+            this.cmbequipajogador2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbequipajogador2.FormattingEnabled = true;
             this.cmbequipajogador2.Location = new System.Drawing.Point(213, 16);
             this.cmbequipajogador2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbequipajogador2.Name = "cmbequipajogador2";
             this.cmbequipajogador2.Size = new System.Drawing.Size(79, 21);
             this.cmbequipajogador2.TabIndex = 16;
-            this.cmbequipajogador2.SelectedIndexChanged += new System.EventHandler(this.cmbequipajogador2_SelectedIndexChanged);
+            this.cmbequipajogador2.DropDownClosed += new System.EventHandler(this.cmbequipajogador2_DropDownClosed);
             // 
             // btnJogoCancelar
             // 
@@ -2688,6 +2694,7 @@
             // tbGestaoUtilizadores
             // 
             this.tbGestaoUtilizadores.Controls.Add(this.gbGUtilizadoresDados);
+            this.tbGestaoUtilizadores.Controls.Add(this.gbGArbitroForm);
             this.tbGestaoUtilizadores.Controls.Add(this.gbGAdministradorForm);
             this.tbGestaoUtilizadores.Controls.Add(this.gbGArbitroForm);
             this.tbGestaoUtilizadores.Location = new System.Drawing.Point(4, 22);
@@ -4337,7 +4344,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bD_DA_ProjetoDataSet_Teams)).EndInit();
             this.tbGestaoTorneios.ResumeLayout(false);
             this.gbGJogosDados.ResumeLayout(false);
-            this.gbGJogosDados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGJogosLista)).EndInit();
             this.gbGTorneiosDados.ResumeLayout(false);
             this.gbGTorneiosDados.PerformLayout();
@@ -4382,11 +4388,11 @@
             this.gbGUtilizadoresDados.ResumeLayout(false);
             this.gbGUtilizadoresDados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGUtilizadoresLista)).EndInit();
-            this.gbGAdministradorForm.ResumeLayout(false);
-            this.gbGAdministradorForm.PerformLayout();
             this.gbGArbitroForm.ResumeLayout(false);
             this.gbGArbitroForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatarArbitro)).EndInit();
+            this.gbGAdministradorForm.ResumeLayout(false);
+            this.gbGAdministradorForm.PerformLayout();
             this.tbVer.ResumeLayout(false);
             this.tcVer.ResumeLayout(false);
             this.tbVerJogadores.ResumeLayout(false);
@@ -4475,8 +4481,6 @@
         private System.Windows.Forms.Label labData;
         private System.Windows.Forms.TextBox txtDescricaoJogo;
         private System.Windows.Forms.Label labDescricao;
-        private System.Windows.Forms.Label labPesquisarJogos;
-        private System.Windows.Forms.TextBox txtGJogosPesquisa;
         private System.Windows.Forms.DataGridView dgvGJogosLista;
         private System.Windows.Forms.Button btnAlterarJogo;
         private System.Windows.Forms.Button btnInserirJogo;
