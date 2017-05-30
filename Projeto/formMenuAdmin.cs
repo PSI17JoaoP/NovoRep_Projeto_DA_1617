@@ -4672,7 +4672,7 @@ namespace Projeto
                         query = query.Where(jogo => jogo.Referee.Username.Equals(arbitroJogo));
                     }
 
-                    query = query.Where(jogo => jogo.Number >= numeroJogo);
+                    query = query.Where(jogo => jogo.Number == numeroJogo);
 
                     //query.Where(jogo => jogo.Date.Equals(dataJogo));
 
@@ -4703,7 +4703,7 @@ namespace Projeto
                         query = query.Where(jogo => jogo.Referee.Username.Equals(arbitroJogo));
                     }
 
-                    query = query.Where(jogo => jogo.Number >= numeroJogo);
+                    query = query.Where(jogo => jogo.Number == numeroJogo);
 
                     //query.Where(jogo => jogo.Date.Equals(dataJogo));
 
