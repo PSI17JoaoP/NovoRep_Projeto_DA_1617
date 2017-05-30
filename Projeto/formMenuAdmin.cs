@@ -2648,7 +2648,19 @@ namespace Projeto
 
         private void txtGJogadoresPesquisa_TextChanged(object sender, EventArgs e)
         {
+            if (txtGJogadoresPesquisa.Text.Length > 0)
+            {
+                var query = from player in containerDados.PlayerSet
+                            where player.Name.Contains(txtGJogadoresPesquisa.Text)
+                            select player;
 
+                dgvGListaJogadores.DataSource = query.ToList();
+            }
+
+            else
+            {
+                atualizarTabelaJogadores();
+            }
         }
 
         private void dgvGListaJogadores_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
