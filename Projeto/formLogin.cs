@@ -93,14 +93,22 @@ namespace Projeto
         {
             bool userAuteticado = false;
 
-            foreach (User utilizador in containerDados.UserSet)
+            try
             {
-                if (username == utilizador.Username && hashPassword == utilizador.Password)
+                foreach (User utilizador in containerDados.UserSet)
                 {
-                    idUtilizador = utilizador.Id;
+                    if (username == utilizador.Username && hashPassword == utilizador.Password)
+                    {
+                        idUtilizador = utilizador.Id;
 
-                    userAuteticado = true;
+                        userAuteticado = true;
+                    }
                 }
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Não foi possivel aceder á base de dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return userAuteticado;
@@ -139,12 +147,20 @@ namespace Projeto
         {
             bool isTipoAdministrator = false;
 
-            foreach (Administrator admin in containerDados.UserSet.OfType<Administrator>())
+            try
             {
-                if (admin.Id == idUtilizador)
+                foreach (Administrator admin in containerDados.UserSet.OfType<Administrator>())
                 {
-                    isTipoAdministrator = true;
+                    if (admin.Id == idUtilizador)
+                    {
+                        isTipoAdministrator = true;
+                    }
                 }
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Não foi possivel aceder á base de dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return isTipoAdministrator;
@@ -162,12 +178,20 @@ namespace Projeto
         {
             bool isTipoArbitro = false;
 
-            foreach (Referee arbitro in containerDados.UserSet.OfType<Referee>())
+            try
             {
-                if (arbitro.Id == idUtilizador)
+                foreach (Referee arbitro in containerDados.UserSet.OfType<Referee>())
                 {
-                    isTipoArbitro = true;
+                    if (arbitro.Id == idUtilizador)
+                    {
+                        isTipoArbitro = true;
+                    }
                 }
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Não foi possivel aceder á base de dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return isTipoArbitro;
