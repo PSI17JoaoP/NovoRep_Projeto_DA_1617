@@ -2481,6 +2481,9 @@ namespace Projeto
 
         #region Gestão de Jogadores
 
+        /// <summary>
+        /// Ativa os componentes para registar um novo jogador
+        /// </summary>
         private void btnInserirJogador_Click(object sender, EventArgs e)
         {
             //Ativa o group box dos jogadores.
@@ -2490,6 +2493,10 @@ namespace Projeto
             btnJogadoresAcao.Text = "Criar";
         }
 
+        /// <summary>
+        /// Ao carregar no botão alterar, o programa retira o id do jogador selecionado,
+        /// depois mostra nos respetivos campos a informação do jogador selecionado.
+        /// </summary>
         private void btnAlterarJogador_Click(object sender, EventArgs e)
         {
             carregarCancelarJogadores();
@@ -2524,6 +2531,12 @@ namespace Projeto
             }
         }
 
+
+        /// <summary>
+        /// Ao carregar em remover verifica se existe algum jogador selecionado, o programa
+        /// obtêm o id, e as informações do jogador selecionado e pergunta ao utilizador se deseja remover o jogador selecionado.
+        /// Se o utilizador selecionar sim, o jogador selecionado é removido e no fim atualiza os dados da tabela dos jogadores.
+        /// </summary>
         private void btnRemoverJogador_Click(object sender, EventArgs e)
         {
             if (dgvGListaJogadores.SelectedCells.Count > 0)
@@ -2541,6 +2554,12 @@ namespace Projeto
             }
         }
 
+
+        /// <summary>
+        /// O programa obtêm dos campos de preenchimento as informações referentes ao jogador.
+        /// Verifica se os dados são todos validos.
+        /// Verifica se terá de inserir um jogador novo ou alterar um jogador.
+        /// </summary>
         private void btnJogadoresAcao_Click(object sender, EventArgs e)
         {
             //recolher os dados referentes aos jogadores
@@ -2595,11 +2614,20 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// faz um reset ao formulário. Limpa todos os campos do formulário.
+        /// </summary>
         private void btnJogadoresCancelar_Click(object sender, EventArgs e)
         {
             carregarCancelarJogadores();
         }
 
+        /// <summary>
+        /// Abre uma janela para escolher uma imagem, para o avatar do jogador.
+        /// A imagem deve ter as dimensões de 128 por 128.
+        /// Coloca no campo da imagem, a imagem escolhida pelo utilizador.
+        /// Coloca o caminho da imagem, no campo do caminho da imagem.
+        /// </summary>
         private void btImagem_Click(object sender, EventArgs e)
         {
             //filtra e só deixa selecionar imagens
@@ -2635,6 +2663,9 @@ namespace Projeto
 
         }
 
+        /// <summary>
+        /// Ativa os botões caso o utilizador carregue na tabela.
+        /// </summary>
         private void dgvGListaJogadores_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (dgvGListaJogadores.RowCount > 0 && dgvGListaJogadores.SelectedCells.Count > 0)
@@ -2644,6 +2675,13 @@ namespace Projeto
             }
         }
 
+
+        /// <summary>
+        /// Permite inserir um novo jogador.
+        /// São enviados para esta função todos os dados do novo jogador. Todos eles anteriormente validados.
+        /// Guarda o caminho da imagem.
+        /// Cria o contrutor do jogador e depois adiciona-o no container dos dados.
+        /// </summary>
         private void inserirNovoJogador(string nome, string email, string nickname, int idade, string caminhoAbsoluto, string caminhoRelativo)
         {
             try
@@ -2669,6 +2707,12 @@ namespace Projeto
             }
         }
 
+
+        /// <summary>
+        /// Esta função altera os dados do jogador, são enviados os dados anteriormente validados
+        /// O programa obtêm o objeto com o id do jogador selecionado na tabela
+        /// Depois atualiza os dados do jogador selecionado.
+        /// </summary>
         private void alterarJogadorExistente(string nome, string email, string nickname, int idade, string caminhoAbsoluto, string caminhoRelativo)
         {
             try
@@ -2693,6 +2737,11 @@ namespace Projeto
             }
         }
 
+
+        /// <summary>
+        /// Esta função remove o jogador selecionado.
+        /// Obtem o jogador selecionado através do id do jogador
+        /// </summary>
         private void removerJogador()
         {
             try
@@ -2719,6 +2768,12 @@ namespace Projeto
             }
         }
 
+
+        /// <summary>
+        /// Faz um reset ao formulário dos jogadores.
+        /// Coloca todos os valores dos campos e as caixas de texto limpas.
+        /// Altera também os estados das group box.
+        /// </summary>
         private void carregarCancelarJogadores()
         {
             txtNomeJogador.ResetText();
@@ -2737,6 +2792,11 @@ namespace Projeto
             btnRemoverJogador.Enabled = false;
         }
 
+        /// <summary>
+        /// Permite atualizar a tabela dos jogadores
+        /// Obtem todos os dados de jogadores através do data set, e coloca-os na tabela
+        /// dos jogadores
+        /// </summary>
         private void atualizarTabelaJogadores()
         {
             dgvGListaJogadores.DataSource = null;
@@ -2748,6 +2808,15 @@ namespace Projeto
             dgvGListaJogadores.CurrentCell = dgvGListaJogadores.Rows[i - 1].Cells[0];
         }
 
+        /// <summary>
+        /// Verifica se o nome, o email e o nickname escritos pelo utilizador já se encontram registados.
+        /// Se for para criar um jogador novo verifica em todos os jogadores.
+        /// Se for para alterar um jogador registado anteriormente, verifica todos
+        /// os jogadores, menos o jogador que está a ser alterado.
+        /// Se existir repetição de dados devolve true.
+        /// Se existir repetição de dados mostra uma mensagem, a dizer quais os campos repetidos.
+        /// </summary>
+        
         private Boolean verificarNomeNickname(string nome, string email, string nickname)
         {
             Boolean existe = false;
@@ -2779,6 +2848,11 @@ namespace Projeto
             return existe;
         }
 
+        /// <summary>
+        /// Envia uma mensagem de quais os campos repetidos.
+        /// Recebe os dados repetidos
+        /// Envia uma mensagem a dizer quais os campos repetidos.
+        /// </summary>
         private void enviarMensagemRepeticaoDados(Player player, string nome, string email, string nickname)
         {
             if (nome.Equals(player.Name))
@@ -2799,6 +2873,10 @@ namespace Projeto
 
         #region Pesquisa de Jogadores
 
+        /// <summary>
+        /// Permite realizar pesquisas de acordo com os dados inseridos pelo utilizador.
+        /// Pesquisa e adapta a consulta de acordo com os campos preenchidos.
+        /// </summary>
         private void pesquisarJogadores(object sender, EventArgs e)
         {
             string nome = txtNomeJogador2.Text;
@@ -2830,6 +2908,10 @@ namespace Projeto
             dgvGListaJogadoresPesquisa.DataSource = query.ToList();
         }
 
+        /// <summary>
+        /// atualiza a tabela dos jogadores.
+        /// Seleciona a última linha de registo da tabela.
+        /// </summary>
         private void atualizarTabelaJogadoresPesquisa()
         {
             dgvGListaJogadoresPesquisa.DataSource = null;
@@ -2837,14 +2919,19 @@ namespace Projeto
             dgvGListaJogadoresPesquisa.DataSource = this.playerSetBindingSource;
 
             int i = dgvGListaJogadoresPesquisa.Rows.Count;
-
-            dgvGListaJogadoresPesquisa.CurrentCell = dgvGListaJogadoresPesquisa.Rows[i - 1].Cells[0];
+            if (i != 0)
+            {
+                dgvGListaJogadoresPesquisa.CurrentCell = dgvGListaJogadoresPesquisa.Rows[i - 1].Cells[0];
+            }
         }
 
         #endregion
 
         #region Gestão de Equipas
 
+        /// <summary>
+        /// Ativa os componentes para poder registar uma nova equipa
+        /// </summary>
         private void btnInserirEquipa_Click(object sender, EventArgs e)
         {
             gbGEquipasForm.Enabled = true;
@@ -2852,6 +2939,10 @@ namespace Projeto
             btnEquipaAcao.Text = "Criar";
         }
 
+        /// <summary>
+        /// Ao carregar no botão alterar, o programa retira o id da equipa selecionada,
+        /// depois mostra nos respetivos campos a informação da equipa selecionada.
+        /// </summary>
         private void btnAlterarEquipa_Click(object sender, EventArgs e)
         {
             carregarCancelarEquipas();
@@ -2883,6 +2974,11 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Ao carregar em remover verifica se existe alguma equipa selecionada, o programa
+        /// obtêm o id, e as informações da equipa selecionada e pergunta ao utilizador se deseja remover a equipa selecionada.
+        /// Se o utilizador selecionar sim, a equipa selecionada é removida e no fim atualiza os dados da tabela das equipas.
+        /// </summary>
         private void btnRemoverEquipa_Click(object sender, EventArgs e)
         {
             if (dgvGListaEquipas.SelectedCells.Count > 0)
@@ -2900,6 +2996,11 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// O programa obtêm dos campos de preencimentos as informações referentes à equipa.
+        /// Verifica se os dados são todos validos.
+        /// Verifica se terá de inserir uma nova equipa ou alterar uma equipa.
+        /// </summary>
         private void btnEquipaAcao_Click(object sender, EventArgs e)
         {
             string nome = txtGNomeEquipa.Text.Trim();
@@ -2932,11 +3033,20 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// faz um reset ao formulário. Limpa todos os campos do formulário.
+        /// </summary>
         private void btnEquipaCancelar_Click(object sender, EventArgs e)
         {
             carregarCancelarEquipas();
         }
 
+        /// <summary>
+        /// Abre uma janela para escolher uma imagem, para o avatar da equipa.
+        /// A imagem deve ter as dimensões de 128 por 128.
+        /// Coloca no campo da imagem, a imagem escolhida pelo utilizador.
+        /// Coloca o caminho da imagem, no campo do caminho da imagem.
+        /// </summary>
         private void btnAvatarEquipa_Click(object sender, EventArgs e)
         {
             //filtra e só deixa selecionar imagens
@@ -2967,6 +3077,11 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Ativa os botões caso o utilizador carregue na tabela.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvGListaEquipas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (dgvGListaEquipas.RowCount > 0 && dgvGListaEquipas.SelectedCells.Count > 0)
@@ -2977,6 +3092,11 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Permite efetuar pesquisas sempre que o utilizador escreve uma letra.
+        /// Faz a consulta.
+        /// Atualiza a tabela de acordo com os dados que resultam da pesquisa, da consulta
+        /// </summary>
         private void txtGEquipasPesquisa_TextChanged(object sender, EventArgs e)
         {
             if (txtGEquipasPesquisa.Text.Length > 0)
@@ -2994,6 +3114,13 @@ namespace Projeto
             }
         }
 
+
+        /// <summary>
+        /// Permite inserir uma nova equipa.
+        /// São enviados para esta função todos os dados da nova equipa. Todos eles anteriormente validados.
+        /// Guarda o caminho da imagem.
+        /// Cria o construtor do jogador e depois adiciona-o no container dos dados.
+        /// </summary>
         private void inserirNovaEquipa(string nome, string caminhoAbsoluto, string caminhoRelative)
         {
             try
@@ -3016,6 +3143,11 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Esta função altera os dados da equipa, são enviados os dados anteriormente validados
+        /// O programa obtêm o objeto com o id da equipa selecionado na tabela
+        /// Depois atualiza os dados do jogador selecionado.
+        /// </summary>
         private void alterarEquipaExistente(string nome, string caminhoAbsoluto, string caminhoRelative)
         {
             Team equipa;
@@ -3031,6 +3163,10 @@ namespace Projeto
             containerDados.SaveChanges();
         }
 
+        /// <summary>
+        /// Esta função remove a equipa selecionada.
+        /// Obtem a equipa selecionada através do id da equipa
+        /// </summary>
         private void removerEquipa()
         {
             try
@@ -3055,6 +3191,11 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Permite atualizar a tabela das equipas
+        /// Obtem todos os dados das equipas através do data set, e coloca-os na tabela
+        /// das equipas
+        /// </summary>
         private void atualizarTabelaEquipas()
         {
             dgvGListaEquipas.DataSource = null;
@@ -3062,10 +3203,16 @@ namespace Projeto
             dgvGListaEquipas.DataSource = this.teamSetBindingSource;
 
             int i = dgvGListaEquipas.Rows.Count;
-
-            dgvGListaEquipas.CurrentCell = dgvGListaEquipas.Rows[i - 1].Cells[0];
+            if(i != 0) { 
+                dgvGListaEquipas.CurrentCell = dgvGListaEquipas.Rows[i - 1].Cells[0];
+            }
         }
 
+        /// <summary>
+        /// Faz um reset ao formulário das equipas.
+        /// Coloca todos os valores dos campos e as caixas de texto limpas.
+        /// Altera também os estados das group box.
+        /// </summary>
         private void carregarCancelarEquipas()
         {
             txtGNomeEquipa.ResetText();
@@ -3081,6 +3228,16 @@ namespace Projeto
             btnRemoverEquipa.Enabled = false;
         }
 
+        /// <summary>
+        /// Verifica se o nome da equipa escrita pelo utilizador já se encontra registado.
+        /// Se for para criar uma equipa nova verifica em todos as equipas.
+        /// Se for para alterar uma equipa registada anteriormente, verifica todas
+        /// as equipas, menos a equipa que está a ser alterada.
+        /// Se existir repetição de dados devolve true.
+        /// Se existir repetição de dados mostra uma mensagem, a dizer quais os campos repetidos.
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         private Boolean verificarNomeEquipa(string nome)
         {
             Boolean existe = false;
@@ -3115,6 +3272,11 @@ namespace Projeto
 
         #region Associamento de Jogadores a Equipas
 
+        /// <summary>
+        /// Carrega os jogadores para as listviews.
+        /// Numa list view coloca os jogadores pertencentes a uma equipa.
+        /// Noutra list view coloca os jogadores que não têm equipa.
+        /// </summary>
         private void btnGerirEquipa_Click(object sender, EventArgs e)
         {
             idEquipa = (int)dgvGListaEquipas.CurrentRow.Cells[0].Value;
@@ -3171,6 +3333,10 @@ namespace Projeto
             btnGuardarJogadorEquipa.Enabled = true;
         }
 
+        /// <summary>
+        /// Retira o jogador da lista de jogadores disponíveis e coloca-o na lista dos jogadores de uma equipa.
+        /// Se a equipa possuir dois jogadores não deixa inserir mais jogadores, apenas retirar.
+        /// </summary>
         private void btnAdicionarJogador_Click(object sender, EventArgs e)
         {
             if (lcListaJogadores.SelectedItems.Count > 0)
@@ -3196,6 +3362,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Remove todos os jogadores pertencentes a uma equipa
+        /// Vai à list view da equipa e guarda todos os jogadores um a um, pertencentes à equipa.
+        /// </summary>
         private void btnGuardarJogadorEquipa_Click(object sender, EventArgs e)
         {
             Player jogador;
@@ -3221,6 +3391,12 @@ namespace Projeto
             ResetListViewsEquipas();
         }
 
+        /// <summary>
+        /// Retira o jogador selecionado na list view.
+        /// Se o número de jogadores da equipa for igual a zero, bloqueia o botão de retirar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRetirarJogador_Click(object sender, EventArgs e)
         {
             if (lvJogadoresEquipa.SelectedItems.Count > 0)
@@ -3248,6 +3424,9 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Faz um reset aos campos do formulário de associar os jogadores às equipas.
+        /// </summary>
         private void ResetListViewsEquipas()
         {
             lcListaJogadores.Items.Clear();
@@ -3263,6 +3442,9 @@ namespace Projeto
 
         #region Pesquisa de Equipas
 
+        /// <summary>
+        /// carrega os nomes dos jogadores na combo box, para efeitos de pesquisa
+        /// </summary>
         private void tbVerEquipas_Enter(object sender, EventArgs e)
         {
             cbnomejogadorpesquisa.Items.Clear();
@@ -3274,6 +3456,10 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Permite realizar pesquisas de acordo com os dados inseridos pelo utilizador.
+        /// Pesquisa e adapta a consulta de acordo com os campos preenchidos.
+        /// </summary>
         private void pesquisarEquipas(object sender, EventArgs e)
         {
             string nomeequipa = tbxnomeequipapesquisa.Text;
@@ -3323,6 +3509,11 @@ namespace Projeto
 
         }
 
+        /// <summary>
+        /// Limpa as pesquisas e os filtros
+        /// Limpa as caixas de texto
+        /// Coloca todas as equipas registadas na tabela.
+        /// </summary>
         private void btlimpar_Click(object sender, EventArgs e)
         {
             tbxnomeequipapesquisa.ResetText();
@@ -3330,6 +3521,9 @@ namespace Projeto
             dgvGListaEquipasPesquisa.DataSource = teamSetBindingSource;
         }
 
+        /// <summary>
+        /// Limpa a tabela de pesquisas de equipas
+        /// </summary>
         private void limparTabelaPesquisas()
         {
             dgvGListaEquipasPesquisa.DataSource = teamSetBindingSource;
@@ -3342,6 +3536,13 @@ namespace Projeto
 
         #region Gestão de Jogos
 
+        /// <summary>
+        /// Carrega os arbitros
+        /// Carrega os Decks, que contenham mais de 45 cartas e que tenham no mínimo 3 cartas do tipo cidade.
+        /// Se estiver selecionado o radio button dos torneios standard, carrega os jogadores.
+        /// Se estiver selecionado o radio button dos torneios de equipa, carrega as equipas.
+        /// Atualiza a tabela de jogos, carrega a tabela de jogos de acordo com o tipo de torneio selecionado.
+        /// </summary>
         private void btngerirjogos_Click(object sender, EventArgs e)
         {
             gbGJogosDados.Enabled = true;
@@ -3370,6 +3571,12 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Cancela o jogo
+        /// Faz reset aos dados e aos formulários.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancelarJogo_Click(object sender, EventArgs e)
         {
             cancelarJogo();
@@ -3380,6 +3587,11 @@ namespace Projeto
             gbGTorneiosDados.Enabled = true;
         }
 
+        /// <summary>
+        /// Coloca o formulario de maneira a poder registar um novo jogo.
+        /// Carrega as equipas se for um torneio de equipas.
+        /// Carrega os jogadores se for um torneio de jogadores.
+        /// </summary>
         private void btnInserirJogo_Click(object sender, EventArgs e)
         {
             gbGJogosForm.Visible = true;
@@ -3399,6 +3611,12 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Coloca o formulário de maneira a poder alterar um jogo.
+        /// Coloca os dados do jogo nos respetivos campos.
+        /// Se for um jogo de equipa carrega os dados do jogo de equipa
+        /// Se for um jogo standard carrega os dados do jogo standard
+        /// </summary>
         private void btnAlterarJogo_Click(object sender, EventArgs e)
         {
             gbGJogosForm.Enabled = true;
@@ -3476,6 +3694,12 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Obtem o id do jogo a eliminar.
+        /// Pergunta se deseja eliminar o jogo selecionado.
+        /// Se sim, elimina o jogo e atualiza a tabela de jogos.
+        /// Por fim faz reset aos campos do formulário.
+        /// </summary>
         private void btnRemoverJogo_Click(object sender, EventArgs e)
         {
             gbGTorneiosForm.Visible = false;
@@ -3497,11 +3721,37 @@ namespace Projeto
             gbGJogosForm.Enabled = false;
         }
 
+
+        /// <summary>
+        /// Verifica se todos os dados estão corretamente preechidos e selecionados.
+        /// Obtem todos os dados.
+        /// Depois conforme o tipo de torneio selecionado, guarda ou altera o tipo de jogo.
+        /// Verifica se o número de jogo já está registado, para evitar repetições de números de jogos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnJogoAcao_Click(object sender, EventArgs e)
         {
             if ((int)nudNJogo.Value == 0 || cmbarbitrojogos.SelectedIndex == -1 || cmbequipajogador1.SelectedIndex == -1 || cmbequipajogador2.SelectedIndex == -1 || cmbdecks1.SelectedIndex == -1 || cmbdecks2.SelectedIndex == -1)
             {
                 MessageBox.Show("Preencha os campos corretamente.", "Preenchimento de dados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                if(cmbdecks1.Items.Count == 0 || cmbdecks2.Items.Count == 0)
+                {
+                    MessageBox.Show("Tem de criar mais um deck válido.", "Registo de dados");
+                }
+                if(cmbequipajogador1.Items.Count == 0 || cmbequipajogador2.Items.Count == 0)
+                {
+                    if(radioTeamTournaments.Checked == true)
+                    {
+                        MessageBox.Show("Tem de criar mais equipas.", "Registo de dados");
+                    }
+                    else if(radioStandardTournaments.Checked == true)
+                    {
+                        MessageBox.Show("Tem de criar mais jogadores.", "Registode dados");
+                    }
+                    
+                }
             }
             else
             {
@@ -3516,32 +3766,90 @@ namespace Projeto
 
                 if (btnJogoAcao.Text.Equals("Criar"))
                 {
-
-                    if (radioStandardTournaments.Checked == true)
-                    {
-                        guardarStandardGame(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                    Boolean existe = verificaNrJogo(nrjogo);
+                    if(existe == false) { 
+                        if (radioStandardTournaments.Checked == true)
+                        {
+                            guardarStandardGame(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                        }
+                        else if (radioTeamTournaments.Checked == true)
+                        {
+                            guardarTeamGame(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                        }
                     }
-                    else if (radioTeamTournaments.Checked == true)
+                    else
                     {
-                        guardarTeamGame(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                        MessageBox.Show("Já existe um jogo com esse número.", "Repetição de número de jogo");
                     }
                 }
                 else if (btnJogoAcao.Text.Equals("Guardar"))
                 {
-                    if (radioStandardTournaments.Checked == true)
-                    {
-                        alterarStandardGame(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                    Boolean existe = verificaNrJogoAlterar(nrjogo);
+                    if (existe == false) { 
+                        if (radioStandardTournaments.Checked == true)
+                        {
+                            alterarStandardGame(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                        }
+                        else if (radioTeamTournaments.Checked == true)
+                        {
+                            alterarTeamGame(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                        }
                     }
-                    else if (radioTeamTournaments.Checked == true)
+                    else
                     {
-                        alterarTeamGame(data, nrjogo, usernamearbitro, nomejogador1, nomejogador2, deck1, deck2, descricao);
+                        MessageBox.Show("Já existe um jogo registado com esse número.", "Repetição de número de jogo.");
                     }
                 }
-                cancelarJogo();
-                gbGJogosForm.Enabled = false;
             }
         }
 
+        /// <summary>
+        /// Verifica se o número de jogo já se encontra inserido, excepto no id do jogo a que se refere.
+        /// Devolve true se gor igual, se não for devolve false
+        /// Percorre todos os jogos, menos o jogo selecionado e verifica
+        /// </summary>
+        private Boolean verificaNrJogoAlterar(int nrjogo)
+        {
+            Boolean existe = false;
+
+            foreach(Game jogo in containerDados.GameSet)
+            {
+                
+                if(jogo.Number == nrjogo && jogo.Id != idJogo)
+                {
+                    existe = true;
+                }
+            }
+            return existe;
+        }
+
+        
+        /// <summary>
+        /// Verifica se o id de jogo se encontra repetido.
+        /// Devolve true se for igual, se não for devolve false.
+        /// Percorre todos os jogos e verifica
+        /// </summary>
+        /// <param name="nrjogo"></param>
+        /// <returns></returns>
+        private Boolean verificaNrJogo(int nrjogo)
+        {
+            Boolean existe = false;
+
+            foreach(Game jogo in containerDados.GameSet)
+            {
+                if(jogo.Number == nrjogo)
+                {
+                    existe = true;
+                }
+            }
+            return existe;
+        }
+
+
+        /// <summary>
+        /// Faz reset aos campos do formulário
+        /// Faz reset aos componentes do formulário
+        /// </summary>
         private void btnJogoCancelar_Click(object sender, EventArgs e)
         {
             cancelarJogo();
@@ -3549,6 +3857,14 @@ namespace Projeto
             gbGJogosForm.Enabled = false;
         }
 
+        /// <summary>
+        /// guarda um novo jogo de equipa.
+        /// Recebe todos os dados validados anteriormente.
+        /// Vai obter os ids dos arbitros, das equipas e dos decks através dos nomes.
+        /// Cria um objeto e guarda os valores dentro desse objeto.
+        /// Atualiza a tabela de jogos de equipas.
+        /// Limpa o formulário, faz reset ao formulário.
+        /// </summary>
         private void guardarTeamGame(DateTime data, int nrjogo, string usernamearbitro, string nomeequipa1, string nomeequipa2, string deck1, string deck2, string descricao)
         {
             int idarbitro = getIdArbitro(usernamearbitro);
@@ -3574,6 +3890,8 @@ namespace Projeto
                 containerDados.GameSet.Add(jogoequipa);
                 containerDados.SaveChanges();
                 refreshTabelaJogos();
+                cancelarJogo();
+                gbGJogosForm.Enabled = false;
 
             }
             catch (Exception ex)
@@ -3582,6 +3900,15 @@ namespace Projeto
             }
         }
 
+
+        /// <summary>
+        /// guarda um novo jogo standard.
+        /// Recebe todos os dados validados anteriormente.
+        /// Vai obter os ids dos arbitros, das equipas e dos decks através dos nomes.
+        /// Cria um objeto e guarda os valores dentro desse objeto.
+        /// Atualiza a tabela de jogos standard.
+        /// Limpa o formulário, faz reset ao formulário.
+        /// </summary>
         private void guardarStandardGame(DateTime data, int nrjogo, string usernamearbitro, string nomejogador1, string nomejogador2, string deck1, string deck2, string descricao)
         {
 
@@ -3610,6 +3937,8 @@ namespace Projeto
                 containerDados.GameSet.Add(jogo);
                 containerDados.SaveChanges();
                 refreshTabelaJogos();
+                cancelarJogo();
+                gbGJogosForm.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -3617,6 +3946,13 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// altera um jogo de equipa.
+        /// Recebe os dados todos validados anteriormente.
+        /// Vai buscar através do idselecionado qual o jogo de equipa selecionado.
+        /// Depois atualiza os vários valores.
+        /// Atualiza a tabela dos jogos de equipa.
+        /// </summary>
         private void alterarTeamGame(DateTime data, int nrjogo, string usernamearbitro, string nomeequipa1, string nomeequipa2, string deck1, string deck2, string descricao)
         {
             int idarbitro = getIdArbitro(usernamearbitro);
@@ -3643,6 +3979,13 @@ namespace Projeto
             refreshTabelaJogos();
         }
 
+        /// <summary>
+        /// altera um jogo standard.
+        /// Recebe os dados todos validados anteriormente.
+        /// Vai buscar através do idselecionado qual o jogo standard selecionado.
+        /// Depois atualiza os vários valores.
+        /// Atualiza a tabela dos jogos standard.
+        /// </summary>
         private void alterarStandardGame(DateTime data, int nrjogo, string usernamearbitro, string nomejogador1, string nomejogador2, string deck1, string deck2, string descricao)
         {
             int idarbitro = getIdArbitro(usernamearbitro);
@@ -3669,6 +4012,10 @@ namespace Projeto
             refreshTabelaJogos();
         }
 
+        /// <summary>
+        /// Vai procurar em todos os jogos qual o jogo com o id igual ao do jogo selecionado.
+        /// Depois remove esse jogo.
+        /// </summary>
         private void removerJogo()
         {
             try
@@ -3688,6 +4035,9 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Carrega as equipas registadas para as combo box
+        /// </summary>
         private void carregarEquipas()
         {
             cmbequipajogador1.Items.Clear();
@@ -3700,18 +4050,91 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Carrega os decks que possuam mais de 45 cartas e que contenham pelo menos três cartas do tipo cidade.
+        /// Coloca na combo box.
+        /// </summary>
         private void carregarDecks()
         {
             cmbdecks1.Items.Clear();
             cmbdecks2.Items.Clear();
 
+            Deck deck1;
+
             foreach (Deck deck in containerDados.DeckSet)
             {
-                cmbdecks1.Items.Add(deck.Name);
-                cmbdecks2.Items.Add(deck.Name);
+                int nrcartas = verificaNrCartas(deck);
+
+                if (nrcartas >= 45)
+                {
+                    int nrcartascidade = verificaNrCartasCidade(deck);
+
+                    if (nrcartascidade >= 3)
+                    {
+                        cmbdecks1.Items.Add(deck.Name);
+                        cmbdecks2.Items.Add(deck.Name);
+                    }
+                    
+                }
             }
         }
 
+        /// <summary>
+        /// Verifica quantas cartas do tipo cidade existem num baralho.
+        /// Percorre todas as associações entre cartas e baralhos.
+        /// Se o id do deck for igaul ao id do deck,
+        /// verifica carta a carta se é igual ao id da carta,
+        /// verifica se é do tipo cidade,
+        /// se for acrescenta o número de quantidade desa carta existente no baralho.
+        /// </summary>
+        private int verificaNrCartasCidade(Deck deck)
+        {
+            int nrcartas = 0;
+            foreach (DeckCards deckcards in containerDados.DeckCardsSet)
+            {
+                if (deckcards.DeckId == deck.Id)
+                {
+                    int idcarta = deckcards.CardId;
+
+                    foreach (Card carta in containerDados.CardSet)
+                    {
+                        if (carta.Id == idcarta)
+                        {
+                            if (carta.Type.Equals("Cidade"))
+                            {
+
+                                nrcartas += deckcards.Qtd;
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+            return nrcartas;
+        }
+
+        /// <summary>
+        /// devolve a quantidade de cartas que um deck possuí
+        /// </summary>
+        private int verificaNrCartas(Deck deck)
+        {
+            int nrcartas = 0;
+            foreach (DeckCards deckcards in containerDados.DeckCardsSet)
+            {
+                if (deckcards.DeckId == deck.Id)
+                {
+                    nrcartas += deckcards.Qtd;
+                }
+            }
+            return nrcartas;
+        }
+
+
+        /// <summary>
+        /// carrega os árbitros existentes para as combo box.
+        /// </summary>
         private void carregarArbitrosJogos()
         {
             cmbarbitrojogos.Items.Clear();
@@ -3722,6 +4145,9 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// carrega todos os jogadores existentes para as combo box.
+        /// </summary>
         private void carregarJogadoresJogos()
         {
             cmbequipajogador1.Items.Clear();
@@ -3735,6 +4161,9 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// carrega as equipas existentes para as combo box
+        /// </summary>
         private void carregarEquipasJogos()
         {
             cmbequipajogador1.Items.Clear();
@@ -3746,6 +4175,9 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// devolve o id de determinado deck.
+        /// </summary>
         private int getIdDeck(string nomedeck)
         {
             int iddeck = 0;
@@ -3759,6 +4191,9 @@ namespace Projeto
             return iddeck;
         }
 
+        /// <summary>
+        /// devolve o id de determinado jogador.
+        /// </summary>
         private int getIdJogador(string nomejogador)
         {
             int idjogador = 0;
@@ -3772,6 +4207,9 @@ namespace Projeto
             return idjogador;
         }
 
+        /// <summary>
+        /// devolve o id de determinado árbitro.
+        /// </summary>
         private int getIdArbitro(string usernamearbitro)
         {
             int idarbitro = 0;
@@ -3785,6 +4223,9 @@ namespace Projeto
             return idarbitro;
         }
 
+        /// <summary>
+        /// devolve o id de determinada equipa.
+        /// </summary>
         private int getIdEquipa(string nomeequipa)
         {
             int idequipa = 0;
@@ -3798,6 +4239,9 @@ namespace Projeto
             return idequipa;
         }
 
+        /// <summary>
+        /// devolve o nome de determinado jogador.
+        /// </summary>
         private string getNomeJogador(int nrjogador)
         {
             string nomejogador = "";
@@ -3811,6 +4255,9 @@ namespace Projeto
             return nomejogador;
         }
 
+        /// <summary>
+        /// devolve o nome de determinado deck.
+        /// </summary>
         private string getNomeDeck(int nrdeck)
         {
             string nomedeck = "";
@@ -3824,6 +4271,9 @@ namespace Projeto
             return nomedeck;
         }
 
+        /// <summary>
+        /// devolve o id de determinada equipa.
+        /// </summary>
         private string getNomeEquipa(int nrequipa)
         {
             string nomeequipa = "";
@@ -3837,6 +4287,9 @@ namespace Projeto
             return nomeequipa;
         }
 
+        /// <summary>
+        /// devolve o nome de utilizador do arbitro.
+        /// </summary>
         private string getUsernameArbitro(int idarbitro)
         {
             string usernamearbitro = "";
@@ -3850,6 +4303,10 @@ namespace Projeto
             return usernamearbitro;
         }
 
+        /// <summary>
+        /// Cancela o jogo.
+        /// Limpa todos os campos do jogo.
+        /// </summary>
         private void cancelarJogo()
         {
             tpDataJogos.Value = DateTime.Now;
@@ -3862,6 +4319,12 @@ namespace Projeto
             txtDescricaoJogo.ResetText();
         }
 
+        /// <summary>
+        /// Atualiza a tabela de jogos
+        /// Se estiver selecionado os torneios de equipas carrega os jogos para a tabela.
+        /// Se estiver selecionado os torneios standard carrega os jogos para a tabela.
+        /// Seleciona a última linha da tabela.
+        /// </summary>
         private void refreshTabelaJogos()
         {
             if (radioTeamTournaments.Checked == true)
@@ -3882,6 +4345,185 @@ namespace Projeto
             }
         }
 
+        /// <summary>
+        /// Consonante o jogador selecionado carrega na outra combo box, todos os jogadores, menos
+        /// o jogador selecionado.
+        /// </summary>
+        private void cmbequipajogador1_DropDownClosed(object sender, EventArgs e)
+        {
+            string selecionado = "";
+            int i = cmbequipajogador2.SelectedIndex;
+            //int b = cmbequipajogador2.SelectedIndex;
+            if (i != -1) { 
+                 selecionado = cmbequipajogador2.SelectedItem.ToString();
+            }
+            if (radioTeamTournaments.Checked == true)
+            {
+                if (cmbequipajogador1.SelectedIndex != -1)
+                {
+                    string nomeequipa1 = cmbequipajogador1.SelectedItem.ToString();
+                    cmbequipajogador2.Items.Clear();
+                    foreach (Team equipa in containerDados.TeamSet)
+                    {
+                        if (!equipa.Name.Equals(nomeequipa1))
+                        {
+                            cmbequipajogador2.Items.Add(equipa.Name);
+                        }
+                    }
+                }
+            }
+            else if (radioStandardTournaments.Checked == true)
+            {
+                if (cmbequipajogador1.SelectedIndex != -1)
+                {
+                    string nomejogador1 = cmbequipajogador1.SelectedItem.ToString();
+                    cmbequipajogador2.Items.Clear();
+                    foreach (Player jogador in containerDados.PlayerSet)
+                    {
+                        if (!jogador.Name.Equals(nomejogador1))
+                        {
+                            cmbequipajogador2.Items.Add(jogador.Name);
+                        }
+                    }
+                }
+            }
+            if(i != -1) { 
+                //cmbequipajogador2.SelectedIndex = i-1;
+                cmbequipajogador2.SelectedItem = selecionado;
+            }
+        }
+
+        /// <summary>
+        /// Consoante o jogador selecionado carrega na outra combo box, todos os jogadores, menos
+        /// o jogador selecionado.
+        /// </summary>
+        private void cmbequipajogador2_DropDownClosed(object sender, EventArgs e)
+        {
+            string selecionado = "";
+            int i = cmbequipajogador1.SelectedIndex;
+            //int b = cmbequipajogador1.SelectedIndex;
+            if (i != -1) { 
+                 selecionado = cmbequipajogador1.SelectedItem.ToString();
+            }
+            if (radioTeamTournaments.Checked == true)
+            {
+                if (cmbequipajogador2.SelectedIndex != -1)
+                {
+                    string nomeequipa2 = cmbequipajogador2.SelectedItem.ToString();
+                    cmbequipajogador1.Items.Clear();
+                    foreach (Team equipa in containerDados.TeamSet)
+                    {
+                        if (!equipa.Name.Equals(nomeequipa2))
+                        {
+                            cmbequipajogador1.Items.Add(equipa.Name);
+                        }
+                    }
+                }
+            }
+            else if (radioStandardTournaments.Checked == true)
+            {
+                if (cmbequipajogador2.SelectedIndex != -1)
+                {
+                    string nomejogador2 = cmbequipajogador2.SelectedItem.ToString();
+                    cmbequipajogador1.Items.Clear();
+                    foreach (Player jogador in containerDados.PlayerSet)
+                    {
+                        if (!jogador.Name.Equals(nomejogador2))
+                        {
+                            cmbequipajogador1.Items.Add(jogador.Name);
+                        }
+                    }
+                }
+            }
+            if(i != -1) { 
+                //cmbequipajogador1.SelectedIndex = i-1;
+                cmbequipajogador1.SelectedItem = selecionado;
+            }
+        }
+
+        /// <summary>
+        /// Consoante o deck selecionado carrega na outra combo box, todos os decks,
+        /// que tenham 45 cartas e que pelo menos três sejam do tipo cidade
+        /// </summary>
+        private void cmbdecks1_DropDownClosed(object sender, EventArgs e)
+        {
+            string selecionado = "";
+            int i = cmbdecks2.SelectedIndex;
+            //int b = cmbdecks2.SelectedIndex;
+            if (i != -1)
+            {
+                selecionado = cmbdecks2.SelectedItem.ToString();
+            }
+            if (cmbdecks1.SelectedIndex != -1)
+            {
+                string nomedeck1 = cmbdecks1.SelectedItem.ToString();
+                cmbdecks2.Items.Clear();
+                foreach (Deck deck in containerDados.DeckSet)
+                {
+                    //verificar se e 
+                    int nrcartas = verificaNrCartas(deck);
+                    if (nrcartas >= 45)
+                    {
+                        int nrcartascidade = verificaNrCartasCidade(deck);
+                        if (nrcartascidade >= 3)
+                        {
+                            if (!deck.Name.Equals(nomedeck1))
+                            {
+                                cmbdecks2.Items.Add(deck.Name);
+                            }
+                        }
+                    }
+                }
+
+                if (i != -1)
+                {
+                    //cmbequipajogador2.SelectedIndex = i-1;
+                    cmbdecks2.SelectedItem = selecionado;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Consoante o deck selecionado carrega na outra combo box, todos os decks,
+        /// que tenham 45 cartas e que pelo menos três sejam do tipo cidade
+        /// </summary>
+        private void cmbdecks2_DropDownClosed(object sender, EventArgs e)
+        {
+            string selecionado = "";
+            int i = cmbdecks1.SelectedIndex;
+            //int b = cmbdecks1
+            if (i != -1)
+            {
+                selecionado = cmbdecks1.SelectedItem.ToString();
+            }
+            if (cmbdecks2.SelectedIndex != -1)
+            {
+                string nomedeck2 = cmbdecks2.SelectedItem.ToString();
+                cmbdecks1.Items.Clear();
+                foreach (Deck deck in containerDados.DeckSet)
+                {
+                    int nrcartas = verificaNrCartas(deck);
+                    if (nrcartas >= 45)
+                    {
+                        int nrcartascidade = verificaNrCartasCidade(deck);
+                        if (nrcartascidade >= 3)
+                        {
+                            if (!deck.Name.Equals(nomedeck2))
+                            {
+                                cmbdecks1.Items.Add(deck.Name);
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if (i != -1)
+            {
+                //cmbequipajogador1.SelectedIndex = i-1;
+                cmbdecks1.SelectedItem = selecionado;
+            }
+        }
+    
         #endregion
 
         #region Gestão de Torneios
@@ -4779,105 +5421,6 @@ namespace Projeto
         }
 
         #endregion
-
-        #endregion
-
-        #region WIP
-
-        private void tbGestaoTorneios_Enter(object sender, EventArgs e)
-        {
-            /*cmbJogador1Jogo.Items.Clear();
-
-            Player jogador1;
-            if(cmbJogador1Jogo.SelectedIndex != -1)
-            {
-                jogador1 = (Player)cmbJogador1Jogo.SelectedItem;
-
-
-            }
-
-                foreach(Player jogador in containerDados.PlayerSet)
-                {
-                    cmbJogador1Jogo.Items.Add(jogador.Name);
-                    cmbJogador2Jogo.Items.Add(jogador.Name);
-                }
-                */
-
-
-            /*carregarJogadoresJogos();
-
-            carregarArbitrosJogos();
-            carregarDecks();
-            */
-            //MessageBox.Show("Olá");
-        }
-
-        private void cmbJogador1Jogo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*if (radioTeamTournaments.Checked == true)
-            {
-                if(cmbequipajogador1.SelectedIndex != -1)
-                {
-                    string nomeequipa1 = cmbequipajogador1.SelectedItem.ToString();
-                    cmbequipajogador2.Items.Clear();
-                    foreach (Team equipa in containerDados.TeamSet)
-                    {
-                        if (!equipa.Name.Equals(nomeequipa1))
-                        {
-                            cmbequipajogador2.Items.Add(equipa.Name);
-                        }
-                    }
-                }
-            }
-            else if (radioStandardTournaments.Checked == true)
-            {
-                string nomejogador1 = cmbequipajogador1.SelectedItem.ToString();
-                cmbequipajogador2.Items.Clear();
-                foreach (Player jogador in containerDados.PlayerSet)
-                {
-                    if (!jogador.Name.Equals(nomejogador1))
-                    {
-                        cmbequipajogador2.Items.Add(jogador.Name);
-                    }
-                }
-
-            }*/
-
-
-
-            /*if (i != -1)
-            {
-                cmbequipajogador2.SelectedIndex = i;
-            }*/
-        }
-
-        private void cmbequipajogador2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*if (radioTeamTournaments.Checked == true)
-            {
-                string nomeequipa2 = cmbequipajogador2.SelectedItem.ToString();
-                cmbequipajogador1.Items.Clear();
-                foreach (Team equipa in containerDados.TeamSet)
-                {
-                    if (!equipa.Name.Equals(nomeequipa2))
-                    {
-                        cmbequipajogador1.Items.Add(equipa.Name);
-                    }
-                }
-            }
-            else if (radioStandardTournaments.Checked == true)
-            {
-                string nomejogador2 = cmbequipajogador2.SelectedItem.ToString();
-                cmbequipajogador1.Items.Clear();
-                foreach (Player jogador in containerDados.PlayerSet)
-                {
-                    if (!jogador.Name.Equals(nomejogador2))
-                    {
-                        cmbequipajogador1.Items.Add(jogador.Name);
-                    }
-                }
-            }*/
-        }
 
         #endregion
     }
