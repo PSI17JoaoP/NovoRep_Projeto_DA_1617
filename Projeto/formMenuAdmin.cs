@@ -141,9 +141,11 @@ namespace Projeto
                     txtUsernameArbitro.Text = arbitro.Username;
                     txtNomeArbitro.Text = arbitro.Name;
 
-                    if (File.Exists(arbitro.Avatar))
+                    string pathImagem = Environment.CurrentDirectory + arbitro.Avatar;
+
+                    if (File.Exists(pathImagem))
                     {
-                        using (Bitmap imagemAvatar = new Bitmap(arbitro.Avatar))
+                        using (Bitmap imagemAvatar = new Bitmap(pathImagem))
                         {
                             Image avatarArbitro = new Bitmap(imagemAvatar);
                             pbAvatarArbitro.Image = avatarArbitro;
@@ -153,30 +155,7 @@ namespace Projeto
 
                     else
                     {
-                        //string pathRelativo = Environment.CurrentDirectory + "ArcmageADM/arbitros/avatars" + arbitro.Username + ".png";
-
-                        string pathRelativo = GetPathRelativeImagem(arbitro.Username, "\\arbitros\\avatars");
-
-                        if (File.Exists(pathRelativo))
-                        {
-                            using (Bitmap imagemAvatar = new Bitmap(pathRelativo))
-                            {
-                                Image avatarArbitro = new Bitmap(imagemAvatar);
-                                pbAvatarArbitro.Image = avatarArbitro;
-                            }
-
-                            arbitro.Avatar = pathRelativo;
-
-                            containerDados.Entry(arbitro).State = EntityState.Modified;
-                            containerDados.SaveChanges();
-
-                            txtAvatarArbitro.Text = arbitro.Avatar;
-                        }
-
-                        else
-                        {
-                            MessageBox.Show("Não foi possivél encontrar a imagem do árbitro a alterar. Insira uma nova imagem e guarde as alterações", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
+                        MessageBox.Show("Não foi possivél abrir o avatar do árbitro.\nA imagem foi eliminada manualmente.\nInsira uma nova imagem e clique no botão 'Aplicar'", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                     btnAcaoArbitro.Text = "Aplicar";
@@ -2540,9 +2519,11 @@ namespace Projeto
                         txtNickJogador.Text = player.Nickname;
                         nudIdadeJogador.Value = (int)player.Age;
 
-                        if (File.Exists(player.Avatar))
+                        string pathImagem = Environment.CurrentDirectory + player.Avatar;
+
+                        if (File.Exists(pathImagem))
                         {
-                            using (Bitmap imagemAvatar = new Bitmap(player.Avatar))
+                            using (Bitmap imagemAvatar = new Bitmap(pathImagem))
                             {
                                 Image avatarJogador = new Bitmap(imagemAvatar);
                                 pictureBox1.Image = avatarJogador;
@@ -2552,25 +2533,7 @@ namespace Projeto
 
                         else
                         {
-                            //string pathRelativo = Environment.CurrentDirectory + "ArcmageADM/jogadores/avatars" + player.Name + ".png";
-
-                            string pathRelativo = GetPathRelativeImagem(player.Name, "\\jogadores\\avatars");
-
-                            if (File.Exists(pathRelativo))
-                            {
-                                using (Bitmap imagemAvatar = new Bitmap(pathRelativo))
-                                {
-                                    Image avatarJogador = new Bitmap(imagemAvatar);
-                                    pictureBox1.Image = avatarJogador;
-                                }
-
-                                player.Avatar = pathRelativo;
-
-                                containerDados.Entry(player).State = EntityState.Modified;
-                                containerDados.SaveChanges();
-
-                                txtAvatar.Text = player.Avatar;
-                            }
+                            MessageBox.Show("Não foi possivél abrir o avatar do jogador.\nA imagem foi eliminada manualmente.\nInsira uma nova imagem e clique no botão 'Aplicar'", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
@@ -2922,7 +2885,7 @@ namespace Projeto
                     {
                         txtGNomeEquipa.Text = team.Name;
 
-                        if (File.Exists(team.Avatar))
+                        if (File.Exists(Environment.CurrentDirectory + team.Avatar))
                         {
                             using (Bitmap imagemAvatar = new Bitmap(team.Avatar))
                             {
@@ -2934,25 +2897,7 @@ namespace Projeto
 
                         else
                         {
-                            //string pathRelativo = Environment.CurrentDirectory + "ArcmageADM/equipas/avatars" + team.Name + ".png";
-
-                            string pathRelativo = GetPathRelativeImagem(team.Name, "\\equipas\\avatars");
-
-                            if (File.Exists(pathRelativo))
-                            {
-                                using (Bitmap imagemAvatar = new Bitmap(pathRelativo))
-                                {
-                                    Image avatarEquipa = new Bitmap(imagemAvatar);
-                                    pictureBoxAvatarEquipa.Image = avatarEquipa;
-                                }
-
-                                team.Avatar = pathRelativo;
-
-                                containerDados.Entry(team).State = EntityState.Modified;
-                                containerDados.SaveChanges();
-
-                                txtGAvatarEquipa.Text = team.Avatar;
-                            }
+                            MessageBox.Show("Não foi possivél abrir o avatar da equipa.\nA imagem foi eliminada manualmente.\nInsira uma nova imagem e clique no botão 'Aplicar'", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
